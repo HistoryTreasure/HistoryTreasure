@@ -43,5 +43,15 @@ namespace ITI.HistoryTreasures.Tests
             string speech = "Hello world !";
             Assert.That(p.Speech, Is.EqualTo(speech)); //Verify creation of PNJ and if the speech is correct
         }
+
+        [Test]
+        public void T05_MainCharacter_had_name_and_have_a_speed()
+        {
+            MainCharacter mC = new MainCharacter(0, 0, "test", "Judd");
+            string name = "Judd";
+            int speed = 1;
+            Assert.That(mC.Name, Is.EqualTo("Judd"));
+            Assert.That(mC.Speed, Is.EqualTo(1));
+        }
     }
 }

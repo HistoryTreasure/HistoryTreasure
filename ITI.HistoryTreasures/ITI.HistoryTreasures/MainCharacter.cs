@@ -5,11 +5,11 @@ using System.Text;
 
 namespace ITI.HistoryTreasures
 {
-    class MainCharacter : Character
+    public class MainCharacter : Character
     {
         int _speed;
 
-        public MainCharacter(int X, int Y, string bitMapName, string name, int speed)
+        public MainCharacter(int X, int Y, string bitMapName, string name)
             : base (0, 0, "test", name)
         {
             _speed = 1;

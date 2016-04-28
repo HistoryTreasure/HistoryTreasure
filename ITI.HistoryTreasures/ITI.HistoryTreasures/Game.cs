@@ -9,5 +9,11 @@ namespace ITI.HistoryTreasures
 {
     public class Game
     {
+        public List<Theme> _theme;
+
+        public Game()
+        {
+            _theme = new List<Theme>();            
+        }
     }
 }

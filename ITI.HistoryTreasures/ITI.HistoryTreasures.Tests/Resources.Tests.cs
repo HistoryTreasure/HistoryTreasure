@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace ITI.HistoryTreasures.Tests
 {
     [TestFixture]
-    public class Resources
+    public class ResourcesTests
     {
     }
 }
