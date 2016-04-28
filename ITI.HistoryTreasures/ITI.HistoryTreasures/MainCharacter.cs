@@ -7,9 +7,22 @@ namespace ITI.HistoryTreasures
 {
     class MainCharacter : Character
     {
-        public MainCharacter(int X, int Y, string bitMapName, string name)
+        int _speed;
+
+        public MainCharacter(int X, int Y, string bitMapName, string name, int speed)
             : base (0, 0, "test", name)
         {
+            _speed = 1;
+        }
+
+        public int Speed
+        {
+            get { return _speed; }
+        }
+
+        public void Movement()
+        {
+            throw new NotImplementedException();
         }
 
         internal Game Game

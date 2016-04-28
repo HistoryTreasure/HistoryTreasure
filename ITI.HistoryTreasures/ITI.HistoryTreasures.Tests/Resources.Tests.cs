@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace ITI.HistoryTreasures.Tests
 {
-    class Resources
+    [TestFixture]
+    public class Resources
     {
     }
 }

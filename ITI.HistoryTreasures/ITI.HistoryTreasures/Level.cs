@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ITI.HistoryTreasures
 {
-    class Level : Game
+    public class Level : Game
     {
     }
 }

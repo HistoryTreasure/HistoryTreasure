@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace ITI.HistoryTreasures
 {
-    class Game
+    public class Game
     {
     }
 }

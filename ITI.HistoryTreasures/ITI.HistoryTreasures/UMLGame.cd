@@ -43,26 +43,26 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ITI.HistoryTreasures.MainCharacter" Collapsed="true">
-    <Position X="1.5" Y="2.5" Width="1.5" />
+    <Position X="1.5" Y="3.5" Width="1.5" />
     <InheritanceLine Type="ITI.HistoryTreasures.Character" ManuallyRouted="true">
       <Path>
         <Point X="2.25" Y="1.062" />
         <Point X="2.25" Y="1.437" />
-        <Point X="1.255" Y="1.437" />
-        <Point X="1.255" Y="2.846" />
-        <Point X="1.5" Y="2.846" />
+        <Point X="1.125" Y="1.437" />
+        <Point X="1.125" Y="3.846" />
+        <Point X="1.5" Y="3.846" />
       </Path>
     </InheritanceLine>
     <AssociationLine Name="Game" Type="ITI.HistoryTreasures.Game" ManuallyRouted="true">
       <Path>
-        <Point X="3" Y="2.846" />
-        <Point X="3.411" Y="2.846" />
+        <Point X="3" Y="3.846" />
+        <Point X="3.411" Y="3.846" />
         <Point X="3.411" Y="0.781" />
         <Point X="4" Y="0.781" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAABAAgAAAAABAAAAAAAAAA=</HashCode>
       <FileName>MainCharacter.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -70,17 +70,17 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="ITI.HistoryTreasures.PNJ" Collapsed="true">
-    <Position X="1.5" Y="1.75" Width="1.5" />
+    <Position X="1.5" Y="2.75" Width="1.5" />
     <AssociationLine Name="Level" Type="ITI.HistoryTreasures.Level" ManuallyRouted="true">
       <Path>
-        <Point X="3" Y="2.096" />
-        <Point X="3.354" Y="2.096" />
+        <Point X="3" Y="3.096" />
+        <Point X="3.354" Y="3.096" />
         <Point X="3.354" Y="2.596" />
         <Point X="4" Y="2.596" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAABAAQAAAAAAAA=</HashCode>
       <FileName>PNJ.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

@@ -35,5 +35,13 @@ namespace ITI.HistoryTreasures.Tests
             string bitMapName = "test";
             Assert.That(c.BitMapName, Is.EqualTo(bitMapName)); //Recover character by his BitMapName
         }
+
+        [Test]
+        public void T04_PNJ_can_be_created_and_say_the_good_speech()
+        {
+            PNJ p = new PNJ(0, 0, "test", "Hawke", "Hello world !");
+            string speech = "Hello world !";
+            Assert.That(p.Speech, Is.EqualTo(speech)); //Verify creation of PNJ and if the speech is correct
+        }
     }
 }
