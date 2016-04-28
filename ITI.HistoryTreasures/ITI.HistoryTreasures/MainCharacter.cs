@@ -5,8 +5,13 @@ using System.Text;
 
 namespace ITI.HistoryTreasures
 {
-    public class MainCharacter : Character
+    class MainCharacter : Character
     {
+        public MainCharacter(int X, int Y, string bitMapName, string name)
+            : base (0, 0, "test", name)
+        {
+        }
+
         internal Game Game
         {
             get

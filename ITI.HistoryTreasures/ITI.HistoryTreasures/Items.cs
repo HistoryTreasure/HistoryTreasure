@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ITI.HistoryTreasures
 {
-    public class Items : Resources
+    class Items : Resources
     {
         public Map MapDesign
         {

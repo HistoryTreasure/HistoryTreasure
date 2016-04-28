@@ -5,8 +5,13 @@ using System.Text;
 
 namespace ITI.HistoryTreasures
 {
-    public class PNJ : Character
+    class PNJ : Character
     {
+        public PNJ(int X, int Y, string bitMapName, string name)
+            : base (0, 0, "test", name)
+        {
+        }
+
         public Level Level
         {
             get

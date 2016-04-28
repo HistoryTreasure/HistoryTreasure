@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ITI.HistoryTreasures
 {
-    public class Theme : Game
+    class Theme : Game
     {
     }
 }
