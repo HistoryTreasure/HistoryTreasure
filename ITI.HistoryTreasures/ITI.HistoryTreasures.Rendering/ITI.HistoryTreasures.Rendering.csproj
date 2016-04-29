@@ -67,10 +67,14 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameContext.cs" />
+    <Compile Include="Items.cs" />
+    <Compile Include="MapDesign.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendering.cs" />
+    <Compile Include="Resources.cs" />
+    <Compile Include="Sound.cs" />
+    <Compile Include="Tile.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
