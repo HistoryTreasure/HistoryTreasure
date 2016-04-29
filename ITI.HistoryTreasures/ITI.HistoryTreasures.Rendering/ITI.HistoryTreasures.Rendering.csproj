@@ -74,6 +74,7 @@
     <Compile Include="Rendering.cs" />
     <Compile Include="Resources.cs" />
     <Compile Include="Sound.cs" />
+    <Compile Include="Sprites.cs" />
     <Compile Include="Tile.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
