@@ -20,7 +20,7 @@
   <Class Name="ITI.HistoryTreasures.Game" Collapsed="true">
     <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAgAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -64,7 +64,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>IAAAIAAAAAAAAAAAAAAABQQAACgAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAIAAAAAAAAAAAAAAABAQAACgBAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Theme.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -77,7 +77,7 @@
   <Class Name="ITI.HistoryTreasures.Level" Collapsed="true">
     <Position X="7.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAASAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAAAAAAAWAAAAAAQAACABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Level.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -94,5 +94,19 @@
       <FileName>GameState.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ITI.HistoryTreasures.Tile" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAACA=</HashCode>
+      <FileName>Tile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ITI.HistoryTreasures.TileEnum" Collapsed="true">
+    <Position X="11" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAEAgAAAAACAAAAAAAAAAAAAAAAAAgIAA=</HashCode>
+      <FileName>TileEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

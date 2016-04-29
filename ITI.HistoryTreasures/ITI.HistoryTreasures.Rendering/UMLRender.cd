@@ -39,18 +39,18 @@
       <FileName>Items.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ITI.HistoryTreasures.Tile" Collapsed="true">
-    <Position X="4" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAgAQAAEAAAAAACA=</HashCode>
-      <FileName>Tile.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ITI.HistoryTreasures.Rendering.Sprites" Collapsed="true">
     <Position X="5.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sprites.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITI.HistoryTreasures.TileG" Collapsed="true">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAQABEAAAAAAAA=</HashCode>
+      <FileName>TileG.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
