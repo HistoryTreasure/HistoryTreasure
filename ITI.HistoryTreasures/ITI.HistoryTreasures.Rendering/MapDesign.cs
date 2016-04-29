@@ -7,6 +7,10 @@ namespace ITI.HistoryTreasures
 {
     class Map
     {
+        byte[][] _data;
+        Dictionary<byte,Tile> _tiles;
+                
+
         public Level Level
         {
             get
