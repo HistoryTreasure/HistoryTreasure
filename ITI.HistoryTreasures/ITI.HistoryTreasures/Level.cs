@@ -7,26 +7,34 @@ namespace ITI.HistoryTreasures
 {
     public class Level
     {
-        string _name;
+        readonly string _name;
         bool _isFinish;
-        private List<PNJ> _pnj;
+        public List<PNJ> _pnj;
+        Theme _ctx;
 
-        public Level(string name)
+        public Level(Theme ctx, string name)
         {
+            _ctx = ctx;
             _name = name;
             _isFinish = false;
+            _pnj = new List<PNJ>();
+        }
+
+        public string Name
+        {
+            get { return _name; }
+        }
+
+        public bool IsFinish
+        {
+            get { return _isFinish; }
+            set { _isFinish = value; }
         }
 
         public Theme Theme
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get { return _ctx; }
+            set { _ctx = value; }
         }
     }
 }

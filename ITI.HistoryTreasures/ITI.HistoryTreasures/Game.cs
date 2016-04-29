@@ -9,12 +9,16 @@ namespace ITI.HistoryTreasures
 {
     public class Game
     {
-        public List<Theme> _theme;
-        private List<Theme> _themes;
+        public List<Theme> _themes;
 
         public Game()
         {
-            _theme = new List<Theme>();            
+            _themes = new List<Theme>();            
+        }
+
+        public List<Theme> Themes
+        {
+            get { return _themes; }
         }
     }
 }

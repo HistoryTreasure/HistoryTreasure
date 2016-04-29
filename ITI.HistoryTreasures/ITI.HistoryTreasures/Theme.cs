@@ -7,19 +7,18 @@ namespace ITI.HistoryTreasures
 {
     public class Theme
     {
-        List<Level> _level;
         string _name;
         bool _isFinish;
-        private List<Level> _levels;
+        public List<Level> _levels;
+        Game _ctx;
 
-        public Theme(string name)
-            : base()
+        public Theme(Game ctx, string name)
+            
         {
+            _ctx = ctx;
             _name = name;
             _isFinish = false;
-            _level = new List<Level>();
-            Level level = new Level("Try");
-            _level.Add(level);
+            _levels = new List<Level>();
         }
 
         public string Name
@@ -34,14 +33,8 @@ namespace ITI.HistoryTreasures
 
         public Game Game
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get { return _ctx; }
+            set { _ctx = value; }
         }
     }
 }
