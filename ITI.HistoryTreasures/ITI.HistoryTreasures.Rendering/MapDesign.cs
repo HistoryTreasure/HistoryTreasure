@@ -5,22 +5,9 @@ using System.Text;
 
 namespace ITI.HistoryTreasures
 {
-    class Map
+    class MapDesign
     {
         byte[][] _data;
         Dictionary<byte,Tile> _tiles;
-                
-
-        public Level Level
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
     }
 }

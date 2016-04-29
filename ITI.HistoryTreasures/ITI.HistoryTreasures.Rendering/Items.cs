@@ -7,7 +7,7 @@ namespace ITI.HistoryTreasures
 {
     class Items : Resources
     {
-        public Map MapDesign
+        public MapDesign MapDesign
         {
             get
             {

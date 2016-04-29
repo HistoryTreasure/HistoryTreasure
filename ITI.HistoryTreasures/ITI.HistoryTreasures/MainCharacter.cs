@@ -10,7 +10,7 @@ namespace ITI.HistoryTreasures
         int _speed;
 
         public MainCharacter(int X, int Y, string bitMapName, string name)
-            : base (0, 0, "test", name)
+            : base(0, 0, "test", name)
         {
             _speed = 1;
         }
@@ -23,18 +23,6 @@ namespace ITI.HistoryTreasures
         public void Movement()
         {
             throw new NotImplementedException();
-        }
-
-        internal Game Game
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
         }
     }
 }

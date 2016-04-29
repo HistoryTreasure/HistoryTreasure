@@ -8,5 +8,16 @@ namespace ITI.HistoryTreasures
 {
     class Map
     {
+        public Level Level
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
     }
 }

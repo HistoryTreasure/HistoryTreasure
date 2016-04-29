@@ -8,9 +8,9 @@ namespace ITI.HistoryTreasures
     public class PNJ : Character
     {
         string _speech;
-        
+
         public PNJ(int X, int Y, string bitMapName, string name, string speech)
-            : base (0, 0, "test", name)
+            : base(0, 0, "test", name)
         {
             _speech = speech;
         }

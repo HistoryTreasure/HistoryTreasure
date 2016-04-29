@@ -44,5 +44,17 @@ namespace ITI.HistoryTreasures
             get { return _name; }
             set { _name = value; }
         }
+
+        public Game Game
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
     }
 }

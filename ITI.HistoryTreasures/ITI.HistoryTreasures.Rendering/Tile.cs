@@ -28,7 +28,7 @@ namespace ITI.HistoryTreasures
             get { return _sprite; }
         }
 
-        public Map MapDesign
+        public MapDesign MapDesign
         {
             get
             {

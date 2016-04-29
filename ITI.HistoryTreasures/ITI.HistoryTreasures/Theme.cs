@@ -5,11 +5,12 @@ using System.Text;
 
 namespace ITI.HistoryTreasures
 {
-    public class Theme : Game
+    public class Theme
     {
         List<Level> _level;
         string _name;
         bool _isFinish;
+        private List<Level> _levels;
 
         public Theme(string name)
             : base()
@@ -29,6 +30,18 @@ namespace ITI.HistoryTreasures
         public bool isFinish
         {
             get { return _isFinish; }
+        }
+
+        public Game Game
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
         }
     }
 }

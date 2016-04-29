@@ -10,6 +10,7 @@ namespace ITI.HistoryTreasures
     public class Game
     {
         public List<Theme> _theme;
+        private List<Theme> _themes;
 
         public Game()
         {
