@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures
 {
-    public class Character
+    public abstract class Character
     {
         int _positionX; //Position X to find a character
         int _positionY; //Position Y to find a character
