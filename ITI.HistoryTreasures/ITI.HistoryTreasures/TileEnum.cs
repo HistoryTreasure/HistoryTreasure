@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures
 {
-    class MapDesign
+    public enum TileEnum
     {
-        byte[][] _data;
-        Dictionary<byte,TileG> _tiles;
+       WATER,GRASS,
+       BOATFLOOR,BOATWALL,
+       BRIDGE,BRIDGEWALL
     }
 }

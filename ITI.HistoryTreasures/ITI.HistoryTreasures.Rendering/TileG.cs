@@ -6,21 +6,16 @@ using System.Drawing;
 
 namespace ITI.HistoryTreasures
 {
-    class Tile : Resources
+    class TileG : Resources
     {
-        bool _isSolid;
         Image _sprite; //reference to an image
+        TileEnum _tileName;
 
-        public Tile(bool IsSolid, Image Sprite)
+        public TileG(Image Sprite, TileEnum tileName)
         {
             if (Sprite == null) throw new ArgumentNullException();
-            _isSolid = IsSolid;
             _sprite = Sprite;
-        }
-
-        public bool IsSolid
-        {
-            get { return _isSolid; }
+            _tileName = tileName;
         }
 
         public Image Sprite
