@@ -17,9 +17,11 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = new Theme(g,"theme");
             Level l = new Level(t,"Level");
             PNJ p = new PNJ(l, 0, 0, "test", "Hawke", "Hello world !");
+            l._pnj.Add(p);
             string speech = "Hello world !";
             Assert.That(p.Speech, Is.EqualTo(speech)); //Verify creation of PNJ and if the speech is correct
             Assert.That(p.Level, Is.EqualTo(l));
+            Assert.That(l._pnj.Contains(p));
         }
     }
 
