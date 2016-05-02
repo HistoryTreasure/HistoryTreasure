@@ -25,6 +25,16 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
+        public void PNJ_cannot_be_created_if_his_position_is_negative()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            Level l = new Level(t, "Level");
+            
+            Assert.Throws<ArgumentException>(() => new PNJ(g, l, -1, 0, "test", "Hawke", "Hello world"));
+        }
+
+        [Test]
         public void PNJ_return_correct_coordinate() //Return position of PNJ
         {
             Game g = new Game();
@@ -50,6 +60,14 @@ namespace ITI.HistoryTreasures.Tests
             int speed = 1;
             Assert.That(mC.Name, Is.EqualTo(name));
             Assert.That(mC.Speed, Is.EqualTo(speed));
+        }
+
+        [Test]
+        public void MainCharacter_cannot_be_created_if_his_position_is_negative()
+        {
+            Game g = new Game();
+            
+            Assert.Throws<ArgumentException>(() => new MainCharacter(g, -1, 0, "test", "Judd"));
         }
 
         [Test]

@@ -13,6 +13,10 @@ namespace ITI.HistoryTreasures
             : base(ctx, X, Y, bitMapName, name)
         {
             _speed = 1;
+            if (X < 0 || Y < 0)
+            {
+                throw new ArgumentException("You cannot create character to this coordonate");
+            }
         }
 
         public int Speed

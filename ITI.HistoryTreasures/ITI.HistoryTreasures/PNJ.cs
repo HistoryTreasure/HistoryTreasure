@@ -15,6 +15,10 @@ namespace ITI.HistoryTreasures
         {
             _ctx = ctx;
             _speech = speech;
+            if (X < 0 || Y < 0)
+            {
+                throw new ArgumentException("You cannot create a PNJ with this coordonate");
+            }
         }
 
         public string Speech
