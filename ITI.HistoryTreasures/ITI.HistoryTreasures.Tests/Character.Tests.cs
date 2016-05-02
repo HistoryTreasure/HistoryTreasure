@@ -19,8 +19,21 @@ namespace ITI.HistoryTreasures.Tests
             PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
             l._pnj.Add(p);
             string speech = "Hello world !";
-            Assert.That(p.Speech, Is.EqualTo(speech)); //Verify creation of PNJ and if the speech is correct
+            Assert.That(p.Speech, Is.EqualTo(speech)); //Verify if the speech is correct
             Assert.That(p.Level, Is.EqualTo(l));
+            Assert.That(l._pnj.Contains(p));
+        }
+
+        [Test]
+        public void PNJ_return_correct_coordinate() //Return position of PNJ
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            Level l = new Level(t, "Level");
+            PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
+            l._pnj.Add(p);
+            Assert.That(p.positionX, Is.EqualTo(0));
+            Assert.That(p.positionY, Is.EqualTo(0));
             Assert.That(l._pnj.Contains(p));
         }
     }
