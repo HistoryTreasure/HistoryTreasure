@@ -10,7 +10,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAIAAAACEAAAAAAAAAIAQAAAgAAAAAAAMAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAACEAAAAAAAAAIAQAAAgBAAAAAAMAAAAAAAA=</HashCode>
       <FileName>Character.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -97,7 +97,7 @@
   <Class Name="ITI.HistoryTreasures.Tile" Collapsed="true">
     <Position X="12.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAACAAAAAAAAAAAAAAAAAAABAAAAAAACA=</HashCode>
+      <HashCode>AAAAAAAAABAAACAAAAAIAAAAAAAAAgAAABAAAAAAACA=</HashCode>
       <FileName>Tile.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

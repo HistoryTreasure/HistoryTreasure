@@ -29,9 +29,7 @@ namespace ITI.HistoryTreasures
         public Level Level
         {
             get
-            {
-                return _ctx;
-            }
+            { return _ctx; }
         }
     }
 }
