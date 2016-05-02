@@ -47,7 +47,7 @@
   <Class Name="ITI.HistoryTreasures.PNJ" Collapsed="true">
     <Position X="3.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAABAAQAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAABAAABAAQAAAAAAAA=</HashCode>
       <FileName>PNJ.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

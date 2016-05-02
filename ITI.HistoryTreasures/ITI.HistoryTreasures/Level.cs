@@ -34,7 +34,6 @@ namespace ITI.HistoryTreasures
         public Theme Theme
         {
             get { return _ctx; }
-            set { _ctx = value; }
         }
     }
 }
