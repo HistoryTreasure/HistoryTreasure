@@ -11,11 +11,15 @@ namespace ITI.HistoryTreasures.Tests
     public class PNJTests
     {
         [Test]
-        public void PNJ_can_be_created_and_say_the_good_speech()
+        public void PNJ_can_be_created_with_a_context_a_name_and_a_speech()
         {
-            PNJ p = new PNJ(0, 0, "test", "Hawke", "Hello world !");
+            Game g = new Game();
+            Theme t = new Theme(g,"theme");
+            Level l = new Level(t,"Level");
+            PNJ p = new PNJ(l, 0, 0, "test", "Hawke", "Hello world !");
             string speech = "Hello world !";
             Assert.That(p.Speech, Is.EqualTo(speech)); //Verify creation of PNJ and if the speech is correct
+            Assert.That(p.Level, Is.EqualTo(l));
         }
     }
 
