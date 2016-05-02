@@ -38,5 +38,29 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(mC.Name, Is.EqualTo(name));
             Assert.That(mC.Speed, Is.EqualTo(speed));
         }
+
+        [Test]
+        public void MainCharacter_can_move_up()
+        {
+            Game g = new Game();
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+
+            for(int i = 0; i < 10; i++)
+            mC.Movement(KeyEnum.up);
+
+            Assert.That(mC.positionY, Is.EqualTo(10));
+        }
+
+        [Test]
+        public void MainCharacter_can_move_left()
+        {
+            Game g = new Game();
+            MainCharacter mC = new MainCharacter(g, 10, 0, "test", "Judd");
+
+            for (int i = 0; i < 10; i++)
+                mC.Movement(KeyEnum.left);
+
+            Assert.That(mC.positionX, Is.EqualTo(0));
+        }
     }
 }

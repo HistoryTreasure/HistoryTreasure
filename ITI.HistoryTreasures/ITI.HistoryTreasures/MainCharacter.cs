@@ -10,7 +10,7 @@ namespace ITI.HistoryTreasures
         int _speed;
 
         public MainCharacter(Game ctx, int X, int Y, string bitMapName, string name)
-            : base(ctx, 0, 0, "test", name)
+            : base(ctx, X, Y, bitMapName, name)
         {
             _speed = 1;
         }
@@ -20,9 +20,16 @@ namespace ITI.HistoryTreasures
             get { return _speed; }
         }
 
-        public void Movement()
+        public void Movement(KeyEnum key)
         {
-            throw new NotImplementedException();
+            if (key == KeyEnum.up)
+                this.positionY = positionY + Speed;
+            else if (key == KeyEnum.down)
+                this.positionY = positionY - Speed;
+            else if (key == KeyEnum.right)
+                this.positionX = positionX + Speed;
+            else if (key == KeyEnum.left)
+                this.positionX = positionX - Speed;
         }
     }
 }
