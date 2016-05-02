@@ -26,13 +26,29 @@ namespace ITI.HistoryTreasures
         public int positionX
         {
             get { return _positionX; }
-            set { _positionX = value; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("You cannot move outside the map");
+                }
+   
+                    _positionX = value;      
+            }
         }
 
         public int positionY
         {
             get { return _positionY; }
-            set { _positionY = value; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("You cannot move outside the map");
+                }
+
+                _positionY = value;
+            }
         }
 
         public string BitMapName

@@ -93,5 +93,13 @@ namespace ITI.HistoryTreasures.Tests
 
             Assert.That(mC.positionX, Is.EqualTo(0));
         }
+
+        [Test]
+        public void MainCharacter_cannot_move_outside_the_map()
+        {
+            Game g = new Game();
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Assert.Throws<ArgumentException>(() => mC.Movement(KeyEnum.left));
+        }
     }
 }
