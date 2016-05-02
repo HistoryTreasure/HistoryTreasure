@@ -10,16 +10,20 @@ namespace ITI.HistoryTreasures
     {
         bool _isSolid;
         TileEnum _tileName;
+        Map _mapContext;
+
+        public Tile(bool isSolid, TileEnum tileName, Map mapContext)
+        {
+            _isSolid = isSolid;
+            _tileName = tileName;
+            _mapContext = mapContext;
+        }
 
         internal Map Map
         {
             get
             {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
+                return _mapContext;
             }
         }
 
@@ -27,12 +31,13 @@ namespace ITI.HistoryTreasures
         {
             get
             {
-                throw new System.NotImplementedException();
+                return _tileName;
             }
+        }
 
-            set
-            {
-            }
+        public bool IsSolid
+        {
+            get { return _isSolid; }
         }
     }
 }
