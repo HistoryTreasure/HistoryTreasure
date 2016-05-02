@@ -10,6 +10,29 @@ namespace ITI.HistoryTreasures
     {
         bool _isSolid;
         TileEnum _tileName;
-        
+
+        internal Map Map
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public TileEnum TileEnum
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
     }
 }

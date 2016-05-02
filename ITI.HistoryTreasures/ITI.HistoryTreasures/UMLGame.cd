@@ -88,21 +88,25 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="ITI.HistoryTreasures.GameState" Collapsed="true">
-    <Position X="10.25" Y="1.25" Width="1.5" />
+    <Position X="10.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameState.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ITI.HistoryTreasures.Tile" Collapsed="true">
-    <Position X="9.75" Y="0.5" Width="1.5" />
+    <Position X="12.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAACA=</HashCode>
+      <HashCode>AAAAAAAAABAAACAAAAAAAAAAAAAAAAAAABAAAAAAACA=</HashCode>
       <FileName>Tile.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Map" />
+      <Property Name="TileEnum" />
+    </ShowAsAssociation>
   </Class>
   <Enum Name="ITI.HistoryTreasures.TileEnum" Collapsed="true">
-    <Position X="11" Y="2.25" Width="1.5" />
+    <Position X="12.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAEAgAAAAACAAAAAAAAAAAAAAAAAAgIAA=</HashCode>
       <FileName>TileEnum.cs</FileName>
