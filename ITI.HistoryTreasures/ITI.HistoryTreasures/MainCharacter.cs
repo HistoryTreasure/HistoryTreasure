@@ -9,8 +9,8 @@ namespace ITI.HistoryTreasures
     {
         int _speed;
 
-        public MainCharacter(int X, int Y, string bitMapName, string name)
-            : base(0, 0, "test", name)
+        public MainCharacter(Game ctx, int X, int Y, string bitMapName, string name)
+            : base(ctx, 0, 0, "test", name)
         {
             _speed = 1;
         }

@@ -12,9 +12,11 @@ namespace ITI.HistoryTreasures
         int _positionY; //Position Y to find a character
         string _bitMapName; //To search the apparence of a character
         string _name; //Name of character
+        Game _ctx;
 
-        public Character(int X, int Y, string bitMapName, string name)
+        public Character(Game ctx, int X, int Y, string bitMapName, string name)
         {
+            _ctx = ctx;
             _positionX = X;
             _positionY = Y;
             _bitMapName = bitMapName;
@@ -47,14 +49,7 @@ namespace ITI.HistoryTreasures
 
         public Game Game
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get { return _ctx; }
         }
     }
 }

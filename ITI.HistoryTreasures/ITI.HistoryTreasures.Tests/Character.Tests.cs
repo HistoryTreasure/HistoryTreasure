@@ -14,9 +14,9 @@ namespace ITI.HistoryTreasures.Tests
         public void PNJ_can_be_created_with_a_context_a_name_and_a_speech()
         {
             Game g = new Game();
-            Theme t = new Theme(g,"theme");
+            Theme t = new Theme(g,"Theme");
             Level l = new Level(t,"Level");
-            PNJ p = new PNJ(l, 0, 0, "test", "Hawke", "Hello world !");
+            PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
             l._pnj.Add(p);
             string speech = "Hello world !";
             Assert.That(p.Speech, Is.EqualTo(speech)); //Verify creation of PNJ and if the speech is correct
@@ -31,7 +31,8 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void MainCharacter_have_a_name_and_a_speed()
         {
-            MainCharacter mC = new MainCharacter(0, 0, "test", "Judd");
+            Game g = new Game();
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
             string name = "Judd";
             int speed = 1;
             Assert.That(mC.Name, Is.EqualTo(name));

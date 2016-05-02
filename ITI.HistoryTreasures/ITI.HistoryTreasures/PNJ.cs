@@ -10,8 +10,8 @@ namespace ITI.HistoryTreasures
         string _speech;
         readonly Level _ctx;
 
-        public PNJ(Level ctx, int X, int Y, string bitMapName, string name, string speech)
-            : base(0, 0, "test", name)
+        public PNJ(Game gctx, Level ctx, int X, int Y, string bitMapName, string name, string speech)
+            : base(gctx, 0, 0, "test", name)
         {
             _ctx = ctx;
             _speech = speech;
