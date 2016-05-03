@@ -37,13 +37,6 @@
       <Property Name="Level" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="ITI.HistoryTreasures.MainCharacter" Collapsed="true">
-    <Position X="1.5" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAABAAAAAABAAAAAAAABAAAAAAAAAA=</HashCode>
-      <FileName>MainCharacter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ITI.HistoryTreasures.PNJ" Collapsed="true">
     <Position X="3.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
@@ -110,6 +103,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAgAEAgAAAAACAAAAAAAAAAAAAAAAAAgIAA=</HashCode>
       <FileName>TileEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ITI.HistoryTreasures.KeyEnum" Collapsed="true">
+    <Position X="1" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAIAAAAAAAAAgAAgAA=</HashCode>
+      <FileName>KeyEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />
