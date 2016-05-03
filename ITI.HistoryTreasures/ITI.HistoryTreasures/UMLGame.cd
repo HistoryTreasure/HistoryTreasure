@@ -40,7 +40,7 @@
   <Class Name="ITI.HistoryTreasures.PNJ" Collapsed="true">
     <Position X="3.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAABAAABAAQAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAABAAABAEQAAAAAAAA=</HashCode>
       <FileName>PNJ.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -98,6 +98,13 @@
       <Property Name="TileEnum" />
     </ShowAsAssociation>
   </Class>
+  <Class Name="ITI.HistoryTreasures.MainCharacter" Collapsed="true">
+    <Position X="1.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAABAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>MainCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="ITI.HistoryTreasures.TileEnum" Collapsed="true">
     <Position X="12.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
@@ -106,9 +113,9 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="ITI.HistoryTreasures.KeyEnum" Collapsed="true">
-    <Position X="1" Y="2.5" Width="1.5" />
+    <Position X="0.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAIAAAAAAAAAgAAgAA=</HashCode>
+      <HashCode>AAAABAAAAAACAAAAAAAAAAAAAAAIAAAAAAAAAgAAgAA=</HashCode>
       <FileName>KeyEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
