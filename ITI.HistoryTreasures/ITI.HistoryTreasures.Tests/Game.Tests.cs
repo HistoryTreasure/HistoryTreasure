@@ -41,7 +41,7 @@ namespace ITI.HistoryTreasures.Tests
             g._themes.Add(t);
             t._levels.Add(l);
 
-            l.FinishLevel();
+            l.IsFinish = true;
             t.FinishTheme();
 
             Assert.That(g._themes[0].IsFinish == true);
@@ -72,7 +72,7 @@ namespace ITI.HistoryTreasures.Tests
             Level l = new Level(t,"level");
             g._themes.Add(t);
             t._levels.Add(l);
-            l.FinishLevel();
+            l.IsFinish = true;
 
             Assert.That(t._levels[0].IsFinish == true);
         }
