@@ -12,7 +12,7 @@ namespace ITI.HistoryTreasures
         public List<Theme> _themes;
 
         /// <summary>
-        /// This constructor served to initialize our list of theme.
+        /// This constructor create a game and initialize our list of theme.
         /// </summary>
         public Game()
         {

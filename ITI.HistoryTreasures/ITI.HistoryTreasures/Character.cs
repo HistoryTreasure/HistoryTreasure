@@ -18,8 +18,8 @@ namespace ITI.HistoryTreasures
         /// This constructor allow to create a Character
         /// </summary>
         /// <param name="ctx">This parameter reference character contains in game.</param>
-        /// <param name="X">This parameter reference horizontal position.</param>
-        /// <param name="Y">This parameter reference vertical position.</param>
+        /// <param name="X">This parameter reference horizontal position with an int.</param>
+        /// <param name="Y">This parameter reference vertical position with an int.</param>
         /// <param name="bitMapName">This parameter reference appaerance of Character.</param>
         /// <param name="name">This parameter reference name of Character.</param>
         public Character(Game ctx, int X, int Y, string bitMapName, string name)
@@ -32,7 +32,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return horizontal position.
+        /// This properties return horizontal position with an int.
         /// </summary>
         public int positionX
         {
@@ -49,7 +49,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return vertical position.
+        /// This properties return vertical position with an int.
         /// </summary>
         public int positionY
         {
@@ -75,7 +75,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return name.
+        /// This properties return the name of the character.
         /// </summary>
         public string Name
         {

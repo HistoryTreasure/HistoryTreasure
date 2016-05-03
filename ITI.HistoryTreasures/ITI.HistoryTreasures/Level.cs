@@ -16,7 +16,7 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// This constructor create a level.
         /// </summary>
-        /// <param name="ctx">This parameter reference level contains in theme.</param>
+        /// <param name="ctx">This parameter reference the theme of the level.</param>
         /// <param name="name">This parameter reference name of level.</param>
         public Level(Theme ctx, string name)
         {
@@ -27,7 +27,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return a name.
+        /// This properties return the name of the level.
         /// </summary>
         public string Name
         {
@@ -44,7 +44,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return the context of the theme.
+        /// This properties return the theme of the level.
         /// </summary>
         public Theme Theme
         {

@@ -26,7 +26,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return a name.
+        /// This properties return the theme name.
         /// </summary>
         public string Name
         {
