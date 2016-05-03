@@ -11,6 +11,7 @@ namespace ITI.HistoryTreasures
         bool _isFinish;
         public List<PNJ> _pnj;
         Theme _ctx;
+        MainCharacter _mainCharacter;
 
         public Level(Theme ctx, string name)
         {
@@ -36,9 +37,22 @@ namespace ITI.HistoryTreasures
             get { return _ctx; }
         }
 
+        public MainCharacter MainCharacter
+        {
+            get { return _mainCharacter; }
+        }
+
         public void FinishLevel()
         {
             IsFinish = true;
+        }
+
+        public void GameOver()
+        {
+            if (_mainCharacter.Life == 0)
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
