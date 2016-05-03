@@ -36,9 +36,15 @@ namespace ITI.HistoryTreasures
                 this.positionX = positionX - Speed;
         }
 
-        public void Interactions()
+        /*public void Interactions(KeyEnum key)
         {
-            if ()
-        }
+            if (key == KeyEnum.action)
+            {
+                if ()
+                {
+                    
+                }
+            }
+        }*/
     }
 }

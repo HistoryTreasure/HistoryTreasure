@@ -31,5 +31,10 @@ namespace ITI.HistoryTreasures
             get
             { return _ctx; }
         }
+
+        public string Talk(PNJ pnj)
+        {
+            return pnj.Speech;
+        }
     }
 }
