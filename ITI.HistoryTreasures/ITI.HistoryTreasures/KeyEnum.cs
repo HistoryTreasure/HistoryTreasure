@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures
 {
+    /// <summary>
+    /// This enumeration allow to implement movement of MainCharacter.
+    /// </summary>
     public enum KeyEnum
     {
         up,

@@ -9,7 +9,15 @@ namespace ITI.HistoryTreasures
     {
         int _speed;
         int _life;
-        
+
+        /// <summary>
+        /// This constructor allow to create MainCharacter
+        /// </summary>
+        /// <param name="ctx">This parameter reference the MainCharacter contains in game.</param>
+        /// <param name="X">This parameter reference horizontal position.</param>
+        /// <param name="Y">This parameter reference vertical position.</param>
+        /// <param name="bitMapName">This parameter reference appaerance of Character.</param>
+        /// <param name="name">This parameter reference name of PNJ.</param>
         public MainCharacter(Game ctx, int X, int Y, string bitMapName, string name)
             : base(ctx, X, Y, bitMapName, name)
         {
@@ -21,11 +29,17 @@ namespace ITI.HistoryTreasures
             }
         }
 
+        /// <summary>
+        /// This properties return a speed.
+        /// </summary>
         public int Speed
         {
             get { return _speed; }
         }
 
+        /// <summary>
+        /// This properties return number of life.
+        /// </summary>
         public int Life
         {
             get { return _life; }
@@ -40,6 +54,10 @@ namespace ITI.HistoryTreasures
             }
         }
 
+        /// <summary>
+        /// This method allow to move the MainCharacter.
+        /// </summary>
+        /// <param name="key"></param>
         public void Movement(KeyEnum key)
         {
             if (key == KeyEnum.up)

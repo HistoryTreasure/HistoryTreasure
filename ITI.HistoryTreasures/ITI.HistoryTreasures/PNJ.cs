@@ -10,6 +10,16 @@ namespace ITI.HistoryTreasures
         string _speech;
         readonly Level _ctx;
 
+        /// <summary>
+        /// This constructor allow to create a PNJ
+        /// </summary>
+        /// <param name="gctx">This parameter reference pnj contains in game.</param>
+        /// <param name="ctx">This parameter reference pnj contains in level.</param>
+        /// <param name="X">This parameter reference horizontal position.</param>
+        /// <param name="Y">This parameter reference vertical position.</param>
+        /// <param name="bitMapName">This parameter reference appaerance of Character.</param>
+        /// <param name="name">This parameter reference name of PNJ.</param>
+        /// <param name="speech">This parameter reference speech of PNJ.</param>
         public PNJ(Game gctx, Level ctx, int X, int Y, string bitMapName, string name, string speech)
             : base(gctx, 0, 0, "test", name)
         {
@@ -21,17 +31,26 @@ namespace ITI.HistoryTreasures
             }
         }
 
+        /// <summary>
+        /// This properties return a speech.
+        /// </summary>
         public string Speech
         {
             get { return _speech; }
         }
 
+        /// <summary>
+        /// This properties return the context of the level.
+        /// </summary>
         public Level Level
         {
             get
             { return _ctx; }
         }
 
+        /// <summary>
+        /// This properties return PNJ's speech.
+        /// </summary>
         public string Talk(PNJ pnj)
         {
             return pnj.Speech;
