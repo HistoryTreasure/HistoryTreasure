@@ -35,5 +35,10 @@ namespace ITI.HistoryTreasures
         {
             get { return _ctx; }
         }
+
+        public void FinishLevel()
+        {
+            IsFinish = true;
+        }
     }
 }

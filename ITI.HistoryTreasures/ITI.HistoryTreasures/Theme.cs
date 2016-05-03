@@ -13,7 +13,6 @@ namespace ITI.HistoryTreasures
         Game _ctx;
 
         public Theme(Game ctx, string name)
-            
         {
             _ctx = ctx;
             _name = name;
@@ -26,15 +25,35 @@ namespace ITI.HistoryTreasures
             get { return _name; }
         }
 
-        public bool isFinish
+        public bool IsFinish
         {
             get { return _isFinish; }
+            set { _isFinish = value; }
         }
 
         public Game Game
         {
             get { return _ctx; }
             set { _ctx = value; }
+        }
+
+        public void FinishTheme()
+        {
+            bool test = true;
+            foreach (Level l in _levels)
+            {
+                if (l.IsFinish != true)
+                {
+                    test = false;
+                    break;
+                }
+                else
+                    continue;
+            }
+
+            if(test != true)
+                return;
+            IsFinish = true;
         }
     }
 }
