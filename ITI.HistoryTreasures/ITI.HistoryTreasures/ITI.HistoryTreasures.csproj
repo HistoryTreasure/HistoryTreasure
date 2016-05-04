@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Character.cs" />
     <Compile Include="KeyEnum.cs" />
+    <Compile Include="Rectangle.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameState.cs" />

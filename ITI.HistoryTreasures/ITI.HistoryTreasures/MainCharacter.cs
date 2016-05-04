@@ -9,6 +9,7 @@ namespace ITI.HistoryTreasures
     {
         int _speed;
         int _life;
+        //private object speech; //--------------------------------------------------------------TEST
 
         /// <summary>
         /// This constructor allow to create MainCharacter
@@ -55,6 +56,19 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
+        /// This method served to check life of MainCharacter.
+        /// When MainCharacter have 0 life, we send a message : "GameOver".
+        /// </summary>
+        public bool GameOver()
+        {
+            if (Life == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
         /// This method allow to move the MainCharacter.
         /// </summary>
         /// <param name="key"></param>
@@ -70,15 +84,17 @@ namespace ITI.HistoryTreasures
                 this.positionX = positionX - Speed;
         }
 
-        /*public void Interactions(KeyEnum key)
+        //----------------------------------------------------------------------- TEST
+        /*public void IsPositioning (int posX, int posY)
         {
-            if (key == KeyEnum.action)
-            {
-                if ()
-                {
-                    
-                }
-            }
+            this.positionX = posX;
+            this.positionY = posY;
+        }
+
+        public void Interactions(KeyEnum key)
+        {
+            PNJ.GiveMessage(speech);
         }*/
+        //------------------------------------------------------------------------ TEST
     }
 }

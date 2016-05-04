@@ -76,5 +76,17 @@ namespace ITI.HistoryTreasures.Tests
 
             Assert.That(t._levels[0].IsFinish == true);
         }
+
+        /*[Test]
+        public void Levels_return_correctly_main_character()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            Level l = new Level(t, "Level");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "Test", "Judd");
+            g._themes.Add(t);
+            t._levels.Add(l);
+            Assert.That(l.MainCharacter, Is.EqualTo(mC));
+        }*/
     }
 }

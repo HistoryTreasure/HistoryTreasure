@@ -46,6 +46,18 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(p.positionY, Is.EqualTo(0));
             Assert.That(l._pnj.Contains(p));
         }
+
+        [Test]
+        public void PNJ_return_speech_correctly()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            Level l = new Level(t, "Level");
+            PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
+            l._pnj.Add(p);
+            Assert.That(p.Speech, Is.EqualTo("Hello world !"));
+            Assert.That(l._pnj.Contains(p));
+        }
     }
 
     [TestFixture]
@@ -100,6 +112,24 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
             Assert.Throws<ArgumentException>(() => mC.Movement(KeyEnum.left));
+        }
+
+        [Test]
+        public void MainCharacter_cannot_have_more_than_three_life()
+        {
+            Game g = new Game();
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Assert.Throws<ArgumentException>(() => mC.Life++);
+        }
+
+        [Test]
+        public void MainCharacter_game_over_return_false_if_life_equal_zero()
+        {
+            Game g = new Game();
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Assert.That(mC.GameOver, Is.EqualTo(true));
+            mC.Life = 0;
+            Assert.That(mC.GameOver, Is.EqualTo(false));
         }
     }
 }

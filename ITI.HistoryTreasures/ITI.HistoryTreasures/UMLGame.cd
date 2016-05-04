@@ -70,7 +70,7 @@
   <Class Name="ITI.HistoryTreasures.Level" Collapsed="true">
     <Position X="7.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAIAAAAAgAAAAWAAAAAAQAACABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAAgAAAAWAAAAAAQgACABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Level.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -82,7 +82,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="ITI.HistoryTreasures.GameState" Collapsed="true">
-    <Position X="10.25" Y="1" Width="1.5" />
+    <Position X="10" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameState.cs</FileName>
@@ -102,8 +102,15 @@
   <Class Name="ITI.HistoryTreasures.MainCharacter" Collapsed="true">
     <Position X="1.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAABAEAAAABAAAAAAAABAAAAAABAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAAAAAABAEAAAABAAAAAAAABAAAAAABAAA=</HashCode>
       <FileName>MainCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITI.HistoryTreasures.Rectangle" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAQAAAAAAAIAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Rectangle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="ITI.HistoryTreasures.TileEnum" Collapsed="true">
@@ -114,7 +121,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="ITI.HistoryTreasures.KeyEnum" Collapsed="true">
-    <Position X="0.75" Y="1.25" Width="1.5" />
+    <Position X="0.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAACAAAAAAAAAAAAAAAIAAAAAAAAAgAAgAA=</HashCode>
       <FileName>KeyEnum.cs</FileName>

@@ -58,17 +58,5 @@ namespace ITI.HistoryTreasures
         {
             get { return _mainCharacter; }
         }
-
-        /// <summary>
-        /// This method served to check life of MainCharacter.
-        /// When MainCharacter have 0 life, we send a message : "GameOver".
-        /// </summary>
-        public void GameOver()
-        {
-            if (_mainCharacter.Life == 0)
-            {
-                throw new NotImplementedException();
-            }
-        }
     }
 }
