@@ -9,6 +9,7 @@ namespace ITI.HistoryTreasures
     {
         int _speed;
         int _life;
+        
         //private object speech; //--------------------------------------------------------------TEST
 
         /// <summary>
@@ -22,12 +23,12 @@ namespace ITI.HistoryTreasures
         public MainCharacter(Game ctx, int X, int Y, string bitMapName, string name)
             : base(ctx, X, Y, bitMapName, name)
         {
-            _speed = 1;
-            _life = 3;
             if (X < 0 || Y < 0)
             {
                 throw new ArgumentException("You cannot create character to this coordonate");
             }
+            _speed = 1;
+            _life = 3;
         }
 
         /// <summary>
@@ -84,6 +85,7 @@ namespace ITI.HistoryTreasures
                 this.positionX = positionX - Speed;
         }
 
+        
         //----------------------------------------------------------------------- TEST
         /*public void IsPositioning (int posX, int posY)
         {

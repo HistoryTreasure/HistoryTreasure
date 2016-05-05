@@ -131,5 +131,21 @@ namespace ITI.HistoryTreasures.Tests
             mC.Life = 0;
             Assert.That(mC.GameOver, Is.EqualTo(false));
         }
+
+        [Test]
+        public void Maint_Character_hitbox_return_good_value()
+        {
+            Game g = new Game();
+            MainCharacter mC = new MainCharacter(g, 32, 32, "test", "Judd");
+            Assert.That(mC.HitBox.rectangleCtx, Is.EqualTo(mC));
+            Assert.That(mC.HitBox.xA, Is.EqualTo(16));
+            Assert.That(mC.HitBox.yA, Is.EqualTo(32));
+            Assert.That(mC.HitBox.xB, Is.EqualTo(48));
+            Assert.That(mC.HitBox.yB, Is.EqualTo(32));
+            Assert.That(mC.HitBox.xC, Is.EqualTo(48));
+            Assert.That(mC.HitBox.yC, Is.EqualTo(16));
+            Assert.That(mC.HitBox.xD, Is.EqualTo(16));
+            Assert.That(mC.HitBox.yD, Is.EqualTo(16));
+        }
     }
 }

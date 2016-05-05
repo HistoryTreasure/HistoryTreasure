@@ -8,41 +8,39 @@ namespace ITI.HistoryTreasures
 {
     public class Rectangle
     {
-        int _a;
-        int _b;
-        int _c;
-        int _d;
+        Character _ctx;
+        int _xA;
+        int _yA;
+        int _xB;
+        int _yB;
+        int _xC;
+        int _yC;
+        int _xD;
+        int _yD;
 
-        public Rectangle(int a, int b, int c, int d)
+        public Rectangle(Character ctx,int xA, int yA, int xB, int yB, int xC, int yC, int xD, int yD)
         {
-            _a = a;
-            _b = b;
-            _c = c;
-            _d = d;
+            _ctx = ctx;
+            _xA = xA;
+            _yA = yA;
+            _xB = xB;
+            _yB = yB;
+            _xC = xC;
+            _yC = yC;
+            _xD = xD;
+            _yD = yD;
         }
 
-        public int A
-        {
-            get { return _a; }
-            set { _a = value; }
-        }
+        public Character rectangleCtx { get { return _ctx; } }
 
-        public int B
-        {
-            get { return _b; }
-            set { _b = value; }
-        }
+        public int xA { get { return _xA; } set { _xA = value; } }
+        public int yA { get { return _yA; } set { _yA = value; } }
+        public int xB { get { return _xB; } set { _xB = value; } }
+        public int yB { get { return _yB; } set { _yB = value; } }
+        public int xC { get { return _xB; } set { _xB = value; } }
+        public int yC { get { return _yC; } set { _yC = value; } }
+        public int xD { get { return _xB; } set { _xB = value; } }
+        public int yD { get { return _yD; } set { _yD = value; } }
 
-        public int C
-        {
-            get { return _c; }
-            set { _c = value; }
-        }
-
-        public int D
-        {
-            get { return _d; }
-            set { _d = value; }
-        }
     }
 }
