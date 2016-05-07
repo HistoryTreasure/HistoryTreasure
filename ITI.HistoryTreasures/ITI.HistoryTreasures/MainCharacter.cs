@@ -10,8 +10,6 @@ namespace ITI.HistoryTreasures
         int _speed;
         int _life;
         
-        //private object speech; //--------------------------------------------------------------TEST
-
         /// <summary>
         /// This constructor allow to create MainCharacter
         /// </summary>
@@ -85,18 +83,9 @@ namespace ITI.HistoryTreasures
                 this.positionX = positionX - Speed;
         }
 
-        
-        //----------------------------------------------------------------------- TEST
-        /*public void IsPositioning (int posX, int posY)
-        {
-            this.positionX = posX;
-            this.positionY = posY;
-        }
-
         public void Interactions(KeyEnum key)
         {
-            PNJ.GiveMessage(speech);
-        }*/
-        //------------------------------------------------------------------------ TEST
+            throw new NotImplementedException();
+        }
     }
 }

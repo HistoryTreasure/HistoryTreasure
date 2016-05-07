@@ -55,13 +55,5 @@ namespace ITI.HistoryTreasures
         {
             return pnj.Speech;
         }
-
-        //--------------------------------------------- TEST
-        /*internal static void GiveMessage(object speech)
-        {
-            throw new NotImplementedException();
-        }*/
-        //--------------------------------------------- TEST
-
     }
 }
