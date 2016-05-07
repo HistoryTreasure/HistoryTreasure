@@ -30,7 +30,7 @@ namespace ITI.HistoryTreasures
             _positionY = Y;
             _bitMapName = bitMapName;
             _name = name;
-            _hitBox = new Rectangle(this, positionX - 16, positionY, positionX + 16, positionY, positionX + 16, positionY - 16, positionX - 16, positionY - 16);
+            _hitBox = new Rectangle(this, positionX -16, positionY, positionX + 16, positionY, positionX + 16, positionY - 16, positionX -16, positionY - 16);
         }
 
         /// <summary>

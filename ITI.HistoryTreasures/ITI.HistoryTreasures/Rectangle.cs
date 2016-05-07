@@ -37,9 +37,9 @@ namespace ITI.HistoryTreasures
         public int yA { get { return _yA; } set { _yA = value; } }
         public int xB { get { return _xB; } set { _xB = value; } }
         public int yB { get { return _yB; } set { _yB = value; } }
-        public int xC { get { return _xB; } set { _xB = value; } }
+        public int xC { get { return _xC; } set { _xC = value; } }
         public int yC { get { return _yC; } set { _yC = value; } }
-        public int xD { get { return _xB; } set { _xB = value; } }
+        public int xD { get { return _xD; } set { _xD = value; } }
         public int yD { get { return _yD; } set { _yD = value; } }
 
     }
