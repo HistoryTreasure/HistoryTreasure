@@ -133,7 +133,7 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
-        public void Maint_Character_hitbox_return_good_value()
+        public void MainCharacter_hitbox_return_good_value()
         {
             Game g = new Game();
             MainCharacter mC = new MainCharacter(g, 32, 32, "test", "Judd");
@@ -146,6 +146,21 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(mC.HitBox.yC, Is.EqualTo(16));
             Assert.That(mC.HitBox.xD, Is.EqualTo(16));
             Assert.That(mC.HitBox.yD, Is.EqualTo(16));
+        }
+
+        [Test]
+        public void MainCharacter_cannot_move_if_he_collide_a_PNJ()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            Level l = new Level(t, "Level");
+            MainCharacter mc = new MainCharacter(g, 32, 32, "test", "Judd");
+            PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "coucou");
+
+            mc.Movement(KeyEnum.up);
+
+            Assert.That(mc.positionX == 32 && mc.positionY == 32);
+
         }
     }
 }

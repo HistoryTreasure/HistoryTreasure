@@ -9,7 +9,7 @@ namespace ITI.HistoryTreasures
     {
         int _speed;
         int _life;
-        
+
         /// <summary>
         /// This constructor allow to create MainCharacter
         /// </summary>
@@ -74,13 +74,16 @@ namespace ITI.HistoryTreasures
         public void Movement(KeyEnum key)
         {
             if (key == KeyEnum.up)
-                this.positionY = positionY + Speed;
+                if (!HitBox.IsCollide(HitBox.xA, HitBox.yA, HitBox.xB, HitBox.yB, positionX, positionY - 16))
+                {
+                    positionY = positionY + Speed;
+                }
             else if (key == KeyEnum.down)
-                this.positionY = positionY - Speed;
+                positionY = positionY - Speed;
             else if (key == KeyEnum.right)
-                this.positionX = positionX + Speed;
+                positionX = positionX + Speed;
             else if (key == KeyEnum.left)
-                this.positionX = positionX - Speed;
+                positionX = positionX - Speed;
         }
 
         public void Interactions(KeyEnum key)
