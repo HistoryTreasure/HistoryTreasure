@@ -92,5 +92,18 @@ namespace ITI.HistoryTreasures.Tests
         }*/
 
         //Level return correctly a PNJ 
+        /*
+        [Test]
+        public void Levels_return_correctly_PNJ
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            Level l = new Level(t, "Level");
+            PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
+            g._themes.Add(t);
+            t._levels.Add(l);
+            Assert.That(l.PNJ, Is.EqualTo(p));
+        }
+        */
     }
 }
