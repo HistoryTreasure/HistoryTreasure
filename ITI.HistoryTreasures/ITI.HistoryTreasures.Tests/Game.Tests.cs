@@ -46,6 +46,8 @@ namespace ITI.HistoryTreasures.Tests
 
             Assert.That(g._themes[0].IsFinish == true);
         }
+
+        //theme contains some levels and return this list correctly
     }
 
     [TestFixture]
@@ -88,5 +90,7 @@ namespace ITI.HistoryTreasures.Tests
             t._levels.Add(l);
             Assert.That(l.MainCharacter, Is.EqualTo(mC));
         }*/
+
+        //Level return correctly a PNJ 
     }
 }

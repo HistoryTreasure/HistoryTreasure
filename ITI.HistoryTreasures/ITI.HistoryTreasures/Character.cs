@@ -86,13 +86,16 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return game context.
+        /// This propertie return game context.
         /// </summary>
         public Game Game
         {
             get { return _ctx; }
         }
 
+        /// <summary>
+        /// This propertie return hitbox.
+        /// </summary>
         public Rectangle HitBox
         {
             get { return _hitBox; }

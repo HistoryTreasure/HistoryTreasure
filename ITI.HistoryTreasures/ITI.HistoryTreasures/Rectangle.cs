@@ -18,6 +18,18 @@ namespace ITI.HistoryTreasures
         int _xD;
         int _yD;
 
+        /// <summary>
+        /// This constructor allow to create a Rectangle 
+        /// </summary>
+        /// <param name="ctx">This parameter reference rectangle contains in character.</param>
+        /// <param name="xA">Coordonate X in a point A.</param>
+        /// <param name="yA">Coordonate Y in a point A.</param>
+        /// <param name="xB">Coordonate X in a point B.</param>
+        /// <param name="yB">Coordonate Y in a point B.</param>
+        /// <param name="xC">Coordonate X in a point C.</param>
+        /// <param name="yC">Coordonate Y in a point C.</param>
+        /// <param name="xD">Coordonate X in a point D.</param>
+        /// <param name="yD">Coordonate Y in a point D.</param>
         public Rectangle(Character ctx,int xA, int yA, int xB, int yB, int xC, int yC, int xD, int yD)
         {
             _ctx = ctx;
@@ -31,8 +43,14 @@ namespace ITI.HistoryTreasures
             _yD = yD;
         }
 
+        /// <summary>
+        /// This propertie return Character context.
+        /// </summary>
         public Character rectangleCtx { get { return _ctx; } }
 
+        /// <summary>
+        /// This properties return coordonate of our Rectangle.
+        /// </summary>
         public int xA { get { return _xA; } set { _xA = value; } }
         public int yA { get { return _yA; } set { _yA = value; } }
         public int xB { get { return _xB; } set { _xB = value; } }
