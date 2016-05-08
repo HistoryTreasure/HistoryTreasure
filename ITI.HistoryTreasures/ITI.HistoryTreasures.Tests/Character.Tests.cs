@@ -110,8 +110,13 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_cannot_move_outside_the_map()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
-            Assert.Throws<ArgumentException>(() => mC.Movement(KeyEnum.left));
+            MainCharacter mC = new MainCharacter(g, 32, 32, "test", "Judd");
+            for(int i = 32; i > 10; i--)
+            {
+                mC.Movement(KeyEnum.left);
+            }
+
+            Assert.That(mC.positionX == 16);
         }
 
         [Test]

@@ -74,16 +74,19 @@ namespace ITI.HistoryTreasures
         public void Movement(KeyEnum key)
         {
             if (key == KeyEnum.up)
-                if (!HitBox.IsCollide(HitBox.xA, HitBox.yA, HitBox.xB, HitBox.yB, positionX, positionY - 16))
-                {
-                    positionY = positionY + Speed;
-                }
+                positionY = positionY + Speed;
             else if (key == KeyEnum.down)
-                positionY = positionY - Speed;
+                if (positionY == 16)
+                    return;
+                else
+                    positionY = positionY - Speed;
             else if (key == KeyEnum.right)
                 positionX = positionX + Speed;
             else if (key == KeyEnum.left)
-                positionX = positionX - Speed;
+                if (positionX == 16)
+                    return;
+                else
+                    positionX = positionX - Speed;
         }
 
         public void Interactions(KeyEnum key)
