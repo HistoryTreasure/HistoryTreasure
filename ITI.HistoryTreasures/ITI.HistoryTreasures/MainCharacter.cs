@@ -89,6 +89,10 @@ namespace ITI.HistoryTreasures
                     positionX = positionX - Speed;
         }
 
+        /// <summary>
+        /// This method allow to interact with an object or a PNJ.
+        /// </summary>
+        /// <param name="key"></param>
         public void Interactions(KeyEnum key)
         {
             throw new NotImplementedException();
