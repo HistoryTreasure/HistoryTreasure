@@ -165,7 +165,6 @@ namespace ITI.HistoryTreasures.Tests
             mc.Movement(KeyEnum.up);
 
             Assert.That(mc.positionX == 32 && mc.positionY == 32);
-
         }
     }
 }
