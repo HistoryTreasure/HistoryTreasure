@@ -46,8 +46,6 @@ namespace ITI.HistoryTreasures.Tests
 
             Assert.That(g._themes[0].IsFinish == true);
         }
-
-        //theme contains some levels and return this list correctly
     }
 
     [TestFixture]
@@ -79,6 +77,19 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(t._levels[0].IsFinish == true);
         }
 
+        [Test]
+        public void Levels_return_correctly_PNJ()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            Level l = new Level(t, "Level");
+            PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
+            g._themes.Add(t);
+            t._levels.Add(l);
+            l._pnj.Add(p);
+            Assert.That(l._pnj.Contains(p));
+        }
+
         /*[Test]
         public void Levels_return_correctly_main_character()
         {
@@ -90,20 +101,5 @@ namespace ITI.HistoryTreasures.Tests
             t._levels.Add(l);
             Assert.That(l.MainCharacter, Is.EqualTo(mC));
         }*/
-
-        //Level return correctly a PNJ 
-        /*
-        [Test]
-        public void Levels_return_correctly_PNJ
-        {
-            Game g = new Game();
-            Theme t = new Theme(g, "Theme");
-            Level l = new Level(t, "Level");
-            PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
-            g._themes.Add(t);
-            t._levels.Add(l);
-            Assert.That(l.PNJ, Is.EqualTo(p));
-        }
-        */
     }
 }
