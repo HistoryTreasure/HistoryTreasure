@@ -13,7 +13,7 @@ namespace ITI.HistoryTreasures
         string _bitMapName; //To search the apparence of a character
         string _name; //Name of character
         Game _ctx; //Game context
-        Rectangle _hitBox;
+        Hitbox _hitBox;
 
         /// <summary>
         /// This constructor allow to create a Character
@@ -30,7 +30,7 @@ namespace ITI.HistoryTreasures
             _positionY = Y;
             _bitMapName = bitMapName;
             _name = name;
-            _hitBox = new Rectangle(this, positionX -16, positionY, positionX + 16, positionY, positionX + 16, positionY - 16, positionX -16, positionY - 16);
+            _hitBox = new Hitbox(positionX -16, positionY, positionX + 16, positionY - 16);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// This propertie return hitbox.
         /// </summary>
-        public Rectangle HitBox
+        public Hitbox HitBox
         {
             get { return _hitBox; }
         }

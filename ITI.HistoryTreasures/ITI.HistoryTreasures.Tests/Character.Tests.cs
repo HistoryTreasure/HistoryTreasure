@@ -14,8 +14,8 @@ namespace ITI.HistoryTreasures.Tests
         public void PNJ_can_be_created_with_a_context_a_name_and_a_speech()
         {
             Game g = new Game();
-            Theme t = new Theme(g,"Theme");
-            Level l = new Level(t,"Level");
+            Theme t = new Theme(g, "Theme");
+            Level l = new Level(t, "Level");
             PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
             l._pnj.Add(p);
             string speech = "Hello world !";
@@ -30,7 +30,7 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
             Level l = new Level(t, "Level");
-            
+
             Assert.Throws<ArgumentException>(() => new PNJ(g, l, -1, 0, "test", "Hawke", "Hello world"));
         }
 
@@ -78,7 +78,7 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_cannot_be_created_if_his_position_is_negative()
         {
             Game g = new Game();
-            
+
             Assert.Throws<ArgumentException>(() => new MainCharacter(g, -1, 0, "test", "Judd"));
         }
 
@@ -88,8 +88,8 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
 
-            for(int i = 0; i < 10; i++)
-            mC.Movement(KeyEnum.up);
+            for (int i = 0; i < 10; i++)
+                mC.Movement(KeyEnum.up);
 
             Assert.That(mC.positionY, Is.EqualTo(10));
         }
@@ -111,7 +111,7 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             MainCharacter mC = new MainCharacter(g, 32, 32, "test", "Judd");
-            for(int i = 32; i > 10; i--)
+            for (int i = 32; i > 10; i--)
             {
                 mC.Movement(KeyEnum.left);
             }
@@ -142,7 +142,6 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             MainCharacter mC = new MainCharacter(g, 32, 32, "test", "Judd");
-            Assert.That(mC.HitBox.rectangleCtx, Is.EqualTo(mC));
             Assert.That(mC.HitBox.xA, Is.EqualTo(16));
             Assert.That(mC.HitBox.yA, Is.EqualTo(32));
             Assert.That(mC.HitBox.xB, Is.EqualTo(48));
@@ -159,13 +158,15 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
             Level l = new Level(t, "Level");
+            g._themes.Add(t);
+            t._levels.Add(l);
             MainCharacter mc = new MainCharacter(g, 32, 32, "test", "Judd");
             PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "coucou");
+            l._pnj.Add(pnj);
 
             mc.Movement(KeyEnum.up);
 
             Assert.That(mc.positionX == 32 && mc.positionY == 32);
-
         }
     }
 }

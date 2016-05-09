@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures
 {
-    public class Rectangle
+    public class Hitbox
     {
-        Character _ctx;
         int _xA;
         int _yA;
         int _xB;
@@ -30,23 +29,17 @@ namespace ITI.HistoryTreasures
         /// <param name="yC">Coordonate Y in a point C.</param>
         /// <param name="xD">Coordonate X in a point D.</param>
         /// <param name="yD">Coordonate Y in a point D.</param>
-        public Rectangle(Character ctx,int xA, int yA, int xB, int yB, int xC, int yC, int xD, int yD)
+        public Hitbox(int xA, int yA,int xC, int yC)
         {
-            _ctx = ctx;
             _xA = xA;
             _yA = yA;
-            _xB = xB;
-            _yB = yB;
+            _xB = xC;
+            _yB = yA;
             _xC = xC;
             _yC = yC;
-            _xD = xD;
-            _yD = yD;
+            _xD = xA;
+            _yD = yC;
         }
-
-        /// <summary>
-        /// This propertie return Character context.
-        /// </summary>
-        public Character rectangleCtx { get { return _ctx; } }
 
         /// <summary>
         /// This properties return coordonate of our Rectangle.
@@ -61,7 +54,7 @@ namespace ITI.HistoryTreasures
         public int yD { get { return _yD; } set { _yD = value; } }
         
         // detect if something collide with the hitbox
-        public bool IsCollide(int x1, int y1, int x2, int y2, int xValue, int yValue)
+        /*public bool IsCollide(int x1, int y1, int x2, int y2, int xValue, int yValue)
         {
             if((xValue > x1 && xValue < x2) && (yValue == y1 && yValue == y2))
                 return true;
@@ -69,6 +62,6 @@ namespace ITI.HistoryTreasures
                 return true;
             else
                 return false;
-        }
+        }*/
     }
 }

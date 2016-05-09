@@ -21,7 +21,7 @@ namespace ITI.HistoryTreasures
         /// <param name="name">This parameter reference name of PNJ.</param>
         /// <param name="speech">This parameter reference speech of PNJ.</param>
         public PNJ(Game gctx, Level ctx, int X, int Y, string bitMapName, string name, string speech)
-            : base(gctx, 0, 0, "test", name)
+            : base(gctx, X, Y, "test", name)
         {
             _ctx = ctx;
             _speech = speech;
