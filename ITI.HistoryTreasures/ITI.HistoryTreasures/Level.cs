@@ -58,5 +58,14 @@ namespace ITI.HistoryTreasures
         {
             get { return _mainCharacter; }
         }
+
+        /*public void InteractionWithPNJ(KeyEnum key)
+        {
+            if (MainCharacter proche de PNJ)
+            {
+                key = KeyEnum.action;
+                _pnj.Talk();
+            }
+        }*/
     }
 }

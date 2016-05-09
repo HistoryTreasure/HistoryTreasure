@@ -96,6 +96,30 @@ namespace ITI.HistoryTreasures
         public void Interactions(KeyEnum key)
         {
             throw new NotImplementedException();
+            /*if (MainCharacter proche PNJ)
+            {
+                key = KeyEnum.action;
+                PNJ.Talk(); 
+            }
+            
+            else if (MainCharacter proche Button)
+            {
+                key = KeyEnum.action;
+                Appuie sur le bouton;
+            }
+
+            else if (MainCharacter proche Indices)
+            {
+                key = KeyEnum.action;
+                Ramasse l'indice;
+            }
+
+            else 
+            {
+                throw new NotImplementedException();
+                ou continue;
+            }
+            */
         }
     }
 }
