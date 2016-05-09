@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures
 {
-    class Map
+    public class Map
     {
+        string _name;
+        public Map(string name)
+        {
+            _name = name;
+        }
+
         public Level Level
         {
             get
