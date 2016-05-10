@@ -61,10 +61,10 @@ namespace ITI.HistoryTreasures
 
         /*public void InteractionWithPNJ(KeyEnum key)
         {
-            if (MainCharacter proche de PNJ)
+            if ((_mainCharacter.HitBox.xA && _mainCharacter.HitBox.yA) && _pnj[0].HitBox.xA)
             {
                 key = KeyEnum.action;
-                _pnj.Talk();
+                _pnj[0].Talk(_pnj[0]);
             }
         }*/
     }

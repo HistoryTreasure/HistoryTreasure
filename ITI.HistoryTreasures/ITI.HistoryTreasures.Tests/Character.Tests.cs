@@ -58,6 +58,22 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(p.Speech, Is.EqualTo("Hello world !"));
             Assert.That(l._pnj.Contains(p));
         }
+
+        [Test]
+        public void PNJ_We_can_created_two_pnj_different_and_they_return_two_speech_different()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            Level l = new Level(t, "Level");
+            PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
+            PNJ n = new PNJ(g, l, 15, 5, "test", "Marth", "And you failed !");
+            l._pnj.Add(p);
+            l._pnj.Add(n);
+            Assert.That(p.Speech, Is.EqualTo("Hello world !"));
+            Assert.That(n.Speech, Is.EqualTo("And you failed !"));
+            Assert.That(l._pnj.Contains(p));
+            Assert.That(l._pnj.Contains(n));
+        }
     }
 
     [TestFixture]
@@ -179,7 +195,7 @@ namespace ITI.HistoryTreasures.Tests
             g._themes.Add(t);
             t._levels.Add(l);
             MainCharacter mc = new MainCharacter(g, 32, 32, "test", "Judd");
-            PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "coucou");
+            PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "Hello world !");
             l._pnj.Add(pnj);
 
             mc.Movement(KeyEnum.up);
