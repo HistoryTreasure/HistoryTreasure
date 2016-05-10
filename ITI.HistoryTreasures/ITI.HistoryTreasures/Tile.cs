@@ -22,7 +22,10 @@ namespace ITI.HistoryTreasures
             _mapContext = mapContext;
             _posX = posX;
             _posY = posY;
-            _hitbox = new Hitbox(posX - 16, posY + 16, posX + 16, posY - 16);
+            if (isSolid == true)
+            {
+                _hitbox = new Hitbox(posX - 16, posY + 16, posX + 16, posY - 16);
+            }
         }
 
         internal Map Map
