@@ -74,7 +74,6 @@ namespace ITI.HistoryTreasures
                     key = KeyEnum.action;
                     _talk = _pnj[i].Speech;
                 }
-
                 else
                 {
                     break;
