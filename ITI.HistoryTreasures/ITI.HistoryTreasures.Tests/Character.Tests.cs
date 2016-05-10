@@ -15,7 +15,8 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
-            Level l = new Level(t, "Level");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
             PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
             l._pnj.Add(p);
             string speech = "Hello world !";
@@ -29,7 +30,8 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
-            Level l = new Level(t, "Level");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
 
             Assert.Throws<ArgumentException>(() => new PNJ(g, l, -1, 0, "test", "Hawke", "Hello world"));
         }
@@ -39,7 +41,8 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
-            Level l = new Level(t, "Level");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
             PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
             l._pnj.Add(p);
             Assert.That(p.positionX, Is.EqualTo(0));
@@ -52,7 +55,8 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
-            Level l = new Level(t, "Level");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
             PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
             l._pnj.Add(p);
             Assert.That(p.Speech, Is.EqualTo("Hello world !"));
@@ -64,7 +68,8 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
-            Level l = new Level(t, "Level");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
             PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
             PNJ n = new PNJ(g, l, 15, 5, "test", "Marth", "And you failed !");
             l._pnj.Add(p);
@@ -173,16 +178,16 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
-            Level l = new Level(t, "Level");
+            MainCharacter mC = new MainCharacter(g, 32, 32, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
             g._themes.Add(t);
             t._levels.Add(l);
-            MainCharacter mc = new MainCharacter(g, 32, 32, "test", "Judd");
             PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "coucou");
             l._pnj.Add(pnj);
 
-            mc.Movement(KeyEnum.up);
+            mC.Movement(KeyEnum.up);
 
-            Assert.That(mc.positionX == 32 && mc.positionY == 32);
+            Assert.That(mC.positionX == 32 && mC.positionY == 32);
         }        
     }
 }
