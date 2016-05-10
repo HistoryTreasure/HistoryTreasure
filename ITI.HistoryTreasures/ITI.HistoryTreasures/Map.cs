@@ -8,17 +8,18 @@ namespace ITI.HistoryTreasures
 {
     class Map
     {
-        Level _levels;
+        Level _level;
         Tile[,] _tileArray;
 
-        public Map()
+        public Map(Level level, int width, int height)
         {
-            Tile[,] _tileArray = new Tile[288, 288];
+            _level = level;
+            _tileArray = new Tile[width, height];
         }
 
         public Level Level
         {
-            get { return _levels; }
+            get { return _level; }
         }
     }
 }

@@ -47,13 +47,5 @@ namespace ITI.HistoryTreasures
             get
             { return _ctx; }
         }
-
-        /// <summary>
-        /// This properties return PNJ's speech.
-        /// </summary>
-        public string Talk(PNJ pnj)
-        {
-            return pnj.Speech;
-        }
     }
 }
