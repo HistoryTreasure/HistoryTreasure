@@ -59,13 +59,24 @@ namespace ITI.HistoryTreasures
             get { return _mainCharacter; }
         }
 
-        /*public void InteractionWithPNJ(KeyEnum key)
+        public string InteractionWithPNJ(KeyEnum key)
         {
-            if ((_mainCharacter.HitBox.xA && _mainCharacter.HitBox.yA) && _pnj[0].HitBox.xA)
+            string _talk = "";
+            for(int i = 0; i < _pnj.Count; i++)
             {
-                key = KeyEnum.action;
-                _pnj[0].Talk(_pnj[0]);
+
+                if((_mainCharacter.HitBox.xA - _pnj[i].HitBox.xA == 33) || (_pnj[i].HitBox.xA - _mainCharacter.HitBox.xA == 33) && (_pnj[i].HitBox.yA - _mainCharacter.HitBox.yA == 33) || (_mainCharacter.HitBox.yA - _pnj[i].HitBox.yA == 33))
+                {
+                    key = KeyEnum.action;
+                    _talk = _pnj[i].Speech;
+                }
+
+                else
+                {
+                    break;
+                }
             }
-        }*/
+            return _talk;
+        }
     }
 }

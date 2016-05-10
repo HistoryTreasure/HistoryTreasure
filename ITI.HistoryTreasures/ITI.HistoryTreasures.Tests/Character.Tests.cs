@@ -183,25 +183,6 @@ namespace ITI.HistoryTreasures.Tests
             mc.Movement(KeyEnum.up);
 
             Assert.That(mc.positionX == 32 && mc.positionY == 32);
-        }
-
-        /* CHANGE THIS TEST BECAUSE NOT COMPLETED AT ALL
-        [Test]
-        public void MainCharacter_can_interact_with_a_PNJ_and_receive_his_speech()
-        {
-            Game g = new Game();
-            Theme t = new Theme(g, "Theme");
-            Level l = new Level(t, "Level");
-            g._themes.Add(t);
-            t._levels.Add(l);
-            MainCharacter mc = new MainCharacter(g, 32, 32, "test", "Judd");
-            PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "Hello world !");
-            l._pnj.Add(pnj);
-
-            mc.Movement(KeyEnum.up);
-
-            Assert.That(mc.positionX == 32 && mc.positionY == 32);
-        }
-        */
+        }        
     }
 }

@@ -93,33 +93,9 @@ namespace ITI.HistoryTreasures
         /// This method allow to interact with an object or a PNJ.
         /// </summary>
         /// <param name="key"></param>
-        public void Interactions(KeyEnum key)
+        /*public void Interactions(KeyEnum key)
         {
             throw new NotImplementedException();
-            /*if (MainCharacter proche PNJ)
-            {
-                key = KeyEnum.action;
-                PNJ.Talk(); 
-            }
-            
-            else if (MainCharacter proche Button)
-            {
-                key = KeyEnum.action;
-                Appuie sur le bouton;
-            }
-
-            else if (MainCharacter proche Indices)
-            {
-                key = KeyEnum.action;
-                Ramasse l'indice;
-            }
-
-            else 
-            {
-                throw new NotImplementedException();
-                ou continue;
-            }
-            */
-        }
+        }*/
     }
 }
