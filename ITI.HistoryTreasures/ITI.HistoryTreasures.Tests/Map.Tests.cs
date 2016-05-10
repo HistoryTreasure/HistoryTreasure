@@ -31,7 +31,7 @@ namespace ITI.HistoryTreasures.Tests
         {
             Map m = new Map("test");
             Tile t = new Tile(false, TileEnum.GRASS, m, 16, 16);
-            Tile t2 = new Tile(true, TileEnum.WATER, m, 16, 16);
+            Tile t2 = new Tile(true, TileEnum.WATER, m, 32, 32);
 
             Assert.That(t.TileHitbox == null);
             Assert.That(t2.TileHitbox != null);
