@@ -74,19 +74,39 @@ namespace ITI.HistoryTreasures
         public void Movement(KeyEnum key)
         {
             if (key == KeyEnum.up)
-                positionY = positionY + Speed;
+            {
+                positionY = positionY - Speed;
+                HitBox.yA--;
+                HitBox.yC--;
+            }
             else if (key == KeyEnum.down)
+            {
                 if (positionY == 16)
                     return;
                 else
-                    positionY = positionY - Speed;
+                {
+                    positionY = positionY + Speed;
+                    HitBox.yA++;
+                    HitBox.yC++;
+                }
+            }
             else if (key == KeyEnum.right)
+            {
                 positionX = positionX + Speed;
+                HitBox.xA++;
+                HitBox.xC++;
+            }
             else if (key == KeyEnum.left)
+            {
                 if (positionX == 16)
                     return;
                 else
+                {
                     positionX = positionX - Speed;
+                    HitBox.xA--;
+                    HitBox.xC--;
+                }
+            }
         }
 
         /// <summary>

@@ -107,7 +107,7 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_can_move_up()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            MainCharacter mC = new MainCharacter(g, 0, 20, "test", "Judd");
 
             for (int i = 0; i < 10; i++)
                 mC.Movement(KeyEnum.up);
@@ -145,19 +145,22 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
-            MainCharacter mC = new MainCharacter(g, 40, 32, "test", "Judd");
+            MainCharacter mC = new MainCharacter(g, 48, 50, "test", "Judd");
             Level l = new Level(t, mC, "Level");
             g._themes.Add(t);
             t._levels.Add(l);
-            PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "coucou");
+            PNJ pnj = new PNJ(g, l, 48, 32, "test", "Hawke", "coucou");
             l._pnj.Add(pnj);
 
-            if((mC.HitBox.yA != pnj.HitBox.yD) && (mC.HitBox.yB != pnj.HitBox.yC))
+            for (int i = 0; i < 10; i++)
             {
-                mC.Movement(KeyEnum.up);
+                if ((mC.HitBox.yA != pnj.HitBox.yD) && (mC.HitBox.yB != pnj.HitBox.yC))
+                {
+                    mC.Movement(KeyEnum.up);
+                }
             }
 
-            Assert.That(mC.positionX == 40 && mC.positionY == 32);
+            Assert.That(mC.positionX == 48 && mC.positionY == 48);
         }
 
         [Test]
@@ -188,9 +191,9 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(mC.HitBox.xB, Is.EqualTo(48));
             Assert.That(mC.HitBox.yB, Is.EqualTo(32));
             Assert.That(mC.HitBox.xC, Is.EqualTo(48));
-            Assert.That(mC.HitBox.yC, Is.EqualTo(16));
+            Assert.That(mC.HitBox.yC, Is.EqualTo(48));
             Assert.That(mC.HitBox.xD, Is.EqualTo(16));
-            Assert.That(mC.HitBox.yD, Is.EqualTo(16));
+            Assert.That(mC.HitBox.yD, Is.EqualTo(48));
         }
     }
 }
