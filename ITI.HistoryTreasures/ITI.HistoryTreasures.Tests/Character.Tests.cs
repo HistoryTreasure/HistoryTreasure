@@ -141,6 +141,26 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
+        public void MainCharacter_cannot_move_if_he_collide_a_PNJ_by_the_botom()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 40, 32, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
+            g._themes.Add(t);
+            t._levels.Add(l);
+            PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "coucou");
+            l._pnj.Add(pnj);
+
+            if((mC.HitBox.yA != pnj.HitBox.yD) && (mC.HitBox.yB != pnj.HitBox.yC))
+            {
+                mC.Movement(KeyEnum.up);
+            }
+
+            Assert.That(mC.positionX == 40 && mC.positionY == 32);
+        }
+
+        [Test]
         public void MainCharacter_cannot_have_more_than_three_life()
         {
             Game g = new Game();
@@ -172,22 +192,5 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(mC.HitBox.xD, Is.EqualTo(16));
             Assert.That(mC.HitBox.yD, Is.EqualTo(16));
         }
-
-        [Test]
-        public void MainCharacter_cannot_move_if_he_collide_a_PNJ()
-        {
-            Game g = new Game();
-            Theme t = new Theme(g, "Theme");
-            MainCharacter mC = new MainCharacter(g, 32, 32, "test", "Judd");
-            Level l = new Level(t, mC, "Level");
-            g._themes.Add(t);
-            t._levels.Add(l);
-            PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "coucou");
-            l._pnj.Add(pnj);
-
-            mC.Movement(KeyEnum.up);
-
-            Assert.That(mC.positionX == 32 && mC.positionY == 32);
-        }        
     }
 }
