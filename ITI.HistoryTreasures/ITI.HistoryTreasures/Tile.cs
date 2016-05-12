@@ -29,7 +29,7 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// Map Context
         /// </summary>
-        internal Map Map
+        public Map Map
         {
             get
             {

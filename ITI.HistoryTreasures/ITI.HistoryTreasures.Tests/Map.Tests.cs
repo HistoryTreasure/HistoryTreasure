@@ -23,6 +23,10 @@ namespace ITI.HistoryTreasures.Tests
 
             _test = m.map1;
 
+            Assert.That(_test[0, 0].Map, Is.EqualTo(_verif[0, 0].Map));
+            Assert.That(_test[0, 0].IsSolid, Is.EqualTo(_verif[0, 0].IsSolid));
+            Assert.That(_test[0, 0].TileEnum, Is.EqualTo(_verif[0, 0].TileEnum));
+            CollectionAssert.AreEqual(_test, _verif);
         }
     }
 }
