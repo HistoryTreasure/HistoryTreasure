@@ -71,11 +71,11 @@ namespace ITI.HistoryTreasures.Tests
             MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
             Level l = new Level(t, mC, "Level");
             PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
-            PNJ n = new PNJ(g, l, 15, 5, "test", "Marth", "And you failed !");
+            PNJ n = new PNJ(g, l, 15, 5, "test", "Marth", "You have to search the good questions !");
             l._pnj.Add(p);
             l._pnj.Add(n);
             Assert.That(p.Speech, Is.EqualTo("Hello world !"));
-            Assert.That(n.Speech, Is.EqualTo("And you failed !"));
+            Assert.That(n.Speech, Is.EqualTo("You have to search the good questions !"));
             Assert.That(l._pnj.Contains(p));
             Assert.That(l._pnj.Contains(n));
         }
