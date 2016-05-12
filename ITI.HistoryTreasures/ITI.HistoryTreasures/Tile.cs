@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures
 {
-    class Tile
+    public class Tile
     {
         bool _isSolid;
         TileEnum _tileName;
