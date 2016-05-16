@@ -11,30 +11,6 @@ namespace ITI.HistoryTreasures.Tests
     class MapTest
     {
         [Test]
-        [Ignore("Not complete")]
-        public void Map_TileArray_Return_Good_Value()
-        {
-            Game g = new Game();
-            Theme t = new Theme(g, "Theme");
-            Level l = new Level(t, "Level");
-            Map m = new Map(l);
-            Tile _floor = new Tile(false, TileEnum.BOATFLOOR, m);
-            Tile[,] _test = new Tile[2,2];
-            _test[0, 0] = _floor; 
-            Tile[,] _verif = new Tile[,] { { _floor, _floor }, { _floor, _floor } };
-
-            _test = m.map1;
-
-            /*Assert.That(_test[0, 0].Map, Is.EqualTo(_verif[0, 0].Map));
-            Assert.That(_test[0, 0].IsSolid, Is.EqualTo(_verif[0, 0].IsSolid));
-            Assert.That(_test[0, 0].TileEnum, Is.EqualTo(_verif[0, 0].TileEnum));*/
-            /*Assert.AreSame(_test[0, 0],_floor);
-            CollectionAssert.AreEqual(_verif, _test);*/
-            //Assert.AreEqual(_verif[1, 1], _test[1, 1]);
-        }
-
-        [Test]
-        [Ignore("Contains error")]
         public void Map_array_return_good_value()
         {
             Game g = new Game();
@@ -43,17 +19,23 @@ namespace ITI.HistoryTreasures.Tests
             Map m = new Map(l);
             Tile[,] _test;
             Tile _floor = new Tile(false, TileEnum.BOATFLOOR, m);
-            Tile _floor2= new Tile(false, TileEnum.BOATFLOOR, m);
             Tile[,] _verif = new Tile[,] { { _floor, _floor }, { _floor, _floor } };
 
             _test = m.map1;
 
-            Assert.AreSame(_floor2, _floor);
+            int line = 0;
 
-            Assert.That(_test[0, 0].Map, Is.EqualTo(_verif[0, 0].Map));
-            Assert.That(_test[0, 0].IsSolid, Is.EqualTo(_verif[0, 0].IsSolid));
-            Assert.That(_test[0, 0].TileEnum, Is.EqualTo(_verif[0, 0].TileEnum));
-            CollectionAssert.AreEqual(_test, _verif);
+            for (int i = 0; i < 2; i++)
+            {
+                Assert.That(_test[line, i].Map, Is.EqualTo(_verif[line, i].Map));
+                Assert.That(_test[line, i].IsSolid, Is.EqualTo(_verif[line, i].IsSolid));
+                Assert.That(_test[line, i].TileEnum, Is.EqualTo(_verif[line, i].TileEnum));
+                if (i == 1 && line < 1)
+                {
+                    i = 0;
+                    line++;
+                }
+            }
         }
 
         [Test]
