@@ -8,15 +8,15 @@ namespace ITI.HistoryTreasures
 {
     public abstract class Character
     {
-        int _positionX; //Position X to find a character
-        int _positionY; //Position Y to find a character
-        string _bitMapName; //To search the apparence of a character
-        string _name; //Name of character
-        Game _ctx; //Game context
+        int _positionX;
+        int _positionY;
+        string _bitMapName;
+        string _name;
+        Game _ctx;
         Hitbox _hitBox;
 
         /// <summary>
-        /// This constructor allow to create a Character
+        /// This constructor allow to create a Character.
         /// </summary>
         /// <param name="ctx">This parameter reference character contains in game.</param>
         /// <param name="X">This parameter reference horizontal position with an int.</param>
@@ -45,7 +45,6 @@ namespace ITI.HistoryTreasures
                 {
                     throw new ArgumentException("You cannot move outside the map");
                 }
-   
                     _positionX = value;      
             }
         }
@@ -77,7 +76,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return the name of the character.
+        /// This properties return the name of the Character.
         /// </summary>
         public string Name
         {

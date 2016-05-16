@@ -8,7 +8,7 @@ namespace ITI.HistoryTreasures
 {
 
     /// <summary>
-    /// This enumeration contains all name of Tiles    
+    /// This enumeration contains all name of Tiles.
     /// </summary>
     public enum TileEnum
     {

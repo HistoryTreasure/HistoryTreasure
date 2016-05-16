@@ -13,6 +13,10 @@ namespace ITI.HistoryTreasures
         //Dictionary<byte,TileG> _tiles;
         Game _context;
 
+        /// <summary>
+        /// This constructor create MapDesign.
+        /// </summary>
+        /// <param name="g">This parameter define Game context.</param>
         public MapDesign(Game g)
         {
             _context = g;

@@ -12,10 +12,10 @@ namespace ITI.HistoryTreasures
         TileEnum _tileName;
 
         /// <summary>
-        /// Constructor for the Tile 
+        /// This contructor create TileG.
         /// </summary>
-        /// <param name="Sprite"></param>
-        /// <param name="tileName"></param>
+        /// <param name="Sprite">This parameter define the sprite name.</param>
+        /// <param name="tileName">This parameter define the tileName.</param>
         public TileG(Image Sprite, TileEnum tileName)
         {
             if (Sprite == null) throw new ArgumentNullException();
@@ -24,7 +24,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Tile Image
+        /// Return tile image.
         /// </summary>
         public Image Sprite
         {

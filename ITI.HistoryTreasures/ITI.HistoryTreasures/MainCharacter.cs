@@ -11,7 +11,7 @@ namespace ITI.HistoryTreasures
         int _life;
 
         /// <summary>
-        /// This constructor allow to create MainCharacter
+        /// This constructor allow to create MainCharacter.
         /// </summary>
         /// <param name="ctx">This parameter reference the MainCharacter contains in game.</param>
         /// <param name="X">This parameter reference horizontal position with an int.</param>

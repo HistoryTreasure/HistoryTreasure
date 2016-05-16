@@ -11,17 +11,27 @@ namespace ITI.HistoryTreasures
         Level _level;
         Tile[,] _tileArray;
 
+        /// <summary>
+        /// This constructor create a Map.
+        /// </summary>
+        /// <param name="level">Level context.</param>
         public Map(Level level/*, int width, int height*/)
         {
             _level = level;
             //_tileArray = new Tile[width, height];
         }
 
+        /// <summary>
+        /// This propertie return a level.
+        /// </summary>
         public Level Level
         {
             get { return _level; }
         }
 
+        /// <summary>
+        /// This propertie return tile array (2D).
+        /// </summary>
         public Tile[,] map1
         {
             get
@@ -31,6 +41,9 @@ namespace ITI.HistoryTreasures
             }
         }
 
+        /// <summary>
+        /// This propertie return field tilearray.
+        /// </summary>
         public Tile[,] TileArray { get { return _tileArray; }  }
     }
 }

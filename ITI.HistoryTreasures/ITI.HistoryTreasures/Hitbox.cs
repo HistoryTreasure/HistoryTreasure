@@ -18,7 +18,7 @@ namespace ITI.HistoryTreasures
         int _yD;
 
         /// <summary>
-        /// This constructor allow to create a Rectangle 
+        /// This constructor allow to create a Rectangle. 
         /// </summary>
         /// <param name="ctx">This parameter reference rectangle contains in character.</param>
         /// <param name="xA">Coordonate X in a point A.</param>

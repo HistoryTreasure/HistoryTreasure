@@ -11,7 +11,7 @@ namespace ITI.HistoryTreasures
         readonly Level _ctx;
 
         /// <summary>
-        /// This constructor allow to create a PNJ
+        /// This constructor allow to create a PNJ.
         /// </summary>
         /// <param name="gctx">This parameter reference pnj contains in game.</param>
         /// <param name="ctx">This parameter reference pnj contains in level.</param>

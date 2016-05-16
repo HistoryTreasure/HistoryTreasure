@@ -13,11 +13,11 @@ namespace ITI.HistoryTreasures
         Map _mapContext;
 
         /// <summary>
-        /// Tile Constructor
+        /// Tile Constructor create Tile.
         /// </summary>
-        /// <param name="isSolid"></param>
-        /// <param name="tileName"></param>
-        /// <param name="mapContext"></param>
+        /// <param name="isSolid">This parameter define if a tile can be cross.</param>
+        /// <param name="tileName">This parameter define the tileName.</param>
+        /// <param name="mapContext">This parameter define the MapContext.</param>
         public Tile(bool isSolid, TileEnum tileName, Map mapContext)
         {
             _isSolid = isSolid;
@@ -27,7 +27,7 @@ namespace ITI.HistoryTreasures
 
 
         /// <summary>
-        /// Map Context
+        /// Return map context. 
         /// </summary>
         public Map Map
         {
@@ -38,7 +38,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// References Tile's name
+        /// Return Tile's name.
         /// </summary>
         public TileEnum TileEnum
         {
@@ -49,7 +49,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Define if the is tile Solid
+        /// Return if tile is solid.
         /// </summary>
         public bool IsSolid
         {
