@@ -24,7 +24,6 @@ namespace ITI.HistoryTreasures.Rendering
         public HistoryTreasures()
         {
             InitializeComponent();
-            _Eau = new CMouse(g) { left = 10, Top = 200 };
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -38,7 +37,16 @@ namespace ITI.HistoryTreasures.Rendering
             TextRenderer.DrawText(dc, "X=" + _cursX.ToString() + ":" + "Y=" + _cursY.ToString(), _font,
                new Rectangle(0,0, 120, 20), SystemColors.ControlText, flags);
 #endif
-            _Eau.drawImage(dc);
+
+            for (int ix = 0; ix < 64; ix += 32)
+            {
+                for (int iy = 0; iy < 64; iy += 32)
+                {
+                    _Eau = new CMouse(g) { left = ix, Top = iy };
+                    _Eau.drawImage(dc);
+                }
+            }
+            
             base.OnPaint(e);
         }
 
