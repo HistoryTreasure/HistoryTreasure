@@ -14,7 +14,7 @@ namespace ITI.HistoryTreasures.Rendering
         private Rectangle _mouseHotSpot = new Rectangle();
         
         public CMouse(Game g)
-            : base(g, Properties.Resources.Mole)
+            : base(g, Properties.Resources.eau)
         {
             _mouseHotSpot.X = left + 20;
             _mouseHotSpot.Y = Top - 1;
