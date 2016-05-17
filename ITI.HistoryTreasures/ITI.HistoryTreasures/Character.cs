@@ -14,6 +14,7 @@ namespace ITI.HistoryTreasures
         string _name; //Name of character
         Game _ctx; //Game context
         Hitbox _hitBox;
+        MainCharacter _mc;
 
         /// <summary>
         /// This constructor allow to create a Character
@@ -100,5 +101,7 @@ namespace ITI.HistoryTreasures
         {
             get { return _hitBox; }
         }
+
+        
     }
 }

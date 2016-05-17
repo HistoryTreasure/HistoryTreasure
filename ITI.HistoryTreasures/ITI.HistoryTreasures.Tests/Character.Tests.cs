@@ -92,6 +92,36 @@ namespace ITI.HistoryTreasures.Tests
             Assert.Throws<InvalidOperationException>(() => new PNJ(g, l, 15, 5, "test", "Marth", "And you failed !"));
             Assert.That(l._pnj.Contains(p));
         }
+
+        [Test]
+        public void PNJ_hitbox_return_good_value()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
+            PNJ p = new PNJ(g, l, 16, 16, "test", "Hawke", "Hello world !");
+            l._pnj.Add(p);
+            Assert.That(p.HitBox.xA, Is.EqualTo(0));
+            Assert.That(p.HitBox.yA, Is.EqualTo(16));
+            Assert.That(p.HitBox.xB, Is.EqualTo(32));
+            Assert.That(p.HitBox.yB, Is.EqualTo(16));
+            Assert.That(p.HitBox.xC, Is.EqualTo(32));
+            Assert.That(p.HitBox.yC, Is.EqualTo(32));
+            Assert.That(p.HitBox.xD, Is.EqualTo(0));
+            Assert.That(p.HitBox.yD, Is.EqualTo(32));
+        }
+
+        [Test]
+        public void PNJ_cannot_be_created_with_his_hitbox_outside_the_map()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
+
+            Assert.Throws<ArgumentException>(() => new PNJ(g, l, 15, 15, "test", "Hawke", "Hello world !"));
+        }
     }
 
     [TestFixture]
@@ -207,6 +237,27 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(mC.HitBox.yC, Is.EqualTo(48));
             Assert.That(mC.HitBox.xD, Is.EqualTo(16));
             Assert.That(mC.HitBox.yD, Is.EqualTo(48));
+        }
+
+        [Test]
+        [Ignore("Not complete")]
+        public void MainCharacter_cannot_be_created_two_times()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 48, 50, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
+
+            Assert.Throws<InvalidOperationException>(() => new MainCharacter(g, 15, 15, "test", "Bob"));
+        }
+
+        [Test]
+        public void MainCharacter_cannot_be_created_with_his_hitbox_outside_the_map()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+           
+            Assert.Throws<ArgumentException>(() => new MainCharacter(g, 15, 15, "test", "Judd"));
         }
     }
 }

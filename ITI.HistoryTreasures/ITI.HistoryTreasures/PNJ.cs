@@ -26,8 +26,13 @@ namespace ITI.HistoryTreasures
             if (X < 0 || Y < 0)
             {
                 throw new ArgumentException("You cannot create a PNJ with this coordonate");
-            } 
-            
+            }
+
+            else if (X < 16)
+            {
+                throw new ArgumentException("You cannot create a character with his hitbox outside the map.");
+            }
+
             _ctx = ctx;
 
             if (Level._pnj.Count != 0)
