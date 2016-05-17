@@ -23,12 +23,24 @@ namespace ITI.HistoryTreasures
         public PNJ(Game gctx, Level ctx, int X, int Y, string bitMapName, string name, string speech)
             : base(gctx, X, Y, "test", name)
         {
-            _ctx = ctx;
-            _speech = speech;
             if (X < 0 || Y < 0)
             {
                 throw new ArgumentException("You cannot create a PNJ with this coordonate");
+            } 
+            
+            _ctx = ctx;
+
+            if (Level._pnj.Count != 0)
+            {
+                foreach (PNJ p in Level._pnj)
+                {
+                    if (p.positionX == X && p.positionY == Y)
+                    {
+                        throw new InvalidOperationException();
+                    }
+                }
             }
+            _speech = speech;
         }
 
         /// <summary>

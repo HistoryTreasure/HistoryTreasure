@@ -79,6 +79,19 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(l._pnj.Contains(p));
             Assert.That(l._pnj.Contains(n));
         }
+
+        [Test]
+        public void PNJ_can_created_two_PNJ_different_but_not_in_the_same_coordonate()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
+            PNJ p = new PNJ(g, l, 15, 5, "test", "Hawke", "Hello world !");
+            l._pnj.Add(p);
+            Assert.Throws<InvalidOperationException>(() => new PNJ(g, l, 15, 5, "test", "Marth", "And you failed !"));
+            Assert.That(l._pnj.Contains(p));
+        }
     }
 
     [TestFixture]
