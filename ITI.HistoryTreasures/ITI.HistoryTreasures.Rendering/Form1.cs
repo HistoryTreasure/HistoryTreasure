@@ -18,8 +18,9 @@ namespace ITI.HistoryTreasures.Rendering
         int _cursX = 0;
         int _cursY = 0;
 
-        CMouse _Eau;
+        MapDesign _Eau;
         Game g;
+        Bitmap _herb = Properties.Resources.herbe;
 
         public HistoryTreasures()
         {
@@ -35,14 +36,14 @@ namespace ITI.HistoryTreasures.Rendering
             TextFormatFlags flags = TextFormatFlags.Left | TextFormatFlags.EndEllipsis;
             Font _font = new System.Drawing.Font("Stencil", 12, FontStyle.Regular);
             TextRenderer.DrawText(dc, "X=" + _cursX.ToString() + ":" + "Y=" + _cursY.ToString(), _font,
-               new Rectangle(0,0, 120, 20), SystemColors.ControlText, flags);
+               new Rectangle(900,700, 120, 20), SystemColors.ControlText, flags);
 #endif
 
-            for (int ix = 0; ix < 64; ix += 32)
+            for (int ix = 0; ix < 800; ix += 32)
             {
-                for (int iy = 0; iy < 64; iy += 32)
+                for (int iy = 0; iy < 600; iy += 32)
                 {
-                    _Eau = new CMouse(g) { left = ix, Top = iy };
+                    _Eau = new MapDesign(g, _herb) { left = ix, Top = iy };
                     _Eau.drawImage(dc);
                 }
             }

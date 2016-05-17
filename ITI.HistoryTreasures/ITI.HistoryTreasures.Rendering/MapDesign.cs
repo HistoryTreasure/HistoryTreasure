@@ -21,7 +21,6 @@ namespace ITI.HistoryTreasures
         //Dictionary<byte,TileG> _tiles;
         Game _context;
         Bitmap _bitmap;
-        MapDesign _mouse;
 
         private int X;
         private int Y;
@@ -31,10 +30,10 @@ namespace ITI.HistoryTreasures
 
 
         // mapdesign take different data
-        public MapDesign(Game g, Bitmap _resouce)
+        public MapDesign(Game g, Bitmap _resource)
         {
             _context = g;
-            _bitmap = new Bitmap(_resouce);
+            _bitmap = new Bitmap(_resource);
         }
 
         //the form  of the image
@@ -64,14 +63,3 @@ namespace ITI.HistoryTreasures
         }
     }
 }
-
-            ////using (Pen p = new Pen(Brushes.DeepSkyBlue))
-            //{
-            //    var bmp = new Bitmap(Rendering.Properties.Resources.eau);
-
-            //    e.Graphics.DrawImage(bmp , 0, 0, Width - 1, Height - 1);
-            //    dra
-            //}
-            ////   base.OnPaint(e);
-
-       
