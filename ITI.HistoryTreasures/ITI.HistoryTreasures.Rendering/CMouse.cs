@@ -9,10 +9,13 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures.Rendering
 {
+    //this class have no access on the form
+    //Mapdesign  give  detail
     class CMouse : MapDesign
     {
         private Rectangle _mouseHotSpot = new Rectangle();
-        
+
+        //access to the image
         public CMouse(Game g)
             : base(g, Properties.Resources.eau)
         {
@@ -23,7 +26,7 @@ namespace ITI.HistoryTreasures.Rendering
 
         }
         /// <summary>
-        /// position of the mouse
+        ///Put the image at the correct position on the screen
         /// </summary>
         /// <param name="X"></param>
         /// <param name="Y"></param>
@@ -33,18 +36,6 @@ namespace ITI.HistoryTreasures.Rendering
             Top = Y;
             _mouseHotSpot.X = left + 20;
             _mouseHotSpot.Y = Top -1;
-        }
-
-        public bool Hit(int X, int Y)
-        {
-            Rectangle c = new Rectangle(X, Y, 1, 1);
-
-            if (_mouseHotSpot.Contains(c))
-            {
-                return true;
-            }
-            return false;
-
         }
     }
 }
