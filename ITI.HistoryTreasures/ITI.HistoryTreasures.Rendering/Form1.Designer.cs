@@ -1,6 +1,6 @@
 ﻿namespace ITI.HistoryTreasures.Rendering
 {
-    partial class Form1
+    partial class HistoryTreasures
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // HistoryTreasures
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.CausesValidation = false;
+            this.ClientSize = new System.Drawing.Size(534, 353);
+            this.Name = "HistoryTreasures";
+            this.ShowInTaskbar = false;
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HistoryTreasures_MouseMove);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
