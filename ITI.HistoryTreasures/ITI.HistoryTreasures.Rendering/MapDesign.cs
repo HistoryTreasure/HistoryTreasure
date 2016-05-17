@@ -21,7 +21,7 @@ namespace ITI.HistoryTreasures
         //Dictionary<byte,TileG> _tiles;
         Game _context;
         Bitmap _bitmap;
-        MapDesign _mouse;
+       
 
         private int X;
         private int Y;

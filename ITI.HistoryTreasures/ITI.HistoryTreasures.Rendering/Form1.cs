@@ -35,7 +35,7 @@ namespace ITI.HistoryTreasures.Rendering
             TextFormatFlags flags = TextFormatFlags.Left | TextFormatFlags.EndEllipsis;
             Font _font = new System.Drawing.Font("Stencil", 12, FontStyle.Regular);
             TextRenderer.DrawText(dc, "X=" + _cursX.ToString() + ":" + "Y=" + _cursY.ToString(), _font,
-               new Rectangle(0,0, 120, 20), SystemColors.ControlText, flags);
+               new Rectangle(0,128, 120, 20), SystemColors.ControlText, flags);
 #endif
 
             for (int ix = 0; ix < 64; ix += 32)
