@@ -25,6 +25,7 @@ namespace ITI.HistoryTreasures
             _name = name;
             _isFinish = false;
             _pnj = new List<PNJ>();
+            ctx._levels.Add(this);
         }
 
         /// <summary>
@@ -58,6 +59,15 @@ namespace ITI.HistoryTreasures
         public MainCharacter MainCharacter
         {
             get { return _mainCharacter; }
+        }
+
+
+        /// <summary>
+        /// This properties return list of pnj.
+        /// </summary>
+        public List<PNJ> PNJ
+        {
+            get { return _pnj; }
         }
 
         public string InteractionWithPNJ(KeyEnum key)

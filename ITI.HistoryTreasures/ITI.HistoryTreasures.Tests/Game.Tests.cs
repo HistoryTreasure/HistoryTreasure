@@ -27,9 +27,8 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = new Theme(g, "Test");
             string name = "Test";
-            g._themes.Add(t);
             Assert.That(t.Name, Is.EqualTo(name));
-            Assert.That(g._themes.Contains(t));
+            Assert.That(g.Themes.Contains(t));
         }
 
         [Test]
@@ -39,13 +38,11 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = new Theme(g, "theme");
             MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
             Level l = new Level(t, mC, "level");
-            g._themes.Add(t);
-            t._levels.Add(l);
 
             l.IsFinish = true;
             t.FinishTheme();
 
-            Assert.That(g._themes[0].IsFinish == true);
+            Assert.That(g.Themes[0].IsFinish == true);
         }
     }
 
@@ -60,10 +57,9 @@ namespace ITI.HistoryTreasures.Tests
             MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
             Level l = new Level(t, mC, "Try");
             string name = "Try";
-            g._themes.Add(t);
-            t._levels.Add(l);
+
             Assert.That(l.Name, Is.EqualTo(name));
-            Assert.That(t._levels.Contains(l));
+            Assert.That(t.Levels.Contains(l));
         }
 
         [Test]
@@ -73,11 +69,10 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = new Theme(g, "theme");
             MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
             Level l = new Level(t, mC, "level");
-            g._themes.Add(t);
-            t._levels.Add(l);
+
             l.IsFinish = true;
 
-            Assert.That(t._levels[0].IsFinish == true);
+            Assert.That(t.Levels[0].IsFinish == true);
         }
 
         [Test]
@@ -88,10 +83,8 @@ namespace ITI.HistoryTreasures.Tests
             MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
             Level l = new Level(t, mC, "Level");
             PNJ p = new PNJ(g, l, 32, 32, "test", "Hawke", "Hello world !");
-            g._themes.Add(t);
-            t._levels.Add(l);
-            l._pnj.Add(p);
-            Assert.That(l._pnj.Contains(p));
+
+            Assert.That(l.PNJ.Contains(p));
         }
 
         [Test]
@@ -101,10 +94,9 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = new Theme(g, "Theme");
             MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
             Level l = new Level(t, mC, "Level");
-            g._themes.Add(t);
-            t._levels.Add(l);
+
             PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "Hello world !");
-            l._pnj.Add(pnj);
+            
             Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
         }
 
@@ -115,10 +107,9 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = new Theme(g, "Theme");
             MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
             Level l = new Level(t, mC, "Level");
-            g._themes.Add(t);
-            t._levels.Add(l);
+    
             PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "Hello world !");
-            l._pnj.Add(pnj);
+            
             Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
         }
 
@@ -129,8 +120,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = new Theme(g, "Theme");
             MainCharacter mC = new MainCharacter(g, 16, 16, "Test", "Judd");
             Level l = new Level(t, mC, "Level");
-            g._themes.Add(t);
-            t._levels.Add(l);
+
             Assert.That(l.MainCharacter, Is.EqualTo(mC));
         }
     }
