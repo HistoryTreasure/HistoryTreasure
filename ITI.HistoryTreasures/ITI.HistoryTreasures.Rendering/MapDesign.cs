@@ -12,19 +12,18 @@ using System.Windows.Forms;
 namespace ITI.HistoryTreasures
 {
 
-    //releasing the difference reference 
 
     class MapDesign : IDisposable
     {
         bool disposed = false;
-        //byte[][] _data;
-        //Dictionary<byte,TileG> _tiles;
+       
         Game _context;
         Bitmap _bitmap;
 
         private int X;
         private int Y;
 
+        //define X and Y 
         public int left { get { return X; } set { X = value; } }
         public new int Top { get { return Y; } set { Y = value; } }
 
@@ -36,11 +35,10 @@ namespace ITI.HistoryTreasures
             _bitmap = new Bitmap(_resource);
         }
 
-        //the form  of the image
+        //define the image
         public void drawImage(Graphics gfx)
         {
             gfx.DrawImage(_bitmap, X, Y);
-
         }
 
         public void Dispose()
@@ -50,7 +48,8 @@ namespace ITI.HistoryTreasures
 
         }
 
-        //if the image will be there or not
+        //if we don't need an image of ressource, we can remove it 
+
         protected virtual void Dispose(bool disposing)
         {
             if (disposed)

@@ -14,7 +14,8 @@ namespace ITI.HistoryTreasures.Rendering
 {
     public partial class HistoryTreasures : Form
     {
-
+        // the mouse has a cursor
+        // On the screen X and Y
         int _cursX = 0;
         int _cursY = 0;
 
@@ -33,12 +34,14 @@ namespace ITI.HistoryTreasures.Rendering
 #if  My_Debug
 
 
+            // the position,style and composition of X and Y
             TextFormatFlags flags = TextFormatFlags.Left | TextFormatFlags.EndEllipsis;
             Font _font = new System.Drawing.Font("Stencil", 12, FontStyle.Regular);
             TextRenderer.DrawText(dc, "X=" + _cursX.ToString() + ":" + "Y=" + _cursY.ToString(), _font,
                new Rectangle(900,700, 120, 20), SystemColors.ControlText, flags);
 #endif
 
+            //position of the tile
             for (int ix = 0; ix < 800; ix += 32)
             {
                 for (int iy = 0; iy < 600; iy += 32)
@@ -53,7 +56,7 @@ namespace ITI.HistoryTreasures.Rendering
 
 
       
-
+        // move of the mouse 
         private void HistoryTreasures_MouseMove(object sender, MouseEventArgs e)
         {
             
