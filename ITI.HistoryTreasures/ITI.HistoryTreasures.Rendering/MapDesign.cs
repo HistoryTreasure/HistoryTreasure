@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace ITI.HistoryTreasures
 {
+
+    //releasing the difference reference 
+
     class MapDesign : IDisposable
     {
         bool disposed = false;
@@ -26,13 +29,15 @@ namespace ITI.HistoryTreasures
         public int left { get { return X; } set { X = value; } }
         public new int Top { get { return Y; } set { Y = value; } }
 
+
+        // mapdesign take different data
         public MapDesign(Game g, Bitmap _resouce)
         {
             _context = g;
             _bitmap = new Bitmap(_resouce);
         }
 
-
+        //the form  of the image
         public void drawImage(Graphics gfx)
         {
             gfx.DrawImage(_bitmap, X, Y);
@@ -46,6 +51,7 @@ namespace ITI.HistoryTreasures
 
         }
 
+        //if the image will be there or not
         protected virtual void Dispose(bool disposing)
         {
             if (disposed)

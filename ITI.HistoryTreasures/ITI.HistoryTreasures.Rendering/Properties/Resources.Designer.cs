@@ -63,9 +63,9 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap eau {
+        internal static System.Drawing.Bitmap Mole {
             get {
-                object obj = ResourceManager.GetObject("eau", resourceCulture);
+                object obj = ResourceManager.GetObject("Mole", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
