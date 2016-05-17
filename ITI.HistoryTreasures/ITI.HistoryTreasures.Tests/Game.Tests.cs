@@ -37,7 +37,7 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "theme");
-            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
             Level l = new Level(t, mC, "level");
             g._themes.Add(t);
             t._levels.Add(l);
@@ -57,7 +57,7 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "Test");
-            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
             Level l = new Level(t, mC, "Try");
             string name = "Try";
             g._themes.Add(t);
@@ -71,7 +71,7 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "theme");
-            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
             Level l = new Level(t, mC, "level");
             g._themes.Add(t);
             t._levels.Add(l);
@@ -85,9 +85,9 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
-            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
             Level l = new Level(t, mC, "Level");
-            PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
+            PNJ p = new PNJ(g, l, 32, 32, "test", "Hawke", "Hello world !");
             g._themes.Add(t);
             t._levels.Add(l);
             l._pnj.Add(p);
@@ -99,7 +99,7 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
-            MainCharacter mC = new MainCharacter(g, 15, 15, "test", "Judd");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
             Level l = new Level(t, mC, "Level");
             g._themes.Add(t);
             t._levels.Add(l);
@@ -113,7 +113,7 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
-            MainCharacter mC = new MainCharacter(g, 7, 15, "test", "Judd");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
             Level l = new Level(t, mC, "Level");
             g._themes.Add(t);
             t._levels.Add(l);
@@ -127,7 +127,7 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = new Theme(g, "Theme");
-            MainCharacter mC = new MainCharacter(g, 0, 0, "Test", "Judd");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "Test", "Judd");
             Level l = new Level(t, mC, "Level");
             g._themes.Add(t);
             t._levels.Add(l);
