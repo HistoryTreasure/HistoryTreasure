@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace ITI.HistoryTreasures
 {
-    class TileG : Resources
+    class TileG : Resource
     {
         Image _sprite; //reference to an image
         TileEnum _tileName;

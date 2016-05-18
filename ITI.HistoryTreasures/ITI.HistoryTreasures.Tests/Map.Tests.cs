@@ -29,7 +29,7 @@ namespace ITI.HistoryTreasures.Tests
             {
                 Assert.That(_test[line, i].Map, Is.EqualTo(_verif[line, i].Map));
                 Assert.That(_test[line, i].IsSolid, Is.EqualTo(_verif[line, i].IsSolid));
-                Assert.That(_test[line, i].TileEnum, Is.EqualTo(_verif[line, i].TileEnum));
+                Assert.That(_test[line, i].TileType, Is.EqualTo(_verif[line, i].TileType));
                 if (i == 1 && line < 1)
                 {
                     i = 0;

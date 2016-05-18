@@ -28,7 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.gameControl1 = new ITI.HistoryTreasures.Rendering.GameControl();
             this.SuspendLayout();
+            // 
+            // gameControl1
+            // 
+            this.gameControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gameControl1.LevelContext = null;
+            this.gameControl1.Location = new System.Drawing.Point(0, 0);
+            this.gameControl1.Name = "gameControl1";
+            this.gameControl1.Size = new System.Drawing.Size(534, 353);
+            this.gameControl1.TabIndex = 0;
             // 
             // HistoryTreasures
             // 
@@ -36,6 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(534, 353);
+            this.Controls.Add(this.gameControl1);
             this.DoubleBuffered = true;
             this.Name = "HistoryTreasures";
             this.ShowInTaskbar = false;
@@ -45,6 +56,8 @@
         }
 
         #endregion
+
+        private GameControl gameControl1;
     }
 }
 

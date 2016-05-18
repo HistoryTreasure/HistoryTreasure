@@ -22,13 +22,15 @@ namespace ITI.HistoryTreasures.Rendering
         MapDesign _Eau;
         Game g;
         Bitmap _herb = Properties.Resources.herbe;
+        Theme _tCtx;
 
         public HistoryTreasures()
         {
             InitializeComponent();
+            gameControl1.LevelContext = new Level(_tCtx, "Test"); 
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        /*protected override void OnPaint(PaintEventArgs e)
         {
             Graphics dc = e.Graphics;
 #if  My_Debug
@@ -52,7 +54,7 @@ namespace ITI.HistoryTreasures.Rendering
             }
             
             base.OnPaint(e);
-        }
+        }*/
 
 
       

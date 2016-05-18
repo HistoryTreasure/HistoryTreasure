@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures
 {
-    public class Resources
+    public class Resource
     {
     }
 }

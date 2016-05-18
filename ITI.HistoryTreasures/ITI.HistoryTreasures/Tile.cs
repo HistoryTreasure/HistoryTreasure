@@ -40,7 +40,7 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// Return Tile's name.
         /// </summary>
-        public TileEnum TileEnum
+        public TileEnum TileType
         {
             get
             {

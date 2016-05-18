@@ -67,12 +67,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Items.cs" />
     <Compile Include="MapDesign.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendering.cs" />
-    <Compile Include="Resources.cs" />
+    <Compile Include="Resource.cs" />
+    <Compile Include="ResourcesManager.cs" />
     <Compile Include="Sound.cs" />
     <Compile Include="Sprites.cs" />
     <Compile Include="TileG.cs" />
@@ -120,15 +124,6 @@
       <Project>{2e7c097f-51e5-4943-9f3d-3d9626951a67}</Project>
       <Name>ITI.HistoryTreasures</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\eau.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\devant.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\herbe.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

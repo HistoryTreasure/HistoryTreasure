@@ -12,6 +12,7 @@ namespace ITI.HistoryTreasures
         public List<PNJ> _pnj;
         Theme _ctx;
         MainCharacter _mainCharacter;
+        Map _mCtx;
 
         /// <summary>
         /// This constructor create a level.
@@ -24,6 +25,7 @@ namespace ITI.HistoryTreasures
             _name = name;
             _isFinish = false;
             _pnj = new List<PNJ>();
+            _mCtx = new Map(this, 10, 10);
         }
 
         /// <summary>
@@ -44,7 +46,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return the theme of the level.
+        /// This property returns the theme of the level.
         /// </summary>
         public Theme Theme
         {
@@ -52,11 +54,16 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return the MainCharacter.
+        /// This property returns the MainCharacter.
         /// </summary>
         public MainCharacter MainCharacter
         {
             get { return _mainCharacter; }
+        }
+
+        public Map MapContext
+        {
+            get { return _mCtx; }
         }
     }
 }

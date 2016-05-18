@@ -8,7 +8,7 @@ namespace ITI.HistoryTreasures.Rendering
 {
     class Rendering
     {
-        public Resources Resources
+        public Resource Resources
         {
             get
             {
