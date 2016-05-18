@@ -34,7 +34,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return horizontal position with an int.
+        /// This property returns horizontal position with an int.
         /// </summary>
         public int positionX
         {
@@ -50,7 +50,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return vertical position with an int.
+        /// This property returns vertical position with an int.
         /// </summary>
         public int positionY
         {
@@ -67,7 +67,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return appaerance of Character.
+        /// This property returns appaerance of Character.
         /// </summary>
         public string BitMapName
         {
@@ -76,7 +76,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return the name of the Character.
+        /// This property returns the name of the Character.
         /// </summary>
         public string Name
         {
@@ -85,7 +85,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This propertie return game context.
+        /// This property returns game context.
         /// </summary>
         public Game Game
         {
@@ -93,7 +93,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This propertie return hitbox.
+        /// This property returns hitbox.
         /// </summary>
         public Hitbox HitBox
         {

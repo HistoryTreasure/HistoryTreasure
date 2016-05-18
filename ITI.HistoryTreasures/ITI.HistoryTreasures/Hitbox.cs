@@ -42,7 +42,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return coordonate of our Rectangle.
+        /// This property returns coordonate of our Rectangle.
         /// </summary>
         public int xA { get { return _xA; } set { _xA = value; } }
         public int yA { get { return _yA; } set { _yA = value; } }

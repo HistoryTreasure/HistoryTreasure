@@ -30,7 +30,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return a speed with an int.
+        /// This property returns a speed with an int.
         /// </summary>
         public int Speed
         {
@@ -38,7 +38,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return number of life with an int.
+        /// This property returns number of life with an int.
         /// </summary>
         public int Life
         {

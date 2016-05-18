@@ -28,7 +28,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This propertie return a level.
+        /// This property returns a level.
         /// </summary>
         public Level Level
         {
@@ -36,7 +36,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This propertie return tile array (2D).
+        /// This property returns tile array (2D).
         /// </summary>
         /*public Tile[,] map1
         {
@@ -48,15 +48,21 @@ namespace ITI.HistoryTreasures
         }*/
 
         /// <summary>
-        /// This propertie return field tilearray.
+        /// This property returns field tilearray.
         /// </summary>
         public Tile[,] TileArray { get { return _tileArray; }  }
 
+        /// <summary>
+        /// This property returns vertical length of array.
+        /// </summary>
         public int Height
         {
             get { return _tileArray.GetLength(1);  }
         }
 
+        /// <summary>
+        /// This property returns horizontal length of array.
+        /// </summary>
         public int Width
         {
             get { return _tileArray.GetLength(0); }
