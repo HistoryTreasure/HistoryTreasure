@@ -25,7 +25,6 @@ namespace ITI.HistoryTreasures
             _name = name;
             _isFinish = false;
             _pnj = new List<PNJ>();
-            ctx._levels.Add(this);
         }
 
         /// <summary>

@@ -46,7 +46,6 @@ namespace ITI.HistoryTreasures
                 }
             }
             _speech = speech;
-            ctx._pnj.Add(this);
         }
 
         /// <summary>

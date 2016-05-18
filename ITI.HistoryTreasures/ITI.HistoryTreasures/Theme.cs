@@ -23,7 +23,6 @@ namespace ITI.HistoryTreasures
             _name = name;
             _isFinish = false;
             _levels = new List<Level>();
-            ctx._themes.Add(this);
         }
 
         /// <summary>
