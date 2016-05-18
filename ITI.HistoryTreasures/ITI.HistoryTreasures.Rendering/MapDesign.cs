@@ -13,7 +13,7 @@ namespace ITI.HistoryTreasures
 {
 
 
-    class MapDesign : IDisposable
+    class MapDesign
     {
         bool disposed = false;
        
@@ -39,26 +39,6 @@ namespace ITI.HistoryTreasures
         public void drawImage(Graphics gfx)
         {
             gfx.DrawImage(_bitmap, X, Y);
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-
-        }
-
-        //if we don't need an image of ressource, we can remove it 
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposed)
-                return;
-            if (disposing)
-            {
-                _bitmap.Dispose();
-            }
-            disposed = true;
         }
     }
 }
