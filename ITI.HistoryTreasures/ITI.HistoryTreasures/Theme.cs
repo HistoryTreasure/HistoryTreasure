@@ -26,7 +26,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return the theme name.
+        /// This property returns the theme name.
         /// </summary>
         public string Name
         {
@@ -34,7 +34,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return if a level is finish.
+        /// This property returns if a level is finish.
         /// </summary>
         public bool IsFinish
         {
@@ -43,12 +43,28 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return the context of the game.
+        /// This property returns the context of the game.
         /// </summary>
         public Game Game
         {
             get { return _ctx; }
             set { _ctx = value; }
+        }
+
+        public List<Level> Levels
+        {
+            get { return _levels; }
+        }
+
+        /// <summary>
+        /// This method serve to create a level.
+        /// </summary>
+        /// <param name="name">This parameter define name of Level.</param>
+        public Level CreateLevel(string name)
+        {
+            Level l = new Level(this, name);
+            _levels.Add(l);
+            return l;
         }
 
         /// <summary>

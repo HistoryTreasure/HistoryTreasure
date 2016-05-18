@@ -36,6 +36,11 @@ namespace ITI.HistoryTreasures
             get { return _name; }
         }
 
+        public List<PNJ> Pnj
+        {
+            get { return _pnj; }
+        }
+
         /// <summary>
         /// This properties return if a level is finish.
         /// </summary>
@@ -51,6 +56,13 @@ namespace ITI.HistoryTreasures
         public Theme Theme
         {
             get { return _ctx; }
+        }
+
+        public PNJ CreatePNJ(Game gctx, int X, int Y, string bitMapName, string name, string speech)
+        {
+            PNJ p = new PNJ(gctx, this, X, Y, bitMapName, name, speech);
+            _pnj.Add(p);
+            return p;
         }
 
         /// <summary>

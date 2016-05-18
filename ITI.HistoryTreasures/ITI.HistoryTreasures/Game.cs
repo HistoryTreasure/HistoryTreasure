@@ -20,6 +20,17 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
+        /// This method serve to create a Theme. 
+        /// </summary>
+        /// <param name="name">This parameter define name of theme.</param>
+        public Theme CreateTheme(string name)
+        {
+            Theme t = new Theme(this, name);
+            _themes.Add(t);
+            return t;
+        }
+
+        /// <summary>
         /// This properties return list of theme.
         /// </summary>
         public List<Theme> Themes
