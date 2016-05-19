@@ -7,6 +7,9 @@ namespace ITI.HistoryTreasures
 {
     class Items : Resource
     {
+        /// <summary>
+        /// This property returns MapDesign context.
+        /// </summary>
         public MapDesign MapDesign
         {
             get

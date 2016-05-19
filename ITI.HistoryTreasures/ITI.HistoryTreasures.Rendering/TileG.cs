@@ -12,10 +12,10 @@ namespace ITI.HistoryTreasures
         TileEnum _tileName;
 
         /// <summary>
-        /// This contructor create TileG.
+        /// This contructor instantiate TileG.
         /// </summary>
-        /// <param name="Sprite">This parameter define the sprite name.</param>
-        /// <param name="tileName">This parameter define the tileName.</param>
+        /// <param name="tileG">This parameter contains the tile bitmap.</param>
+        /// <param name="tileName">This parameter contains the tileName.</param>
         public TileG(Bitmap tileG, TileEnum tileName)
         {
             if (TileGr == null) throw new ArgumentNullException();
@@ -24,13 +24,16 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Return tile image.
+        /// This property returns a tile.
         /// </summary>
         public Bitmap TileGr
         {
             get { return _tileG; }
         }
 
+        /// <summary>
+        /// This property returns MapDesign context.
+        /// </summary>
         public MapDesign MapDesign
         {
             get

@@ -16,17 +16,27 @@ namespace ITI.HistoryTreasures.Rendering
         private IContainer components;
         ResourcesManager _resourcesManager;
 
+        /// <summary>
+        /// This constructor instantiate GameControl. 
+        /// </summary>
         public GameControl()
         {
             _resourcesManager = new ResourcesManager();
         }
 
+        /// <summary>
+        /// This property returns the level context.
+        /// </summary>
         public Level LevelContext
         {
             get { return _lCtx; }
             set { _lCtx = value; }
         }
 
+        /// <summary>
+        /// This method paint element on screen.
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnPaint(PaintEventArgs e)
         {
             if (_lCtx == null) return;

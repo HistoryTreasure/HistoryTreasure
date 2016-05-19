@@ -14,8 +14,6 @@ namespace ITI.HistoryTreasures.Rendering
 {
     public partial class HistoryTreasures : Form
     {
-        // the mouse has a cursor
-        // On the screen X and Y
         int _cursX = 0;
         int _cursY = 0;
 
@@ -24,10 +22,13 @@ namespace ITI.HistoryTreasures.Rendering
         Bitmap _herb = Properties.Resources.herbe;
         Theme _tCtx;
 
+        /// <summary>
+        /// This contructor instantiate HistoryTreasures.
+        /// </summary>
         public HistoryTreasures()
         {
             InitializeComponent();
-            gameControl1.LevelContext = new Level(_tCtx, "Test"); 
+            gameControl1.LevelContext = new Level(_tCtx, "Test");
         }
 
         /*protected override void OnPaint(PaintEventArgs e)
@@ -55,21 +56,25 @@ namespace ITI.HistoryTreasures.Rendering
             
             base.OnPaint(e);
         }*/
-
-
-      
-        // move of the mouse 
+        
+        /// <summary>
+        /// This method update position of the mouse for show it on screen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HistoryTreasures_MouseMove(object sender, MouseEventArgs e)
         {
-            
-
             _cursX = e.X;
             _cursY = e.Y;
 
             this.Refresh();
-
         }
 
+        /// <summary>
+        /// This method refresh the screen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.Refresh();

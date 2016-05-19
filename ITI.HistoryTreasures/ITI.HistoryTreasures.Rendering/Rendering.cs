@@ -8,6 +8,9 @@ namespace ITI.HistoryTreasures.Rendering
 {
     class Rendering
     {
+        /// <summary>
+        /// This property returns Resources context.
+        /// </summary>
         public Resource Resources
         {
             get
@@ -20,6 +23,9 @@ namespace ITI.HistoryTreasures.Rendering
             }
         }
 
+        /// <summary>
+        /// This property returns MapDesign context.
+        /// </summary>
         internal MapDesign MapDesign
         {
             get
