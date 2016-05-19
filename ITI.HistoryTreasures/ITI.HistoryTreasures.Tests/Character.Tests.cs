@@ -42,8 +42,8 @@ namespace ITI.HistoryTreasures.Tests
             Level l = t.CreateLevel("Level");
             PNJ p = l.CreatePNJ(g, 16, 16, "Test", "Hawke", "Hello world !");
             
-            Assert.That(p.positionX, Is.EqualTo(0));
-            Assert.That(p.positionY, Is.EqualTo(0));
+            Assert.That(p.positionX, Is.EqualTo(16));
+            Assert.That(p.positionY, Is.EqualTo(16));
             Assert.That(l.Pnj.Contains(p));
         }
 

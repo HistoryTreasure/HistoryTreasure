@@ -9,7 +9,7 @@ namespace ITI.HistoryTreasures
     {
         string _name;
         bool _isFinish;
-        public List<Level> _levels;
+        List<Level> _levels;
         Game _ctx;
 
         /// <summary>

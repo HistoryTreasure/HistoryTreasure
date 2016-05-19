@@ -9,7 +9,7 @@ namespace ITI.HistoryTreasures
     {
         readonly string _name;
         bool _isFinish;
-        public List<PNJ> _pnj;
+        List<PNJ> _pnj;
         Theme _ctx;
         MainCharacter _mainCharacter;
         Map _mCtx;

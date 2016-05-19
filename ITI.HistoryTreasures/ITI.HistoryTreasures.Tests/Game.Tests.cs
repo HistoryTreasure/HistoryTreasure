@@ -29,7 +29,7 @@ namespace ITI.HistoryTreasures.Tests
             string name = "Theme";
             
             Assert.That(t.Name, Is.EqualTo(name));
-            Assert.That(g._themes.Contains(t));
+            Assert.That(g.Themes.Contains(t));
         }
 
         [Test]
