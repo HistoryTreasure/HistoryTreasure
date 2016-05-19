@@ -44,6 +44,15 @@ namespace ITI.HistoryTreasures.Tests
 
             Assert.That(g.Themes[0].IsFinish == true);
         }
+
+        [Test]
+        public void A_theme_cannot_be_created_two_times_with_same_name()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+
+            Assert.Throws<InvalidOperationException>(() => g.CreateTheme("Theme"));
+        }
     }
 
     [TestFixture]
@@ -82,6 +91,16 @@ namespace ITI.HistoryTreasures.Tests
             PNJ p = l.CreatePNJ(g, 10, 10, "Test", "Hawke", "Hello world !");
 
             Assert.That(l.Pnj.Contains(p));
+        }
+
+        [Test]
+        public void A_level_cannot_be_created_two_times_with_same_name()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+
+            Assert.Throws<InvalidOperationException>(() => t.CreateLevel("Level"));
         }
 
         /*[Test]

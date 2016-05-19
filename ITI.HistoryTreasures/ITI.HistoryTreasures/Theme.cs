@@ -19,6 +19,14 @@ namespace ITI.HistoryTreasures
         /// <param name="name">This parameter reference name of level.</param>
         public Theme(Game ctx, string name)
         {
+            for (int i = 0; i < ctx.Themes.Count; i++)
+            {
+                if (ctx.Themes[i].Name == name)
+                {
+                    throw new InvalidOperationException("You cannot create two themes with same name");
+                }
+            }
+
             _ctx = ctx;
             _name = name;
             _isFinish = false;
