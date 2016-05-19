@@ -89,5 +89,11 @@ namespace ITI.HistoryTreasures
         {
             get { return _mCtx; }
         }
+
+        /*public Map CreateMap(this, List<PNJ> Pnj, MainCharacter mC)
+        {
+            _mCtx = new Map(this, 10, 10);
+
+        }*/
     }
 }

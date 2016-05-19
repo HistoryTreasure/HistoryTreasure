@@ -17,14 +17,15 @@ namespace ITI.HistoryTreasures
         public Map(Level level, int width, int height)
         {
             _level = level;
-            _tileArray = new Tile[width, height];
+            TileArray = _tileArray;
+            /*_tileArray = new Tile[width, height];
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < height; j++)
                 {
                     _tileArray[i, j] = new Tile(false, TileEnum.GRASS, level.MapContext);
                 } 
-            }
+            }*/
         }
 
         /// <summary>
@@ -50,7 +51,11 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// This property returns field tilearray.
         /// </summary>
-        public Tile[,] TileArray { get { return _tileArray; }  }
+        public Tile[,] TileArray
+        {
+            get { return _tileArray; }
+            set { _tileArray = value; }
+        }
 
         /// <summary>
         /// This property returns vertical length of array.
