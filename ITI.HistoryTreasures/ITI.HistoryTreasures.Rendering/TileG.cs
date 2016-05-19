@@ -8,7 +8,7 @@ namespace ITI.HistoryTreasures
 {
     class TileG : Resource
     {
-        Image _sprite; //reference to an image
+        Bitmap _tileG; //reference to an image
         TileEnum _tileName;
 
         /// <summary>
@@ -16,19 +16,19 @@ namespace ITI.HistoryTreasures
         /// </summary>
         /// <param name="Sprite">This parameter define the sprite name.</param>
         /// <param name="tileName">This parameter define the tileName.</param>
-        public TileG(Image Sprite, TileEnum tileName)
+        public TileG(Bitmap tileG, TileEnum tileName)
         {
-            if (Sprite == null) throw new ArgumentNullException();
-            _sprite = Sprite;
+            if (TileGr == null) throw new ArgumentNullException();
+            _tileG = tileG;
             _tileName = tileName;
         }
 
         /// <summary>
         /// Return tile image.
         /// </summary>
-        public Image Sprite
+        public Bitmap TileGr
         {
-            get { return _sprite; }
+            get { return _tileG; }
         }
 
         public MapDesign MapDesign
