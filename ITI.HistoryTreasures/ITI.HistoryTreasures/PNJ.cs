@@ -35,7 +35,7 @@ namespace ITI.HistoryTreasures
 
             _ctx = ctx;
 
-            if (Level._pnj.Count != 0)
+            if (Level.PNJ.Count != 0)
             {
                 foreach (PNJ p in Level._pnj)
                 {
@@ -46,6 +46,8 @@ namespace ITI.HistoryTreasures
                 }
             }
             _speech = speech;
+
+            ctx.PNJ.Add(this);
         }
 
         /// <summary>
