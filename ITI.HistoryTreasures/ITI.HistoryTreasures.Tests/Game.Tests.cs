@@ -88,11 +88,10 @@ namespace ITI.HistoryTreasures.Tests
         public void Levels_return_correctly_main_character()
         {
             Game g = new Game();
-            Theme t = new Theme(g, "Theme");
-            Level l = new Level(t, "Level");
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
             MainCharacter mC = new MainCharacter(g, 0, 0, "Test", "Judd");
-            g._themes.Add(t);
-            t._levels.Add(l);
+
             Assert.That(l.MainCharacter, Is.EqualTo(mC));
         }*/
     }

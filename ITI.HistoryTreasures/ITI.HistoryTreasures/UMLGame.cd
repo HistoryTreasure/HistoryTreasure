@@ -96,7 +96,6 @@
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Map" />
-      <Property Name="TileType" />
     </ShowAsAssociation>
   </Class>
   <Class Name="ITI.HistoryTreasures.MainCharacter" Collapsed="true">
