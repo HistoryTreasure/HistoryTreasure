@@ -90,7 +90,7 @@ namespace ITI.HistoryTreasures.Tests
             Level l = t.CreateLevel("Level");
             PNJ p = l.CreatePNJ(g, 10, 10, "Test", "Hawke", "Hello world !");
 
-            Assert.That(l.Pnj.Contains(p));
+            Assert.That(l.PNJ.Contains(p));
         }
 
         [Test]

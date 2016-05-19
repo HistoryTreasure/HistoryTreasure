@@ -23,12 +23,21 @@ namespace ITI.HistoryTreasures
         public PNJ(Game gctx, Level ctx, int X, int Y, string bitMapName, string name, string speech)
             : base(gctx, X, Y, "test", name)
         {
-            _ctx = ctx;
-            _speech = speech;
             if (X < 0 || Y < 0)
             {
                 throw new ArgumentException("You cannot create a PNJ with this coordonate");
             }
+
+            for (int i = 0; i < ctx.PNJ.Count; i++)
+            {
+                if (ctx.PNJ[i].Name == name)
+                {
+                    throw new InvalidOperationException("You cannot create two levels with same name");
+                }
+            }
+
+            _ctx = ctx;
+            _speech = speech;
         }
 
         /// <summary>

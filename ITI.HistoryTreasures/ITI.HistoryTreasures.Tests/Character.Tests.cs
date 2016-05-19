@@ -21,7 +21,18 @@ namespace ITI.HistoryTreasures.Tests
             string speech = "Hello world !";
             Assert.That(p.Speech, Is.EqualTo(speech)); //Verify if the speech is correct
             Assert.That(p.Level, Is.EqualTo(l));
-            Assert.That(l.Pnj.Contains(p));
+            Assert.That(l.PNJ.Contains(p));
+        }
+
+        [Test]
+        public void PNJ_can_be_created_with_a_unique_name()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+            PNJ p = l.CreatePNJ(g, 16, 16, "Test", "Hawke", "Hello world !");
+
+            Assert.Throws<InvalidOperationException>(() => l.CreatePNJ(g, 32, 32, "Test", "Hawke", "Hello world !"));
         }
 
         [Test]
@@ -44,7 +55,7 @@ namespace ITI.HistoryTreasures.Tests
             
             Assert.That(p.positionX, Is.EqualTo(16));
             Assert.That(p.positionY, Is.EqualTo(16));
-            Assert.That(l.Pnj.Contains(p));
+            Assert.That(l.PNJ.Contains(p));
         }
 
         [Test]
@@ -56,7 +67,7 @@ namespace ITI.HistoryTreasures.Tests
             PNJ p = l.CreatePNJ(g, 16, 16, "Test", "Hawke", "Hello world !");
             
             Assert.That(p.Speech, Is.EqualTo("Hello world !"));
-            Assert.That(l.Pnj.Contains(p));
+            Assert.That(l.PNJ.Contains(p));
         }
     }
 

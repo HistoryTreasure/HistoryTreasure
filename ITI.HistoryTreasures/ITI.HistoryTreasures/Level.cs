@@ -50,7 +50,7 @@ namespace ITI.HistoryTreasures
         /// <value>
         /// The PNJ.
         /// </value>
-        public List<PNJ> Pnj
+        public List<PNJ> PNJ
         {
             get { return _pnj; }
         }
