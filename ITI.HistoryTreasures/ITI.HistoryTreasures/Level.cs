@@ -36,6 +36,12 @@ namespace ITI.HistoryTreasures
             get { return _name; }
         }
 
+        /// <summary>
+        /// Return the PNJ list.
+        /// </summary>
+        /// <value>
+        /// The PNJ.
+        /// </value>
         public List<PNJ> Pnj
         {
             get { return _pnj; }
@@ -73,6 +79,12 @@ namespace ITI.HistoryTreasures
             get { return _mainCharacter; }
         }
 
+        /// <summary>
+        /// Gets the map context.
+        /// </summary>
+        /// <value>
+        /// The map context.
+        /// </value>
         public Map MapContext
         {
             get { return _mCtx; }

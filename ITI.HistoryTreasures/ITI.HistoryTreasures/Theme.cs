@@ -51,6 +51,12 @@ namespace ITI.HistoryTreasures
             set { _ctx = value; }
         }
 
+        /// <summary>
+        /// Gets the level list.
+        /// </summary>
+        /// <value>
+        /// The levels.
+        /// </value>
         public List<Level> Levels
         {
             get { return _levels; }
