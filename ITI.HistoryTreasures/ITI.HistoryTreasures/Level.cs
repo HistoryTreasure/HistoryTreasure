@@ -64,6 +64,16 @@ namespace ITI.HistoryTreasures
             get { return _ctx; }
         }
 
+        /// <summary>
+        /// Creates the PNJ.
+        /// </summary>
+        /// <param name="gctx">The GCTX.</param>
+        /// <param name="X">The x position .</param>
+        /// <param name="Y">The y position.</param>
+        /// <param name="bitMapName">Name of the bit map.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="speech">The speech.</param>
+        /// <returns></returns>
         public PNJ CreatePNJ(Game gctx, int X, int Y, string bitMapName, string name, string speech)
         {
             PNJ p = new PNJ(gctx, this, X, Y, bitMapName, name, speech);
