@@ -32,6 +32,7 @@ namespace ITI.HistoryTreasures
             _ctx = ctx;
             _name = name;
             _isFinish = false;
+            _mainCharacter = new MainCharacter(ctx.Game, 16, 16, "Test", "Judd"); //a mettre en commmentaire
             _pnj = new List<PNJ>();
             _mCtx = new Map(this, 10, 10);
         }
@@ -107,6 +108,11 @@ namespace ITI.HistoryTreasures
         {
             get { return _mCtx; }
         }
+
+        /*public Game GameContext //commentaire
+        {
+            get { return _gtcx; }
+        }*/
 
         /*public Map CreateMap(this, List<PNJ> Pnj, MainCharacter mC)
         {

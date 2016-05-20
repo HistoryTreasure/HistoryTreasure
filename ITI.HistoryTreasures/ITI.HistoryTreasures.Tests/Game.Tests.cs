@@ -103,15 +103,19 @@ namespace ITI.HistoryTreasures.Tests
             Assert.Throws<InvalidOperationException>(() => t.CreateLevel("Level"));
         }
 
-        /*[Test]
+        [Test]
         public void Levels_return_correctly_main_character()
         {
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            MainCharacter mC = new MainCharacter(g, 0, 0, "Test", "Judd");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "Test", "Judd");
 
-            Assert.That(l.MainCharacter, Is.EqualTo(mC));
-        }*/
+            Assert.That(mC.Game == l.MainCharacter.Game);
+            Assert.That(mC.positionX == l.MainCharacter.positionX);
+            Assert.That(mC.positionY == l.MainCharacter.positionY);
+            Assert.That(mC.BitMapName == l.MainCharacter.BitMapName);
+            Assert.That(mC.Name == l.MainCharacter.Name);
+        }
     }
 }
