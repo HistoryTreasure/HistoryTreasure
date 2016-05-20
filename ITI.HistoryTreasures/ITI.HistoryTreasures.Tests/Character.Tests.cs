@@ -178,5 +178,15 @@ namespace ITI.HistoryTreasures.Tests
 
             Assert.That(mc.positionX == 32 && mc.positionY == 32);
         }
+
+        [Test]
+        public void MainCharacter_cannot_be_create_two_times()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+
+            Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, "test", "judd"));
+        }
     }
 }

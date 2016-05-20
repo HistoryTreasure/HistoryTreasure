@@ -32,7 +32,7 @@ namespace ITI.HistoryTreasures
             _ctx = ctx;
             _name = name;
             _isFinish = false;
-            _mainCharacter = new MainCharacter(ctx.Game, 16, 16, "Test", "Judd"); //a mettre en commmentaire
+            _mainCharacter = CreateMain(ctx,16,16,"Test", "Judd" );
             _pnj = new List<PNJ>();
             _mCtx = new Map(this, 10, 10);
         }
@@ -88,6 +88,15 @@ namespace ITI.HistoryTreasures
             PNJ p = new PNJ(gctx, this, X, Y, bitMapName, name, speech);
             _pnj.Add(p);
             return p;
+        }
+
+        public MainCharacter CreateMain(Theme ctx, int x, int y, string bitMapName, string name)
+        {
+            if (MainCharacter != null)
+                throw new InvalidOperationException("you cannot crate two main character");
+
+            return new MainCharacter(ctx.Game, x, y, bitMapName, name); 
+
         }
 
         /// <summary>
