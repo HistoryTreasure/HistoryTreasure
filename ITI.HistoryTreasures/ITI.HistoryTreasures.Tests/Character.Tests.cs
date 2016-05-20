@@ -122,6 +122,20 @@ namespace ITI.HistoryTreasures.Tests
 
             Assert.Throws<ArgumentException>(() => new PNJ(g, l, 15, 15, "test", "Hawke", "Hello world !"));
         }
+
+        /*[Test]
+        [Ignore("Not complete at all")]
+        public void PNJ_cannot_be_create_on_a_wall()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
+            PNJ p = new PNJ(g, l, 16, 16, "test", "Hawke", "Hello world !");
+            l._pnj.Add(p);
+
+            Assert.That(p.HitBox, Is.EqualTo(p));
+        }*/
     }
 
     [TestFixture]
@@ -247,5 +261,19 @@ namespace ITI.HistoryTreasures.Tests
            
             Assert.Throws<ArgumentException>(() => new MainCharacter(g, 15, 15, "test", "Judd"));
         }
+
+        /*[Test]
+        [Ignore("Not complete at all")]
+        public void MainCharacter_cannot_be_create_on_a_wall()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 48, 50, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
+            g._themes.Add(t);
+            t._levels.Add(l);
+
+            Assert.That(mC.HitBox, Is.EqualTo(mC));
+        }*/
     }
 }
