@@ -18,7 +18,6 @@ namespace ITI.HistoryTreasures.Rendering
         int _cursY = 0;
 
         MapDesign _Eau;
-        Game g;
         Bitmap _herb = Properties.Resources.herbe;
         Theme _tCtx;
 
@@ -28,6 +27,8 @@ namespace ITI.HistoryTreasures.Rendering
         public HistoryTreasures()
         {
             InitializeComponent();
+            Game g = new Game();
+            _tCtx = g.CreateTheme("Theme");
             gameControl1.LevelContext = new Level(_tCtx, "Test");
         }
 

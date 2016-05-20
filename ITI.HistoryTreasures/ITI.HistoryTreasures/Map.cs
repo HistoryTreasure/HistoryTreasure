@@ -18,14 +18,14 @@ namespace ITI.HistoryTreasures
         {
             _level = level;
             TileArray = _tileArray;
-            /*_tileArray = new Tile[width, height];
+            _tileArray = new Tile[width, height];
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < height; j++)
                 {
                     _tileArray[i, j] = new Tile(false, TileEnum.GRASS, level.MapContext);
                 } 
-            }*/
+            }
         }
 
         /// <summary>
