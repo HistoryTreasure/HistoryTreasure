@@ -240,18 +240,6 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
-        [Ignore("Not complete")]
-        public void MainCharacter_cannot_be_created_two_times()
-        {
-            Game g = new Game();
-            Theme t = new Theme(g, "Theme");
-            MainCharacter mC = new MainCharacter(g, 48, 50, "test", "Judd");
-            Level l = new Level(t, mC, "Level");
-
-            Assert.Throws<InvalidOperationException>(() => new MainCharacter(g, 15, 15, "test", "Bob"));
-        }
-
-        [Test]
         public void MainCharacter_cannot_be_created_with_his_hitbox_outside_the_map()
         {
             Game g = new Game();
