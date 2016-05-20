@@ -118,11 +118,6 @@ namespace ITI.HistoryTreasures
             get { return _mCtx; }
         }
 
-        /*public Game GameContext //commentaire
-        {
-            get { return _gtcx; }
-        }*/
-
         /*public Map CreateMap(this, List<PNJ> Pnj, MainCharacter mC)
         {
             _mCtx = new Map(this, 10, 10);
