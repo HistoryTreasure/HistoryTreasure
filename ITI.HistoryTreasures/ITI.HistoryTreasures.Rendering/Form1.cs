@@ -16,8 +16,7 @@ namespace ITI.HistoryTreasures.Rendering
     {
         int _cursX = 0;
         int _cursY = 0;
-
-        MapDesign _Eau;
+        
         Bitmap _herb = Properties.Resources.herbe;
         Theme _tCtx;
 
