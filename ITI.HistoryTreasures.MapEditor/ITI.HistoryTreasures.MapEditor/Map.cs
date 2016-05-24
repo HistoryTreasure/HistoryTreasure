@@ -8,5 +8,6 @@ namespace ITI.HistoryTreasures.MapEditor
 {
     public class Map
     {
+        Tile[,] _tileArray;
     }
 }

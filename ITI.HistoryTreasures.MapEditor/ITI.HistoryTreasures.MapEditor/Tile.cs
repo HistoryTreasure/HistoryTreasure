@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITI.HistoryTreasures.MapEditor.Core
+namespace ITI.HistoryTreasures.MapEditor
 {
     public class Tile
     {
