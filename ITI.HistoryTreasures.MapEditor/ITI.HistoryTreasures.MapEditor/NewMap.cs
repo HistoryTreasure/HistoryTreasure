@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace ITI.HistoryTreasures.MapEditor
 {
-    public partial class Form1 : Form
+    public partial class NewMap : Form
     {
-        public Form1()
+        public NewMap()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Button Cancel.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
