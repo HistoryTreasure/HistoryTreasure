@@ -29,9 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.gameControl1 = new ITI.HistoryTreasures.Rendering.GameControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.gameControl1 = new ITI.HistoryTreasures.Rendering.GameControl();
             this.SuspendLayout();
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 600;
+            //this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // gameControl1
             // 
@@ -41,12 +47,7 @@
             this.gameControl1.Name = "gameControl1";
             this.gameControl1.Size = new System.Drawing.Size(584, 561);
             this.gameControl1.TabIndex = 0;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 600;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.gameControl1.SizeChanged += new System.EventHandler(this.gameControl1_SizeChanged);
             // 
             // HistoryTreasures
             // 

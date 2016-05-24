@@ -42,10 +42,10 @@ namespace ITI.HistoryTreasures.Rendering
             if (_lCtx == null) return;
             Tile[,] tileArray = _lCtx.MapContext.TileArray;
             Size _windowSize = HistoryTreasures.ActiveForm.Size;
-            int x = _windowSize.Width / 30;
-            int y = _windowSize.Height / 30;
-            int width = _windowSize.Width / 30;
-            int height = _windowSize.Height / 30;
+            int x = 0;
+            int y = 0;
+            int width = _windowSize.Width / tileArray.GetLength(0);
+            int height = _windowSize.Height / tileArray.GetLength(1);
 
             //Resizing the Form to an almost perfect square
             HistoryTreasures.ActiveForm.Size = new Size(_windowSize.Height, _windowSize.Height);
@@ -57,11 +57,24 @@ namespace ITI.HistoryTreasures.Rendering
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = _resourcesManager.GetTileBitmap(t);
                     e.Graphics.DrawImage(tileBitmap, x, y, width, height);
-                    x += 30;
+                    x += _windowSize.Width / tileArray.GetLength(0);
                 }
-                x = _windowSize.Width / 30;
-                y += 30;
+                x = 0;
+                y += _windowSize.Height / tileArray.GetLength(1);
             }
+        }
+
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // GameControl
+            // 
+            this.DoubleBuffered = true;
+            this.Name = "GameControl";
+            this.ResumeLayout(false);
+
         }
     }
 }

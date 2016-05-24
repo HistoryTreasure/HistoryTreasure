@@ -18,13 +18,13 @@ namespace ITI.HistoryTreasures
         {
             _level = level;
             TileArray = _tileArray;
-            _tileArray = new Tile[width, height /*5, 5*/];
+            _tileArray = new Tile[/*width, height*/ 5, 5];
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < height; j++)
                 {
-                    _tileArray[i, j] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    /*_tileArray[0, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    //_tileArray[i, j] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[0, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[0, 1] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[0, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[0, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
@@ -48,7 +48,7 @@ namespace ITI.HistoryTreasures
                     _tileArray[4, 1] = new Tile(true, TileEnum.WATER, level.MapContext);
                     _tileArray[4, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[4, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[4, 4] = new Tile(true, TileEnum.WATER, level.MapContext);*/
+                    _tileArray[4, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
                 }
             }
         }
