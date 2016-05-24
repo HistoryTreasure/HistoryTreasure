@@ -24,5 +24,20 @@ namespace ITI.HistoryTreasures.MapEditor
             _tileName = tileName;
             _mapContext = mapContext;
         }
+
+        public bool IsSolid
+        {
+            get { return _isSolid; }
+        }
+
+        public TileEnum TileName
+        {
+            get { return _tileName; }
+        }
+
+        public Map MapContext
+        {
+            get { return _mapContext; }
+        }
     }
 }

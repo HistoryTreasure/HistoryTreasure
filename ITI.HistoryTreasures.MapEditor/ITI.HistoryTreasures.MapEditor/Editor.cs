@@ -8,8 +8,6 @@ namespace ITI.HistoryTreasures.MapEditor
 {
     class Editor
     {
-        
-
 
     }
 }
