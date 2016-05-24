@@ -12,8 +12,8 @@ namespace ITI.HistoryTreasures.MapEditor
 {
     public partial class NewMap : Form
     {
-        private int width;
-        private int height;
+        private int _width;
+        private int _height;
         private Map m;
 
         public NewMap()
@@ -28,7 +28,7 @@ namespace ITI.HistoryTreasures.MapEditor
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void button1_Click(object sender, EventArgs e)
         {
-            m = new Map(width,height);
+            m = new Map(_width,_height);
             Close();
         }
 
@@ -49,7 +49,7 @@ namespace ITI.HistoryTreasures.MapEditor
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            width = Convert.ToInt32(numericUpDown1.Value);
+            _width = Convert.ToInt32(numericUpDown1.Value);
         }
 
         /// <summary>
@@ -59,12 +59,9 @@ namespace ITI.HistoryTreasures.MapEditor
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
-            height = Convert.ToInt32(numericUpDown2.Value);
+            _height = Convert.ToInt32(numericUpDown2.Value);
         }
 
-        public Map GetMap
-        {
-            get { return m; }
-        }
+        
     }
 }
