@@ -10,18 +10,19 @@ namespace ITI.HistoryTreasures.MapEditor.Core
     {
         bool _isSolid;
         TileEnum _tileName;
+        Map _mapContext;
 
         /// <summary>
         /// Tile Constructor create Tile.
         /// </summary>
         /// <param name="isSolid">This parameter define if a tile can be cross.</param>
         /// <param name="tileName">This parameter define the tileName.</param>
-        public Tile(bool isSolid, TileEnum tileName)
+        /// <param name="mapContext">This parameter define the MapContext.</param>
+        public Tile(bool isSolid, TileEnum tileName, Map mapContext)
         {
             _isSolid = isSolid;
             _tileName = tileName;
+            _mapContext = mapContext;
         }
-
-
     }
 }
