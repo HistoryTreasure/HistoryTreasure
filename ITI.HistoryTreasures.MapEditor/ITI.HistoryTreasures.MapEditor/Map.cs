@@ -9,5 +9,10 @@ namespace ITI.HistoryTreasures.MapEditor
     public class Map
     {
         Tile[,] _tileArray;
+
+        public Map(int width, int height)
+        {
+            _tileArray = new Tile[width,height];
+        }
     }
 }

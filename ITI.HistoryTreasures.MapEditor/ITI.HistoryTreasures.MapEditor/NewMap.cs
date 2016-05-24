@@ -12,9 +12,24 @@ namespace ITI.HistoryTreasures.MapEditor
 {
     public partial class NewMap : Form
     {
+        private int width;
+        private int height;
+        private Map m;
+
         public NewMap()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Button save.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            m = new Map(width,height);
+            Close();
         }
 
         /// <summary>
@@ -25,6 +40,31 @@ namespace ITI.HistoryTreasures.MapEditor
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// Width textbox.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            width = Convert.ToInt32(numericUpDown1.Value);
+        }
+
+        /// <summary>
+        /// Height textbox.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+            height = Convert.ToInt32(numericUpDown2.Value);
+        }
+
+        public Map GetMap
+        {
+            get { return m; }
         }
     }
 }
