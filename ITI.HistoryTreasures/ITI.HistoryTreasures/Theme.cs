@@ -11,6 +11,7 @@ namespace ITI.HistoryTreasures
         bool _isFinish;
         readonly List<Level> _levels;
         Game _ctx;
+        MainCharacter _mainCharacter;
 
         /// <summary>
         /// This constructor create a theme.
@@ -59,6 +60,11 @@ namespace ITI.HistoryTreasures
             set { _ctx = value; }
         }
 
+        public MainCharacter MainCharacter
+        {
+            get { return _mainCharacter; }
+        }
+
         /// <summary>
         /// Gets the level list.
         /// </summary>
@@ -76,7 +82,7 @@ namespace ITI.HistoryTreasures
         /// <param name="name">This parameter define name of Level.</param>
         public Level CreateLevel(string name)
         {
-            Level l = new Level(this, name);
+            Level l = new Level(this, "Level");
             _levels.Add(l);
             return l;
         }

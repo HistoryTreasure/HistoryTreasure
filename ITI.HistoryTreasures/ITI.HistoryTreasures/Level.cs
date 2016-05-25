@@ -20,7 +20,7 @@ namespace ITI.HistoryTreasures
         /// </summary>
         /// <param name="ctx">This parameter reference the theme of the level.</param>
         /// <param name="name">This parameter reference name of level.</param>
-        public Level(Theme ctx, MainCharacter mC, string name)
+        public Level(Theme ctx, string name)
         {
             for(int i = 0; i < ctx.Levels.Count; i++)
             {
@@ -31,7 +31,6 @@ namespace ITI.HistoryTreasures
             }
 
             _ctx = ctx;
-            _mainCharacter = mC;
             _name = name;
             _isFinish = false;
             _mainCharacter = CreateMain(ctx,16,16,"Test", "Judd" );
@@ -57,6 +56,11 @@ namespace ITI.HistoryTreasures
         public List<PNJ> PNJ
         {
             get { return _pnj; }
+        }
+
+        public List<Clue> Clues
+        {
+            get { return _clues; }
         }
 
         /// <summary>

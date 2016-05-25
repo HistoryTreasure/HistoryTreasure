@@ -56,6 +56,8 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// This property returns a level.
         /// </summary>
+        public Level Level
+        { 
             get { return _level; }
         }
 
