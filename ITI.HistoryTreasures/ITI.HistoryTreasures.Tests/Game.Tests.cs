@@ -123,6 +123,21 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
+        [Ignore("Not completed")]
+        public void Level_method_interaction_work_between_MainCharacter_and_Clue()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 7, 15, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
+            g._themes.Add(t);
+            t._levels.Add(l);
+            Clue c = new Clue("Livre", l, false, 10, 10, "Un indice ? Son nom est François.");
+            l._clues.Add((c));
+            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo("Un indice ? Son nom est François."));
+        }
+
+        [Test]
         public void Levels_return_correctly_main_character()
         {
             Game g = new Game();

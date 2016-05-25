@@ -12,6 +12,7 @@ namespace ITI.HistoryTreasures
         public List<PNJ> _pnj;
         Theme _ctx;
         MainCharacter _mainCharacter;
+        public List<Clue> _clues;
 
         /// <summary>
         /// This constructor create a level.
@@ -25,6 +26,7 @@ namespace ITI.HistoryTreasures
             _name = name;
             _isFinish = false;
             _pnj = new List<PNJ>();
+            _clues = new List<Clue>();
         }
 
         /// <summary>
@@ -60,6 +62,11 @@ namespace ITI.HistoryTreasures
             get { return _mainCharacter; }
         }
 
+        /// <summary>
+        /// Interactions with the PNJ.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns></returns>
         public string InteractionWithPNJ(KeyEnum key)
         {
             string _talk = "";
@@ -82,5 +89,28 @@ namespace ITI.HistoryTreasures
             }
             return _talk;
         }
+
+        /*public string InteractionsWithClue(KeyEnum key)
+        {
+            string _speech = "";
+            for (int i = 0; i < _clues.Count; i++)
+            {
+                if (((_mainCharacter.HitBox.xA - _clues[i].HitBox.xA > 32) || (_mainCharacter.HitBox.xA - _clues[i].HitBox.xA < 33))
+                   || ((_clues[i].HitBox.xA - _mainCharacter.HitBox.xA > 32) || (_clues[i].HitBox.xA - _mainCharacter.HitBox.xA < 33))
+                   && ((_clues[i].HitBox.yA - _mainCharacter.HitBox.yA > 32) || (_clues[i].HitBox.yA - _mainCharacter.HitBox.yA < 33))
+                   || ((_mainCharacter.HitBox.yA - _clues[i].HitBox.yA > 32) || (_mainCharacter.HitBox.yA - _clues[i].HitBox.yA < 33)))
+                {
+                    key = KeyEnum.action;
+                    _speech = _clues[i].Speech;
+                }
+
+                else
+                {
+                    break;
+                }
+            }
+
+            return _speech;
+        }*/
     }
 }

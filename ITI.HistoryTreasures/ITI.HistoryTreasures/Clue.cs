@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures
 {
-    internal class Clue
+    public class Clue
     {
         readonly string _name;
         readonly Level _lCtx;
@@ -98,7 +98,7 @@ namespace ITI.HistoryTreasures
         /// <value>
         /// The hitbox.
         /// </value>
-        public Hitbox Hitbox
+        public Hitbox HitBox
         {
             get { return _hitbox; }
         }
