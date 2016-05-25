@@ -16,6 +16,15 @@ namespace ITI.HistoryTreasures
         /// </summary>
         /// <param name="level">Level context.</param>
         public Map(Level level, int width, int height)
+=======
+        string _name;
+        public Map(string name)
+        {
+            _name = name;
+        }
+
+        public Level Level
+>>>>>>> Hitbox
         {
             _level = level;
             TileArray = _tileArray;
@@ -58,21 +67,11 @@ namespace ITI.HistoryTreasures
         /// This property returns a level.
         /// </summary>
         public Level Level
-        {
+        { 
             get { return _level; }
         }
 
-        /// <summary>
-        /// This property returns tile array (2D).
-        /// </summary>
-        /*public Tile[,] map1
-        {
-            get
-            {
-                Tile _floor = new Tile(false, TileEnum.BOATFLOOR, this);
-                return _tileArray = new Tile[,] { { _floor, _floor }, { _floor, _floor } };
-            }
-        }*/
+
 
         /// <summary>
         /// This property returns field tilearray.
@@ -97,20 +96,6 @@ namespace ITI.HistoryTreasures
         public int Width
         {
             get { return _tileArray.GetLength(0); }
-=======
-        Level _level;
-        Tile[,] _tileArray;
-
-        public Map(Level level, int width, int height)
-        {
-            _level = level;
-            _tileArray = new Tile[width, height];
-        }
-
-        public Level Level
-        {
-            get { return _level; }
->>>>>>> Interactions
         }
     }
 }

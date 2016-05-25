@@ -30,7 +30,11 @@
   <Class Name="ITI.HistoryTreasures.Map" Collapsed="true">
     <Position X="10.25" Y="3" Width="1.5" />
     <TypeIdentifier>
+<<<<<<< HEAD
       <HashCode>AAAAAAAABAAAAAAAAAAAAUAAAAAAAAABAAAACAAAAEA=</HashCode>
+=======
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+>>>>>>> Hitbox
       <FileName>Map.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -70,7 +74,11 @@
   <Class Name="ITI.HistoryTreasures.Level" Collapsed="true">
     <Position X="7.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
+<<<<<<< HEAD
       <HashCode>AAAAIAAAAAgEAAAWAAAAAAQgACABEAQAAAAAAACAAAE=</HashCode>
+=======
+      <HashCode>gAAAIAAAAAgAAAAWAAAAAAQgACABAAAAAAAAAAAAAAA=</HashCode>
+>>>>>>> Hitbox
       <FileName>Level.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -91,11 +99,7 @@
   <Class Name="ITI.HistoryTreasures.Tile" Collapsed="true">
     <Position X="12.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-<<<<<<< HEAD
-      <HashCode>AAAAAAAIABAAAAAAAAAIAAAAAAAAAgAAABAAAAAAACA=</HashCode>
-=======
-      <HashCode>AAAAAAAAABAAACAAAAAIAAAAAAAAAgAAABAAAAAAACA=</HashCode>
->>>>>>> Interactions
+      <HashCode>AAAAAAAAABAABCAAAgAIAAAAAAAgAgAAABAAwAAAQCA=</HashCode>
       <FileName>Tile.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -105,7 +109,7 @@
   <Class Name="ITI.HistoryTreasures.MainCharacter" Collapsed="true">
     <Position X="1.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAAAAABAEAAAABAAAAAAAABAAQAAABAAA=</HashCode>
+      <HashCode>AAAAwAAAAAAAAAAABAEAAAABAAAAAAAABAAAAAQBAAA=</HashCode>
       <FileName>MainCharacter.cs</FileName>
     </TypeIdentifier>
   </Class>

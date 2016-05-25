@@ -32,6 +32,7 @@ namespace ITI.HistoryTreasures
             _name = name;
             _isFinish = false;
             _levels = new List<Level>();
+            ctx.Themes.Add(this);
         }
 
         /// <summary>
@@ -85,6 +86,14 @@ namespace ITI.HistoryTreasures
             Level l = new Level(this, "Level");
             _levels.Add(l);
             return l;
+        }
+
+        /// <summary>
+        /// This properties return list of levels.
+        /// </summary>
+        public List<Level> Levels
+        {
+            get { return _levels; }
         }
 
         /// <summary>

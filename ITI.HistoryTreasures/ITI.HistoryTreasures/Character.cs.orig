@@ -8,13 +8,22 @@ namespace ITI.HistoryTreasures
 {
     public abstract class Character
     {
+<<<<<<< HEAD
         int _positionX;
         int _positionY;
         string _bitMapName;
         string _name;
         readonly Game _ctx;
         readonly Hitbox _hitBox;
+=======
+        int _positionX; //Position X to find a character
+        int _positionY; //Position Y to find a character
+        string _bitMapName; //To search the apparence of a character
+        string _name; //Name of character
+        Game _ctx; //Game context
+        Hitbox _hitBox;
         MainCharacter _mc;
+>>>>>>> Hitbox
 
         /// <summary>
         /// This constructor allow to create a Character.

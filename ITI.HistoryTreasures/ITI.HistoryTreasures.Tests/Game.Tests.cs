@@ -128,9 +128,33 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
         }
 
-        /*[Test]
+        [Test]
         [Ignore("Not completed")]
         public void Level_method_interaction_work_between_MainCharacter_and_Clue()
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
+
+            PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "Hello world !");
+            
+            Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
+        }
+
+        [Test]
+        public void Level_method_interaction_work_in_diagonal_between_MainCharacter_and_PNJ()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
+    
+            PNJ pnj = new PNJ(g, l, 48, 48, "test", "Hawke", "Hello world !");
+            
+            Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
+        }
+
+        [Test]
         {
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
@@ -139,7 +163,7 @@ namespace ITI.HistoryTreasures.Tests
             Clue c = new Clue("Livre", l, false, 10, 10, "Un indice ? Son nom est François.");
             l._clues.Add((c));
             Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo("Un indice ? Son nom est François."));
-        }*/
+        }
 
         [Test]
         public void Levels_return_correctly_main_character()

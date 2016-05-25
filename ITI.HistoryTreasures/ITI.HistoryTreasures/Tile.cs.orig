@@ -8,12 +8,10 @@ namespace ITI.HistoryTreasures
 {
     public class Tile
     {
+<<<<<<< HEAD
         readonly bool _isSolid;
         readonly TileEnum _tileName;
         readonly Map _mapContext;
-        Hitbox _hitbox;
-        readonly int _posX;
-        readonly int _posY;
 
         /// <summary>
         /// Tile Constructor create Tile.
@@ -21,6 +19,17 @@ namespace ITI.HistoryTreasures
         /// <param name="isSolid">This parameter define if a tile can be cross.</param>
         /// <param name="tileName">This parameter define the tileName.</param>
         /// <param name="mapContext">This parameter define the MapContext.</param>
+        public Tile(bool isSolid, TileEnum tileName, Map mapContext)
+=======
+        bool _isSolid;
+        TileEnum _tileName;
+        Map _mapContext;
+        Hitbox _hitbox;
+        readonly int _posX;
+        readonly int _posY;
+
+        public Tile(bool isSolid, TileEnum tileName, Map mapContext, int posX, int posY)
+>>>>>>> Hitbox
         {
             _isSolid = isSolid;
             _tileName = tileName;

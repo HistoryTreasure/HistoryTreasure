@@ -27,12 +27,8 @@ namespace ITI.HistoryTreasures
             {
                 throw new ArgumentException("You cannot create a PNJ with this coordonate");
             }
-            
-                 else if (X < 16)
-            {
-                throw new ArgumentException("You cannot create a character with his hitbox outside the map.");
-            }
 
+<<<<<<< HEAD
             for (int i = 0; i < ctx.PNJ.Count; i++)
             {
                 if (ctx.PNJ[i].Name == name)
@@ -42,6 +38,15 @@ namespace ITI.HistoryTreasures
             }
 
             _ctx = ctx;
+            _speech = speech;
+=======
+            else if (X < 16)
+            {
+                throw new ArgumentException("You cannot create a character with his hitbox outside the map.");
+            }
+
+            _ctx = ctx;
+
             if (Level.PNJ.Count != 0)
             {
                 foreach (PNJ p in Level._pnj)
@@ -55,6 +60,7 @@ namespace ITI.HistoryTreasures
             _speech = speech;
 
             ctx.PNJ.Add(this);
+>>>>>>> Hitbox
         }
 
         /// <summary>
