@@ -7,9 +7,9 @@ namespace ITI.HistoryTreasures
 {
     public class Theme
     {
-        string _name;
+        readonly string _name;
         bool _isFinish;
-        public List<Level> _levels;
+        readonly List<Level> _levels;
         Game _ctx;
 
         /// <summary>
@@ -19,6 +19,14 @@ namespace ITI.HistoryTreasures
         /// <param name="name">This parameter reference name of level.</param>
         public Theme(Game ctx, string name)
         {
+            for (int i = 0; i < ctx.Themes.Count; i++)
+            {
+                if (ctx.Themes[i].Name == name)
+                {
+                    throw new InvalidOperationException("You cannot create two themes with same name");
+                }
+            }
+
             _ctx = ctx;
             _name = name;
             _isFinish = false;
@@ -26,7 +34,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return the theme name.
+        /// This property returns the theme name.
         /// </summary>
         public string Name
         {
@@ -34,7 +42,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return if a level is finish.
+        /// This property returns if a level is finish.
         /// </summary>
         public bool IsFinish
         {
@@ -43,12 +51,34 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return the context of the game.
+        /// This property returns the context of the game.
         /// </summary>
         public Game Game
         {
             get { return _ctx; }
             set { _ctx = value; }
+        }
+
+        /// <summary>
+        /// Gets the level list.
+        /// </summary>
+        /// <value>
+        /// The levels.
+        /// </value>
+        public List<Level> Levels
+        {
+            get { return _levels; }
+        }
+
+        /// <summary>
+        /// This method serve to create a level.
+        /// </summary>
+        /// <param name="name">This parameter define name of Level.</param>
+        public Level CreateLevel(string name)
+        {
+            Level l = new Level(this, name);
+            _levels.Add(l);
+            return l;
         }
 
         /// <summary>

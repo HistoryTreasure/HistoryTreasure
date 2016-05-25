@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ITI.HistoryTreasures.Rendering
 {
-    public class Sprites : Resources
+    public class Sprites : Resource
     {
     }
 }

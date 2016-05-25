@@ -8,15 +8,15 @@ namespace ITI.HistoryTreasures
 {
     public abstract class Character
     {
-        int _positionX; //Position X to find a character
-        int _positionY; //Position Y to find a character
-        string _bitMapName; //To search the apparence of a character
-        string _name; //Name of character
-        Game _ctx; //Game context
-        Hitbox _hitBox;
+        int _positionX;
+        int _positionY;
+        string _bitMapName;
+        string _name;
+        readonly Game _ctx;
+        readonly Hitbox _hitBox;
 
         /// <summary>
-        /// This constructor allow to create a Character
+        /// This constructor allow to create a Character.
         /// </summary>
         /// <param name="ctx">This parameter reference character contains in game.</param>
         /// <param name="X">This parameter reference horizontal position with an int.</param>
@@ -34,7 +34,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return horizontal position with an int.
+        /// This property returns horizontal position with an int.
         /// </summary>
         public int positionX
         {
@@ -45,13 +45,12 @@ namespace ITI.HistoryTreasures
                 {
                     throw new ArgumentException("You cannot move outside the map");
                 }
-   
                     _positionX = value;      
             }
         }
 
         /// <summary>
-        /// This properties return vertical position with an int.
+        /// This property returns vertical position with an int.
         /// </summary>
         public int positionY
         {
@@ -68,7 +67,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return appaerance of Character.
+        /// This property returns appaerance of Character.
         /// </summary>
         public string BitMapName
         {
@@ -77,7 +76,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return the name of the character.
+        /// This property returns the name of the Character.
         /// </summary>
         public string Name
         {
@@ -86,7 +85,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This propertie return game context.
+        /// This property returns game context.
         /// </summary>
         public Game Game
         {
@@ -94,7 +93,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This propertie return hitbox.
+        /// This property returns hitbox.
         /// </summary>
         public Hitbox HitBox
         {

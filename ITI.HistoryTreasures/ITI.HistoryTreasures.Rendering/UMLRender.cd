@@ -2,27 +2,32 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ITI.HistoryTreasures.Rendering.Rendering" Collapsed="true">
     <Position X="6" Y="0.5" Width="1.5" />
+    <AssociationLine Name="MapDesign" Type="ITI.HistoryTreasures.MapDesign">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.165" Y="0.377" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Rendering.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Resources" />
       <Property Name="MapDesign" />
     </ShowAsAssociation>
   </Class>
   <Class Name="ITI.HistoryTreasures.MapDesign" Collapsed="true">
     <Position X="9" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAQASAABAAAAAAAAAAAAAAIAAAAAAAAAAAAYAA=</HashCode>
       <FileName>MapDesign.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="ITI.HistoryTreasures.Resources" Collapsed="true">
+  <Class Name="ITI.HistoryTreasures.Resource" Collapsed="true">
     <Position X="3" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Resources.cs</FileName>
+      <FileName>Resource.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ITI.HistoryTreasures.Rendering.Sound" Collapsed="true">

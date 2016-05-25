@@ -7,11 +7,11 @@ namespace ITI.HistoryTreasures
 {
     public class MainCharacter : Character
     {
-        int _speed;
+        readonly int _speed;
         int _life;
 
         /// <summary>
-        /// This constructor allow to create MainCharacter
+        /// This constructor allow to create MainCharacter.
         /// </summary>
         /// <param name="ctx">This parameter reference the MainCharacter contains in game.</param>
         /// <param name="X">This parameter reference horizontal position with an int.</param>
@@ -30,7 +30,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return a speed with an int.
+        /// This property returns a speed with an int.
         /// </summary>
         public int Speed
         {
@@ -38,7 +38,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return number of life with an int.
+        /// This property returns number of life with an int.
         /// </summary>
         public int Life
         {

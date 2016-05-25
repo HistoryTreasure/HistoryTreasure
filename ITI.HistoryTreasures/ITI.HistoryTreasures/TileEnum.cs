@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures
 {
+
+    /// <summary>
+    /// This enumeration contains all name of Tiles.
+    /// </summary>
     public enum TileEnum
     {
        WATER,GRASS,

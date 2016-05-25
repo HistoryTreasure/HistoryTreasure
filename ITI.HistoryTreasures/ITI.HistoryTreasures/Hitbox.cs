@@ -18,7 +18,7 @@ namespace ITI.HistoryTreasures
         int _yD;
 
         /// <summary>
-        /// This constructor allow to create a Rectangle 
+        /// This constructor allow to create a Rectangle. 
         /// </summary>
         /// <param name="ctx">This parameter reference rectangle contains in character.</param>
         /// <param name="xA">Coordonate X in a point A.</param>
@@ -42,7 +42,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return coordonate of our Rectangle.
+        /// This property returns coordonate of our Rectangle.
         /// </summary>
         public int xA { get { return _xA; } set { _xA = value; } }
         public int yA { get { return _yA; } set { _yA = value; } }

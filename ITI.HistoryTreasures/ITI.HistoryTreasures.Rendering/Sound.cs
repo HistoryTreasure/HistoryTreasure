@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures.Rendering
 {
-    class Sound : Resources
+    class Sound : Resource
     {
     }
 }

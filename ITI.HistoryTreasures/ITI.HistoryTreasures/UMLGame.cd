@@ -20,7 +20,7 @@
   <Class Name="ITI.HistoryTreasures.Game" Collapsed="true">
     <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAQAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -30,7 +30,7 @@
   <Class Name="ITI.HistoryTreasures.Map" Collapsed="true">
     <Position X="10.25" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAUAAAAAAAAABAAAACAAAAEA=</HashCode>
       <FileName>Map.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -57,7 +57,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>IAAAIAAAAAAAAAAEAAAAAAQAACgBAAgAAAAAAAAAAAA=</HashCode>
+      <HashCode>IQAAIAAAAAAAAAAEAAAAAAQAACgBAAgBAAAAAAAAAAA=</HashCode>
       <FileName>Theme.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -70,7 +70,7 @@
   <Class Name="ITI.HistoryTreasures.Level" Collapsed="true">
     <Position X="7.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAgAAAAWAAAAAAQgACABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAAgEAAAWAAAAAAQgACABEAQAAAAAAACAAAE=</HashCode>
       <FileName>Level.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -91,12 +91,11 @@
   <Class Name="ITI.HistoryTreasures.Tile" Collapsed="true">
     <Position X="12.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAACAAAgAIAAAAAAAAAgAAABAAAAAAACA=</HashCode>
+      <HashCode>AAAAAAAIABAAAAAAAAAIAAAAAAAAAgAAABAAAAAAACA=</HashCode>
       <FileName>Tile.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Map" />
-      <Property Name="TileEnum" />
     </ShowAsAssociation>
   </Class>
   <Class Name="ITI.HistoryTreasures.MainCharacter" Collapsed="true">
@@ -109,8 +108,15 @@
   <Class Name="ITI.HistoryTreasures.Hitbox" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AwAAAACIAQQAAADAYAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AwAAAACIAQQAAADAYAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Hitbox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ITI.HistoryTreasures.Clue" Collapsed="true">
+    <Position X="11.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Clue.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="ITI.HistoryTreasures.TileEnum" Collapsed="true">

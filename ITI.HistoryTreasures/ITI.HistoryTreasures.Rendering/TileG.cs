@@ -6,31 +6,34 @@ using System.Drawing;
 
 namespace ITI.HistoryTreasures
 {
-    class TileG : Resources
+    class TileG : Resource
     {
-        Image _sprite; //reference to an image
+        Bitmap _tileG; //reference to an image
         TileEnum _tileName;
 
         /// <summary>
-        /// Constructor for the Tile 
+        /// This contructor instantiate TileG.
         /// </summary>
-        /// <param name="Sprite"></param>
-        /// <param name="tileName"></param>
-        public TileG(Image Sprite, TileEnum tileName)
+        /// <param name="tileG">This parameter contains the tile bitmap.</param>
+        /// <param name="tileName">This parameter contains the tileName.</param>
+        public TileG(Bitmap tileG, TileEnum tileName)
         {
-            if (Sprite == null) throw new ArgumentNullException();
-            _sprite = Sprite;
+            if (TileGr == null) throw new ArgumentNullException();
+            _tileG = tileG;
             _tileName = tileName;
         }
 
         /// <summary>
-        /// Tile Image
+        /// This property returns a tile.
         /// </summary>
-        public Image Sprite
+        public Bitmap TileGr
         {
-            get { return _sprite; }
+            get { return _tileG; }
         }
 
+        /// <summary>
+        /// This property returns MapDesign context.
+        /// </summary>
         public MapDesign MapDesign
         {
             get

@@ -9,7 +9,7 @@ namespace ITI.HistoryTreasures
 {
     public class Game
     {
-        public List<Theme> _themes;
+        readonly List<Theme> _themes;
 
         /// <summary>
         /// This constructor create a game and initialize our list of theme.
@@ -17,6 +17,17 @@ namespace ITI.HistoryTreasures
         public Game()
         {
             _themes = new List<Theme>();            
+        }
+
+        /// <summary>
+        /// This method serve to create a Theme. 
+        /// </summary>
+        /// <param name="name">This parameter define name of theme.</param>
+        public Theme CreateTheme(string name)
+        {
+            Theme t = new Theme(this, name);
+            _themes.Add(t);
+            return t;
         }
 
         /// <summary>
