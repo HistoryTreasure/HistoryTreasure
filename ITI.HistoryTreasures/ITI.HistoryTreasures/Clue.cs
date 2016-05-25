@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures
 {
-    class Clue
+    internal class Clue
     {
+        
+
+        public Clue()
+        {
+            
+        }
     }
 }
