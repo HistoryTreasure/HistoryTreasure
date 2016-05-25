@@ -9,24 +9,21 @@ namespace ITI.HistoryTreasures
     {
         readonly string _name;
         bool _isFinish;
-<<<<<<< HEAD
         readonly List<PNJ> _pnj;
         readonly Theme _ctx;
         readonly MainCharacter _mainCharacter;
-        readonly Map _mCtx;
-=======
-        public List<PNJ> _pnj;
-        Theme _ctx;
-        MainCharacter _mainCharacter;
+<<<<<<< HEAD
         public List<Clue> _clues;
->>>>>>> Interactions
+=======
+>>>>>>> MapEditor
+        readonly Map _mCtx;
 
         /// <summary>
         /// This constructor create a level.
         /// </summary>
         /// <param name="ctx">This parameter reference the theme of the level.</param>
         /// <param name="name">This parameter reference name of level.</param>
-        public Level(Theme ctx, MainCharacter mC, string name)
+        public Level(Theme ctx, string name)
         {
             for(int i = 0; i < ctx.Levels.Count; i++)
             {
@@ -37,16 +34,12 @@ namespace ITI.HistoryTreasures
             }
 
             _ctx = ctx;
-            _mainCharacter = mC;
             _name = name;
             _isFinish = false;
             _mainCharacter = CreateMain(ctx,16,16,"Test", "Judd" );
             _pnj = new List<PNJ>();
-<<<<<<< HEAD
             _mCtx = new Map(this, 10, 10);
-=======
             _clues = new List<Clue>();
->>>>>>> Interactions
         }
 
         /// <summary>
@@ -66,6 +59,11 @@ namespace ITI.HistoryTreasures
         public List<PNJ> PNJ
         {
             get { return _pnj; }
+        }
+
+        public List<Clue> Clues
+        {
+            get { return _clues; }
         }
 
         /// <summary>
@@ -120,22 +118,6 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-<<<<<<< HEAD
-        /// Gets the map context.
-        /// </summary>
-        /// <value>
-        /// The map context.
-        /// </value>
-        public Map MapContext
-        {
-            get { return _mCtx; }
-        }
-
-        /*public Map CreateMap(this, List<PNJ> Pnj, MainCharacter mC)
-        {
-            _mCtx = new Map(this, 10, 10);
-
-=======
         /// Interactions with the PNJ.
         /// </summary>
         /// <param name="key">The key.</param>
@@ -162,6 +144,17 @@ namespace ITI.HistoryTreasures
             }
             return _talk;
         }
+        
+        /// <summary>
+        /// Gets the map context.
+        /// </summary>
+        /// <value>
+        /// The map context.
+        /// </value>
+        public Map MapContext
+        {
+            get { return _mCtx; }
+        }
 
         /*public string InteractionsWithClue(KeyEnum key)
         {
@@ -184,7 +177,6 @@ namespace ITI.HistoryTreasures
             }
 
             return _speech;
->>>>>>> Interactions
         }*/
     }
 }
