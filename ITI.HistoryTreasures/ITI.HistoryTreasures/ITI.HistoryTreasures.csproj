@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="Clue.cs" />
     <Compile Include="KeyEnum.cs" />
     <Compile Include="Hitbox.cs" />
     <Compile Include="Tile.cs" />
