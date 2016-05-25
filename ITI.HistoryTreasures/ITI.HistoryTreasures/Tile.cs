@@ -8,9 +8,9 @@ namespace ITI.HistoryTreasures
 {
     public class Tile
     {
-        bool _isSolid;
-        TileEnum _tileName;
-        Map _mapContext;
+        readonly bool _isSolid;
+        readonly TileEnum _tileName;
+        readonly Map _mapContext;
 
         /// <summary>
         /// Tile Constructor create Tile.

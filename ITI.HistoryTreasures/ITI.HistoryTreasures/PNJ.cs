@@ -7,7 +7,7 @@ namespace ITI.HistoryTreasures
 {
     public class PNJ : Character
     {
-        string _speech;
+        readonly string _speech;
         readonly Level _ctx;
 
         /// <summary>

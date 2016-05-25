@@ -7,7 +7,7 @@ namespace ITI.HistoryTreasures
 {
     public class MainCharacter : Character
     {
-        int _speed;
+        readonly int _speed;
         int _life;
 
         /// <summary>
