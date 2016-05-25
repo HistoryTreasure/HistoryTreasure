@@ -9,10 +9,10 @@ namespace ITI.HistoryTreasures
     {
         readonly string _name;
         bool _isFinish;
-        List<PNJ> _pnj;
-        Theme _ctx;
-        MainCharacter _mainCharacter;
-        Map _mCtx;
+        readonly List<PNJ> _pnj;
+        readonly Theme _ctx;
+        readonly MainCharacter _mainCharacter;
+        readonly Map _mCtx;
 
         /// <summary>
         /// This constructor create a level.

@@ -7,9 +7,9 @@ namespace ITI.HistoryTreasures
 {
     public class Theme
     {
-        string _name;
+        readonly string _name;
         bool _isFinish;
-        List<Level> _levels;
+        readonly List<Level> _levels;
         Game _ctx;
 
         /// <summary>

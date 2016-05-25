@@ -7,7 +7,7 @@ namespace ITI.HistoryTreasures
 {
     public class Map
     {
-        Level _level;
+        readonly Level _level;
         Tile[,] _tileArray;
 
         /// <summary>

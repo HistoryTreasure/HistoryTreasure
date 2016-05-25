@@ -12,8 +12,8 @@ namespace ITI.HistoryTreasures
         int _positionY;
         string _bitMapName;
         string _name;
-        Game _ctx;
-        Hitbox _hitBox;
+        readonly Game _ctx;
+        readonly Hitbox _hitBox;
 
         /// <summary>
         /// This constructor allow to create a Character.
