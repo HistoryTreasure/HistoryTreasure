@@ -12,8 +12,8 @@ namespace ITI.HistoryTreasures.MapEditor
 {
     public partial class NewMap : Form
     {
-        private int _width;
-        private int _height;
+        private int _width = 2;
+        private int _height = 2;
         private Map m;
 
         public NewMap()

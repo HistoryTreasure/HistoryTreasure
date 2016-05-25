@@ -12,8 +12,8 @@ namespace ITI.HistoryTreasures.MapEditor
 
         public Map(int width, int height)
         {
-            if( width <= 0 || height <=0)
-                throw new ArgumentException("The array size cannot be negative");
+            if( width <= 1 || height <= 1)
+                throw new ArgumentException("The array size cannot be negative or less than 2");
                 
             _tileArray = new Tile[width,height];
         }
