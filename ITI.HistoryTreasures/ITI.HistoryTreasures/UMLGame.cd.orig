@@ -91,7 +91,11 @@
   <Class Name="ITI.HistoryTreasures.Tile" Collapsed="true">
     <Position X="12.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAACAAAgAIAAAAAAAAAgAAABAAAAAAACA=</HashCode>
+<<<<<<< HEAD
+      <HashCode>AAAAAAAIABAAAAAAAAAIAAAAAAAAAgAAABAAAAAAACA=</HashCode>
+=======
+      <HashCode>AAAAAAAAABAAACAAAAAIAAAAAAAAAgAAABAAAAAAACA=</HashCode>
+>>>>>>> Interactions
       <FileName>Tile.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

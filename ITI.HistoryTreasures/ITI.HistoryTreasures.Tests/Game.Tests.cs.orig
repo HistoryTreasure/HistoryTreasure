@@ -36,9 +36,16 @@ namespace ITI.HistoryTreasures.Tests
         public void Themes_is_finish_if_all_levels_are_complete()
         {
             Game g = new Game();
+<<<<<<< HEAD
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
+=======
+            Theme t = new Theme(g, "theme");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
             Level l = new Level(t, mC, "level");
+            g._themes.Add(t);
+            t._levels.Add(l);
+>>>>>>> Interactions
 
             l.IsFinish = true;
             t.FinishTheme();
@@ -63,10 +70,19 @@ namespace ITI.HistoryTreasures.Tests
         public void Levels_are_created_and_have_a_name_and_is_correctly_add_to_his_list()
         {
             Game g = new Game();
+<<<<<<< HEAD
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
             string name = "Level";
 
+=======
+            Theme t = new Theme(g, "Test");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Level l = new Level(t, mC, "Try");
+            string name = "Try";
+            g._themes.Add(t);
+            t._levels.Add(l);
+>>>>>>> Interactions
             Assert.That(l.Name, Is.EqualTo(name));
             Assert.That(t.Levels.Contains(l));
         }
@@ -75,9 +91,17 @@ namespace ITI.HistoryTreasures.Tests
         public void Levels_finish_return_good_value()
         {
             Game g = new Game();
+<<<<<<< HEAD
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
+=======
+            Theme t = new Theme(g, "theme");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Level l = new Level(t, mC, "level");
+            g._themes.Add(t);
+            t._levels.Add(l);
+>>>>>>> Interactions
             l.IsFinish = true;
 
             Assert.That(t.Levels[0].IsFinish == true);
@@ -87,13 +111,14 @@ namespace ITI.HistoryTreasures.Tests
         public void Levels_return_correctly_PNJ()
         {
             Game g = new Game();
+<<<<<<< HEAD
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
             PNJ p = l.CreatePNJ(g, 10, 10, "Test", "Hawke", "Hello world !");
 
             Assert.That(l.PNJ.Contains(p));
         }
-        
+
         [Test]
         public void A_level_cannot_be_created_two_times_with_same_name()
         {
@@ -103,6 +128,31 @@ namespace ITI.HistoryTreasures.Tests
 
             Assert.Throws<InvalidOperationException>(() => t.CreateLevel("Level"));
         }
+
+        [Test]
+        public void Levels_return_correctly_main_character()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+            MainCharacter mC = new MainCharacter(g, 16, 16, "Test", "Judd");
+
+            Assert.That(mC.Game == l.MainCharacter.Game);
+            Assert.That(mC.positionX == l.MainCharacter.positionX);
+            Assert.That(mC.positionY == l.MainCharacter.positionY);
+            Assert.That(mC.BitMapName == l.MainCharacter.BitMapName);
+            Assert.That(mC.Name == l.MainCharacter.Name);
+=======
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
+            PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
+            g._themes.Add(t);
+            t._levels.Add(l);
+            l._pnj.Add(p);
+            Assert.That(l._pnj.Contains(p));
+        }
+
         [Test]
         public void Level_method_interaction_work_between_MainCharacter_and_PNJ()
         {
@@ -150,15 +200,13 @@ namespace ITI.HistoryTreasures.Tests
         public void Levels_return_correctly_main_character()
         {
             Game g = new Game();
-            Theme t = g.CreateTheme("Theme");
-            Level l = t.CreateLevel("Level");
-            MainCharacter mC = new MainCharacter(g, 16, 16, "Test", "Judd");
-
-            Assert.That(mC.Game == l.MainCharacter.Game);
-            Assert.That(mC.positionX == l.MainCharacter.positionX);
-            Assert.That(mC.positionY == l.MainCharacter.positionY);
-            Assert.That(mC.BitMapName == l.MainCharacter.BitMapName);
-            Assert.That(mC.Name == l.MainCharacter.Name);
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "Test", "Judd");
+            Level l = new Level(t, mC, "Level");
+            g._themes.Add(t);
+            t._levels.Add(l);
+            Assert.That(l.MainCharacter, Is.EqualTo(mC));
+>>>>>>> Interactions
         }
     }
 }

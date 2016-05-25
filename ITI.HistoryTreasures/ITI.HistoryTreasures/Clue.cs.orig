@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures
 {
+<<<<<<< HEAD
+    internal class Clue
+=======
     public class Clue
+>>>>>>> Interactions
     {
         readonly string _name;
         readonly Level _lCtx;
@@ -98,7 +102,11 @@ namespace ITI.HistoryTreasures
         /// <value>
         /// The hitbox.
         /// </value>
+<<<<<<< HEAD
+        public Hitbox Hitbox
+=======
         public Hitbox HitBox
+>>>>>>> Interactions
         {
             get { return _hitbox; }
         }

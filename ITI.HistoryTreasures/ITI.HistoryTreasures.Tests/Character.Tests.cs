@@ -41,6 +41,7 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
+            Level l = new Level(t, mC, "Level");
 
             Assert.Throws<ArgumentException>(() => l.CreatePNJ(g, -1, 0, "Test", "Hawke", "Hello world !"));
         }
@@ -68,6 +69,23 @@ namespace ITI.HistoryTreasures.Tests
             
             Assert.That(p.Speech, Is.EqualTo("Hello world !"));
             Assert.That(l.PNJ.Contains(p));
+        }
+
+        [Test]
+        public void PNJ_We_can_created_two_pnj_different_and_they_return_two_speech_different()
+        {
+            Game g = new Game();
+            Theme t = new Theme(g, "Theme");
+            MainCharacter mC = new MainCharacter(g, 0, 0, "test", "Judd");
+            Level l = new Level(t, mC, "Level");
+            PNJ p = new PNJ(g, l, 0, 0, "test", "Hawke", "Hello world !");
+            PNJ n = new PNJ(g, l, 15, 5, "test", "Marth", "You have to search the good questions !");
+            l._pnj.Add(p);
+            l._pnj.Add(n);
+            Assert.That(p.Speech, Is.EqualTo("Hello world !"));
+            Assert.That(n.Speech, Is.EqualTo("You have to search the good questions !"));
+            Assert.That(l._pnj.Contains(p));
+            Assert.That(l._pnj.Contains(n));
         }
     }
 
@@ -171,12 +189,11 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            MainCharacter mc = new MainCharacter(g, 32, 32, "test", "Judd");
             PNJ pnj = l.CreatePNJ(g, 16, 16, "Test", "Hawke", "Hello world !");
 
-            mc.Movement(KeyEnum.up);
+            mC.Movement(KeyEnum.up);
 
-            Assert.That(mc.positionX == 32 && mc.positionY == 32);
+            Assert.That(mC.positionX == 32 && mC.positionY == 32);
         }
 
         [Test]
@@ -187,6 +204,6 @@ namespace ITI.HistoryTreasures.Tests
             Level l = t.CreateLevel("Level");
 
             Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, "test", "judd"));
-        }
+        }        
     }
 }
