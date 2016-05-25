@@ -16,10 +16,10 @@ namespace ITI.HistoryTreasures.Rendering
     {
         int _cursX = 0;
         int _cursY = 0;
-
-        MapDesign _Eau;
+        
         Bitmap _herb = Properties.Resources.herbe;
         Theme _tCtx;
+
 
         /// <summary>
         /// This contructor instantiate HistoryTreasures.
@@ -31,6 +31,21 @@ namespace ITI.HistoryTreasures.Rendering
             _tCtx = g.CreateTheme("Theme");
             gameControl1.LevelContext = new Level(_tCtx, "Test");
         }
+
+        //public void EnableDoubleBuffering()
+        //{
+        //    // Set the value of the double-buffering style bits to true.
+        //    this.SetStyle(ControlStyles.DoubleBuffer |
+        //       ControlStyles.UserPaint |
+        //       ControlStyles.AllPaintingInWmPaint,
+        //       true);
+        //    DoubleBuffered = true;
+        //    this.UpdateStyles();
+        //}
+
+
+
+
 
         /*protected override void OnPaint(PaintEventArgs e)
         {
@@ -57,7 +72,9 @@ namespace ITI.HistoryTreasures.Rendering
             
             base.OnPaint(e);
         }*/
-        
+
+
+
         /// <summary>
         /// This method update position of the mouse for show it on screen.
         /// </summary>
@@ -65,6 +82,7 @@ namespace ITI.HistoryTreasures.Rendering
         /// <param name="e"></param>
         private void HistoryTreasures_MouseMove(object sender, MouseEventArgs e)
         {
+
             _cursX = e.X;
             _cursY = e.Y;
 
@@ -76,7 +94,14 @@ namespace ITI.HistoryTreasures.Rendering
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void timer1_Tick(object sender, EventArgs e)
+
+        //private void timer1_Tick(object sender, EventArgs e)
+        //{
+        //    this.Invalidate();
+            
+        //}
+
+        private void gameControl1_SizeChanged(object sender, EventArgs e)
         {
             this.Refresh();
         }

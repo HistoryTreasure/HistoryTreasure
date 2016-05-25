@@ -18,13 +18,38 @@ namespace ITI.HistoryTreasures
         {
             _level = level;
             TileArray = _tileArray;
-            _tileArray = new Tile[width, height];
+            _tileArray = new Tile[/*width, height*/ 5, 5];
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < height; j++)
                 {
-                    _tileArray[i, j] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                } 
+                    //_tileArray[i, j] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[0, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[0, 1] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[0, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[0, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[0, 4] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[1, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[1, 1] = new Tile(true, TileEnum.WATER, level.MapContext);
+                    _tileArray[1, 2] = new Tile(true, TileEnum.WATER, level.MapContext);
+                    _tileArray[1, 3] = new Tile(true, TileEnum.WATER, level.MapContext);
+                    _tileArray[1, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
+                    _tileArray[2, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[2, 1] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[2, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[2, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[2, 4] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[3, 0] = new Tile(true, TileEnum.WATER, level.MapContext);
+                    _tileArray[3, 1] = new Tile(true, TileEnum.WATER, level.MapContext);
+                    _tileArray[3, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[3, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[3, 4] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[4, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[4, 1] = new Tile(true, TileEnum.WATER, level.MapContext);
+                    _tileArray[4, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[4, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
+                    _tileArray[4, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
+                }
             }
         }
 
