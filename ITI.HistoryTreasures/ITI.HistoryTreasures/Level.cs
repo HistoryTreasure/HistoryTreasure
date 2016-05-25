@@ -20,7 +20,7 @@ namespace ITI.HistoryTreasures
         /// </summary>
         /// <param name="ctx">This parameter reference the theme of the level.</param>
         /// <param name="name">This parameter reference name of level.</param>
-        public Level(Theme ctx, MainCharacter mC, string name)
+        public Level(Theme ctx, string name)
         {
             for(int i = 0; i < ctx.Levels.Count; i++)
             {
@@ -31,7 +31,6 @@ namespace ITI.HistoryTreasures
             }
 
             _ctx = ctx;
-            _mainCharacter = mC;
             _name = name;
             _isFinish = false;
             _mainCharacter = CreateMain(ctx,16,16,"Test", "Judd" );
@@ -115,15 +114,6 @@ namespace ITI.HistoryTreasures
             get { return _mainCharacter; }
         }
 
-
-        /// <summary>
-        /// This properties return list of pnj.
-        /// </summary>
-        public List<PNJ> PNJ
-        {
-            get { return _pnj; }
-        }
-
         public string InteractionWithPNJ(KeyEnum key)
         {
             string _talk = "";
@@ -146,34 +136,6 @@ namespace ITI.HistoryTreasures
             return _talk;
         }
 
-        /// <summary>
-        /// Interactions with the PNJ.
-        /// </summary>
-        /// <param name="key">The key.</param>
-        /// <returns></returns>
-        public string InteractionWithPNJ(KeyEnum key)
-        {
-            string _talk = "";
-            for(int i = 0; i < _pnj.Count; i++)
-            {
-
-                if(((_mainCharacter.HitBox.xA - _pnj[i].HitBox.xA > 32) || (_mainCharacter.HitBox.xA - _pnj[i].HitBox.xA < 33)) 
-                    || ((_pnj[i].HitBox.xA - _mainCharacter.HitBox.xA > 32) || (_pnj[i].HitBox.xA - _mainCharacter.HitBox.xA < 33))
-                    && ((_pnj[i].HitBox.yA - _mainCharacter.HitBox.yA > 32) || (_pnj[i].HitBox.yA - _mainCharacter.HitBox.yA < 33)) 
-                    || ((_mainCharacter.HitBox.yA - _pnj[i].HitBox.yA > 32) || (_mainCharacter.HitBox.yA - _pnj[i].HitBox.yA < 33)))
-                {
-                    key = KeyEnum.action;
-                    _talk = _pnj[i].Speech;
-                }
-
-                else
-                {
-                    break;
-                }
-            }
-            return _talk;
-        }
-        
         /// <summary>
         /// Gets the map context.
         /// </summary>

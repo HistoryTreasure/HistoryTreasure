@@ -89,14 +89,6 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This properties return list of levels.
-        /// </summary>
-        public List<Level> Levels
-        {
-            get { return _levels; }
-        }
-
-        /// <summary>
         /// This method served to verify if a theme is completed, to complete one theme we have to complete all levels contained in this theme.
         /// </summary>
         public void FinishTheme()

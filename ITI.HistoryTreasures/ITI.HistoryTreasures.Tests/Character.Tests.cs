@@ -41,8 +41,7 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            Level l = new Level(t, mC, "Level");
-
+            
             Assert.Throws<ArgumentException>(() => l.CreatePNJ(g, -1, 0, "Test", "Hawke", "Hello world !"));
         }
 
@@ -69,20 +68,6 @@ namespace ITI.HistoryTreasures.Tests
             
           
             Assert.That(p.Speech, Is.EqualTo("Hello world !"));
-            Assert.That(l.PNJContains(p));
-        }
-
-        [Test]
-        public void PNJ_We_can_created_two_pnj_different_and_they_return_two_speech_different()
-        {
-            Game g = new Game();
-            Theme t = new Theme(g, "Theme");
-            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
-            Level l = new Level(t, mC, "Level");
-            PNJ p = new PNJ(g, l, 32, 32, "test", "Hawke", "Hello world !");
-            PNJ n = new PNJ(g, l, 48, 48, "test", "Marth", "And you failed !");
-            
-            Assert.That(p.Speech, Is.EqualTo("Hello world !"));
             Assert.That(l.PNJ.Contains(p));
         }
 
@@ -93,8 +78,8 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            PNJ p = l.CreatePNJ(g, 0, 0, "test", "Hawke", "Hello world !");
-            PNJ n = l.CreatePNJ(g, 15, 5, "test", "Marth", "You have to search the good questions !");
+            PNJ p = l.CreatePNJ(g, 16, 16, "test", "Hawke", "Hello world !");
+            PNJ n = l.CreatePNJ(g, 32, 32, "test", "Marth", "You have to search the good questions !");
 
             Assert.That(p.Speech, Is.EqualTo("Hello world !"));
             Assert.That(n.Speech, Is.EqualTo("You have to search the good questions !"));
@@ -106,11 +91,11 @@ namespace ITI.HistoryTreasures.Tests
         public void PNJ_hitbox_return_good_value()
         {
             Game g = new Game();
-            Theme t = new Theme(g, "Theme");
+            Theme t = g.CreateTheme("Theme");
             MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
-            Level l = new Level(t, mC, "Level");
-            PNJ p = new PNJ(g, l, 16, 16, "test", "Hawke", "Hello world !");
-            l._pnj.Add(p);
+            Level l = t.CreateLevel("Level");
+            PNJ p = l.CreatePNJ(g, 16, 16, "test", "Hawke", "Hello world !");
+
             Assert.That(p.HitBox.xA, Is.EqualTo(0));
             Assert.That(p.HitBox.yA, Is.EqualTo(16));
             Assert.That(p.HitBox.xB, Is.EqualTo(32));
@@ -125,9 +110,9 @@ namespace ITI.HistoryTreasures.Tests
         public void PNJ_cannot_be_created_with_his_hitbox_outside_the_map()
         {
             Game g = new Game();
-            Theme t = new Theme(g, "Theme");
+            Theme t = g.CreateTheme("Theme");
             MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
-            Level l = new Level(t, mC, "Level");
+            Level l = t.CreateLevel("Level");
 
             Assert.Throws<ArgumentException>(() => new PNJ(g, l, 15, 15, "test", "Hawke", "Hello world !"));
         }
@@ -207,13 +192,14 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
+        [Ignore("Not complete")]
         public void MainCharacter_cannot_move_if_he_collide_a_PNJ_by_the_botom()
         {
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             
             Level l = t.CreateLevel("Level");
-
+            MainCharacter mC = new MainCharacter(g, 32, 32, "test", "Judd");
             PNJ pnj = l.CreatePNJ(g, 48, 32, "test", "Hawke", "coucou");
             
             for (int i = 0; i < 10; i++)
@@ -292,6 +278,6 @@ namespace ITI.HistoryTreasures.Tests
             Level l = t.CreateLevel("Level");
 
             Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, "test", "judd"));
-        }        
+        }    */    
     }
 }

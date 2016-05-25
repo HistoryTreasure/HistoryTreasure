@@ -44,7 +44,7 @@ namespace ITI.HistoryTreasures
             _ctx = ctx;
             if (Level.PNJ.Count != 0)
             {
-                foreach (PNJ p in Level._pnj)
+                foreach (PNJ p in Level.PNJ)
                 {
                     if (p.positionX == X && p.positionY == Y)
                     {

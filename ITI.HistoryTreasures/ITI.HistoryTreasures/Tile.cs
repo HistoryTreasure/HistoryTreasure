@@ -21,12 +21,12 @@ namespace ITI.HistoryTreasures
         /// <param name="isSolid">This parameter define if a tile can be cross.</param>
         /// <param name="tileName">This parameter define the tileName.</param>
         /// <param name="mapContext">This parameter define the MapContext.</param>
+        public Tile(bool isSolid, TileEnum tileName, Map mapContext)
         {
             _isSolid = isSolid;
             _tileName = tileName;
             _mapContext = mapContext;
-            _posX = posX;
-            _posY = posY;
+
             if (isSolid == true)
             {
                 _hitbox = new Hitbox(posX - 16, posY + 16, posX + 16, posY - 16);
