@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,11 +35,42 @@ namespace ITI.HistoryTreasures
             _speech = speech;
             _hitbox = new Hitbox(x - 16, y, x + 16, y + 16);
 
+            if (X < 0 || Y < 0)
+            {
+                throw new ArgumentException("You cannot create a PNJ with this coordonate");
+            }
+
+            else if (X < 16)
+            {
+                throw new ArgumentException("You cannot create a character with his hitbox outside the map.");
+            }
+
             for (int i = 0; i < lCtx.Clues.Count; i++)
             {
                 if (lCtx.Clues[i].Name == name)
                 {
-                    throw new InvalidOperationException("You cannot create two clues with same name");
+                    throw new InvalidOperationException("You cannot create two clues with same name.");
+                }
+
+                else if (lCtx.Clues[i].Speech == speech)
+                {
+                    throw new InvalidOperationException("You cannot have the same speech twice.");
+                }
+            }
+
+            if ((X < 16) || (Y < 16) || (X > (lCtx.MapContext.TileArray.GetLength(0) * 32 - 16) || (Y > (lCtx.MapContext.TileArray.GetLength(1) * 32 - 16))))
+{
+                throw new ArgumentException();
+            }
+
+            if (LCtx.Clues.Count != 0)
+            {
+                foreach (Clue c in LCtx.Clues)
+                {
+                    if (c.X == X && c.Y == Y)
+                    {
+                        throw new InvalidOperationException();
+                    }
                 }
             }
         }
@@ -60,7 +92,7 @@ namespace ITI.HistoryTreasures
         /// <value>
         /// The level context.
         /// </value>
-        public Level LCxt
+        public Level LCtx
         {
             get { return _lCtx; }
         }

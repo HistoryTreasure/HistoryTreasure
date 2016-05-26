@@ -174,7 +174,7 @@ namespace ITI.HistoryTreasures.Tests
 
             Clue c = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est François !");
 
-            Assert.That(c.LCxt == l);
+            Assert.That(c.LCtx == l);
             Assert.That(c.X == 32);
             Assert.That(c.Y == 32);
             Assert.That(c.Name == "Livre");
@@ -205,6 +205,51 @@ namespace ITI.HistoryTreasures.Tests
             Level l = t.CreateLevel("Level");
 
             Clue c = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !");
+
+            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+        }
+
+        [Test]
+        public void Level_the_Clue_have_a_unique_speech()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+
+            Clue c = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !");
+
+            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+        }
+
+        [Test]
+        public void Level_Clue_cannot_be_created_if_his_position_is_negative()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+
+            Assert.Throws<ArgumentException>(() => l.CreateClue(t, -1, 0, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+        }
+
+        [Test]
+        public void Level_Clue_cannot_be_created_outside_the_map()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+
+            Assert.Throws<ArgumentException>(() => l.CreateClue(t, 15, 15, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+        }
+
+        [Test]
+        [Ignore("Ce test parait bizarre")]
+        public void Level_two_Clue_cannot_be_create_on_the_same_position()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+
+            Clue c1 = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !");
 
             Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
         }
