@@ -97,12 +97,39 @@ namespace ITI.HistoryTreasures
             return p;
         }
 
+        /// <summary>
+        /// Creates the main.
+        /// </summary>
+        /// <param name="ctx">The CTX.</param>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="bitMapName">Name of the bit map.</param>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        /// <exception cref="System.InvalidOperationException">you cannot create two main character</exception>
         public MainCharacter CreateMain(Theme ctx, int x, int y, string bitMapName, string name)
         {
             if (MainCharacter != null)
                 throw new InvalidOperationException("you cannot create two main character");
 
             return new MainCharacter(ctx.Game, x, y, bitMapName, name); 
+        }
+
+        /// <summary>
+        /// Creates the clue.
+        /// </summary>
+        /// <param name="ctx">The CTX.</param>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="bitMapName">Name of the bit map.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="speech">The speech.</param>
+        /// <returns></returns>
+        public Clue CreateClue(Theme ctx, int x, int y, string name, string speech)
+        {
+            Clue c = new Clue(name, this, x, y, speech);
+            _clues.Add(c);
+            return c;
         }
 
         /// <summary>
@@ -146,7 +173,7 @@ namespace ITI.HistoryTreasures
             get { return _mCtx; }
         }
 
-        /*public string InteractionsWithClue(KeyEnum key)
+        public string InteractionsWithClue(KeyEnum key)
         {
             string _speech = "";
             for (int i = 0; i < _clues.Count; i++)
@@ -167,6 +194,6 @@ namespace ITI.HistoryTreasures
             }
 
             return _speech;
-        }*/
+        }
     }
 }

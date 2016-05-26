@@ -26,15 +26,16 @@ namespace ITI.HistoryTreasures
         /// <param name="y">The y.</param>
         /// <param name="hitbox">The hitbox.</param>
         /// <param name="speech">The speech.</param>
-        public Clue(string name, Level lCtx, bool isUsed, int x, int y, Hitbox hitbox, string speech)
+        public Clue(string name, Level lCtx, /*bool isUsed,*/ int x, int y, /*Hitbox hitbox,*/ string speech)
         {
             _name = name;
             _lCtx = lCtx;
-            _isUsed = isUsed;
+            //_isUsed = isUsed;
             _x = x;
             _y = y;
-            _hitbox = hitbox;
+            //_hitbox = hitbox;
             _speech = speech;
+            _hitbox = new Hitbox(x - 16, y, x + 16, y + 16);
         }
 
         /// <summary>
@@ -59,17 +60,17 @@ namespace ITI.HistoryTreasures
             get { return _lCtx; }
         }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance is used.
-        /// </summary>
-        /// <value>
-        ///   <c>true</c> if this instance is used; otherwise, <c>false</c>.
-        /// </value>
-        public bool IsUsed
-        {
-            get { return _isUsed; }
-            set { _isUsed = value; }
-        }
+        ///// <summary>
+        ///// Gets or sets a value indicating whether this instance is used.
+        ///// </summary>
+        ///// <value>
+        /////   <c>true</c> if this instance is used; otherwise, <c>false</c>.
+        ///// </value>
+        //public bool IsUsed
+        //{
+        //    get { return _isUsed; }
+        //    set { _isUsed = value; }
+        //}
 
         /// <summary>
         /// </summary>

@@ -127,17 +127,29 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
         }
 
-        /*[Test]
+        [Test]
         public void Level_method_interaction_works_between_MainCharacter_and_Clue()
         {
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            MainCharacter mC = new MainCharacter(g, 7, 15, "test", "Judd");
-            Clue c = new Clue("Livre", l, false, 10, 10, "Un indice ? Son nom est François.");
-            l._clues.Add((c));
+
+            Clue c = l.CreateClue(t, 32, 32, "Livre", "Un indice ? Son nom est François.");
+
             Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo("Un indice ? Son nom est François."));
-        }*/
+        }
+
+        [Test]
+        public void Level_method_interaction_works_in_diagonal_between_MainCharacter_and_Clue()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+
+            Clue c = l.CreateClue(t, 48, 48, "Livre", "Un indice ? Son nom est François.");
+
+            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo("Un indice ? Son nom est François."));
+        }
 
         [Test]
         public void Levels_return_correctly_main_character()
