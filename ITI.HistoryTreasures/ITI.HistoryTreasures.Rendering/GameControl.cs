@@ -22,6 +22,8 @@ namespace ITI.HistoryTreasures.Rendering
         public GameControl()
         {
             _resourcesManager = new ResourcesManager();
+            InitializeComponent();
+
         }
 
         /// <summary>
@@ -41,26 +43,29 @@ namespace ITI.HistoryTreasures.Rendering
         {
             if (_lCtx == null) return;
             Tile[,] tileArray = _lCtx.MapContext.TileArray;
-            Size _windowSize = HistoryTreasures.ActiveForm.Size;
+            //Size _windowSize = HistoryTreasures.ActiveForm.Size;
             int x = 0;
             int y = 0;
-            int width = _windowSize.Width / tileArray.GetLength(0);
-            int height = _windowSize.Height / tileArray.GetLength(1);
+            int width = this.Width / tileArray.GetLength(0);
+            int height = this.Height / tileArray.GetLength(1);
 
             //Resizing the Form to an almost perfect square
-            HistoryTreasures.ActiveForm.Size = new Size(_windowSize.Height, _windowSize.Height);
+            //  HistoryTreasures.ActiveForm.Size = new Size(this.Height,this.Height);
 
             for (int i = 0; i < _lCtx.MapContext.Height; i++)
             {
-                for(int j = 0; j < _lCtx.MapContext.Width; j++)
+                for (int j = 0; j < _lCtx.MapContext.Width; j++)
                 {
+                    Tile m = tileArray[i, j];
+
+                    // Bitmap tileperso = _resourcesManager.GetTileBitmapPerso(m);
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = _resourcesManager.GetTileBitmap(t);
                     e.Graphics.DrawImage(tileBitmap, x, y, width, height);
-                    x += _windowSize.Width / tileArray.GetLength(0);
+                    x += this.Width / tileArray.GetLength(0);
                 }
                 x = 0;
-                y += _windowSize.Height / tileArray.GetLength(1);
+                y += this.Height / tileArray.GetLength(1);
             }
         }
 
@@ -73,7 +78,13 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             this.DoubleBuffered = true;
             this.Name = "GameControl";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GameControl_KeyPress);
             this.ResumeLayout(false);
+
+        }
+
+        private void GameControl_KeyPress(object sender, KeyPressEventArgs e)
+        {
 
         }
     }

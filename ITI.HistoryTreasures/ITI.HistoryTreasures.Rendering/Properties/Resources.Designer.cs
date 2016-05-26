@@ -63,6 +63,26 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _base {
+            get {
+                object obj = ResourceManager.GetObject("_base", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap droite {
+            get {
+                object obj = ResourceManager.GetObject("droite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eau {
             get {
                 object obj = ResourceManager.GetObject("eau", resourceCulture);
@@ -76,6 +96,26 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         internal static System.Drawing.Bitmap herbe {
             get {
                 object obj = ResourceManager.GetObject("herbe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_X4_Y10 {
+            get {
+                object obj = ResourceManager.GetObject("img_X4_Y10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pont_vertcal {
+            get {
+                object obj = ResourceManager.GetObject("pont_vertcal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
