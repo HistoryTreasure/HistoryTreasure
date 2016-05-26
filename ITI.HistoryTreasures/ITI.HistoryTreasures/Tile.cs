@@ -33,6 +33,16 @@ namespace ITI.HistoryTreasures
             }
         }
 
+        public void CreateTileHitbox(Tile[,] tilearray)
+        {
+            foreach (Tile tile in tilearray)
+            {
+                if (tile.IsSolid == true)
+                {
+                    
+                }
+            }
+        }
 
         /// <summary>
         /// Return map context. 

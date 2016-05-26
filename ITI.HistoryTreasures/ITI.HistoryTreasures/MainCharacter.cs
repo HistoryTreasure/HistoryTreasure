@@ -9,6 +9,7 @@ namespace ITI.HistoryTreasures
     {
         readonly int _speed;
         int _life;
+        Map _mCtx;
 
         /// <summary>
         /// This constructor allow to create MainCharacter.
@@ -65,6 +66,12 @@ namespace ITI.HistoryTreasures
             }
         }
 
+        public Map MCtx
+        {
+            get { return _mCtx; }
+            set { _mCtx = value; }
+        }
+
         /// <summary>
         /// This method served to check life of MainCharacter.
         /// When MainCharacter have 0 life, we send a message : "GameOver".
@@ -86,23 +93,27 @@ namespace ITI.HistoryTreasures
         {
             if (key == KeyEnum.up)
             {
+                if (positionY == 16)
+                    return;
+
                 positionY = positionY - Speed;
                 HitBox.yA--;
                 HitBox.yC--;
             }
             else if (key == KeyEnum.down)
             {
-                if (positionY == 16)
+                if (positionY == (MCtx.TileArray.GetLength(1) * 32) - 16)
                     return;
-                else
-                {
-                    positionY = positionY + Speed;
-                    HitBox.yA++;
-                    HitBox.yC++;
-                }
+
+                positionY = positionY + Speed;
+                HitBox.yA++;
+                HitBox.yC++;
             }
             else if (key == KeyEnum.right)
             {
+                if (positionX == (MCtx.TileArray.GetLength(0) *32) -16 )
+                    return;
+
                 positionX = positionX + Speed;
                 HitBox.xA++;
                 HitBox.xC++;
@@ -111,12 +122,10 @@ namespace ITI.HistoryTreasures
             {
                 if (positionX == 16)
                     return;
-                else
-                {
-                    positionX = positionX - Speed;
-                    HitBox.xA--;
-                    HitBox.xC--;
-                }
+
+                positionX = positionX - Speed;
+                HitBox.xA--;
+                HitBox.xC--;
             }
         }
     }

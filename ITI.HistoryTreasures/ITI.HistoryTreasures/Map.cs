@@ -51,6 +51,8 @@ namespace ITI.HistoryTreasures
                     _tileArray[4, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
                 }
             }
+
+            level.MainCharacter.MCtx = this;
         }
 
         /// <summary>

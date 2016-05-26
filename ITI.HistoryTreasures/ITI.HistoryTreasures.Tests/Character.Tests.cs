@@ -17,7 +17,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
             PNJ p = l.CreatePNJ(g, 16, 16, "Test", "Hawke", "Hello world !");
-            
+
             string speech = "Hello world !";
             Assert.That(p.Speech, Is.EqualTo(speech)); //Verify if the speech is correct
             Assert.That(p.Level, Is.EqualTo(l));
@@ -41,7 +41,7 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            
+
             Assert.Throws<ArgumentException>(() => l.CreatePNJ(g, -1, 0, "Test", "Hawke", "Hello world !"));
         }
 
@@ -52,7 +52,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
             PNJ p = l.CreatePNJ(g, 16, 16, "Test", "Hawke", "Hello world !");
-            
+
             Assert.That(p.positionX, Is.EqualTo(16));
             Assert.That(p.positionY, Is.EqualTo(16));
             Assert.That(l.PNJ.Contains(p));
@@ -65,8 +65,8 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
             PNJ p = l.CreatePNJ(g, 16, 16, "Test", "Hawke", "Hello world !");
-            
-          
+
+
             Assert.That(p.Speech, Is.EqualTo("Hello world !"));
             Assert.That(l.PNJ.Contains(p));
         }
@@ -158,12 +158,12 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_can_move_up()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 16, 20, "test", "Judd");
+            MainCharacter mC = new MainCharacter(g, 16, 26, "test", "Judd");
 
             for (int i = 0; i < 10; i++)
                 mC.Movement(KeyEnum.up);
 
-            Assert.That(mC.positionY, Is.EqualTo(10));
+            Assert.That(mC.positionY, Is.EqualTo(16));
         }
 
         [Test]
@@ -179,7 +179,7 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
-        public void MainCharacter_cannot_move_outside_the_map()
+        public void MainCharacter_cannot_move_outside_the_map_by_the_left()
         {
             Game g = new Game();
             MainCharacter mC = new MainCharacter(g, 32, 32, "test", "Judd");
@@ -192,15 +192,31 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
+        public void MainCharacter_cannot_move_outside_the_map_by_the_right()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+            Map m = new Map(l, 5, 5);
+
+            for (int i = 0; i < 1000; i++)
+            {
+                l.MainCharacter.Movement(KeyEnum.right);
+            }
+
+            Assert.That(l.MainCharacter.positionX == 144);
+        }
+
+        [Test]
         public void MainCharacter_cannot_move_if_he_collide_a_PNJ_by_the_botom()
         {
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
-            
+
             Level l = t.CreateLevel("Level");
             MainCharacter mC = new MainCharacter(g, 32, 54, "test", "Judd");
             PNJ pnj = l.CreatePNJ(g, 32, 32, "test", "Hawke", "coucou");
-            
+
             for (int i = 0; i < 10; i++)
             {
                 if ((mC.HitBox.yA != pnj.HitBox.yD) && (mC.HitBox.yB != pnj.HitBox.yC))
@@ -253,7 +269,7 @@ namespace ITI.HistoryTreasures.Tests
             Level l = t.CreateLevel("Level");
             Assert.Throws<ArgumentException>(() => new MainCharacter(g, 15, 15, "test", "Judd"));
         }
-        
+
         /*[Test]
         [Ignore("Not complete at all")]
         public void MainCharacter_cannot_be_create_on_a_wall()
@@ -277,6 +293,6 @@ namespace ITI.HistoryTreasures.Tests
             Level l = t.CreateLevel("Level");
 
             Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, "test", "judd"));
-        }    */    
+        }    */
     }
 }
