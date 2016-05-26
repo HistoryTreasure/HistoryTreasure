@@ -14,6 +14,7 @@ namespace ITI.HistoryTreasures
         readonly MainCharacter _mainCharacter;
         public List<Clue> _clues;
         readonly Map _mCtx;
+        bool _isOpen;
 
         /// <summary>
         /// This constructor create a level.
@@ -22,9 +23,9 @@ namespace ITI.HistoryTreasures
         /// <param name="name">This parameter reference name of level.</param>
         public Level(Theme ctx, string name)
         {
-            for(int i = 0; i < ctx.Levels.Count; i++)
+            for (int i = 0; i < ctx.Levels.Count; i++)
             {
-                if(ctx.Levels[i].Name == name)
+                if (ctx.Levels[i].Name == name)
                 {
                     throw new InvalidOperationException("You cannot create two levels with same name");
                 }
@@ -33,10 +34,11 @@ namespace ITI.HistoryTreasures
             _ctx = ctx;
             _name = name;
             _isFinish = false;
-            _mainCharacter = CreateMain(ctx,16,16,"Test", "Judd" );
+            _mainCharacter = CreateMain(ctx, 16, 16, "Test", "Judd" );
             _pnj = new List<PNJ>();
             _mCtx = new Map(this, 10, 10);
             _clues = new List<Clue>();
+            _isOpen = false;
         }
 
         /// <summary>
@@ -58,6 +60,12 @@ namespace ITI.HistoryTreasures
             get { return _pnj; }
         }
 
+        /// <summary>
+        /// Gets the clues.
+        /// </summary>
+        /// <value>
+        /// The clues.
+        /// </value>
         public List<Clue> Clues
         {
             get { return _clues; }
@@ -125,9 +133,9 @@ namespace ITI.HistoryTreasures
         /// <param name="name">The name.</param>
         /// <param name="speech">The speech.</param>
         /// <returns></returns>
-        public Clue CreateClue(Theme ctx, int x, int y, string name, string speech)
+        public Clue CreateClue(Theme ctx, int x, int y, string bitMapName, string name, string speech)
         {
-            Clue c = new Clue(name, this, x, y, speech);
+            Clue c = new Clue(name, this, bitMapName, x, y, speech);
             _clues.Add(c);
             return c;
         }
@@ -140,6 +148,11 @@ namespace ITI.HistoryTreasures
             get { return _mainCharacter; }
         }
 
+        /// <summary>
+        /// Interactions the with PNJ.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns></returns>
         public string InteractionWithPNJ(KeyEnum key)
         {
             string _talk = "";
@@ -173,6 +186,11 @@ namespace ITI.HistoryTreasures
             get { return _mCtx; }
         }
 
+        /// <summary>
+        /// Interactionses the with clue.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns></returns>
         public string InteractionsWithClue(KeyEnum key)
         {
             string _speech = "";
@@ -192,8 +210,19 @@ namespace ITI.HistoryTreasures
                     break;
                 }
             }
-
             return _speech;
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether this instance is open.
+        /// Allow to quit the level when user win.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is open; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsOpen
+        {
+            get { return _isOpen; }
         }
     }
 }

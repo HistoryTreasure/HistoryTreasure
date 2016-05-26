@@ -10,32 +10,37 @@ namespace ITI.HistoryTreasures
     {
         readonly string _name;
         readonly Level _lCtx;
-        bool _isUsed;
         readonly int _x;
         readonly int _y;
         readonly Hitbox _hitbox;
         readonly string _speech;
+        string _bitMapName;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Clue"/> class.
         /// </summary>
         /// <param name="name">The name.</param>
         /// <param name="lCtx">The Level CTX.</param>
-        /// <param name="isUsed">If set to <c>true</c> [is used].</param>
         /// <param name="x">The x.</param>
         /// <param name="y">The y.</param>
-        /// <param name="hitbox">The hitbox.</param>
         /// <param name="speech">The speech.</param>
-        public Clue(string name, Level lCtx, /*bool isUsed,*/ int x, int y, /*Hitbox hitbox,*/ string speech)
+        public Clue(string name, Level lCtx, string bitMapName, int x, int y, string speech)
         {
             _name = name;
             _lCtx = lCtx;
-            //_isUsed = isUsed;
+            _bitMapName = bitMapName;
             _x = x;
             _y = y;
-            //_hitbox = hitbox;
             _speech = speech;
             _hitbox = new Hitbox(x - 16, y, x + 16, y + 16);
+
+            for (int i = 0; i < lCtx.Clues.Count; i++)
+            {
+                if (lCtx.Clues[i].Name == name)
+                {
+                    throw new InvalidOperationException("You cannot create two clues with same name");
+                }
+            }
         }
 
         /// <summary>
@@ -60,17 +65,16 @@ namespace ITI.HistoryTreasures
             get { return _lCtx; }
         }
 
-        ///// <summary>
-        ///// Gets or sets a value indicating whether this instance is used.
-        ///// </summary>
-        ///// <value>
-        /////   <c>true</c> if this instance is used; otherwise, <c>false</c>.
-        ///// </value>
-        //public bool IsUsed
-        //{
-        //    get { return _isUsed; }
-        //    set { _isUsed = value; }
-        //}
+        /// <summary>
+        /// Gets the name of the bit map.
+        /// </summary>
+        /// <value>
+        /// The name of the bit map.
+        /// </value>
+        public string BitMapName
+        {
+            get { return _bitMapName; }
+        }
 
         /// <summary>
         /// </summary>
