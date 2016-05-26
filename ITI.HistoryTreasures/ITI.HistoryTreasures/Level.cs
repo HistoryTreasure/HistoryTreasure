@@ -100,10 +100,9 @@ namespace ITI.HistoryTreasures
         public MainCharacter CreateMain(Theme ctx, int x, int y, string bitMapName, string name)
         {
             if (MainCharacter != null)
-                throw new InvalidOperationException("you cannot crate two main character");
+                throw new InvalidOperationException("you cannot create two main character");
 
             return new MainCharacter(ctx.Game, x, y, bitMapName, name); 
-
         }
 
         /// <summary>
