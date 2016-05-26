@@ -192,15 +192,14 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
-        [Ignore("Not complete")]
         public void MainCharacter_cannot_move_if_he_collide_a_PNJ_by_the_botom()
         {
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             
             Level l = t.CreateLevel("Level");
-            MainCharacter mC = new MainCharacter(g, 32, 32, "test", "Judd");
-            PNJ pnj = l.CreatePNJ(g, 48, 32, "test", "Hawke", "coucou");
+            MainCharacter mC = new MainCharacter(g, 32, 54, "test", "Judd");
+            PNJ pnj = l.CreatePNJ(g, 32, 32, "test", "Hawke", "coucou");
             
             for (int i = 0; i < 10; i++)
             {
@@ -210,7 +209,7 @@ namespace ITI.HistoryTreasures.Tests
                 }
             }
 
-            Assert.That(mC.positionX == 48 && mC.positionY == 48);
+            Assert.That(mC.positionX == 32 && mC.positionY == 48);
         }
 
         [Test]
