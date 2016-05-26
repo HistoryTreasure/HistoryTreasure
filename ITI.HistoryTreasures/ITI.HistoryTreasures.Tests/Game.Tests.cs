@@ -242,7 +242,7 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
-        [Ignore("Ce test parait bizarre")]
+        //[Ignore("Ce test parait bizarre")]
         public void Level_two_Clue_cannot_be_create_on_the_same_position()
         {
             Game g = new Game();
