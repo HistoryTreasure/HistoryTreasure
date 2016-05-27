@@ -68,6 +68,24 @@ namespace ITI.HistoryTreasures
                     }
                 }
             }
+
+            if (LCtx.PNJ.Count != 0)
+            {
+                foreach (PNJ p in LCtx.PNJ)
+                {
+                    if (p.positionX == X && p.positionY == Y)
+                    {
+                        throw new InvalidOperationException("You cannot create Clue on PNJ.");
+                    }
+                }
+            }
+
+            if (LCtx.MainCharacter.positionX == X && LCtx.MainCharacter.positionY == Y)
+            {
+                throw new InvalidOperationException("You cannot create Clue on MainCharacter.");
+            }
+
+            
         }
 
         /// <summary>

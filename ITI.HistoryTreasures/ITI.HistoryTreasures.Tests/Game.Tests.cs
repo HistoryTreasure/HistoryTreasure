@@ -254,5 +254,46 @@ namespace ITI.HistoryTreasures.Tests
 
             Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
         }
+
+        [Test]
+        public void Level_Clue_cannot_be_create_on_a_PNJ()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+
+            PNJ p = l.CreatePNJ(g, 32, 32, "Test", "Hawke", "Hello world !");
+
+            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+        }
+
+        [Test]
+        public void Level_Clue_cannot_be_create_on_MainCharacter()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+
+           Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 16, 16, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+        }
+
+        [Test]
+        public void Level_Clue_returns_correctly_his_hitbox()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+
+            Clue c = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !");
+
+            Assert.That(c.HitBox.xA, Is.EqualTo(16));
+            Assert.That(c.HitBox.yA, Is.EqualTo(32));
+            Assert.That(c.HitBox.xB, Is.EqualTo(48));
+            Assert.That(c.HitBox.yB, Is.EqualTo(32));
+            Assert.That(c.HitBox.xC, Is.EqualTo(48));
+            Assert.That(c.HitBox.yC, Is.EqualTo(48));
+            Assert.That(c.HitBox.xD, Is.EqualTo(16));
+            Assert.That(c.HitBox.yD, Is.EqualTo(48));
+        }
     }
 }
