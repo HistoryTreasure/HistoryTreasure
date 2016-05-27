@@ -40,11 +40,6 @@ namespace ITI.HistoryTreasures
                 throw new ArgumentException("You cannot create a PNJ with this coordonate");
             }
 
-            else if (X < 16)
-            {
-                throw new ArgumentException("You cannot create a character with his hitbox outside the map.");
-            }
-
             for (int i = 0; i < lCtx.Clues.Count; i++)
             {
                 if (lCtx.Clues[i].Name == name)

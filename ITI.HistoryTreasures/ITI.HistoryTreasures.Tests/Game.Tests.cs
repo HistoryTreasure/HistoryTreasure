@@ -182,7 +182,7 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
-        public void Level_can_create_several_clue_and_return_two_speech_different()
+        public void Level_can_create_several_clue_and_return_several_speech_different()
         {
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
@@ -204,7 +204,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Clue c = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !");
+            Clue c = l.CreateClue(t, 16, 32, "Clue", "Livre", "Bouh");
 
             Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
         }
@@ -216,7 +216,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Clue c = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !");
+            Clue c = l.CreateClue(t, 16, 32, "Clue", "Test", "Un indice ? Son nom est Henri !");
 
             Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
         }
@@ -238,11 +238,12 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Assert.Throws<ArgumentException>(() => l.CreateClue(t, 15, 15, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+            Map m = new Map(l, 5, 5);
+
+            Assert.Throws<ArgumentException>(() => l.CreateClue(t, 170, 170, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
         }
 
         [Test]
-        //[Ignore("Ce test parait bizarre")]
         public void Level_two_Clue_cannot_be_create_on_the_same_position()
         {
             Game g = new Game();
