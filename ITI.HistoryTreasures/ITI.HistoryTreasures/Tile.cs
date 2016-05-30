@@ -12,8 +12,8 @@ namespace ITI.HistoryTreasures
         readonly TileEnum _tileName;
         readonly Map _mapContext;
         Hitbox _hitbox;
-        readonly int _posX;
-        readonly int _posY;
+        int _posX;
+        int _posY;
 
         /// <summary>
         /// Tile Constructor create Tile.
@@ -26,22 +26,11 @@ namespace ITI.HistoryTreasures
             _isSolid = isSolid;
             _tileName = tileName;
             _mapContext = mapContext;
-
-            if (isSolid == true)
-            {
-                _hitbox = new Hitbox(posX - 16, posY + 16, posX + 16, posY - 16);
-            }
         }
 
-        public void CreateTileHitbox(Tile[,] tilearray)
+        public void CreateTileHitbox(Tile tile)
         {
-            foreach (Tile tile in tilearray)
-            {
-                if (tile.IsSolid == true)
-                {
-                    
-                }
-            }
+            _hitbox = new Hitbox(tile.posX - 16, tile.posY - 16, tile.posX + 16, tile.posY + 16);
         }
 
         /// <summary>
@@ -58,7 +47,7 @@ namespace ITI.HistoryTreasures
         /// </summary>
         public TileEnum TileType
         {
-            get { return _tileName;}
+            get { return _tileName; }
         }
 
         public Hitbox TileHitbox
@@ -69,10 +58,12 @@ namespace ITI.HistoryTreasures
         public int posX
         {
             get { return _posX; }
+            set { _posX = value; }
         }
         public int posY
         {
             get { return _posY; }
+            set { _posY = value; }
         }
 
         /// <summary>

@@ -40,25 +40,25 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(t1.TileHitbox == null);
             Assert.That(t2.TileHitbox != null);
         }
-        
+
         [Test]
-        [Ignore("Not completed")]
+        //[Ignore("Not completed")]
         public void Tile_can_be_create_and_have_a_hitbox()
         {
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
             Map m = new Map(l, 10, 10);
-            Tile t1 = new Tile(true, TileEnum.WATER, m);
+            Tile t1 = m.TileArray[1, 1];
 
-            Assert.That(t1.TileHitbox.xA== 0);
+            Assert.That(t1.TileHitbox.xA == 32);
             Assert.That(t1.TileHitbox.yA == 32);
-            Assert.That(t1.TileHitbox.xB == 32);
+            Assert.That(t1.TileHitbox.xB == 64);
             Assert.That(t1.TileHitbox.yB == 32);
-            Assert.That(t1.TileHitbox.xC == 32);
-            Assert.That(t1.TileHitbox.yC == 0);
-            Assert.That(t1.TileHitbox.xD == 0);
-            Assert.That(t1.TileHitbox.yD == 0);
+            Assert.That(t1.TileHitbox.xC == 64);
+            Assert.That(t1.TileHitbox.yC == 64);
+            Assert.That(t1.TileHitbox.xD == 32);
+            Assert.That(t1.TileHitbox.yD == 64);
         }
     }
 }

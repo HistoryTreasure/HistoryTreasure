@@ -49,21 +49,43 @@ namespace ITI.HistoryTreasures
                     _tileArray[4, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[4, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[4, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
+
                 }
             }
 
             level.MainCharacter.MCtx = this;
+            CreateTileHitbox(TileArray);
+        }
+
+        public void CreateTileHitbox(Tile[,] tilearray)
+        {
+            int x = 16;
+            int y = 16;
+            for (int i = 0; i < tilearray.GetLength(0); i++)
+            {
+                for (int j = 0; j < tilearray.GetLength(1); j++)
+                {
+                    if (TileArray[i,j].IsSolid == true)
+                    {
+                        TileArray[i, j].posX = x;
+                        TileArray[i, j].posY = y;
+
+                        TileArray[i, j].CreateTileHitbox(TileArray[i, j]);
+                    }
+                    x += 32;
+                }
+                x = 16;
+                y += 32;
+            }
         }
 
         /// <summary>
         /// This property returns a level.
         /// </summary>
         public Level Level
-        { 
+        {
             get { return _level; }
         }
-
-
 
         /// <summary>
         /// This property returns field tilearray.
@@ -79,7 +101,7 @@ namespace ITI.HistoryTreasures
         /// </summary>
         public int Height
         {
-            get { return _tileArray.GetLength(1);  }
+            get { return _tileArray.GetLength(1); }
         }
 
         /// <summary>
