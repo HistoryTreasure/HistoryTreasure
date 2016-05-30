@@ -52,7 +52,7 @@ namespace ITI.HistoryTreasures.Rendering
 
             for (int i = 0; i < _lCtx.MapContext.Height; i++)
             {
-                for(int j = 0; j < _lCtx.MapContext.Width; j++)
+                for (int j = 0; j < _lCtx.MapContext.Width; j++)
                 {
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = _resourcesManager.GetTileBitmap(t);

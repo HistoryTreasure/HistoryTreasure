@@ -111,7 +111,7 @@ namespace ITI.HistoryTreasures
             }
             else if (key == KeyEnum.right)
             {
-                if (positionX == (MCtx.TileArray.GetLength(0) *32) -16 )
+                if (positionX == (MCtx.TileArray.GetLength(0) * 32) - 16)
                     return;
 
                 positionX = positionX + Speed;

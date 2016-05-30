@@ -34,8 +34,8 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
             Map m = new Map(l, 10, 10);
-            Tile t1 = new Tile(false, TileEnum.GRASS, m);
-            Tile t2 = new Tile(true, TileEnum.WATER, m);
+            Tile t1 = m.TileArray[0, 0];
+            Tile t2 = m.TileArray[1, 1];
 
             Assert.That(t1.TileHitbox == null);
             Assert.That(t2.TileHitbox != null);

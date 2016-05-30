@@ -65,7 +65,7 @@ namespace ITI.HistoryTreasures
             {
                 for (int j = 0; j < tilearray.GetLength(1); j++)
                 {
-                    if (TileArray[i,j].IsSolid == true)
+                    if (TileArray[i, j].IsSolid == true)
                     {
                         TileArray[i, j].posX = x;
                         TileArray[i, j].posY = y;

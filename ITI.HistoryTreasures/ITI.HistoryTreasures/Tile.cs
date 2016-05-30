@@ -38,8 +38,7 @@ namespace ITI.HistoryTreasures
         /// </summary>
         public Map Map
         {
-            get
-            { return _mapContext; }
+            get { return _mapContext; }
         }
 
         /// <summary>
