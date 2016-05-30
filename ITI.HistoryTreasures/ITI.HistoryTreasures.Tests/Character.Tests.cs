@@ -289,8 +289,7 @@ namespace ITI.HistoryTreasures.Tests
             mc.Movement(KeyEnum.up);
 
             Assert.That(mc.positionX == 32 && mc.positionY == 32);
-            
-        }*/
+        }
 
         [Test]
         public void MainCharacter_cannot_be_create_two_times()
@@ -300,6 +299,6 @@ namespace ITI.HistoryTreasures.Tests
             Level l = t.CreateLevel("Level");
 
             Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, "test", "judd"));
-        }     
+        }*/          
     }
 }
