@@ -117,6 +117,19 @@ namespace ITI.HistoryTreasures.Tests
             Assert.Throws<ArgumentException>(() => new PNJ(g, l, 15, 15, "test", "Hawke", "Hello world !"));
         }
 
+        [Test]
+        public void PNJ_have_a_unique_speech()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+
+            PNJ p = l.CreatePNJ(g, 16, 32, "Test", "Hawke", "Hello world !");
+
+            Assert.Throws<InvalidOperationException>(() => l.CreatePNJ(g, 32, 32, "Test", "Hawke", "Hello world !"));
+        }
+
+
         /*[Test]
         [Ignore("Not complete at all")]
         public void PNJ_cannot_be_create_on_a_wall()
@@ -277,7 +290,7 @@ namespace ITI.HistoryTreasures.Tests
 
             Assert.That(mc.positionX == 32 && mc.positionY == 32);
             
-        }
+        }*/
 
         [Test]
         public void MainCharacter_cannot_be_create_two_times()
@@ -287,6 +300,6 @@ namespace ITI.HistoryTreasures.Tests
             Level l = t.CreateLevel("Level");
 
             Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, "test", "judd"));
-        }    */    
+        }     
     }
 }

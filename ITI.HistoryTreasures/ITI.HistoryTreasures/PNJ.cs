@@ -39,6 +39,11 @@ namespace ITI.HistoryTreasures
                 {
                     throw new InvalidOperationException("You cannot create two levels with same name");
                 }
+
+                else if (ctx.PNJ[i].Speech == speech)
+                {
+                    throw new InvalidOperationException("You cannot have the same speech twice.");
+                }
             }
 
             _ctx = ctx;
