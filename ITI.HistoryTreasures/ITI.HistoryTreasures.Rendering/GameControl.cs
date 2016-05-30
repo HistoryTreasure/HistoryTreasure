@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+using ITI.HistoryTreasures.Rendering.Properties;
 
 namespace ITI.HistoryTreasures.Rendering
 {
@@ -46,6 +48,9 @@ namespace ITI.HistoryTreasures.Rendering
             int y = 0;
             int width = _windowSize.Width / tileArray.GetLength(0);
             int height = _windowSize.Height / tileArray.GetLength(1);
+
+            SoundPlayer audio = new SoundPlayer(Resources.audio);
+            audio.Play();
 
             //Resizing the Form to an almost perfect square
             HistoryTreasures.ActiveForm.Size = new Size(_windowSize.Height, _windowSize.Height);
