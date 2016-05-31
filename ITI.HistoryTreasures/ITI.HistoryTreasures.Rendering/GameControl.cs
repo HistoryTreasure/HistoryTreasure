@@ -41,7 +41,7 @@ namespace ITI.HistoryTreasures.Rendering
         protected override void OnPaint(PaintEventArgs e)
         {
             if (LevelContext == null) return;
-            Tile[,] tileArray = _lCtx.MapContext.TileArray;
+            Tile[,] tileArray = LevelContext.MapContext.TileArray;
             //Size _windowSize = HistoryTreasures.ActiveForm.Size;
             int x = 0;
             int y = 0;
@@ -69,9 +69,8 @@ namespace ITI.HistoryTreasures.Rendering
 
             MainCharacter MC = LevelContext.MainCharacter;
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
-            e.Graphics.DrawImage(characterBitmap, MC.positionX -16, MC.positionY -16, width, height);
+            e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
         }
-
 
         private void InitializeComponent()
         {
@@ -81,14 +80,9 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             this.DoubleBuffered = true;
             this.Name = "GameControl";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GameControl_KeyPress);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
 
-        }
-
-        private void GameControl_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if(e == 
         }
 
         /*private void PaintCharacter()
@@ -100,6 +94,29 @@ namespace ITI.HistoryTreasures.Rendering
         {
             get { return _resourcesManager; }
         }
-
+        
+        private void GameControl_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Z)
+            {
+                MessageBox.Show("Haut");
+            }
+            else if (e.KeyCode == Keys.S)
+            {
+                MessageBox.Show("Bas");
+            }
+            else if (e.KeyCode == Keys.Q)
+            {
+                MessageBox.Show("Gauche");
+            }
+            else if (e.KeyCode == Keys.D)
+            {
+                MessageBox.Show("Droite");
+            }
+            else if (e.KeyCode == Keys.E)
+            {
+                MessageBox.Show("Action");
+            }
+        }
     }
 }

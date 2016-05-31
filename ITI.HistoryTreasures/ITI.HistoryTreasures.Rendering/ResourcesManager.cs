@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace ITI.HistoryTreasures.Rendering
 {
@@ -11,6 +12,7 @@ namespace ITI.HistoryTreasures.Rendering
     {
         readonly Dictionary<TileEnum, Bitmap> _tileBitmaps;
         readonly Dictionary<CharacterEnum, Bitmap> _characterBitmaps;
+        readonly Dictionary<KeyEnum, Keys> _keys;
 
         /// <summary>
         /// This constructor instantiate a ResourcesManager.
@@ -22,6 +24,7 @@ namespace ITI.HistoryTreasures.Rendering
             _tileBitmaps[TileEnum.WATER] = Properties.Resources.eau;
             _characterBitmaps = new Dictionary<CharacterEnum, Bitmap>();
             _characterBitmaps[CharacterEnum.MCFACE] = Properties.Resources.img_X1_Y0;
+            
         }
 
         /// <summary>
