@@ -19,6 +19,7 @@ namespace ITI.HistoryTreasures.Rendering
         
         Bitmap _herb = Properties.Resources.herbe;
         Theme _tCtx;
+        Level _level;
 
 
         /// <summary>
@@ -29,7 +30,8 @@ namespace ITI.HistoryTreasures.Rendering
             InitializeComponent();
             Game g = new Game();
             _tCtx = g.CreateTheme("Theme");
-            gameControl1.LevelContext = new Level(_tCtx, "Test");
+            _level = new Level(_tCtx, "Test");
+            gameControl1.LevelContext = _level;
         }
 
         //public void EnableDoubleBuffering()

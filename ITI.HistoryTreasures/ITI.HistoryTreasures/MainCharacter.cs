@@ -36,7 +36,7 @@ namespace ITI.HistoryTreasures
                 throw new InvalidOperationException();
             }*/
 
-            _speed = 1;
+            _speed = 6;
             _life = 3;
         }
 

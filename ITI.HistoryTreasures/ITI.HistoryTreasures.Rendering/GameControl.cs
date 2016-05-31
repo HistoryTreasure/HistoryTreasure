@@ -54,6 +54,7 @@ namespace ITI.HistoryTreasures.Rendering
             int y = 0;
             int width = this.Width / tileArray.GetLength(0);
             int height = this.Height / tileArray.GetLength(1);
+            MainCharacter MC = LevelContext.MainCharacter;
 
             //Resizing the Form to an almost perfect square
             //  HistoryTreasures.ActiveForm.Size = new Size(this.Height,this.Height);
@@ -74,13 +75,13 @@ namespace ITI.HistoryTreasures.Rendering
                 y += this.Height / tileArray.GetLength(1);
             }
 
-            MainCharacter MC = LevelContext.MainCharacter;
+            
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
 
-            PNJ pnj = new PNJ(_gCtx, _lCtx, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello");
+            /*PNJ pnj = new PNJ(_gCtx, _lCtx, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello");
             Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
-            e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
+            e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);*/
         }
 
         private void InitializeComponent()
@@ -108,21 +109,30 @@ namespace ITI.HistoryTreasures.Rendering
         
         private void GameControl_KeyDown(object sender, KeyEventArgs e)
         {
+            MainCharacter MC = LevelContext.MainCharacter;
             if (e.KeyCode == Keys.Z)
             {
-                MessageBox.Show("Haut");
+                MC.Movement(KeyEnum.up);
+                Invalidate();
+                //MessageBox.Show("Haut");
             }
             else if (e.KeyCode == Keys.S)
             {
-                MessageBox.Show("Bas");
+                MC.Movement(KeyEnum.down);
+                Invalidate();
+                //MessageBox.Show("Bas");
             }
             else if (e.KeyCode == Keys.Q)
             {
-                MessageBox.Show("Gauche");
+                MC.Movement(KeyEnum.left);
+                Invalidate();
+                //MessageBox.Show("Gauche");
             }
             else if (e.KeyCode == Keys.D)
             {
-                MessageBox.Show("Droite");
+                MC.Movement(KeyEnum.right);
+                Invalidate();
+                //MessageBox.Show("Droite");
             }
             else if (e.KeyCode == Keys.E)
             {

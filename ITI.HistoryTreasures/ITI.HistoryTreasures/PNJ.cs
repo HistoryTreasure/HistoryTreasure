@@ -37,7 +37,7 @@ namespace ITI.HistoryTreasures
             {
                 if (ctx.PNJ[i].Name == name)
                 {
-                    throw new InvalidOperationException("You cannot create two levels with same name");
+                    throw new InvalidOperationException("You cannot create two PNJ with same name");
                 }
             }
 
