@@ -13,6 +13,7 @@ namespace ITI.HistoryTreasures.Rendering
     public class GameControl : UserControl
     {
         Level _lCtx;
+        Game _gCtx;
         private IContainer components;
         ResourcesManager _resourcesManager;
 
@@ -23,6 +24,12 @@ namespace ITI.HistoryTreasures.Rendering
         {
             _resourcesManager = new ResourcesManager();
             InitializeComponent();
+        }
+
+        public Game GameContext
+        {
+            get { return _gCtx; }
+            set { _gCtx = value; }
         }
 
         /// <summary>
@@ -70,6 +77,10 @@ namespace ITI.HistoryTreasures.Rendering
             MainCharacter MC = LevelContext.MainCharacter;
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
+
+            PNJ pnj = new PNJ(_gCtx, _lCtx, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello");
+            Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
+            e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
         }
 
         private void InitializeComponent()
