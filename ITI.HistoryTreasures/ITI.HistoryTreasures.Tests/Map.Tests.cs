@@ -11,12 +11,6 @@ namespace ITI.HistoryTreasures.Tests
     class MapTest
     {
         [Test]
-        [Ignore("To do")]
-        public void Map_array_return_good_value()
-        {
-        }
-
-        [Test]
         public void Map_can_be_create()
         {
             Game g = new Game();

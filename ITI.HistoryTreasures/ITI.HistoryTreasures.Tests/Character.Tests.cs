@@ -276,7 +276,7 @@ namespace ITI.HistoryTreasures.Tests
             Level l = t.CreateLevel("Level");
             Assert.Throws<ArgumentException>(() => new MainCharacter(g, 15, 15, "test", "Judd"));
         }
-        
+
         /*[Test]
         [Ignore("Not complete at all")]
         public void MainCharacter_cannot_be_create_on_a_wall()
@@ -289,7 +289,7 @@ namespace ITI.HistoryTreasures.Tests
             mc.Movement(KeyEnum.up);
 
             Assert.That(mc.positionX == 32 && mc.positionY == 32);
-        }
+        }*/
 
         [Test]
         public void MainCharacter_cannot_be_create_two_times()
@@ -298,7 +298,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, "test", "judd"));
-        }*/          
+            Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, "Test", "Judd"));
+        }         
     }
 }
