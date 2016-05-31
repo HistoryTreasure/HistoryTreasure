@@ -23,7 +23,6 @@ namespace ITI.HistoryTreasures.Rendering
         {
             _resourcesManager = new ResourcesManager();
             InitializeComponent();
-
         }
 
         /// <summary>
@@ -41,7 +40,7 @@ namespace ITI.HistoryTreasures.Rendering
         /// <param name="e"></param>
         protected override void OnPaint(PaintEventArgs e)
         {
-            if (_lCtx == null) return;
+            if (LevelContext == null) return;
             Tile[,] tileArray = _lCtx.MapContext.TileArray;
             //Size _windowSize = HistoryTreasures.ActiveForm.Size;
             int x = 0;
@@ -52,21 +51,25 @@ namespace ITI.HistoryTreasures.Rendering
             //Resizing the Form to an almost perfect square
             //  HistoryTreasures.ActiveForm.Size = new Size(this.Height,this.Height);
 
-            for (int i = 0; i < _lCtx.MapContext.Height; i++)
+            for (int i = 0; i < LevelContext.MapContext.Height; i++)
             {
-                for (int j = 0; j < _lCtx.MapContext.Width; j++)
+                for (int j = 0; j < LevelContext.MapContext.Width; j++)
                 {
                     Tile m = tileArray[i, j];
 
                     // Bitmap tileperso = _resourcesManager.GetTileBitmapPerso(m);
                     Tile t = tileArray[i, j];
-                    Bitmap tileBitmap = _resourcesManager.GetTileBitmap(t);
+                    Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
                     e.Graphics.DrawImage(tileBitmap, x, y, width, height);
                     x += this.Width / tileArray.GetLength(0);
                 }
                 x = 0;
                 y += this.Height / tileArray.GetLength(1);
             }
+
+            MainCharacter MC = LevelContext.MainCharacter;
+            Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
+            e.Graphics.DrawImage(characterBitmap, MC.positionX -16, MC.positionY -16, width, height);
         }
 
 
@@ -85,7 +88,18 @@ namespace ITI.HistoryTreasures.Rendering
 
         private void GameControl_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            //if(e == 
         }
+
+        /*private void PaintCharacter()
+        {
+            
+        }*/
+
+        private ResourcesManager GetResourcesManager
+        {
+            get { return _resourcesManager; }
+        }
+
     }
 }

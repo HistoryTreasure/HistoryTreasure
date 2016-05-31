@@ -10,7 +10,7 @@ namespace ITI.HistoryTreasures
     {
         int _positionX;
         int _positionY;
-        string _bitMapName;
+        CharacterEnum _bitMapName;
         string _name;
         readonly Game _ctx;
         readonly Hitbox _hitBox;
@@ -24,7 +24,7 @@ namespace ITI.HistoryTreasures
         /// <param name="Y">This parameter reference vertical position with an int.</param>
         /// <param name="bitMapName">This parameter reference appaerance of Character.</param>
         /// <param name="name">This parameter reference name of Character.</param>
-        public Character(Game ctx, int X, int Y, string bitMapName, string name)
+        public Character(Game ctx, int X, int Y, CharacterEnum bitMapName, string name)
         {
             _ctx = ctx;
             _positionX = X;
@@ -67,13 +67,10 @@ namespace ITI.HistoryTreasures
             }
         }
 
-        /// <summary>
-        /// This property returns appaerance of Character.
-        /// </summary>
-        public string BitMapName
+        
+        public CharacterEnum CharacterBitmapName
         {
             get { return _bitMapName; }
-            set { _bitMapName = value; }
         }
 
         /// <summary>
