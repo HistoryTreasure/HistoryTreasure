@@ -15,6 +15,7 @@ namespace ITI.HistoryTreasures.Rendering
         Level _lCtx;
         private IContainer components;
         ResourcesManager _resourcesManager;
+        Game _gCtx;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -25,6 +26,13 @@ namespace ITI.HistoryTreasures.Rendering
             InitializeComponent();
         }
 
+
+        public Game GameContext
+        {
+            get { return _gCtx; }
+            set { _gCtx = value; }
+        }
+
         /// <summary>
         /// This property returns the level context.
         /// </summary>
@@ -33,6 +41,7 @@ namespace ITI.HistoryTreasures.Rendering
             get { return _lCtx; }
             set { _lCtx = value; }
         }
+
 
         /// <summary>
         /// This method paint element on screen.
@@ -70,9 +79,12 @@ namespace ITI.HistoryTreasures.Rendering
             MainCharacter MC = LevelContext.MainCharacter;
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX -16, MC.positionY -16, width, height);
+
+            PNJ pnj = new PNJ(_gCtx, LevelContext, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello");
+            Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
+            e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
         }
-
-
+        
         private void InitializeComponent()
         {
             this.SuspendLayout();

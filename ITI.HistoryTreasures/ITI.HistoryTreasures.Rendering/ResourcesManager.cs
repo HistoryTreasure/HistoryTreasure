@@ -22,6 +22,7 @@ namespace ITI.HistoryTreasures.Rendering
             _tileBitmaps[TileEnum.WATER] = Properties.Resources.eau;
             _characterBitmaps = new Dictionary<CharacterEnum, Bitmap>();
             _characterBitmaps[CharacterEnum.MCFACE] = Properties.Resources.img_X1_Y0;
+            _characterBitmaps[CharacterEnum.GUARDFACE] = Properties.Resources.droite;
         }
 
         /// <summary>
