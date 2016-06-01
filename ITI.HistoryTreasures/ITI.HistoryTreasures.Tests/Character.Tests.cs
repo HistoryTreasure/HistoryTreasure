@@ -21,7 +21,7 @@ namespace ITI.HistoryTreasures.Tests
             string speech = "Hello world !";
             Assert.That(p.Speech, Is.EqualTo(speech)); //Verify if the speech is correct
             Assert.That(p.Level, Is.EqualTo(l));
-            Assert.That(l.PNJ.Contains(p));
+            Assert.That(l.Pnjs.Contains(p));
         }
 
         [Test]
@@ -55,7 +55,7 @@ namespace ITI.HistoryTreasures.Tests
             
             Assert.That(p.positionX, Is.EqualTo(16));
             Assert.That(p.positionY, Is.EqualTo(16));
-            Assert.That(l.PNJ.Contains(p));
+            Assert.That(l.Pnjs.Contains(p));
         }
 
         [Test]
@@ -68,7 +68,7 @@ namespace ITI.HistoryTreasures.Tests
             
           
             Assert.That(p.Speech, Is.EqualTo("Hello world !"));
-            Assert.That(l.PNJ.Contains(p));
+            Assert.That(l.Pnjs.Contains(p));
         }
 
         [Test]
@@ -83,8 +83,8 @@ namespace ITI.HistoryTreasures.Tests
 
             Assert.That(p.Speech, Is.EqualTo("Hello world !"));
             Assert.That(n.Speech, Is.EqualTo("You have to search the good questions !"));
-            Assert.That(l.PNJ.Contains(p));
-            Assert.That(l.PNJ.Contains(n));
+            Assert.That(l.Pnjs.Contains(p));
+            Assert.That(l.Pnjs.Contains(n));
         }
 
         [Test]

@@ -75,13 +75,12 @@ namespace ITI.HistoryTreasures.Rendering
                 y += this.Height / tileArray.GetLength(1);
             }
 
-            
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
 
-            /*PNJ pnj = new PNJ(_gCtx, _lCtx, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello");
+            PNJ pnj = LevelContext.Pnjs[0];
             Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
-            e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);*/
+            e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
         }
 
         private void InitializeComponent()

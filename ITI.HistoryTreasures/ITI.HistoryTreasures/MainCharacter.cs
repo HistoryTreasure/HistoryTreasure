@@ -86,20 +86,18 @@ namespace ITI.HistoryTreasures
         {
             if (key == KeyEnum.up)
             {
+                if (positionY == 16)
+                    return;
+
                 positionY = positionY - Speed;
                 HitBox.yA--;
                 HitBox.yC--;
             }
             else if (key == KeyEnum.down)
             {
-                if (positionY == 16)
-                    return;
-                else
-                {
                     positionY = positionY + Speed;
                     HitBox.yA++;
                     HitBox.yC++;
-                }
             }
             else if (key == KeyEnum.right)
             {
