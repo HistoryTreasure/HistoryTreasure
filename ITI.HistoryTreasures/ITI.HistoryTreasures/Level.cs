@@ -58,6 +58,12 @@ namespace ITI.HistoryTreasures
             get { return _pnj; }
         }
 
+        /// <summary>
+        /// Gets the clues.
+        /// </summary>
+        /// <value>
+        /// The clues.
+        /// </value>
         public List<Clue> Clues
         {
             get { return _clues; }
