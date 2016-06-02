@@ -19,7 +19,7 @@ namespace ITI.HistoryTreasures
         /// <param name="Y">This parameter reference vertical position with an int.</param>
         /// <param name="bitMapName">This parameter reference appaerance of Character.</param>
         /// <param name="name">This parameter reference name of PNJ.</param>
-        public MainCharacter(Game ctx, int X, int Y, string bitMapName, string name)
+        public MainCharacter(Game ctx, int X, int Y, CharacterEnum bitMapName, string name)
             : base(ctx, X, Y, bitMapName, name)
         {
             if (X < 0 || Y < 0)
@@ -37,7 +37,7 @@ namespace ITI.HistoryTreasures
                 throw new InvalidOperationException();
             }*/
 
-            _speed = 1;
+            _speed = 6;
             _life = 3;
         }
 
