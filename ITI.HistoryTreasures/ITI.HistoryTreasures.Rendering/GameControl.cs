@@ -87,9 +87,9 @@ namespace ITI.HistoryTreasures.Rendering
             Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
             e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
 
-            Clue clue = LevelContext.Clues[0];
+            /*Clue clue = LevelContext.Clues[0];
             Bitmap clueBitmap = GetResourcesManager.GetCharacterBitmap(clue);
-            e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, width, height);
+            e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, width, height);*/
         }
 
         private void InitializeComponent()
