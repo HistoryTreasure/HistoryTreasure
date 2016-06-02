@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+using ITI.HistoryTreasures.Rendering.Properties;
 
 namespace ITI.HistoryTreasures.Rendering
 {
@@ -15,6 +17,7 @@ namespace ITI.HistoryTreasures.Rendering
         Level _lCtx;
         private IContainer components;
         ResourcesManager _resourcesManager;
+        Sound _sound;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -47,6 +50,8 @@ namespace ITI.HistoryTreasures.Rendering
             int width = _windowSize.Width / tileArray.GetLength(0);
             int height = _windowSize.Height / tileArray.GetLength(1);
 
+            _sound = new Sound();
+
             //Resizing the Form to an almost perfect square
             HistoryTreasures.ActiveForm.Size = new Size(_windowSize.Height, _windowSize.Height);
 
@@ -64,6 +69,10 @@ namespace ITI.HistoryTreasures.Rendering
             }
         }
 
+        public Sound Sound
+        {
+            get { return _sound; }
+        }
 
         private void InitializeComponent()
         {

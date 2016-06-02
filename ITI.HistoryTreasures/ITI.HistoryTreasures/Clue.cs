@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,31 +11,81 @@ namespace ITI.HistoryTreasures
     {
         readonly string _name;
         readonly Level _lCtx;
-        bool _isUsed;
         readonly int _x;
         readonly int _y;
         readonly Hitbox _hitbox;
         readonly string _speech;
+        string _bitMapName;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Clue"/> class.
         /// </summary>
         /// <param name="name">The name.</param>
         /// <param name="lCtx">The Level CTX.</param>
-        /// <param name="isUsed">If set to <c>true</c> [is used].</param>
         /// <param name="x">The x.</param>
         /// <param name="y">The y.</param>
-        /// <param name="hitbox">The hitbox.</param>
         /// <param name="speech">The speech.</param>
-        public Clue(string name, Level lCtx, bool isUsed, int x, int y, Hitbox hitbox, string speech)
+        public Clue(string name, Level lCtx, string bitMapName, int x, int y, string speech)
         {
             _name = name;
             _lCtx = lCtx;
-            _isUsed = isUsed;
+            _bitMapName = bitMapName;
             _x = x;
             _y = y;
-            _hitbox = hitbox;
             _speech = speech;
+            _hitbox = new Hitbox(x - 16, y, x + 16, y + 16);
+
+            if (X < 0 || Y < 0)
+            {
+                throw new ArgumentException("You cannot create a PNJ with this coordonate");
+            }
+
+            for (int i = 0; i < lCtx.Clues.Count; i++)
+            {
+                if (lCtx.Clues[i].Name == name)
+                {
+                    throw new InvalidOperationException("You cannot create two clues with same name.");
+                }
+
+                else if (lCtx.Clues[i].Speech == speech)
+                {
+                    throw new InvalidOperationException("You cannot have the same speech twice.");
+                }
+            }
+
+            if ((X < 16) || (Y < 16) || (X > (lCtx.MapContext.TileArray.GetLength(0) * 32 - 16) || (Y > (lCtx.MapContext.TileArray.GetLength(1) * 32 - 16))))
+{
+                throw new ArgumentException("You cannot create a clue outside the map.");
+            }
+
+            if (LCtx.Clues.Count != 0)
+            {
+                foreach (Clue c in LCtx.Clues)
+                {
+                    if (c.X == X && c.Y == Y)
+                    {
+                        throw new InvalidOperationException("You cannot create two clues on same position.");
+                    }
+                }
+            }
+
+            if (LCtx.PNJ.Count != 0)
+            {
+                foreach (PNJ p in LCtx.PNJ)
+                {
+                    if (p.positionX == X && p.positionY == Y)
+                    {
+                        throw new InvalidOperationException("You cannot create Clue on PNJ.");
+                    }
+                }
+            }
+
+            if (LCtx.MainCharacter.positionX == X && LCtx.MainCharacter.positionY == Y)
+            {
+                throw new InvalidOperationException("You cannot create Clue on MainCharacter.");
+            }
+
+            
         }
 
         /// <summary>
@@ -54,21 +105,20 @@ namespace ITI.HistoryTreasures
         /// <value>
         /// The level context.
         /// </value>
-        public Level LCxt
+        public Level LCtx
         {
             get { return _lCtx; }
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this instance is used.
+        /// Gets the name of the bit map.
         /// </summary>
         /// <value>
-        ///   <c>true</c> if this instance is used; otherwise, <c>false</c>.
+        /// The name of the bit map.
         /// </value>
-        public bool IsUsed
+        public string BitMapName
         {
-            get { return _isUsed; }
-            set { _isUsed = value; }
+            get { return _bitMapName; }
         }
 
         /// <summary>

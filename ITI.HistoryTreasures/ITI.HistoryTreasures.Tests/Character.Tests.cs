@@ -111,11 +111,24 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
-            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
+            
             Level l = t.CreateLevel("Level");
 
             Assert.Throws<ArgumentException>(() => new PNJ(g, l, 15, 15, "test", "Hawke", "Hello world !"));
         }
+
+        [Test]
+        public void PNJ_have_a_unique_speech()
+        {
+            Game g = new Game();
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+
+            PNJ p = l.CreatePNJ(g, 16, 32, "Test", "Hawke", "Hello world !");
+
+            Assert.Throws<InvalidOperationException>(() => l.CreatePNJ(g, 32, 32, "Test", "Hawke", "Hello world !"));
+        }
+
 
         /*[Test]
         [Ignore("Not complete at all")]
@@ -139,11 +152,12 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_have_a_name_and_a_speed()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
             string name = "Judd";
             int speed = 1;
-            Assert.That(mC.Name, Is.EqualTo(name));
-            Assert.That(mC.Speed, Is.EqualTo(speed));
+            Assert.That(l.MainCharacter.Name, Is.EqualTo(name));
+            Assert.That(l.MainCharacter.Speed, Is.EqualTo(speed));
         }
 
         [Test]
@@ -155,40 +169,44 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
-        public void MainCharacter_can_move_up()
+        public void MainCharacter_can_move_down()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 16, 26, "test", "Judd");
-
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+            
             for (int i = 0; i < 10; i++)
-                mC.Movement(KeyEnum.up);
+                l.MainCharacter.Movement(KeyEnum.down);
 
-            Assert.That(mC.positionY, Is.EqualTo(16));
+            Assert.That(l.MainCharacter.positionY, Is.EqualTo(26));
         }
 
         [Test]
-        public void MainCharacter_can_move_left()
+        public void MainCharacter_can_move_right()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 32, 0, "test", "Judd");
-
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+            
             for (int i = 0; i < 10; i++)
-                mC.Movement(KeyEnum.left);
+                l.MainCharacter.Movement(KeyEnum.right);
 
-            Assert.That(mC.positionX, Is.EqualTo(22));
+            Assert.That(l.MainCharacter.positionX, Is.EqualTo(26));
         }
 
         [Test]
         public void MainCharacter_cannot_move_outside_the_map_by_the_left()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 32, 32, "test", "Judd");
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+            
             for (int i = 32; i > 10; i--)
             {
-                mC.Movement(KeyEnum.left);
+                l.MainCharacter.Movement(KeyEnum.left);
             }
 
-            Assert.That(mC.positionX == 16);
+            Assert.That(l.MainCharacter.positionX == 16);
         }
 
         [Test]
@@ -232,18 +250,22 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_cannot_have_more_than_three_life()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
-            Assert.Throws<ArgumentException>(() => mC.Life++);
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+            
+            Assert.Throws<ArgumentException>(() => l.MainCharacter.Life++);
         }
 
         [Test]
         public void MainCharacter_game_over_return_false_if_life_equal_zero()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 16, 16, "test", "Judd");
-            Assert.That(mC.GameOver, Is.EqualTo(true));
-            mC.Life = 0;
-            Assert.That(mC.GameOver, Is.EqualTo(false));
+            Theme t = g.CreateTheme("Theme");
+            Level l = t.CreateLevel("Level");
+            
+            Assert.That(l.MainCharacter.GameOver, Is.EqualTo(true));
+            l.MainCharacter.Life = 0;
+            Assert.That(l.MainCharacter.GameOver, Is.EqualTo(false));
         }
 
         [Test]
@@ -282,8 +304,7 @@ namespace ITI.HistoryTreasures.Tests
             mc.Movement(KeyEnum.up);
 
             Assert.That(mc.positionX == 32 && mc.positionY == 32);
-            
-        }
+        }*/
 
         [Test]
         public void MainCharacter_cannot_be_create_two_times()
@@ -292,7 +313,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, "test", "judd"));
-        }    */
+            Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, "Test", "Judd"));
+        }         
     }
 }

@@ -21,7 +21,7 @@ namespace ITI.HistoryTreasures
         /// <param name="name">This parameter reference name of PNJ.</param>
         /// <param name="speech">This parameter reference speech of PNJ.</param>
         public PNJ(Game gctx, Level ctx, int X, int Y, string bitMapName, string name, string speech)
-            : base(gctx, X, Y, "test", name)
+            : base(gctx, X, Y, bitMapName, name)
         {
             if (X < 0 || Y < 0)
             {
@@ -38,6 +38,11 @@ namespace ITI.HistoryTreasures
                 if (ctx.PNJ[i].Name == name)
                 {
                     throw new InvalidOperationException("You cannot create two levels with same name");
+                }
+
+                else if (ctx.PNJ[i].Speech == speech)
+                {
+                    throw new InvalidOperationException("You cannot have the same speech twice.");
                 }
             }
 

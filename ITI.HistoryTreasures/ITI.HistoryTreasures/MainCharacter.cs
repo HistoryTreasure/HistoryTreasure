@@ -102,9 +102,6 @@ namespace ITI.HistoryTreasures
             }
             else if (key == KeyEnum.down)
             {
-                if (positionY == (MCtx.TileArray.GetLength(1) * 32) - 16)
-                    return;
-
                 positionY = positionY + Speed;
                 HitBox.yA++;
                 HitBox.yC++;
