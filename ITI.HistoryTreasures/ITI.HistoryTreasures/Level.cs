@@ -14,6 +14,7 @@ namespace ITI.HistoryTreasures
         readonly Theme _ctx;
         readonly MainCharacter _mainCharacter;
         public List<Clue> _clues;
+        readonly Clue _clue;
         readonly Map _mCtx;
 
         /// <summary>
@@ -39,6 +40,7 @@ namespace ITI.HistoryTreasures
             _pnj = CreatePNJ(Theme.Game, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello");
             _mCtx = new Map(this, 10, 10);
             _clues = new List<Clue>();
+            //_clue = 
         }
 
         /// <summary>
