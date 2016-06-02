@@ -53,15 +53,5 @@ namespace ITI.HistoryTreasures
         public int xD { get { return _xD; } set { _xD = value; } }
         public int yD { get { return _yD; } set { _yD = value; } }
         
-        // detect if something collide with the hitbox
-        /*public bool IsCollide(int x1, int y1, int x2, int y2, int xValue, int yValue)
-        {
-            if((xValue > x1 && xValue < x2) && (yValue == y1 && yValue == y2))
-                return true;
-            else if ((yValue > y1 && yValue < y2) && (xValue == x1 && xValue == x2))
-                return true;
-            else
-                return false;
-        }*/
     }
 }
