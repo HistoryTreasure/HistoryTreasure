@@ -54,7 +54,7 @@ namespace ITI.HistoryTreasures
             }
 
             if ((X < 16) || (Y < 16) || (X > (lCtx.MapContext.TileArray.GetLength(0) * 32 - 16) || (Y > (lCtx.MapContext.TileArray.GetLength(1) * 32 - 16))))
-{
+            {
                 throw new ArgumentException("You cannot create a clue outside the map.");
             }
 
@@ -85,7 +85,7 @@ namespace ITI.HistoryTreasures
                 throw new InvalidOperationException("You cannot create Clue on MainCharacter.");
             }
 
-            
+
         }
 
         /// <summary>

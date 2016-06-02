@@ -72,7 +72,7 @@ namespace ITI.HistoryTreasures.Tests
             g = new Game();
             t = g.CreateTheme("Theme");
             l = t.CreateLevel("Level");
-            c = l.CreateClue(t, 16, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !");
+            c = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !");
         }
 
         [Test]
@@ -147,7 +147,7 @@ namespace ITI.HistoryTreasures.Tests
         public void Levels_returns_correctly_Clue()
         {
             Assert.That(c.LCtx == l);
-            Assert.That(c.X == 16);
+            Assert.That(c.X == 32);
             Assert.That(c.Y == 32);
             Assert.That(c.Name == "Livre");
             Assert.That(c.Speech == "Un indice ? Son nom est Henri !");
@@ -187,7 +187,7 @@ namespace ITI.HistoryTreasures.Tests
         {
             Map m = new Map(l, 5, 5);
 
-            Assert.Throws<ArgumentException>(() => l.CreateClue(t, 170, 170, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+            Assert.Throws<ArgumentException>(() => l.CreateClue(t, 170, 170, "Clue", "Truc", "Truc"));
         }
 
         [Test]
