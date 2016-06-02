@@ -15,6 +15,7 @@ namespace ITI.HistoryTreasures.Rendering
     public class GameControl : UserControl
     {
         Level _lCtx;
+        Game _gCtx;
         private IContainer components;
         ResourcesManager _resourcesManager;
         Sound _sound;
@@ -25,6 +26,13 @@ namespace ITI.HistoryTreasures.Rendering
         public GameControl()
         {
             _resourcesManager = new ResourcesManager();
+            InitializeComponent();
+        }
+
+        public Game GameContext
+        {
+            get { return _gCtx; }
+            set { _gCtx = value; }
         }
 
         /// <summary>
@@ -42,36 +50,46 @@ namespace ITI.HistoryTreasures.Rendering
         /// <param name="e"></param>
         protected override void OnPaint(PaintEventArgs e)
         {
-            if (_lCtx == null) return;
-            Tile[,] tileArray = _lCtx.MapContext.TileArray;
-            Size _windowSize = HistoryTreasures.ActiveForm.Size;
+            if (LevelContext == null) return;
+            Tile[,] tileArray = LevelContext.MapContext.TileArray;
+            //Size _windowSize = HistoryTreasures.ActiveForm.Size;
             int x = 0;
             int y = 0;
-            int width = _windowSize.Width / tileArray.GetLength(0);
-            int height = _windowSize.Height / tileArray.GetLength(1);
+            int width = this.Width / tileArray.GetLength(0);
+            int height = this.Height / tileArray.GetLength(1);
+            MainCharacter MC = LevelContext.MainCharacter;
 
             _sound = new Sound();
 
             //Resizing the Form to an almost perfect square
-            HistoryTreasures.ActiveForm.Size = new Size(_windowSize.Height, _windowSize.Height);
+            //  HistoryTreasures.ActiveForm.Size = new Size(this.Height,this.Height);
 
-            for (int i = 0; i < _lCtx.MapContext.Height; i++)
+            for (int i = 0; i < LevelContext.MapContext.Height; i++)
             {
-                for (int j = 0; j < _lCtx.MapContext.Width; j++)
+                for (int j = 0; j < LevelContext.MapContext.Width; j++)
                 {
+                    Tile m = tileArray[i, j];
+
+                    // Bitmap tileperso = _resourcesManager.GetTileBitmapPerso(m);
                     Tile t = tileArray[i, j];
-                    Bitmap tileBitmap = _resourcesManager.GetTileBitmap(t);
+                    Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
                     e.Graphics.DrawImage(tileBitmap, x, y, width, height);
-                    x += _windowSize.Width / tileArray.GetLength(0);
+                    x += this.Width / tileArray.GetLength(0);
                 }
                 x = 0;
-                y += _windowSize.Height / tileArray.GetLength(1);
+                y += this.Height / tileArray.GetLength(1);
             }
-        }
 
-        public Sound Sound
-        {
-            get { return _sound; }
+            Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
+            e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
+
+            PNJ pnj = LevelContext.Pnjs[0];
+            Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
+            e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
+
+            Clue clue = LevelContext.Clues[0];
+            Bitmap clueBitmap = GetResourcesManager.GetCharacterBitmap(clue);
+            e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, width, height);
         }
 
         private void InitializeComponent()
@@ -82,8 +100,52 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             this.DoubleBuffered = true;
             this.Name = "GameControl";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
 
+        }
+
+        /*private void PaintCharacter()
+        {
+            
+        }*/
+
+        private ResourcesManager GetResourcesManager
+        {
+            get { return _resourcesManager; }
+        }
+        
+        private void GameControl_KeyDown(object sender, KeyEventArgs e)
+        {
+            MainCharacter MC = LevelContext.MainCharacter;
+            if (e.KeyCode == Keys.Z)
+            {
+                MC.Movement(KeyEnum.up);
+                Invalidate();
+                //MessageBox.Show("Haut");
+            }
+            else if (e.KeyCode == Keys.S)
+            {
+                MC.Movement(KeyEnum.down);
+                Invalidate();
+                //MessageBox.Show("Bas");
+            }
+            else if (e.KeyCode == Keys.Q)
+            {
+                MC.Movement(KeyEnum.left);
+                Invalidate();
+                //MessageBox.Show("Gauche");
+            }
+            else if (e.KeyCode == Keys.D)
+            {
+                MC.Movement(KeyEnum.right);
+                Invalidate();
+                //MessageBox.Show("Droite");
+            }
+            else if (e.KeyCode == Keys.E)
+            {
+                MessageBox.Show("Action");
+            }
         }
     }
 }

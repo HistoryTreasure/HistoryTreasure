@@ -9,7 +9,8 @@ namespace ITI.HistoryTreasures.Rendering
 {
     class ResourcesManager
     {
-        Dictionary<TileEnum, Bitmap> _tileBitmaps;
+        readonly Dictionary<TileEnum, Bitmap> _tileBitmaps;
+        readonly Dictionary<CharacterEnum, Bitmap> _characterBitmaps;
 
         /// <summary>
         /// This constructor instantiate a ResourcesManager.
@@ -19,6 +20,9 @@ namespace ITI.HistoryTreasures.Rendering
             _tileBitmaps = new Dictionary<TileEnum, Bitmap>();
             _tileBitmaps[TileEnum.GRASS] = Properties.Resources.herbe;
             _tileBitmaps[TileEnum.WATER] = Properties.Resources.eau;
+            _characterBitmaps = new Dictionary<CharacterEnum, Bitmap>();
+            _characterBitmaps[CharacterEnum.MCFACE] = Properties.Resources.img_X1_Y0;
+            _characterBitmaps[CharacterEnum.GUARDFACE] = Properties.Resources.droite;
         }
 
         /// <summary>
@@ -29,6 +33,11 @@ namespace ITI.HistoryTreasures.Rendering
         public Bitmap GetTileBitmap(Tile tile)
         {
             return _tileBitmaps[tile.TileType];
+        }
+
+        public Bitmap GetCharacterBitmap(Character character)
+        {
+            return _characterBitmaps[character.CharacterBitmapName];
         }
     }
 }

@@ -130,6 +130,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\audio.wav" />
+    <None Include="Resources\base.bmp" />
+    <None Include="Resources\droite.png" />
+    <None Include="Resources\img_X4_Y10.png" />
+    <None Include="Resources\pont vertcal.png" />
+    <None Include="Resources\img_X1_Y0.png" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
