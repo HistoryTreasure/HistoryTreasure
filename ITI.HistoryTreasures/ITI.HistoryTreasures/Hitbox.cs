@@ -52,6 +52,11 @@ namespace ITI.HistoryTreasures
         public int yC { get { return _yC; } set { _yC = value; } }
         public int xD { get { return _xD; } set { _xD = value; } }
         public int yD { get { return _yD; } set { _yD = value; } }
-        
+
+        public bool Overlaps( Hitbox other)
+        {
+            return  !((other.xB >=  && other.xC >= mcHitbox.xD) || (other.yD >= mcHitbox.yA && other.yC >= mcHitbox.yB) 
+                || (other.xA <= mcHitbox.xB && other.xD <= mcHitbox.xC) || (other.yA >= mcHitbox.yD && other.yB >= mcHitbox.yC));
+        }
     }
 }
