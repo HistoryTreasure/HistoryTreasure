@@ -61,11 +61,22 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream audio {
+        internal static System.Drawing.Bitmap _base {
             get {
-                return ResourceManager.GetStream("audio", resourceCulture);
+                object obj = ResourceManager.GetObject("_base", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap droite {
+            get {
+                object obj = ResourceManager.GetObject("droite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -85,6 +96,36 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         internal static System.Drawing.Bitmap herbe {
             get {
                 object obj = ResourceManager.GetObject("herbe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_X1_Y0 {
+            get {
+                object obj = ResourceManager.GetObject("img_X1_Y0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_X4_Y10 {
+            get {
+                object obj = ResourceManager.GetObject("img_X4_Y10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pont_vertcal {
+            get {
+                object obj = ResourceManager.GetObject("pont_vertcal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

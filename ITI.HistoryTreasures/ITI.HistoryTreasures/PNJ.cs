@@ -20,24 +20,24 @@ namespace ITI.HistoryTreasures
         /// <param name="bitMapName">This parameter reference appaerance of Character.</param>
         /// <param name="name">This parameter reference name of PNJ.</param>
         /// <param name="speech">This parameter reference speech of PNJ.</param>
-        public PNJ(Game gctx, Level ctx, int X, int Y, string bitMapName, string name, string speech)
+        public PNJ(Game gctx, Level ctx, int X, int Y, CharacterEnum bitMapName, string name, string speech)
             : base(gctx, X, Y, bitMapName, name)
         {
             if (X < 0 || Y < 0)
             {
                 throw new ArgumentException("You cannot create a PNJ with this coordonate");
             }
-            
-                 else if (X < 16)
+
+            else if (X < 16)
             {
                 throw new ArgumentException("You cannot create a character with his hitbox outside the map.");
             }
 
-            for (int i = 0; i < ctx.PNJ.Count; i++)
+            for (int i = 0; i < ctx.Pnjs.Count; i++)
             {
-                if (ctx.PNJ[i].Name == name)
+                if (ctx.Pnjs[i].Name == name)
                 {
-                    throw new InvalidOperationException("You cannot create two levels with same name");
+                    throw new InvalidOperationException("You cannot create two PNJ with same name");
                 }
 
                 else if (ctx.PNJ[i].Speech == speech)
@@ -47,9 +47,9 @@ namespace ITI.HistoryTreasures
             }
 
             _ctx = ctx;
-            if (Level.PNJ.Count != 0)
+            if (Level.Pnjs.Count != 0)
             {
-                foreach (PNJ p in Level.PNJ)
+                foreach (PNJ p in Level.Pnjs)
                 {
                     if (p.positionX == X && p.positionY == Y)
                     {
@@ -59,7 +59,7 @@ namespace ITI.HistoryTreasures
             }
             _speech = speech;
 
-            ctx.PNJ.Add(this);
+            ctx.Pnjs.Add(this);
         }
 
         /// <summary>

@@ -9,10 +9,12 @@ namespace ITI.HistoryTreasures
     {
         readonly string _name;
         bool _isFinish;
-        readonly List<PNJ> _pnj;
+        readonly List<PNJ> _pnjs;
+        readonly PNJ _pnj;
         readonly Theme _ctx;
         readonly MainCharacter _mainCharacter;
         public List<Clue> _clues;
+        readonly Clue _clue;
         readonly Map _mCtx;
         bool _isOpen;
 
@@ -34,11 +36,12 @@ namespace ITI.HistoryTreasures
             _ctx = ctx;
             _name = name;
             _isFinish = false;
-            _mainCharacter = CreateMain(ctx, 16, 16, "Test", "Judd" );
-            _pnj = new List<PNJ>();
+            _mainCharacter = CreateMain(ctx,16,16, CharacterEnum.MCFACE, "Judd" );
+            _pnjs = new List<PNJ>();
+            _pnj = CreatePNJ(Theme.Game, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello");
             _mCtx = new Map(this, 10, 10);
             _clues = new List<Clue>();
-            _isOpen = false;
+            //_clue = 
         }
 
         /// <summary>
@@ -55,9 +58,9 @@ namespace ITI.HistoryTreasures
         /// <value>
         /// The PNJ.
         /// </value>
-        public List<PNJ> PNJ
+        public List<PNJ> Pnjs
         {
-            get { return _pnj; }
+            get { return _pnjs; }
         }
 
         /// <summary>
@@ -89,6 +92,14 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
+        /// This property returns PNJ.
+        /// </summary>
+        public PNJ Pnj
+        {
+            get { return _pnj; }
+        }
+
+        /// <summary>
         /// Creates the PNJ.
         /// </summary>
         /// <param name="gctx">The GCTX.</param>
@@ -98,10 +109,10 @@ namespace ITI.HistoryTreasures
         /// <param name="name">The name.</param>
         /// <param name="speech">The speech.</param>
         /// <returns></returns>
-        public PNJ CreatePNJ(Game gctx, int X, int Y, string bitMapName, string name, string speech)
+        public PNJ CreatePNJ(Game gctx, int X, int Y, CharacterEnum bitMapName, string name, string speech)
         {
             PNJ p = new PNJ(gctx, this, X, Y, bitMapName, name, speech);
-            _pnj.Add(p);
+            _pnjs.Add(p);
             return p;
         }
 
@@ -115,7 +126,6 @@ namespace ITI.HistoryTreasures
         /// <param name="name">The name.</param>
         /// <returns></returns>
         /// <exception cref="System.InvalidOperationException">you cannot create two main character</exception>
-        public MainCharacter CreateMain(Theme ctx, int x, int y, string bitMapName, string name)
         {
             if (MainCharacter != null)
                 throw new InvalidOperationException("you cannot create two main character");
@@ -156,16 +166,16 @@ namespace ITI.HistoryTreasures
         public string InteractionWithPNJ(KeyEnum key)
         {
             string _talk = "";
-            for(int i = 0; i < _pnj.Count; i++)
+            for(int i = 0; i < _pnjs.Count; i++)
             {
 
-                if(((_mainCharacter.HitBox.xA - _pnj[i].HitBox.xA > 32) || (_mainCharacter.HitBox.xA - _pnj[i].HitBox.xA < 33)) 
-                    || ((_pnj[i].HitBox.xA - _mainCharacter.HitBox.xA > 32) || (_pnj[i].HitBox.xA - _mainCharacter.HitBox.xA < 33))
-                    && ((_pnj[i].HitBox.yA - _mainCharacter.HitBox.yA > 32) || (_pnj[i].HitBox.yA - _mainCharacter.HitBox.yA < 33)) 
-                    || ((_mainCharacter.HitBox.yA - _pnj[i].HitBox.yA > 32) || (_mainCharacter.HitBox.yA - _pnj[i].HitBox.yA < 33)))
+                if(((_mainCharacter.HitBox.xA - _pnjs[i].HitBox.xA > 32) || (_mainCharacter.HitBox.xA - _pnjs[i].HitBox.xA < 33)) 
+                    || ((_pnjs[i].HitBox.xA - _mainCharacter.HitBox.xA > 32) || (_pnjs[i].HitBox.xA - _mainCharacter.HitBox.xA < 33))
+                    && ((_pnjs[i].HitBox.yA - _mainCharacter.HitBox.yA > 32) || (_pnjs[i].HitBox.yA - _mainCharacter.HitBox.yA < 33)) 
+                    || ((_mainCharacter.HitBox.yA - _pnjs[i].HitBox.yA > 32) || (_mainCharacter.HitBox.yA - _pnjs[i].HitBox.yA < 33)))
                 {
                     key = KeyEnum.action;
-                    _talk = _pnj[i].Speech;
+                    _talk = _pnjs[i].Speech;
                 }
                 else
                 {
