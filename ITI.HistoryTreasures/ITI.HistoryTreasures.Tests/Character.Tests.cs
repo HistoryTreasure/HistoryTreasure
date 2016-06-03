@@ -106,7 +106,7 @@ namespace ITI.HistoryTreasures.Tests
         MainCharacter mC;
 
         [TestFixtureSetUp]
-        public void MainCharatcerSetUp()
+        public void MainCharacterSetUp()
         {
             g = new Game();
             t = g.CreateTheme("Theme");
