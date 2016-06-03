@@ -38,7 +38,7 @@ namespace ITI.HistoryTreasures
             _isFinish = false;
             _mainCharacter = CreateMain(ctx,16,16, CharacterEnum.MCFACE, "Judd" );
             _pnjs = new List<PNJ>();
-            _pnj = CreatePNJ(Theme.Game, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello");
+            _pnj = CreatePNJ(Theme.Game, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello world !");
             _mCtx = new Map(this, 10, 10);
             _clues = new List<Clue>();
             //_clue = 
@@ -126,6 +126,7 @@ namespace ITI.HistoryTreasures
         /// <param name="name">The name.</param>
         /// <returns></returns>
         /// <exception cref="System.InvalidOperationException">you cannot create two main character</exception>
+        public MainCharacter CreateMain(Theme ctx, int x, int y, CharacterEnum bitMapName, string name)
         {
             if (MainCharacter != null)
                 throw new InvalidOperationException("you cannot create two main character");

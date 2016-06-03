@@ -69,9 +69,9 @@ namespace ITI.HistoryTreasures
                 }
             }
 
-            if (LCtx.PNJ.Count != 0)
+            if (LCtx.Pnjs.Count != 0)
             {
-                foreach (PNJ p in LCtx.PNJ)
+                foreach (PNJ p in LCtx.Pnjs)
                 {
                     if (p.positionX == X && p.positionY == Y)
                     {

@@ -88,7 +88,7 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            PNJ p = l.CreatePNJ(g, 16, 16, CharacterEnum.MCFACE, "Hawke", "Hello world !");
+            PNJ p = l.Pnj;
 
             Assert.That(l.Pnjs.Contains(p));
         }
@@ -109,7 +109,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            PNJ pnj = l.CreatePNJ(g, 16, 16, CharacterEnum.MCFACE, "Hawke", "Hello world !");
+            PNJ p = l.Pnj;
 
             Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
         }
@@ -121,9 +121,9 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             MainCharacter mC = new MainCharacter(g, 16, 16, CharacterEnum.MCFACE, "Judd");
             Level l = t.CreateLevel("Level");
-    
-            PNJ pnj = new PNJ(g, l, 48, 48, CharacterEnum.MCFACE, "Hawke", "Hello world !");
-            
+
+            PNJ p = l.Pnj;
+
             Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
         }
 
@@ -161,7 +161,7 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(l.MainCharacter.Game == g);
             Assert.That(l.MainCharacter.positionX == 16);
             Assert.That(l.MainCharacter.positionY == 16);
-            Assert.That(l.MainCharacter.BitMapName == "Test");
+            Assert.That(l.MainCharacter.CharacterBitmapName == CharacterEnum.MCFACE);
             Assert.That(l.MainCharacter.Name == "Judd");
         }
 
@@ -262,9 +262,9 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            PNJ p = l.CreatePNJ(g, 32, 32, "Test", "Hawke", "Hello world !");
+            PNJ p = l.Pnj;
 
-            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 16, 128, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
         }
 
         [Test]

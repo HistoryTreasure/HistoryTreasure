@@ -16,8 +16,8 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            PNJ p = l.CreatePNJ(g, 16, 16, CharacterEnum.MCFACE, "Hawke", "Hello world !");
-            
+            PNJ p = l.Pnj;
+
             string speech = "Hello world !";
             Assert.That(p.Speech, Is.EqualTo(speech)); //Verify if the speech is correct
             Assert.That(p.Level, Is.EqualTo(l));
@@ -30,7 +30,7 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            PNJ p = l.CreatePNJ(g, 16, 16, CharacterEnum.MCFACE, "Hawke", "Hello world !");
+            PNJ p = l.Pnj;
 
             Assert.Throws<InvalidOperationException>(() => l.CreatePNJ(g, 32, 32, CharacterEnum.MCFACE, "Hawke", "Hello world !"));
         }
@@ -51,10 +51,10 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            PNJ p = l.CreatePNJ(g, 16, 16, CharacterEnum.MCFACE, "Hawke", "Hello world !");
-            
+            PNJ p = l.Pnj;
+
             Assert.That(p.positionX, Is.EqualTo(16));
-            Assert.That(p.positionY, Is.EqualTo(16));
+            Assert.That(p.positionY, Is.EqualTo(128));
             Assert.That(l.Pnjs.Contains(p));
         }
 
@@ -64,9 +64,9 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            PNJ p = l.CreatePNJ(g, 16, 16, CharacterEnum.MCFACE, "Hawke", "Hello world !");
-            
-          
+            PNJ p = l.Pnj;
+
+
             Assert.That(p.Speech, Is.EqualTo("Hello world !"));
             Assert.That(l.Pnjs.Contains(p));
         }
@@ -78,7 +78,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            PNJ p = l.CreatePNJ(g, 16, 16, CharacterEnum.MCFACE, "Hawke", "Hello world !");
+            PNJ p = l.Pnj;
             PNJ n = l.CreatePNJ(g, 32, 32, CharacterEnum.MCFACE, "Marth", "You have to search the good questions !");
 
             Assert.That(p.Speech, Is.EqualTo("Hello world !"));
@@ -94,16 +94,16 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             MainCharacter mC = new MainCharacter(g, 16, 16, CharacterEnum.MCFACE, "Judd");
             Level l = t.CreateLevel("Level");
-            PNJ p = l.CreatePNJ(g, 16, 16, CharacterEnum.MCFACE, "Hawke", "Hello world !");
+            PNJ p = l.Pnj;
 
             Assert.That(p.HitBox.xA, Is.EqualTo(0));
-            Assert.That(p.HitBox.yA, Is.EqualTo(16));
+            Assert.That(p.HitBox.yA, Is.EqualTo(128));
             Assert.That(p.HitBox.xB, Is.EqualTo(32));
-            Assert.That(p.HitBox.yB, Is.EqualTo(16));
+            Assert.That(p.HitBox.yB, Is.EqualTo(128));
             Assert.That(p.HitBox.xC, Is.EqualTo(32));
-            Assert.That(p.HitBox.yC, Is.EqualTo(32));
+            Assert.That(p.HitBox.yC, Is.EqualTo(144));
             Assert.That(p.HitBox.xD, Is.EqualTo(0));
-            Assert.That(p.HitBox.yD, Is.EqualTo(32));
+            Assert.That(p.HitBox.yD, Is.EqualTo(144));
         }
 
         [Test]
@@ -124,9 +124,9 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            PNJ p = l.CreatePNJ(g, 16, 32, "Test", "Hawke", "Hello world !");
+            PNJ p = l.Pnj;
 
-            Assert.Throws<InvalidOperationException>(() => l.CreatePNJ(g, 32, 32, "Test", "Hawke", "Hello world !"));
+            Assert.Throws<InvalidOperationException>(() => l.CreatePNJ(g, 32, 32, CharacterEnum.GUARDFACE, "Hawke", "Hello world !"));
         }
 
 
@@ -155,7 +155,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
             string name = "Judd";
-            int speed = 1;
+            int speed = 6;
             Assert.That(l.MainCharacter.Name, Is.EqualTo(name));
             Assert.That(l.MainCharacter.Speed, Is.EqualTo(speed));
         }
@@ -178,7 +178,7 @@ namespace ITI.HistoryTreasures.Tests
             for (int i = 0; i < 10; i++)
                 l.MainCharacter.Movement(KeyEnum.down);
 
-            Assert.That(l.MainCharacter.positionY, Is.EqualTo(26));
+            Assert.That(l.MainCharacter.positionY, Is.EqualTo(16 + 10 * l.MainCharacter.Speed));
         }
 
         [Test]
@@ -191,7 +191,7 @@ namespace ITI.HistoryTreasures.Tests
             for (int i = 0; i < 10; i++)
                 l.MainCharacter.Movement(KeyEnum.right);
 
-            Assert.That(l.MainCharacter.positionX, Is.EqualTo(26));
+            Assert.That(l.MainCharacter.positionX, Is.EqualTo(16 + 10 * l.MainCharacter.Speed));
         }
 
         [Test]
@@ -298,7 +298,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, "Test", "Judd"));
+            Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, CharacterEnum.GUARDFACE, "Judd"));
         }         
     }
 }

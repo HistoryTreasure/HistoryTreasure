@@ -8,6 +8,6 @@ namespace ITI.HistoryTreasures
 {
     public enum CharacterEnum
     {
-        MCFACE,MCBACK,MCLEFT,MCRIGHT,GUARDFACE
+        MCFACE, MCBACK, MCLEFT, MCRIGHT, GUARDFACE
     }
 }

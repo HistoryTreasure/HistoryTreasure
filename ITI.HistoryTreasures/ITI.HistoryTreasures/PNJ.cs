@@ -40,7 +40,7 @@ namespace ITI.HistoryTreasures
                     throw new InvalidOperationException("You cannot create two PNJ with same name");
                 }
 
-                else if (ctx.PNJ[i].Speech == speech)
+                else if (ctx.Pnjs[i].Speech == speech)
                 {
                     throw new InvalidOperationException("You cannot have the same speech twice.");
                 }
