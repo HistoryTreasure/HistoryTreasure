@@ -65,7 +65,6 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     Tile m = tileArray[i, j];
 
-                    // Bitmap tileperso = _resourcesManager.GetTileBitmapPerso(m);
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
                     e.Graphics.DrawImage(tileBitmap, x, y, width, height);
@@ -78,13 +77,18 @@ namespace ITI.HistoryTreasures.Rendering
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
 
+            Pen p = new Pen(Color.Red, 3);
+
+            Rectangle r = new Rectangle(MC.HitBox.xA, MC.HitBox.yA, 32,16);
+            e.Graphics.FillRectangle(Brushes.Red, r);
+
             PNJ pnj = LevelContext.Pnjs[0];
             Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
             e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
 
-            /*Clue clue = LevelContext.Clues[0];
-            Bitmap clueBitmap = GetResourcesManager.GetCharacterBitmap(clue);
-            e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, width, height);*/
+            Rectangle r2 = new Rectangle(pnj.HitBox.xA, pnj.HitBox.yA, 32, 16);
+            e.Graphics.FillRectangle(Brushes.Red, r2);
+
         }
 
         private void InitializeComponent()
@@ -99,11 +103,6 @@ namespace ITI.HistoryTreasures.Rendering
             this.ResumeLayout(false);
 
         }
-
-        /*private void PaintCharacter()
-        {
-            
-        }*/
 
         private ResourcesManager GetResourcesManager
         {
@@ -140,7 +139,6 @@ namespace ITI.HistoryTreasures.Rendering
             else if (e.KeyCode == Keys.E)
             {
                 MC.Movement(KeyEnum.action);
-                Invalidate();
                 //MessageBox.Show("Action");
             }
         }

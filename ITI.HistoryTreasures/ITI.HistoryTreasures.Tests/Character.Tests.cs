@@ -136,9 +136,11 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_have_a_name_and_a_speed()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 16, 16, CharacterEnum.MCFACE, "Judd");
+            Theme t = g.CreateTheme(("Theme"));
+            Level l = t.CreateLevel("Level");
+            MainCharacter mC = new MainCharacter(g, l, 16, 16, CharacterEnum.MCFACE, "Judd");
             string name = "Judd";
-            int speed = 6;
+            int speed = 1;
             Assert.That(mC.Name, Is.EqualTo(name));
             Assert.That(mC.Speed, Is.EqualTo(speed));
         }
@@ -147,15 +149,18 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_cannot_be_created_if_his_position_is_negative()
         {
             Game g = new Game();
-
-            Assert.Throws<ArgumentException>(() => new MainCharacter(g, -1, 0, CharacterEnum.MCFACE, "Judd"));
+            Theme t = g.CreateTheme(("Theme"));
+            Level l = t.CreateLevel("Level");
+            Assert.Throws<ArgumentException>(() => new MainCharacter(g, l, -1, 0, CharacterEnum.MCFACE, "Judd"));
         }
 
         [Test]
         public void MainCharacter_can_move_up()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 100, 100, CharacterEnum.MCFACE, "Judd");
+            Theme t = g.CreateTheme(("Theme"));
+            Level l = t.CreateLevel("Level");
+            MainCharacter mC = new MainCharacter(g, l, 100, 100, CharacterEnum.MCFACE, "Judd");
 
             for (int i = 0; i < 10; i++)
                 mC.Movement(KeyEnum.up);
@@ -167,7 +172,9 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_can_move_left()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 100, 0, CharacterEnum.MCFACE, "Judd");
+            Theme t = g.CreateTheme(("Theme"));
+            Level l = t.CreateLevel("Level");
+            MainCharacter mC = new MainCharacter(g, l, 100, 0, CharacterEnum.MCFACE, "Judd");
 
             for (int i = 0; i < 10; i++)
                 mC.Movement(KeyEnum.left);
@@ -180,7 +187,9 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_cannot_move_outside_the_map()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 32, 32, CharacterEnum.MCFACE, "Judd");
+            Theme t = g.CreateTheme(("Theme"));
+            Level l = t.CreateLevel("Level");
+            MainCharacter mC = new MainCharacter(g, l, 32, 32, CharacterEnum.MCFACE, "Judd");
             for (int i = 32; i > 10; i--)
             {
                 mC.Movement(KeyEnum.left);
@@ -197,7 +206,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             
             Level l = t.CreateLevel("Level");
-            MainCharacter mC = new MainCharacter(g, 32, 32, CharacterEnum.MCFACE, "Judd");
+            MainCharacter mC = new MainCharacter(g, l, 32, 32, CharacterEnum.MCFACE, "Judd");
             PNJ pnj = l.CreatePNJ(g, 48, 32, CharacterEnum.MCFACE, "Hawke", "coucou");
             
             for (int i = 0; i < 10; i++)
@@ -215,7 +224,9 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_cannot_have_more_than_three_life()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 16, 16, CharacterEnum.MCFACE, "Judd");
+            Theme t = g.CreateTheme(("Theme"));
+            Level l = t.CreateLevel("Level");
+            MainCharacter mC = new MainCharacter(g, l, 16, 16, CharacterEnum.MCFACE, "Judd");
             Assert.Throws<ArgumentException>(() => mC.Life++);
         }
 
@@ -223,7 +234,9 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_game_over_return_false_if_life_equal_zero()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 16, 16, CharacterEnum.MCFACE, "Judd");
+            Theme t = g.CreateTheme(("Theme"));
+            Level l = t.CreateLevel("Level");
+            MainCharacter mC = new MainCharacter(g, l, 16, 16, CharacterEnum.MCFACE, "Judd");
             Assert.That(mC.GameOver, Is.EqualTo(true));
             mC.Life = 0;
             Assert.That(mC.GameOver, Is.EqualTo(false));
@@ -233,7 +246,9 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_hitbox_return_good_value()
         {
             Game g = new Game();
-            MainCharacter mC = new MainCharacter(g, 32, 32, CharacterEnum.MCFACE, "Judd");
+            Theme t = g.CreateTheme(("Theme"));
+            Level l = t.CreateLevel("Level");
+            MainCharacter mC = new MainCharacter(g, l, 32, 32, CharacterEnum.MCFACE, "Judd");
             Assert.That(mC.HitBox.xA, Is.EqualTo(16));
             Assert.That(mC.HitBox.yA, Is.EqualTo(32));
             Assert.That(mC.HitBox.xB, Is.EqualTo(48));
@@ -250,7 +265,7 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            Assert.Throws<ArgumentException>(() => new MainCharacter(g, 15, 15, CharacterEnum.MCFACE, "Judd"));
+            Assert.Throws<ArgumentException>(() => new MainCharacter(g, l, 15, 15, CharacterEnum.MCFACE, "Judd"));
         }
         
         /*[Test]

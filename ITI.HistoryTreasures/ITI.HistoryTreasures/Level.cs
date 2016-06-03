@@ -114,7 +114,7 @@ namespace ITI.HistoryTreasures
             if (MainCharacter != null)
                 throw new InvalidOperationException("you cannot crate two main character");
 
-            return new MainCharacter(ctx.Game, x, y, bitMapName, name); 
+            return new MainCharacter(ctx.Game, this, x, y, bitMapName, name); 
 
         }
 

@@ -9,6 +9,7 @@ namespace ITI.HistoryTreasures
     {
         readonly int _speed;
         int _life;
+        readonly Level _lCtx;
 
         /// <summary>
         /// This constructor allow to create MainCharacter.
@@ -18,7 +19,7 @@ namespace ITI.HistoryTreasures
         /// <param name="Y">This parameter reference vertical position with an int.</param>
         /// <param name="bitMapName">This parameter reference appaerance of Character.</param>
         /// <param name="name">This parameter reference name of PNJ.</param>
-        public MainCharacter(Game ctx, int X, int Y, CharacterEnum bitMapName, string name)
+        public MainCharacter(Game ctx, Level lCtx, int X, int Y, CharacterEnum bitMapName, string name)
             : base(ctx, X, Y, bitMapName, name)
         {
             if (X < 0 || Y < 0)
@@ -36,8 +37,9 @@ namespace ITI.HistoryTreasures
                 throw new InvalidOperationException();
             }*/
 
-            _speed = 6;
+            _speed = 1;
             _life = 3;
+            _lCtx = lCtx;
         }
 
         /// <summary>
@@ -46,6 +48,16 @@ namespace ITI.HistoryTreasures
         public int Speed
         {
             get { return _speed; }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <value>
+        /// The l CTX.
+        /// </value>
+        public Level LCtx
+        {
+            get { return _lCtx; }
         }
 
         /// <summary>
@@ -115,6 +127,18 @@ namespace ITI.HistoryTreasures
                     HitBox.xA--;
                     HitBox.xC--;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Interacts the specified key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        public void Interact(KeyEnum key)
+        {
+            if (key == KeyEnum.action)
+            {
+                LCtx.InteractionWithPNJ(key);
             }
         }
     }
