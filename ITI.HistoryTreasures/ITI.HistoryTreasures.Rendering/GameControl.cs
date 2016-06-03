@@ -26,6 +26,9 @@ namespace ITI.HistoryTreasures.Rendering
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This property returns the game context.
+        /// </summary>
         public Game GameContext
         {
             get { return _gCtx; }
