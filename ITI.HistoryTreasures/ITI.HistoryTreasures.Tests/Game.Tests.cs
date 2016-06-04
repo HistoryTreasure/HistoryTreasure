@@ -144,7 +144,7 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            MainCharacter mC = new MainCharacter(g, 16, 16, CharacterEnum.MCFACE, "Judd");
+            MainCharacter mC = new MainCharacter(g,l, 16, 16, CharacterEnum.MCFACE, "Judd");
 
             Assert.That(mC.Game == l.MainCharacter.Game);
             Assert.That(mC.positionX == l.MainCharacter.positionX);
