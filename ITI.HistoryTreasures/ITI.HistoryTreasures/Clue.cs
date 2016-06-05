@@ -15,7 +15,7 @@ namespace ITI.HistoryTreasures
         readonly int _y;
         readonly Hitbox _hitbox;
         readonly string _speech;
-        string _bitMapName;
+        ClueEnum _bitMapName;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Clue"/> class.
@@ -25,7 +25,7 @@ namespace ITI.HistoryTreasures
         /// <param name="x">The x.</param>
         /// <param name="y">The y.</param>
         /// <param name="speech">The speech.</param>
-        public Clue(string name, Level lCtx, string bitMapName, int x, int y, string speech)
+        public Clue(string name, Level lCtx, ClueEnum bitMapName, int x, int y, string speech)
         {
             _name = name;
             _lCtx = lCtx;
@@ -111,12 +111,12 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Gets the name of the bit map.
+        /// Gets the name of the clue bitmap.
         /// </summary>
         /// <value>
-        /// The name of the bit map.
+        /// The name of the clue bitmap.
         /// </value>
-        public string BitMapName
+        public ClueEnum ClueBitmapName
         {
             get { return _bitMapName; }
         }

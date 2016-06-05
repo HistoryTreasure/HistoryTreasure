@@ -41,7 +41,8 @@ namespace ITI.HistoryTreasures
             _pnj = CreatePNJ(Theme.Game, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello world !");
             _mCtx = new Map(this, 10, 10);
             _clues = new List<Clue>();
-            //_clue = 
+            _clue = CreateClue(this.Theme, 128, 128, ClueEnum.LIVRE, "Livre",
+                "You want to know the true ? Sorry I didn't do that");
         }
 
         /// <summary>
@@ -72,6 +73,17 @@ namespace ITI.HistoryTreasures
         public List<Clue> Clues
         {
             get { return _clues; }
+        }
+
+        /// <summary>
+        /// Gets the clue.
+        /// </summary>
+        /// <value>
+        /// The clue.
+        /// </value>
+        public Clue Clue
+        {
+            get { return _clue; }
         }
 
         /// <summary>
@@ -144,7 +156,7 @@ namespace ITI.HistoryTreasures
         /// <param name="name">The name.</param>
         /// <param name="speech">The speech.</param>
         /// <returns></returns>
-        public Clue CreateClue(Theme ctx, int x, int y, string bitMapName, string name, string speech)
+        public Clue CreateClue(Theme ctx, int x, int y, ClueEnum bitMapName, string name, string speech)
         {
             Clue c = new Clue(name, this, bitMapName, x, y, speech);
             _clues.Add(c);

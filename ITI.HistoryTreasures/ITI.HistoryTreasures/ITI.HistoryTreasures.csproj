@@ -43,6 +43,7 @@
     <Compile Include="Character.cs" />
     <Compile Include="CharacterEnum.cs" />
     <Compile Include="Clue.cs" />
+    <Compile Include="ClueEnum.cs" />
     <Compile Include="KeyEnum.cs" />
     <Compile Include="Hitbox.cs" />
     <Compile Include="Tile.cs" />
