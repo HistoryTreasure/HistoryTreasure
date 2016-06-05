@@ -52,6 +52,15 @@ namespace ITI.HistoryTreasures
         public int yC { get { return _yC; } set { _yC = value; } }
         public int xD { get { return _xD; } set { _xD = value; } }
         public int yD { get { return _yD; } set { _yD = value; } }
-        
+
+        public int Length()
+        {
+            return xB - xA;
+        }
+
+        public int Height()
+        {
+            return yC - yA;
+        }
     }
 }

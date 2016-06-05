@@ -114,7 +114,7 @@ namespace ITI.HistoryTreasures
             }
             else if (key == KeyEnum.down)
             {
-                if (positionY == (MCtx.TileArray.GetLength(1) * 32) - 16)
+                if (positionY == (MCtx.TileArray.GetLength(1)*32) - 16)
                     return;
 
                 positionY = positionY + Speed;
@@ -123,7 +123,7 @@ namespace ITI.HistoryTreasures
             }
             else if (key == KeyEnum.right)
             {
-                if (positionX == (MCtx.TileArray.GetLength(0) * 32) - 16)
+                if (positionX == (MCtx.TileArray.GetLength(0)*32) - 16)
                     return;
 
                 positionX = positionX + Speed;
@@ -139,8 +139,8 @@ namespace ITI.HistoryTreasures
                 HitBox.xA--;
                 HitBox.xC--;
             }
-            }
         }
+
 
         /// <summary>
         /// Interacts the specified key.
@@ -150,7 +150,11 @@ namespace ITI.HistoryTreasures
         {
             if (key == KeyEnum.action)
             {
-                LCtx.InteractionWithPNJ(key);
+                LCtx.InteractionWithPNJ
+                    (
+                        key
+                    );
+            }
         }
     }
 }

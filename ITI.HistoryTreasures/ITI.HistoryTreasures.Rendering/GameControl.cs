@@ -73,9 +73,8 @@ namespace ITI.HistoryTreasures.Rendering
 
                     if (t.IsSolid)
                     {
-                        Rectangle rt = new Rectangle(t.TileHitbox.xA, t.TileHitbox.yA, t.TileHitbox.xB - t.TileHitbox.xA,
-                            t.TileHitbox.yC - t.TileHitbox.yA);
-                        e.Graphics.FillRectangle(Brushes.Red, rt);
+                        //Rectangle rt = new Rectangle(t.TileHitbox.xA, t.TileHitbox.yA, t.TileHitbox.xB - t.TileHitbox.xA,t.TileHitbox.yC - t.TileHitbox.yA);
+                        //e.Graphics.FillRectangle(Brushes.Red, rt);
                     }
                 }
                 x = 0;
@@ -85,14 +84,14 @@ namespace ITI.HistoryTreasures.Rendering
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
 
-            Rectangle r = new Rectangle(MC.HitBox.xA, MC.HitBox.yA, MC.HitBox.xB - MC.HitBox.xA, MC.HitBox.yC - MC.HitBox.yA);
+            Rectangle r = new Rectangle(MC.HitBox.xA, MC.HitBox.yA, MC.HitBox.Length(), MC.HitBox.Height());
             e.Graphics.FillRectangle(Brushes.Red, r);
 
             PNJ pnj = LevelContext.Pnjs[0];
             Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
             e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
 
-            Rectangle r2 = new Rectangle(pnj.HitBox.xA, pnj.HitBox.yA, MC.HitBox.xB - MC.HitBox.xA, MC.HitBox.yC - MC.HitBox.yA);
+            Rectangle r2 = new Rectangle(pnj.HitBox.xA, pnj.HitBox.yA, pnj.HitBox.Length(),pnj.HitBox.Height());
             e.Graphics.FillRectangle(Brushes.Red, r2);
 
         }
