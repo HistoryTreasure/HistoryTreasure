@@ -109,8 +109,7 @@ namespace ITI.HistoryTreasures
                     return;
 
                 positionY = positionY - Speed;
-                HitBox.yA--;
-                HitBox.yC--;
+                HitBox.UpdateHitbox(key, Speed);
             }
             else if (key == KeyEnum.down)
             {
@@ -118,8 +117,7 @@ namespace ITI.HistoryTreasures
                     return;
 
                 positionY = positionY + Speed;
-                HitBox.yA++;
-                HitBox.yC++;
+                HitBox.UpdateHitbox(key, Speed);
             }
             else if (key == KeyEnum.right)
             {
@@ -127,8 +125,7 @@ namespace ITI.HistoryTreasures
                     return;
 
                 positionX = positionX + Speed;
-                HitBox.xA++;
-                HitBox.xC++;
+                HitBox.UpdateHitbox(key, Speed);
             }
             else if (key == KeyEnum.left)
             {
@@ -136,8 +133,7 @@ namespace ITI.HistoryTreasures
                     return;
 
                 positionX = positionX - Speed;
-                HitBox.xA--;
-                HitBox.xC--;
+                HitBox.UpdateHitbox(key, Speed);
             }
         }
 
