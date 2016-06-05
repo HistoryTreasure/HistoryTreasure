@@ -92,7 +92,7 @@ namespace ITI.HistoryTreasures.Rendering
             Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
             e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
 
-            Rectangle r2 = new Rectangle(pnj.HitBox.xA, pnj.HitBox.yA, MC.HitBox.xB - MC.HitBox.xA, MC.HitBox.yC - MC.HitBox.yA);
+            Rectangle r2 = new Rectangle(pnj.HitBox.xA, pnj.HitBox.yA, pnj.HitBox.xB - pnj.HitBox.xA, pnj.HitBox.yC - pnj.HitBox.yA);
             e.Graphics.FillRectangle(Brushes.Red, r2);
 
         }
