@@ -88,9 +88,9 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            PNJ p = l.CreatePNJ(g, 16, 16, CharacterEnum.MCFACE, "Hawke", "Hello world !");
+            PNJ p = l.Pnj;
 
-            Assert.That(l.PNJ.Contains(p));
+            Assert.That(l.Pnjs.Contains(p));
         }
         
         [Test]
@@ -109,7 +109,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            PNJ pnj = l.CreatePNJ(g, 16, 16, CharacterEnum.MCFACE, "Hawke", "Hello world !");
+            PNJ pnj = l.Pnj;
 
             Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
         }
@@ -119,10 +119,9 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
-            MainCharacter mC = new MainCharacter(g, 16, 16, CharacterEnum.MCFACE, "Judd");
             Level l = t.CreateLevel("Level");
-    
-            PNJ pnj = new PNJ(g, l, 48, 48, CharacterEnum.MCFACE, "Hawke", "Hello world !");
+
+            PNJ pnj = l.Pnj;
             
             Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
         }
@@ -145,7 +144,7 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-            MainCharacter mC = new MainCharacter(g, 16, 16, CharacterEnum.MCFACE, "Judd");
+            MainCharacter mC = new MainCharacter(g,l, 16, 16, CharacterEnum.MCFACE, "Judd");
 
             Assert.That(mC.Game == l.MainCharacter.Game);
             Assert.That(mC.positionX == l.MainCharacter.positionX);

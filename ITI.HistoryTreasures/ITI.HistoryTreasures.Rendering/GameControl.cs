@@ -26,6 +26,9 @@ namespace ITI.HistoryTreasures.Rendering
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This property returns the game context.
+        /// </summary>
         public Game GameContext
         {
             get { return _gCtx; }
@@ -63,25 +66,35 @@ namespace ITI.HistoryTreasures.Rendering
             {
                 for (int j = 0; j < LevelContext.MapContext.Width; j++)
                 {
-                    Tile m = tileArray[i, j];
-
-                    // Bitmap tileperso = _resourcesManager.GetTileBitmapPerso(m);
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
                     e.Graphics.DrawImage(tileBitmap, x, y, width, height);
                     x += this.Width / tileArray.GetLength(0);
+
+                    if (t.IsSolid)
+                    {
+                        Rectangle rt = new Rectangle(t.TileHitbox.xA, t.TileHitbox.yA, t.TileHitbox.xB - t.TileHitbox.xA,
+                            t.TileHitbox.yC - t.TileHitbox.yA);
+                        e.Graphics.FillRectangle(Brushes.Red, rt);
+                    }
                 }
                 x = 0;
                 y += this.Height / tileArray.GetLength(1);
             }
 
-            
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
 
-            /*PNJ pnj = new PNJ(_gCtx, _lCtx, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello");
+            Rectangle r = new Rectangle(MC.HitBox.xA, MC.HitBox.yA, MC.HitBox.xB - MC.HitBox.xA, MC.HitBox.yC - MC.HitBox.yA);
+            e.Graphics.FillRectangle(Brushes.Red, r);
+
+            PNJ pnj = LevelContext.Pnjs[0];
             Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
-            e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);*/
+            e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
+
+            Rectangle r2 = new Rectangle(pnj.HitBox.xA, pnj.HitBox.yA, MC.HitBox.xB - MC.HitBox.xA, MC.HitBox.yC - MC.HitBox.yA);
+            e.Graphics.FillRectangle(Brushes.Red, r2);
+
         }
 
         private void InitializeComponent()
@@ -96,11 +109,6 @@ namespace ITI.HistoryTreasures.Rendering
             this.ResumeLayout(false);
 
         }
-
-        /*private void PaintCharacter()
-        {
-            
-        }*/
 
         private ResourcesManager GetResourcesManager
         {
@@ -136,7 +144,8 @@ namespace ITI.HistoryTreasures.Rendering
             }
             else if (e.KeyCode == Keys.E)
             {
-                MessageBox.Show("Action");
+                MC.Movement(KeyEnum.action);
+                //MessageBox.Show("Action");
             }
         }
     }

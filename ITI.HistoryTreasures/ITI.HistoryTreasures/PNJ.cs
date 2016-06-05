@@ -33,18 +33,18 @@ namespace ITI.HistoryTreasures
                 throw new ArgumentException("You cannot create a character with his hitbox outside the map.");
             }
 
-            for (int i = 0; i < ctx.PNJ.Count; i++)
+            for (int i = 0; i < ctx.Pnjs.Count; i++)
             {
-                if (ctx.PNJ[i].Name == name)
+                if (ctx.Pnjs[i].Name == name)
                 {
                     throw new InvalidOperationException("You cannot create two PNJ with same name");
                 }
             }
 
             _ctx = ctx;
-            if (Level.PNJ.Count != 0)
+            if (Level.Pnjs.Count != 0)
             {
-                foreach (PNJ p in Level.PNJ)
+                foreach (PNJ p in Level.Pnjs)
                 {
                     if (p.positionX == X && p.positionY == Y)
                     {
@@ -54,7 +54,7 @@ namespace ITI.HistoryTreasures
             }
             _speech = speech;
 
-            ctx.PNJ.Add(this);
+            ctx.Pnjs.Add(this);
         }
 
         /// <summary>
