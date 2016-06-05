@@ -53,11 +53,19 @@ namespace ITI.HistoryTreasures
         public int xD { get { return _xD; } set { _xD = value; } }
         public int yD { get { return _yD; } set { _yD = value; } }
 
+        /// <summary>
+        /// Length of the hitbox.
+        /// </summary>
+        /// <returns>The length in a int</returns>
         public int Length()
         {
             return xB - xA;
         }
 
+        /// <summary>
+        /// Height of the hitbox.
+        /// </summary>
+        /// <returns>The Height in a int</returns>
         public int Height()
         {
             return yC - yA;
