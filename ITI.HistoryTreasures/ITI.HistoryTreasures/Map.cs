@@ -57,25 +57,25 @@ namespace ITI.HistoryTreasures
             CreateTileHitbox(TileArray);
         }
 
-        public void CreateTileHitbox(Tile[,] tilearray)
+        public void CreateTileHitbox(Tile[,] tileArray)
         {
-            int x = 16;
-            int y = 16;
-            for (int i = 0; i < tilearray.GetLength(0); i++)
+            int x = 0;
+            int y = 0;
+            for (int i = 0; i < tileArray.GetLength(0); i++)
             {
-                for (int j = 0; j < tilearray.GetLength(1); j++)
+                for (int j = 0; j < tileArray.GetLength(1); j++)
                 {
                     if (TileArray[i, j].IsSolid == true)
                     {
                         TileArray[i, j].posX = x;
                         TileArray[i, j].posY = y;
 
-                        TileArray[i, j].CreateTileHitbox(TileArray[i, j]);
+                        TileArray[i, j].CreateTileHitbox(x,y);
                     }
-                    x += 32;
+                    x += this.Width / tileArray.GetLength(0);
                 }
-                x = 16;
-                y += 32;
+                x =0 ;
+                y += this.Height / tileArray.GetLength(1);
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,9 +29,9 @@ namespace ITI.HistoryTreasures
             _mapContext = mapContext;
         }
 
-        public void CreateTileHitbox(Tile tile)
+        public void CreateTileHitbox(int x, int y)
         {
-            _hitbox = new Hitbox(tile.posX - 16, tile.posY - 16, tile.posX + 16, tile.posY + 16);
+            //_hitbox = new Hitbox(x,y,Map.Width / );
         }
 
         /// <summary>

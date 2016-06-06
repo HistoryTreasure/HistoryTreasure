@@ -29,7 +29,7 @@ namespace ITI.HistoryTreasures
         /// <param name="yC">Coordonate Y in a point C.</param>
         /// <param name="xD">Coordonate X in a point D.</param>
         /// <param name="yD">Coordonate Y in a point D.</param>
-        public Hitbox(int xA, int yA,int xC, int yC)
+        public Hitbox(int xA, int yA, int xC, int yC)
         {
             _xA = xA;
             _yA = yA;
@@ -57,6 +57,60 @@ namespace ITI.HistoryTreasures
         {
             return  !((other.xB >=  && other.xC >= mcHitbox.xD) || (other.yD >= mcHitbox.yA && other.yC >= mcHitbox.yB) 
                 || (other.xA <= mcHitbox.xB && other.xD <= mcHitbox.xC) || (other.yA >= mcHitbox.yD && other.yB >= mcHitbox.yC));
+        }
+        /// <summary>
+        /// Length of the hitbox.
+        /// </summary>
+        /// <returns>The length in a int</returns>
+        public int Length()
+        {
+            return xB - xA;
+        }
+
+        /// <summary>
+        /// Height of the hitbox.
+        /// </summary>
+        /// <returns>The Height in a int</returns>
+        public int Height()
+        {
+            return yC - yA;
+        }
+
+        /// <summary>
+        /// Updates the hitbox position.
+        /// </summary>
+        /// <param name="key">The key pressed.</param>
+        /// <param name="Speed">The speed of the character.</param>
+        public void UpdateHitbox(KeyEnum key, int Speed)
+        {
+            if (key == KeyEnum.right)
+            {
+                xA = xA + Speed;
+                xB = xB + Speed;
+                xC = xC + Speed;
+                xD = xD + Speed;
+            }
+            else if (key == KeyEnum.left)
+            {
+                xA = xA - Speed;
+                xB = xB - Speed;
+                xC = xC - Speed;
+                xD = xD - Speed;
+            }
+            else if (key == KeyEnum.up)
+            {
+                yA = yA - Speed;
+                yB = yB - Speed;
+                yC = yC - Speed;
+                yD = yD - Speed;
+            }
+            else if (key == KeyEnum.down)
+            {
+                yA = yA + Speed;
+                yB = yB + Speed;
+                yC = yC + Speed;
+                yD = yD + Speed;
+            }
         }
     }
 }
