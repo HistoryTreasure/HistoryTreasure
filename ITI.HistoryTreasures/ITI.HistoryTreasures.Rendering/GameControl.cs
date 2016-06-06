@@ -144,8 +144,8 @@ namespace ITI.HistoryTreasures.Rendering
             }
             else if (e.KeyCode == Keys.E)
             {
-                MC.Movement(KeyEnum.action);
-                //MessageBox.Show("Action");
+                MC.Interact(KeyEnum.action);
+                MessageBox.Show(LevelContext.Pnj.Speech);
             }
         }
     }
