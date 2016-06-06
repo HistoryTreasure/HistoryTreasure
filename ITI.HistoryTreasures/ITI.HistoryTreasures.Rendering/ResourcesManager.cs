@@ -25,7 +25,7 @@ namespace ITI.HistoryTreasures.Rendering
             _characterBitmaps[CharacterEnum.MCFACE] = Properties.Resources.img_X1_Y0;
             _characterBitmaps[CharacterEnum.GUARDFACE] = Properties.Resources.droite;
             _clueBitmaps = new Dictionary<ClueEnum, Bitmap>();
-            _clueBitmaps[ClueEnum.LIVRE] = Properties.Resources.livre;
+            _clueBitmaps[ClueEnum.LIVRE] = Properties.Resources.book;
         }
 
         /// <summary>
