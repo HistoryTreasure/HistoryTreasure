@@ -9,6 +9,7 @@ namespace ITI.HistoryTreasures
     {
         readonly Level _level;
         Tile[,] _tileArray;
+        List<Hitbox> hitboxes;
 
         /// <summary>
         /// This constructor create a Map.
@@ -23,7 +24,6 @@ namespace ITI.HistoryTreasures
             {
                 for (int j = 0; j < height; j++)
                 {
-                    //_tileArray[i, j] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[0, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[0, 1] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[0, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
@@ -49,10 +49,8 @@ namespace ITI.HistoryTreasures
                     _tileArray[4, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[4, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[4, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
-
                 }
             }
-
             level.MainCharacter.MCtx = this;
             CreateTileHitbox(TileArray);
         }
@@ -61,6 +59,7 @@ namespace ITI.HistoryTreasures
         {
             int x = 0;
             int y = 0;
+
             for (int i = 0; i < tileArray.GetLength(0); i++)
             {
                 for (int j = 0; j < tileArray.GetLength(1); j++)
@@ -110,6 +109,25 @@ namespace ITI.HistoryTreasures
         public int Width
         {
             get { return _tileArray.GetLength(0); }
+        }
+
+        public List<Hitbox> GetHitboxes(Map map)
+        {
+            hitboxes = new List<Hitbox>();
+            /*foreach (Tile tile in TileArray)
+            {
+                if (tile.IsSolid)
+                {
+                    hitboxes.Add(tile.TileHitbox);
+                }
+            }*/
+
+            foreach (PNJ pnj in Level.Pnjs)
+            {
+                hitboxes.Add(pnj.HitBox);
+            }
+
+            return hitboxes;
         }
     }
 }

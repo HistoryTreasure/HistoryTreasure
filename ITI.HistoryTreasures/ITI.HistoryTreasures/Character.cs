@@ -62,11 +62,9 @@ namespace ITI.HistoryTreasures
                 {
                     throw new ArgumentException("You cannot move outside the map");
                 }
-
                 _positionY = value;
             }
         }
-
         
         public CharacterEnum CharacterBitmapName
         {

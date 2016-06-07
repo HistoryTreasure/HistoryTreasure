@@ -115,6 +115,13 @@ namespace ITI.HistoryTreasures
             {
                 if (positionY == (MCtx.TileArray.GetLength(1)*32) - 16)
                     return;
+                foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
+                {
+                    if (hitbox.Overlaps(hitbox))
+                    {
+                        return;
+                    }
+                }
 
                 positionY = positionY + Speed;
                 HitBox.UpdateHitbox(key, Speed);

@@ -16,7 +16,7 @@ namespace ITI.HistoryTreasures
         int _yC;
         int _xD;
         int _yD;
-
+        
         /// <summary>
         /// This constructor allow to create a Rectangle. 
         /// </summary>
@@ -53,11 +53,17 @@ namespace ITI.HistoryTreasures
         public int xD { get { return _xD; } set { _xD = value; } }
         public int yD { get { return _yD; } set { _yD = value; } }
 
+        /// <summary>
+        /// Check if a hitbox Overlaps another.
+        /// </summary>
+        /// <param name="other">The other.</param>
+        /// <returns>True if the hitbox overlaps    </returns>
         public bool Overlaps( Hitbox other)
         {
-            return  !((other.xB >=  && other.xC >= mcHitbox.xD) || (other.yD >= mcHitbox.yA && other.yC >= mcHitbox.yB) 
-                || (other.xA <= mcHitbox.xB && other.xD <= mcHitbox.xC) || (other.yA >= mcHitbox.yD && other.yB >= mcHitbox.yC));
+            return  !((other.xB >= xD && other.xC >= xD) || (other.yD >= yA && other.yC >= yB) 
+                || (other.xA <= xB && other.xD <= xC) || (other.yA >= yD && other.yB >= yC));
         }
+        
         /// <summary>
         /// Length of the hitbox.
         /// </summary>
