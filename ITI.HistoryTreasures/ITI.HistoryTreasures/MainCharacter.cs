@@ -139,7 +139,7 @@ namespace ITI.HistoryTreasures
             if (key == KeyEnum.action)
             {
                 LCtx.InteractionWithPNJ(key);
-                
+                LCtx.InteractionsWithClue(key);
             }
         }
     }

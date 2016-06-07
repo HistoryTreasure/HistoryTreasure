@@ -154,6 +154,7 @@ namespace ITI.HistoryTreasures.Rendering
             {
                 MC.Interact(KeyEnum.action);
                 MessageBox.Show(LevelContext.Pnj.Speech);
+                MessageBox.Show(LevelContext.Clue.Speech);
             }
         }
     }
