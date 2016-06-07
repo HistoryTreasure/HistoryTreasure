@@ -152,8 +152,11 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This property returns the MainCharacter.
+        /// Gets the main character.
         /// </summary>
+        /// <value>
+        /// The main character.
+        /// </value>
         public MainCharacter MainCharacter
         {
             get { return _mainCharacter; }

@@ -9,6 +9,7 @@ namespace ITI.HistoryTreasures
     {
         readonly Level _level;
         Tile[,] _tileArray;
+        List<Hitbox> hitboxes;
 
         /// <summary>
         /// This constructor create a Map.
@@ -23,7 +24,6 @@ namespace ITI.HistoryTreasures
             {
                 for (int j = 0; j < height; j++)
                 {
-                    //_tileArray[i, j] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[0, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[0, 1] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[0, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
@@ -49,33 +49,32 @@ namespace ITI.HistoryTreasures
                     _tileArray[4, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[4, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[4, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
-
                 }
             }
-
             level.MainCharacter.MCtx = this;
             CreateTileHitbox(TileArray);
         }
 
-        public void CreateTileHitbox(Tile[,] tilearray)
+        public void CreateTileHitbox(Tile[,] tileArray)
         {
-            int x = 16;
-            int y = 16;
-            for (int i = 0; i < tilearray.GetLength(0); i++)
+            int x = 0;
+            int y = 0;
+
+            for (int i = 0; i < tileArray.GetLength(0); i++)
             {
-                for (int j = 0; j < tilearray.GetLength(1); j++)
+                for (int j = 0; j < tileArray.GetLength(1); j++)
                 {
                     if (TileArray[i, j].IsSolid == true)
                     {
                         TileArray[i, j].posX = x;
                         TileArray[i, j].posY = y;
 
-                        TileArray[i, j].CreateTileHitbox(TileArray[i, j]);
+                        TileArray[i, j].CreateTileHitbox(x,y);
                     }
-                    x += 32;
+                    x += this.Width / tileArray.GetLength(0);
                 }
-                x = 16;
-                y += 32;
+                x =0 ;
+                y += this.Height / tileArray.GetLength(1);
             }
         }
 
@@ -110,6 +109,25 @@ namespace ITI.HistoryTreasures
         public int Width
         {
             get { return _tileArray.GetLength(0); }
+        }
+
+        public List<Hitbox> GetHitboxes(Map map)
+        {
+            hitboxes = new List<Hitbox>();
+            /*foreach (Tile tile in TileArray)
+            {
+                if (tile.IsSolid)
+                {
+                    hitboxes.Add(tile.TileHitbox);
+                }
+            }*/
+
+            foreach (PNJ pnj in Level.Pnjs)
+            {
+                hitboxes.Add(pnj.HitBox);
+            }
+
+            return hitboxes;
         }
     }
 }

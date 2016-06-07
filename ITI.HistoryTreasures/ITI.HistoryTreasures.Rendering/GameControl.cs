@@ -29,6 +29,9 @@ namespace ITI.HistoryTreasures.Rendering
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This property returns the game context.
+        /// </summary>
         public Game GameContext
         {
             get { return _gCtx; }
@@ -68,53 +71,53 @@ namespace ITI.HistoryTreasures.Rendering
             {
                 for (int j = 0; j < LevelContext.MapContext.Width; j++)
                 {
-                    Tile m = tileArray[i, j];
-
-                    // Bitmap tileperso = _resourcesManager.GetTileBitmapPerso(m);
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
                     e.Graphics.DrawImage(tileBitmap, x, y, width, height);
-                    x += this.Width / tileArray.GetLength(0);
+                    x += width;
+
+                    if (t.IsSolid)
+                    {
+                        //Rectangle rt = new Rectangle(t.TileHitbox.xA, t.TileHitbox.yA, t.TileHitbox.xB - t.TileHitbox.xA,t.TileHitbox.yC - t.TileHitbox.yA);
+                        //e.Graphics.FillRectangle(Brushes.Red, rt);
+                    }
                 }
                 x = 0;
-                y += this.Height / tileArray.GetLength(1);
+                y += height;
             }
 
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
 
+            Rectangle r = new Rectangle(MC.HitBox.xA, MC.HitBox.yA, width, height / 2);
+            e.Graphics.FillRectangle(Brushes.Red, r);
+
             PNJ pnj = LevelContext.Pnjs[0];
+
             Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
             e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
 
             /*Clue clue = LevelContext.Clues[0];
-            Bitmap clueBitmap = GetResourcesManager.GetCharacterBitmap(clue);
+            Rectangle r2 = new Rectangle(pnj.HitBox.xA, pnj.HitBox.yA, width, height / 2);
+            e.Graphics.FillRectangle(Brushes.Red, r2);
             e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, width, height);*/
         }
 
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // GameControl
-            // 
-            this.DoubleBuffered = true;
-            this.Name = "GameControl";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
-            this.ResumeLayout(false);
+            SuspendLayout();
+            DoubleBuffered = true;
+            Name = "GameControl";
+            KeyDown += new System.Windows.Forms.KeyEventHandler(GameControl_KeyDown);
+            ResumeLayout(false);
 
         }
-
-        /*private void PaintCharacter()
-        {
-            
-        }*/
 
         private ResourcesManager GetResourcesManager
         {
             get { return _resourcesManager; }
         }
-        
+
         private void GameControl_KeyDown(object sender, KeyEventArgs e)
         {
             MainCharacter MC = LevelContext.MainCharacter;
@@ -144,7 +147,8 @@ namespace ITI.HistoryTreasures.Rendering
             }
             else if (e.KeyCode == Keys.E)
             {
-                MessageBox.Show("Action");
+                MC.Movement(KeyEnum.action);
+                //MessageBox.Show("Action");
             }
         }
     }

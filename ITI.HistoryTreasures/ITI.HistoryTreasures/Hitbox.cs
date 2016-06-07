@@ -16,7 +16,7 @@ namespace ITI.HistoryTreasures
         int _yC;
         int _xD;
         int _yD;
-
+        
         /// <summary>
         /// This constructor allow to create a Rectangle. 
         /// </summary>
@@ -29,7 +29,7 @@ namespace ITI.HistoryTreasures
         /// <param name="yC">Coordonate Y in a point C.</param>
         /// <param name="xD">Coordonate X in a point D.</param>
         /// <param name="yD">Coordonate Y in a point D.</param>
-        public Hitbox(int xA, int yA,int xC, int yC)
+        public Hitbox(int xA, int yA, int xC, int yC)
         {
             _xA = xA;
             _yA = yA;
@@ -52,16 +52,70 @@ namespace ITI.HistoryTreasures
         public int yC { get { return _yC; } set { _yC = value; } }
         public int xD { get { return _xD; } set { _xD = value; } }
         public int yD { get { return _yD; } set { _yD = value; } }
-        
-        // detect if something collide with the hitbox
-        /*public bool IsCollide(int x1, int y1, int x2, int y2, int xValue, int yValue)
+
+        /// <summary>
+        /// Check if a hitbox Overlaps another.
+        /// </summary>
+        /// <param name="other">The other.</param>
+        /// <returns>True if the hitbox overlaps    </returns>
+        public bool Overlaps( Hitbox other)
         {
-            if((xValue > x1 && xValue < x2) && (yValue == y1 && yValue == y2))
-                return true;
-            else if ((yValue > y1 && yValue < y2) && (xValue == x1 && xValue == x2))
-                return true;
-            else
-                return false;
-        }*/
+            return  !(yA > other.yC || yC < other.yA || xA > other.xC || xC < other.xA);
+        }
+        
+        /// <summary>
+        /// Length of the hitbox.
+        /// </summary>
+        /// <returns>The length in a int</returns>
+        public int Length()
+        {
+            return xB - xA;
+        }
+
+        /// <summary>
+        /// Height of the hitbox.
+        /// </summary>
+        /// <returns>The Height in a int</returns>
+        public int Height()
+        {
+            return yC - yA;
+        }
+
+        /// <summary>
+        /// Updates the hitbox position.
+        /// </summary>
+        /// <param name="key">The key pressed.</param>
+        /// <param name="Speed">The speed of the character.</param>
+        public void UpdateHitbox(KeyEnum key, int Speed)
+        {
+            if (key == KeyEnum.right)
+            {
+                xA = xA + Speed;
+                xB = xB + Speed;
+                xC = xC + Speed;
+                xD = xD + Speed;
+            }
+            else if (key == KeyEnum.left)
+            {
+                xA = xA - Speed;
+                xB = xB - Speed;
+                xC = xC - Speed;
+                xD = xD - Speed;
+            }
+            else if (key == KeyEnum.up)
+            {
+                yA = yA - Speed;
+                yB = yB - Speed;
+                yC = yC - Speed;
+                yD = yD - Speed;
+            }
+            else if (key == KeyEnum.down)
+            {
+                yA = yA + Speed;
+                yB = yB + Speed;
+                yC = yC + Speed;
+                yD = yD + Speed;
+            }
+        }
     }
 }
