@@ -62,8 +62,6 @@ namespace ITI.HistoryTreasures.Rendering
             int height = this.Height / tileArray.GetLength(1);
             MainCharacter MC = LevelContext.MainCharacter;
 
-            _sound = new Sound();
-
             //Resizing the Form to an almost perfect square
             //  HistoryTreasures.ActiveForm.Size = new Size(this.Height,this.Height);
 
@@ -116,13 +114,14 @@ namespace ITI.HistoryTreasures.Rendering
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
 
+            _sound = new Sound();
         }
 
         private ResourcesManager GetResourcesManager
         {
             get { return _resourcesManager; }
         }
-        
+
         private void GameControl_KeyDown(object sender, KeyEventArgs e)
         {
             MainCharacter MC = LevelContext.MainCharacter;
