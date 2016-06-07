@@ -143,7 +143,7 @@ namespace ITI.HistoryTreasures
             if (MainCharacter != null)
                 throw new InvalidOperationException("you cannot create two main character");
 
-            return new MainCharacter(ctx.Game, x, y, bitMapName, name); 
+            return new MainCharacter(ctx.Game, this, x, y, bitMapName, name); 
         }
 
         /// <summary>
@@ -164,8 +164,11 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// This property returns the MainCharacter.
+        /// Gets the main character.
         /// </summary>
+        /// <value>
+        /// The main character.
+        /// </value>
         public MainCharacter MainCharacter
         {
             get { return _mainCharacter; }
@@ -189,9 +192,6 @@ namespace ITI.HistoryTreasures
                 {
                     key = KeyEnum.action;
                     _talk = _pnjs[i].Speech;
-                }
-                else
-                {
                     break;
                 }
             }

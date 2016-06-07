@@ -109,7 +109,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            PNJ p = l.Pnj;
+            PNJ pnj = l.Pnj;
 
             Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
         }
@@ -119,10 +119,9 @@ namespace ITI.HistoryTreasures.Tests
         {
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
-            MainCharacter mC = new MainCharacter(g, 16, 16, CharacterEnum.MCFACE, "Judd");
             Level l = t.CreateLevel("Level");
 
-            PNJ p = l.Pnj;
+            PNJ pnj = l.Pnj;
 
             Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
         }

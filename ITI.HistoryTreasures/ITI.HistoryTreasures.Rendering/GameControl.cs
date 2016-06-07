@@ -29,6 +29,9 @@ namespace ITI.HistoryTreasures.Rendering
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This property returns the game context.
+        /// </summary>
         public Game GameContext
         {
             get { return _gCtx; }
@@ -68,13 +71,17 @@ namespace ITI.HistoryTreasures.Rendering
             {
                 for (int j = 0; j < LevelContext.MapContext.Width; j++)
                 {
-                    Tile m = tileArray[i, j];
-
-                    // Bitmap tileperso = _resourcesManager.GetTileBitmapPerso(m);
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
                     e.Graphics.DrawImage(tileBitmap, x, y, width, height);
                     x += this.Width / tileArray.GetLength(0);
+
+                    if (t.IsSolid)
+                    {
+                        Rectangle rt = new Rectangle(t.TileHitbox.xA, t.TileHitbox.yA, t.TileHitbox.xB - t.TileHitbox.xA,
+                            t.TileHitbox.yC - t.TileHitbox.yA);
+                        e.Graphics.FillRectangle(Brushes.Red, rt);
+                    }
                 }
                 x = 0;
                 y += this.Height / tileArray.GetLength(1);
@@ -83,6 +90,9 @@ namespace ITI.HistoryTreasures.Rendering
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
 
+            Rectangle r = new Rectangle(MC.HitBox.xA, MC.HitBox.yA, MC.HitBox.xB - MC.HitBox.xA, MC.HitBox.yC - MC.HitBox.yA);
+            e.Graphics.FillRectangle(Brushes.Red, r);
+
             PNJ pnj = LevelContext.Pnjs[0];
             Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
             e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
@@ -90,6 +100,9 @@ namespace ITI.HistoryTreasures.Rendering
             Clue clue = LevelContext.Clues[0];
             Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
             e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, width, height);
+            Rectangle r2 = new Rectangle(pnj.HitBox.xA, pnj.HitBox.yA, pnj.HitBox.xB - pnj.HitBox.xA, pnj.HitBox.yC - pnj.HitBox.yA);
+            e.Graphics.FillRectangle(Brushes.Red, r2);
+
         }
 
         private void InitializeComponent()
@@ -104,11 +117,6 @@ namespace ITI.HistoryTreasures.Rendering
             this.ResumeLayout(false);
 
         }
-
-        /*private void PaintCharacter()
-        {
-            
-        }*/
 
         private ResourcesManager GetResourcesManager
         {
@@ -144,9 +152,8 @@ namespace ITI.HistoryTreasures.Rendering
             }
             else if (e.KeyCode == Keys.E)
             {
-                MC.Movement(KeyEnum.action);
-                Invalidate();
-                //MessageBox.Show("Action");
+                MC.Interact(KeyEnum.action);
+                MessageBox.Show(LevelContext.Pnj.Speech);
             }
         }
     }
