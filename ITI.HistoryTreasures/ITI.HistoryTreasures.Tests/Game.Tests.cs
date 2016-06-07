@@ -133,9 +133,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Clue c = l.CreateClue(t, 32, 32, "Clue","Livre", "Un indice ? Son nom est François.");
-
-            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo("Un indice ? Son nom est François."));
+            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo("You want to know the true ? Sorry I didn't do that"));
         }
 
         [Test]
@@ -145,9 +143,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Clue c = l.CreateClue(t, 48, 48, "Clue", "Livre", "Un indice ? Son nom est François.");
-
-            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo("Un indice ? Son nom est François."));
+            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo("You want to know the true ? Sorry I didn't do that"));
         }
 
         [Test]
@@ -170,14 +166,13 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
-
-            Clue c = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est François !");
+            Clue c = l.Clue;
 
             Assert.That(c.LCtx == l);
-            Assert.That(c.X == 32);
-            Assert.That(c.Y == 32);
+            Assert.That(c.X == 128);
+            Assert.That(c.Y == 128);
             Assert.That(c.Name == "Livre");
-            Assert.That(c.Speech == "Un indice ? Son nom est François !");
+            Assert.That(c.Speech == "You want to know the true ? Sorry I didn't do that");
         }
 
         [Test]
@@ -187,10 +182,10 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Clue c1 = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !");
-            Clue c2 = l.CreateClue(t, 52, 52, "Clue", "Tableau", "Un indice ? Son cheval est blanc !");
+            Clue c1 = l.Clue;
+            Clue c2 = l.CreateClue(t, 52, 52, ClueEnum.LIVRE, "Tableau", "Un indice ? Son cheval est blanc !");
 
-            Assert.That(c1.Speech, Is.EqualTo("Un indice ? Son nom est Henri !"));
+            Assert.That(c1.Speech, Is.EqualTo("You want to know the true ? Sorry I didn't do that"));
             Assert.That(c2.Speech, Is.EqualTo("Un indice ? Son cheval est blanc !"));
             Assert.That(l.Clues.Contains(c1));
             Assert.That(l.Clues.Contains(c2));
@@ -203,9 +198,9 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Clue c = l.CreateClue(t, 16, 32, "Clue", "Livre", "Bouh");
+            Clue c = l.Clue;
 
-            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, ClueEnum.LIVRE, "Livre", "Un indice ? Son nom est Henri !"));
         }
 
         [Test]
@@ -215,9 +210,9 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Clue c = l.CreateClue(t, 16, 32, "Clue", "Test", "Un indice ? Son nom est Henri !");
+            Clue c = l.Clue;
 
-            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, ClueEnum.LIVRE, "Livre", "Un indice ? Son nom est Henri !"));
         }
 
         [Test]
@@ -227,7 +222,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Assert.Throws<ArgumentException>(() => l.CreateClue(t, -1, 0, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+            Assert.Throws<ArgumentException>(() => l.CreateClue(t, -1, 0, ClueEnum.LIVRE, "Livre", "Un indice ? Son nom est Henri !"));
         }
 
         [Test]
@@ -239,7 +234,7 @@ namespace ITI.HistoryTreasures.Tests
 
             Map m = new Map(l, 5, 5);
 
-            Assert.Throws<ArgumentException>(() => l.CreateClue(t, 170, 170, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+            Assert.Throws<ArgumentException>(() => l.CreateClue(t, 170, 170, ClueEnum.LIVRE, "Test", "Un indice ? Son nom est Henri !"));
         }
 
         [Test]
@@ -249,9 +244,9 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Clue c1 = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !");
+            Clue c1 = l.Clue;
 
-            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 32, 32, ClueEnum.LIVRE, "Livre", "Un indice ? Son nom est Henri !"));
         }
 
         [Test]
@@ -263,7 +258,7 @@ namespace ITI.HistoryTreasures.Tests
 
             PNJ p = l.Pnj;
 
-            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 16, 128, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 16, 128, ClueEnum.LIVRE, "Livre", "Un indice ? Son nom est Henri !"));
         }
 
         [Test]
@@ -273,7 +268,7 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-           Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 16, 16, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+           Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 16, 16, ClueEnum.LIVRE, "Livre", "Un indice ? Son nom est Henri !"));
         }
 
         [Test]
@@ -283,16 +278,16 @@ namespace ITI.HistoryTreasures.Tests
             Theme t = g.CreateTheme("Theme");
             Level l = t.CreateLevel("Level");
 
-            Clue c = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !");
+            Clue c = l.Clue;
 
-            Assert.That(c.HitBox.xA, Is.EqualTo(16));
-            Assert.That(c.HitBox.yA, Is.EqualTo(32));
-            Assert.That(c.HitBox.xB, Is.EqualTo(48));
-            Assert.That(c.HitBox.yB, Is.EqualTo(32));
-            Assert.That(c.HitBox.xC, Is.EqualTo(48));
-            Assert.That(c.HitBox.yC, Is.EqualTo(48));
-            Assert.That(c.HitBox.xD, Is.EqualTo(16));
-            Assert.That(c.HitBox.yD, Is.EqualTo(48));
+            Assert.That(c.HitBox.xA, Is.EqualTo(112));
+            Assert.That(c.HitBox.yA, Is.EqualTo(128));
+            Assert.That(c.HitBox.xB, Is.EqualTo(144));
+            Assert.That(c.HitBox.yB, Is.EqualTo(128));
+            Assert.That(c.HitBox.xC, Is.EqualTo(144));
+            Assert.That(c.HitBox.yC, Is.EqualTo(144));
+            Assert.That(c.HitBox.xD, Is.EqualTo(112));
+            Assert.That(c.HitBox.yD, Is.EqualTo(144));
         }
     }
 }
