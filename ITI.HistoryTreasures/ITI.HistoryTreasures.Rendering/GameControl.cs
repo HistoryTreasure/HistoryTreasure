@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
+using ITI.HistoryTreasures.Rendering.Properties;
 
 namespace ITI.HistoryTreasures.Rendering
 {
@@ -16,6 +18,7 @@ namespace ITI.HistoryTreasures.Rendering
         Game _gCtx;
         private IContainer components;
         ResourcesManager _resourcesManager;
+        Sound _sound;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -59,6 +62,8 @@ namespace ITI.HistoryTreasures.Rendering
             int height = this.Height / tileArray.GetLength(1);
             MainCharacter MC = LevelContext.MainCharacter;
 
+            _sound = new Sound();
+
             //Resizing the Form to an almost perfect square
             //  HistoryTreasures.ActiveForm.Size = new Size(this.Height,this.Height);
 
@@ -92,6 +97,9 @@ namespace ITI.HistoryTreasures.Rendering
             Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
             e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
 
+            Clue clue = LevelContext.Clues[0];
+            Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
+            e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, width, height);
             Rectangle r2 = new Rectangle(pnj.HitBox.xA, pnj.HitBox.yA, pnj.HitBox.xB - pnj.HitBox.xA, pnj.HitBox.yC - pnj.HitBox.yA);
             e.Graphics.FillRectangle(Brushes.Red, r2);
 

@@ -16,6 +16,7 @@ namespace ITI.HistoryTreasures
         public List<Clue> _clues;
         readonly Clue _clue;
         readonly Map _mCtx;
+        bool _isOpen;
 
         /// <summary>
         /// This constructor create a level.
@@ -24,9 +25,9 @@ namespace ITI.HistoryTreasures
         /// <param name="name">This parameter reference name of level.</param>
         public Level(Theme ctx, string name)
         {
-            for(int i = 0; i < ctx.Levels.Count; i++)
+            for (int i = 0; i < ctx.Levels.Count; i++)
             {
-                if(ctx.Levels[i].Name == name)
+                if (ctx.Levels[i].Name == name)
                 {
                     throw new InvalidOperationException("You cannot create two levels with same name");
                 }
@@ -40,7 +41,8 @@ namespace ITI.HistoryTreasures
             _pnj = CreatePNJ(Theme.Game, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello world !");
             _mCtx = new Map(this, 10, 10);
             _clues = new List<Clue>();
-            //_clue = 
+            _clue = CreateClue(this.Theme, 128, 128, ClueEnum.LIVRE, "Livre",
+                "You want to know the true ? Sorry I didn't do that");
         }
 
         /// <summary>
@@ -62,9 +64,26 @@ namespace ITI.HistoryTreasures
             get { return _pnjs; }
         }
 
+        /// <summary>
+        /// Gets the clues.
+        /// </summary>
+        /// <value>
+        /// The clues.
+        /// </value>
         public List<Clue> Clues
         {
             get { return _clues; }
+        }
+
+        /// <summary>
+        /// Gets the clue.
+        /// </summary>
+        /// <value>
+        /// The clue.
+        /// </value>
+        public Clue Clue
+        {
+            get { return _clue; }
         }
 
         /// <summary>
@@ -109,13 +128,39 @@ namespace ITI.HistoryTreasures
             return p;
         }
 
+        /// <summary>
+        /// Creates the main.
+        /// </summary>
+        /// <param name="ctx">The CTX.</param>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="bitMapName">Name of the bit map.</param>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        /// <exception cref="System.InvalidOperationException">you cannot create two main character</exception>
         public MainCharacter CreateMain(Theme ctx, int x, int y, CharacterEnum bitMapName, string name)
         {
             if (MainCharacter != null)
-                throw new InvalidOperationException("you cannot crate two main character");
+                throw new InvalidOperationException("you cannot create two main character");
 
             return new MainCharacter(ctx.Game, this, x, y, bitMapName, name); 
+        }
 
+        /// <summary>
+        /// Creates the clue.
+        /// </summary>
+        /// <param name="ctx">The CTX.</param>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="bitMapName">Name of the bit map.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="speech">The speech.</param>
+        /// <returns></returns>
+        public Clue CreateClue(Theme ctx, int x, int y, ClueEnum bitMapName, string name, string speech)
+        {
+            Clue c = new Clue(name, this, bitMapName, x, y, speech);
+            _clues.Add(c);
+            return c;
         }
 
         /// <summary>
@@ -129,6 +174,11 @@ namespace ITI.HistoryTreasures
             get { return _mainCharacter; }
         }
 
+        /// <summary>
+        /// Interactions the with PNJ.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns></returns>
         public string InteractionWithPNJ(KeyEnum key)
         {
             string _talk = "";
@@ -159,7 +209,12 @@ namespace ITI.HistoryTreasures
             get { return _mCtx; }
         }
 
-        /*public string InteractionsWithClue(KeyEnum key)
+        /// <summary>
+        /// Interactionses the with clue.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns></returns>
+        public string InteractionsWithClue(KeyEnum key)
         {
             string _speech = "";
             for (int i = 0; i < _clues.Count; i++)
@@ -178,8 +233,19 @@ namespace ITI.HistoryTreasures
                     break;
                 }
             }
-
             return _speech;
-        }*/
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether this instance is open.
+        /// Allow to quit the level when user win.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is open; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsOpen
+        {
+            get { return _isOpen; }
+        }
     }
 }
