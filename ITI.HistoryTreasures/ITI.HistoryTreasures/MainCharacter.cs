@@ -117,7 +117,7 @@ namespace ITI.HistoryTreasures
                     return;
                 foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
                 {
-                    if (hitbox.Overlaps(hitbox))
+                    if (HitBox.Overlaps(hitbox))
                     {
                         return;
                     }

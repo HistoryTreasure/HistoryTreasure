@@ -37,7 +37,7 @@ namespace ITI.HistoryTreasures
             _isFinish = false;
             _mainCharacter = CreateMain(ctx,16,16, CharacterEnum.MCFACE, "Judd" );
             _pnjs = new List<PNJ>();
-            _pnj = CreatePNJ(Theme.Game, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello world !");
+            _pnj = CreatePNJ(Theme.Game, 16, 48, CharacterEnum.GUARDFACE, "Hawke", "Hello world !");
             _mCtx = new Map(this, 10, 10);
             _clues = new List<Clue>();
             //_clue = 

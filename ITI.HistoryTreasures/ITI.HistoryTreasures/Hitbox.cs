@@ -60,8 +60,7 @@ namespace ITI.HistoryTreasures
         /// <returns>True if the hitbox overlaps    </returns>
         public bool Overlaps( Hitbox other)
         {
-            return  !((other.xB >= xD && other.xC >= xD) || (other.yD >= yA && other.yC >= yB) 
-                || (other.xA <= xB && other.xD <= xC) || (other.yA >= yD && other.yB >= yC));
+            return  !(yA > other.yC || yC < other.yA || xA > other.xC || xC < other.xA);
         }
         
         /// <summary>
