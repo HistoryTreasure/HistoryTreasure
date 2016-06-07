@@ -134,6 +134,7 @@
     <None Include="Resources\img_X4_Y10.png" />
     <None Include="Resources\pont vertcal.png" />
     <None Include="Resources\img_X1_Y0.png" />
+    <None Include="Resources\book.png" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
