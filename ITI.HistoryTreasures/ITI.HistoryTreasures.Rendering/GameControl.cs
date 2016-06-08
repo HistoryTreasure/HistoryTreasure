@@ -60,7 +60,13 @@ namespace ITI.HistoryTreasures.Rendering
             int y = 0;
             int width = this.Width / tileArray.GetLength(0);
             int height = this.Height / tileArray.GetLength(1);
+
             MainCharacter MC = LevelContext.MainCharacter;
+            int posXMC = MC.positionX*Width/tileArray.GetLength(0);
+            int posYMC = MC.positionY * Height / tileArray.GetLength(1);
+
+            int posXPNJ = LevelContext.Pnj.positionX*Width/tileArray.GetLength(0);
+            int posYPNJ = LevelContext.Pnj.positionY * Height / tileArray.GetLength(1);
 
             //Resizing the Form to an almost perfect square
             //  HistoryTreasures.ActiveForm.Size = new Size(this.Height,this.Height);
@@ -88,7 +94,7 @@ namespace ITI.HistoryTreasures.Rendering
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
 
-            Rectangle r = new Rectangle(MC.HitBox.xA, MC.HitBox.yA, MC.HitBox.xB - MC.HitBox.xA, MC.HitBox.yC - MC.HitBox.yA);
+            Rectangle r = new Rectangle(posXMC, posYMC, MC.HitBox.xB - MC.HitBox.xA, MC.HitBox.yC - MC.HitBox.yA);
             e.Graphics.FillRectangle(Brushes.Red, r);
 
             PNJ pnj = LevelContext.Pnjs[0];
@@ -98,7 +104,7 @@ namespace ITI.HistoryTreasures.Rendering
             Clue clue = LevelContext.Clues[0];
             Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
             e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, width, height);
-            Rectangle r2 = new Rectangle(pnj.HitBox.xA, pnj.HitBox.yA, pnj.HitBox.xB - pnj.HitBox.xA, pnj.HitBox.yC - pnj.HitBox.yA);
+            Rectangle r2 = new Rectangle(posXPNJ, posYPNJ, pnj.HitBox.xB - pnj.HitBox.xA, pnj.HitBox.yC - pnj.HitBox.yA);
             e.Graphics.FillRectangle(Brushes.Red, r2);
 
         }
