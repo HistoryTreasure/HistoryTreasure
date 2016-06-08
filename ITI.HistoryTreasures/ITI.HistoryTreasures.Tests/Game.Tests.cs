@@ -72,7 +72,7 @@ namespace ITI.HistoryTreasures.Tests
             g = new Game();
             t = g.CreateTheme("Theme");
             l = t.CreateLevel("Level");
-            c = l.CreateClue(t, 32, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !");
+            c = l.CreateClue(t, 32, 32, ClueEnum.LIVRE, "Livre", "Un indice ? Son nom est Henri !");
         }
 
         [Test]
@@ -187,13 +187,13 @@ namespace ITI.HistoryTreasures.Tests
         {
             Map m = new Map(l, 5, 5);
 
-            Assert.Throws<ArgumentException>(() => l.CreateClue(t, 170, 170, "Clue", "Truc", "Truc"));
+            Assert.Throws<ArgumentException>(() => l.CreateClue(t, 170, 170, ClueEnum.LIVRE, "Truc", "Truc"));
         }
 
         [Test]
         public void Level_two_Clue_cannot_be_create_on_the_same_position()
         {
-            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 16, 32, "Clue", "Livre", "Un indice ? Son nom est Henri !"));
+            Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 16, 32, ClueEnum.LIVRE, "Livre", "Un indice ? Son nom est Henri !"));
         }
 
         [Test]
