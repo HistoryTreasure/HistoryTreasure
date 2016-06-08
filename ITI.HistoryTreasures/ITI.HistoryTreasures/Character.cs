@@ -31,7 +31,7 @@ namespace ITI.HistoryTreasures
             _positionY = Y;
             _bitMapName = bitMapName;
             _name = name;
-            _hitBox = new Hitbox(positionX -16, positionY, positionX + 16, positionY + 16);
+            _hitBox = new Hitbox(positionX, positionY, positionX + 32, positionY + 32);
         }
 
         /// <summary>
@@ -66,6 +66,12 @@ namespace ITI.HistoryTreasures
             }
         }
         
+        /// <summary>
+        /// Gets the name of the character bitmap.
+        /// </summary>
+        /// <value>
+        /// The name of the character bitmap.
+        /// </value>
         public CharacterEnum CharacterBitmapName
         {
             get { return _bitMapName; }
