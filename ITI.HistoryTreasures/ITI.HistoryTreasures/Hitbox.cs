@@ -91,30 +91,22 @@ namespace ITI.HistoryTreasures
             if (key == KeyEnum.right)
             {
                 xA = xA + Speed;
-                xB = xB + Speed;
                 xC = xC + Speed;
-                xD = xD + Speed;
             }
             else if (key == KeyEnum.left)
             {
                 xA = xA - Speed;
-                xB = xB - Speed;
                 xC = xC - Speed;
-                xD = xD - Speed;
             }
             else if (key == KeyEnum.up)
             {
                 yA = yA - Speed;
-                yB = yB - Speed;
                 yC = yC - Speed;
-                yD = yD - Speed;
             }
             else if (key == KeyEnum.down)
             {
                 yA = yA + Speed;
-                yB = yB + Speed;
                 yC = yC + Speed;
-                yD = yD + Speed;
             }
         }
     }
