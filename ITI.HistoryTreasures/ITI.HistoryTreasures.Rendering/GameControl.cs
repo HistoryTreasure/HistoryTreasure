@@ -16,9 +16,10 @@ namespace ITI.HistoryTreasures.Rendering
     {
         Level _lCtx;
         Game _gCtx;
-        private IContainer components;
+        private IContainer _components;
         ResourcesManager _resourcesManager;
         Sound _sound;
+        static readonly int TileSize = 32;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -58,8 +59,10 @@ namespace ITI.HistoryTreasures.Rendering
             //Size _windowSize = HistoryTreasures.ActiveForm.Size;
             int x = 0;
             int y = 0;
-            int width = this.Width / tileArray.GetLength(0);
-            int height = this.Height / tileArray.GetLength(1);
+            double coefX = 1.0 * this.Width/(tileArray.GetLength(0) * TileSize);
+            double coefY = 1.0 * this.Height / (tileArray.GetLength(1) * TileSize);
+            int screenTileWidth = (int)Math.Round(coefX * TileSize);
+            int screenTileHeight = (int)Math.Round(coefY * TileSize);
 
             MainCharacter MC = LevelContext.MainCharacter;
             int posXMC = (Width*tileArray.GetLength(0))/MC.positionX;
@@ -77,7 +80,7 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
-                    e.Graphics.DrawImage(tileBitmap, x, y, width, height);
+                    e.Graphics.DrawImage(tileBitmap, x, y, screenTileWidth, screenTileHeight);
                     x += this.Width / tileArray.GetLength(0);
 
                     if (t.IsSolid)
@@ -92,18 +95,18 @@ namespace ITI.HistoryTreasures.Rendering
             }
 
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
-            e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
+            e.Graphics.DrawImage(characterBitmap, (int)Math.Round(coefX * MC.positionX), (int)Math.Round(coefY * MC.positionY), screenTileWidth, screenTileHeight);
 
             Rectangle r = new Rectangle(posXMC, posYMC, MC.HitBox.xB - MC.HitBox.xA, MC.HitBox.yC - MC.HitBox.yA);
             e.Graphics.FillRectangle(Brushes.Red, r);
 
             PNJ pnj = LevelContext.Pnjs[0];
             Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
-            e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
+            e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, screenTileWidth, screenTileHeight);
 
             Clue clue = LevelContext.Clues[0];
             Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
-            e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, width, height);
+            e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, screenTileWidth, screenTileHeight);
             Rectangle r2 = new Rectangle(posXPNJ, posYPNJ, pnj.HitBox.xB - pnj.HitBox.xA, pnj.HitBox.yC - pnj.HitBox.yA);
             e.Graphics.FillRectangle(Brushes.Red, r2);
         }
