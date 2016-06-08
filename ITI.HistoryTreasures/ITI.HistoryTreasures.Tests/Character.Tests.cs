@@ -261,15 +261,15 @@ namespace ITI.HistoryTreasures.Tests
             Game g = new Game();
             Theme t = g.CreateTheme(("Theme"));
             Level l = t.CreateLevel("Level");
-            MainCharacter mC = new MainCharacter(g, l, 32, 32, CharacterEnum.MCFACE, "Judd");
-            Assert.That(mC.HitBox.xA, Is.EqualTo(16));
-            Assert.That(mC.HitBox.yA, Is.EqualTo(32));
-            Assert.That(mC.HitBox.xB, Is.EqualTo(48));
-            Assert.That(mC.HitBox.yB, Is.EqualTo(32));
-            Assert.That(mC.HitBox.xC, Is.EqualTo(48));
-            Assert.That(mC.HitBox.yC, Is.EqualTo(48));
-            Assert.That(mC.HitBox.xD, Is.EqualTo(16));
-            Assert.That(mC.HitBox.yD, Is.EqualTo(48));
+            MainCharacter mC = new MainCharacter(g, l, 0, 0, CharacterEnum.MCFACE, "Judd");
+            Assert.That(mC.HitBox.xA, Is.EqualTo(0));
+            Assert.That(mC.HitBox.yA, Is.EqualTo(0));
+            Assert.That(mC.HitBox.xB, Is.EqualTo(32));
+            Assert.That(mC.HitBox.yB, Is.EqualTo(0));
+            Assert.That(mC.HitBox.xC, Is.EqualTo(32));
+            Assert.That(mC.HitBox.yC, Is.EqualTo(32));
+            Assert.That(mC.HitBox.xD, Is.EqualTo(0));
+            Assert.That(mC.HitBox.yD, Is.EqualTo(32));
         }
 
         [Test]

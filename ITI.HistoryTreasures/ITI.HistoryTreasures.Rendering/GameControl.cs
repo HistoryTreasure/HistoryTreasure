@@ -62,8 +62,8 @@ namespace ITI.HistoryTreasures.Rendering
             int height = this.Height / tileArray.GetLength(1);
 
             MainCharacter MC = LevelContext.MainCharacter;
-            int posXMC = MC.positionX*Width/tileArray.GetLength(0);
-            int posYMC = MC.positionY * Height / tileArray.GetLength(1);
+            int posXMC = (Width*tileArray.GetLength(0))/MC.positionX;
+            int posYMC = (Height*tileArray.GetLength(1))/MC.positionY;
 
             int posXPNJ = LevelContext.Pnj.positionX*Width/tileArray.GetLength(0);
             int posYPNJ = LevelContext.Pnj.positionY * Height / tileArray.GetLength(1);
