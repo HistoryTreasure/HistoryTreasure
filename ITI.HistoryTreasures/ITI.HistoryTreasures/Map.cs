@@ -61,8 +61,6 @@ namespace ITI.HistoryTreasures
             get { return _level; }
         }
 
-
-
         /// <summary>
         /// This property returns field tilearray.
         /// </summary>

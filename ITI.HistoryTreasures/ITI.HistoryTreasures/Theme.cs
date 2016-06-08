@@ -27,7 +27,6 @@ namespace ITI.HistoryTreasures
                     throw new InvalidOperationException("You cannot create two themes with same name");
                 }
             }
-
             _ctx = ctx;
             _name = name;
             _isFinish = false;
@@ -61,6 +60,12 @@ namespace ITI.HistoryTreasures
             set { _ctx = value; }
         }
 
+        /// <summary>
+        /// Gets the main character.
+        /// </summary>
+        /// <value>
+        /// The main character.
+        /// </value>
         public MainCharacter MainCharacter
         {
             get { return _mainCharacter; }

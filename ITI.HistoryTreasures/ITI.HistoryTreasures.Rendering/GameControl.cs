@@ -106,15 +106,11 @@ namespace ITI.HistoryTreasures.Rendering
             e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, width, height);
             Rectangle r2 = new Rectangle(posXPNJ, posYPNJ, pnj.HitBox.xB - pnj.HitBox.xA, pnj.HitBox.yC - pnj.HitBox.yA);
             e.Graphics.FillRectangle(Brushes.Red, r2);
-
         }
 
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
-            // GameControl
-            // 
             this.DoubleBuffered = true;
             this.Name = "GameControl";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
@@ -135,25 +131,21 @@ namespace ITI.HistoryTreasures.Rendering
             {
                 MC.Movement(KeyEnum.up);
                 Invalidate();
-                //MessageBox.Show("Haut");
             }
             else if (e.KeyCode == Keys.S)
             {
                 MC.Movement(KeyEnum.down);
                 Invalidate();
-                //MessageBox.Show("Bas");
             }
             else if (e.KeyCode == Keys.Q)
             {
                 MC.Movement(KeyEnum.left);
                 Invalidate();
-                //MessageBox.Show("Gauche");
             }
             else if (e.KeyCode == Keys.D)
             {
                 MC.Movement(KeyEnum.right);
                 Invalidate();
-                //MessageBox.Show("Droite");
             }
             else if (e.KeyCode == Keys.E)
             {

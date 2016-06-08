@@ -33,7 +33,6 @@ namespace ITI.HistoryTreasures
             }
         }
 
-
         /// <summary>
         /// Return map context. 
         /// </summary>
@@ -51,15 +50,34 @@ namespace ITI.HistoryTreasures
             get { return _tileName;}
         }
 
+        /// <summary>
+        /// Gets the tile hitbox.
+        /// </summary>
+        /// <value>
+        /// The tile hitbox.
+        /// </value>
         public Hitbox TileHitbox
         {
             get { return _hitbox; }
         }
 
+        /// <summary>
+        /// Gets the position x.
+        /// </summary>
+        /// <value>
+        /// The position x.
+        /// </value>
         public int posX
         {
             get { return _posX; }
         }
+
+        /// <summary>
+        /// Gets the position y.
+        /// </summary>
+        /// <value>
+        /// The position y.
+        /// </value>
         public int posY
         {
             get { return _posY; }
