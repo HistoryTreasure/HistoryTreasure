@@ -96,7 +96,17 @@ namespace ITI.HistoryTreasures
             if (key == KeyEnum.up)
             {
                 if (positionY == 16)
+                {
                     return;
+                }
+
+                foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
+                {
+                    if (HitBox.Overlaps(hitbox))
+                    {
+                        return;
+                    }
+                }
 
                 positionY = positionY - Speed;
                 HitBox.UpdateHitbox(key, Speed);
@@ -110,13 +120,24 @@ namespace ITI.HistoryTreasures
                         return;
                     }
                 }
+
                 positionY = positionY + Speed;
                 HitBox.UpdateHitbox(key, Speed);
             }
             else if (key == KeyEnum.right)
             {
-                if (positionX == (MCtx.TileArray.GetLength(0)*32) - 16)
+                if (positionX == (MCtx.TileArray.GetLength(0) * 32) - 16)
+                {
                     return;
+                }
+
+                foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
+                {
+                    if (HitBox.Overlaps(hitbox))
+                    {
+                        return;
+                    }
+                }
 
                 positionX = positionX + Speed;
                 HitBox.UpdateHitbox(key, Speed);
@@ -125,6 +146,14 @@ namespace ITI.HistoryTreasures
             {
                 if (positionX == 16)
                     return;
+
+                foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
+                {
+                    if (HitBox.Overlaps(hitbox))
+                    {
+                        return;
+                    }
+                }
 
                 positionX = positionX - Speed;
                 HitBox.UpdateHitbox(key, Speed);
