@@ -49,6 +49,15 @@ namespace ITI.HistoryTreasures.Rendering
         }
 
         /// <summary>
+        /// Gets the arround.
+        /// </summary>
+        /// <returns></returns>
+        public int GetArround(double value)
+        {
+            return Convert.ToInt32(value);
+        }
+
+        /// <summary>
         /// This method paint element on screen.
         /// </summary>
         /// <param name="e"></param>
@@ -61,8 +70,8 @@ namespace ITI.HistoryTreasures.Rendering
             int y = 0;
             double coefX = 1.0 * this.Width/(tileArray.GetLength(0) * TileSize);
             double coefY = 1.0 * this.Height / (tileArray.GetLength(1) * TileSize);
-            int screenTileWidth = (int)Math.Round(coefX * TileSize);
-            int screenTileHeight = (int)Math.Round(coefY * TileSize);
+            int screenTileWidth = GetArround(coefX * TileSize);
+            int screenTileHeight = GetArround(coefY * TileSize);
 
             MainCharacter MC = LevelContext.MainCharacter;
             int posXMC = (Width*tileArray.GetLength(0))/MC.positionX;
@@ -95,7 +104,7 @@ namespace ITI.HistoryTreasures.Rendering
             }
 
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
-            e.Graphics.DrawImage(characterBitmap, (int)Math.Round(coefX * MC.positionX), (int)Math.Round(coefY * MC.positionY), screenTileWidth, screenTileHeight);
+            e.Graphics.DrawImage(characterBitmap, GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY), screenTileWidth, screenTileHeight);
 
             Rectangle r = new Rectangle(posXMC, posYMC, MC.HitBox.xB - MC.HitBox.xA, MC.HitBox.yC - MC.HitBox.yA);
             e.Graphics.FillRectangle(Brushes.Red, r);
