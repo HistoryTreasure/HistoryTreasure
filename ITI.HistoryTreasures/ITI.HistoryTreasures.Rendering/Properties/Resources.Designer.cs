@@ -71,6 +71,11 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream audio {
+            get {
+                return ResourceManager.GetStream("audio", resourceCulture);
             }
         }
         
@@ -81,15 +86,6 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
             get {
                 object obj = ResourceManager.GetObject("book", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream audio {
-            get {
-                return ResourceManager.GetStream("audio", resourceCulture);
             }
         }
         

@@ -85,7 +85,7 @@ namespace ITI.HistoryTreasures.Rendering
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
                     e.Graphics.DrawImage(tileBitmap, x, y, screenTileWidth, screenTileHeight);
-                    x += width;
+                    x += screenTileWidth;
 
                     if (t.IsSolid)
                     {
@@ -94,7 +94,7 @@ namespace ITI.HistoryTreasures.Rendering
                     }
                 }
                 x = 0;
-                y += height;
+                y += screenTileHeight;
             }
 
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);

@@ -14,7 +14,7 @@ namespace ITI.HistoryTreasures
         readonly Theme _ctx;
         readonly MainCharacter _mainCharacter;
         public List<Clue> _clues;
-        //readonly Clue _clue;
+        readonly Clue _clue;
         readonly Map _mCtx;
         bool _isOpen;
 
