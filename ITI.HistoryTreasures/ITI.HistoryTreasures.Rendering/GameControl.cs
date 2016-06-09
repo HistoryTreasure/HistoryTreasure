@@ -100,7 +100,7 @@ namespace ITI.HistoryTreasures.Rendering
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY), screenTileWidth, screenTileHeight);
 
-            Rectangle r = new Rectangle(GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY), MC.HitBox.xB - MC.HitBox.xA, MC.HitBox.yC - MC.HitBox.yA);
+            Rectangle r = new Rectangle(GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY) + screenTileHeight/2,screenTileWidth, screenTileHeight /2);
             e.Graphics.FillRectangle(Brushes.Red, r);
             
             foreach (PNJ pnj in LevelContext.Pnjs)
@@ -109,8 +109,8 @@ namespace ITI.HistoryTreasures.Rendering
                 e.Graphics.DrawImage(pnjBitmap, GetArround(coefX * pnj.positionX), GetArround(coefY * pnj.positionY),
                     screenTileWidth, screenTileHeight);
 
-                Rectangle r2 = new Rectangle(GetArround(coefX * pnj.positionX), GetArround(coefY * pnj.positionY), pnj.HitBox.xB - pnj.HitBox.xA, pnj.HitBox.yC - pnj.HitBox.yA);
-                e.Graphics.FillRectangle(Brushes.Red, r2);
+                Rectangle r2 = new Rectangle(GetArround(coefX * pnj.positionX), GetArround(coefY * pnj.positionY) + screenTileHeight / 2, screenTileWidth, screenTileHeight / 2);
+                e.Graphics.FillRectangle(Brushes.Yellow, r2);
             }
             Clue clue = LevelContext.Clues[0];
             Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);

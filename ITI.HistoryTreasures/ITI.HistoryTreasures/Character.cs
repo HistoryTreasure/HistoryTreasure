@@ -31,7 +31,7 @@ namespace ITI.HistoryTreasures
             _positionY = Y;
             _bitMapName = bitMapName;
             _name = name;
-            _hitBox = new Hitbox(positionX, positionY, positionX + 32, positionY + 32);
+            _hitBox = new Hitbox(positionX, positionY + 16, positionX + 32, positionY + 32);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace ITI.HistoryTreasures
                 {
                     throw new ArgumentException("You cannot move outside the map");
                 }
-                    _positionX = value;      
+                _positionX = value;
             }
         }
 
@@ -65,7 +65,7 @@ namespace ITI.HistoryTreasures
                 _positionY = value;
             }
         }
-        
+
         /// <summary>
         /// Gets the name of the character bitmap.
         /// </summary>
@@ -102,6 +102,6 @@ namespace ITI.HistoryTreasures
             get { return _hitBox; }
         }
 
-        
+
     }
 }
