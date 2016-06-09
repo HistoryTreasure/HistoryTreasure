@@ -27,18 +27,8 @@ namespace ITI.HistoryTreasures
             {
                 throw new ArgumentException("You cannot create character to this coordonate");
             }
-
-            else if (X < 16)
-            {
-                throw new ArgumentException("You cannot create a character with his hitbox outside the map.");
-            }
-
-            /*else if(this != null)
-            {
-                throw new InvalidOperationException();
-            }*/
-
-            _speed = 1;
+            
+            _speed = 6;
             _life = 3;
             _lCtx = lCtx;
         }

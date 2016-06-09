@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ITI.HistoryTreasures
 {
-    public enum CharacterEnum
+    public enum ClueEnum
     {
-        MCFACE, MCBACK, MCLEFT, MCRIGHT, GUARDFACE
+        LIVRE, TABLEAU
     }
 }

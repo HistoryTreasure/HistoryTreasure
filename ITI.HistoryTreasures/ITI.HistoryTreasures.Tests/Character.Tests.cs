@@ -117,7 +117,6 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void MainCharacter_have_a_name_and_a_speed()
         {
-            Level l = t.CreateLevel("Level");
             MainCharacter mC = new MainCharacter(g, l, 16, 16, CharacterEnum.MCFACE, "Judd");
             string name = "Judd";
             int speed = 6;
@@ -145,7 +144,6 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void MainCharacter_can_move_right()
         {
-            Level l = t.CreateLevel("Level");
             MainCharacter mC = new MainCharacter(g, l, 100, 0, CharacterEnum.MCFACE, "Judd");
             for (int i = 0; i < 10; i++)
                 l.MainCharacter.Movement(KeyEnum.right);
@@ -157,8 +155,6 @@ namespace ITI.HistoryTreasures.Tests
         [Ignore("Hitbox not correct for the moment")]
         public void MainCharacter_cannot_move_outside_the_map()
         {
-            Level l = t.CreateLevel("Level");
-            MainCharacter mC = new MainCharacter(g, l, 32, 32, CharacterEnum.MCFACE, "Judd");
             for (int i = 32; i > 10; i--)
             {
                 l.MainCharacter.Movement(KeyEnum.left);
@@ -210,18 +206,18 @@ namespace ITI.HistoryTreasures.Tests
             Assert.That(l.MainCharacter.GameOver, Is.EqualTo(true));
             l.MainCharacter.Life = 0;
             Assert.That(l.MainCharacter.GameOver, Is.EqualTo(false));
-            MainCharacter mC = new MainCharacter(g, l, 16, 16, CharacterEnum.MCFACE, "Judd");
         }
 
         [Test]
         [Ignore("Not complete")]
         public void MainCharacter_hitbox_return_good_value()
         {
-            Assert.That(mC.HitBox.xA, Is.EqualTo(1000));
-            Assert.That(mC.HitBox.yA, Is.EqualTo(16));
+            MainCharacter mC = new MainCharacter(g, l, 0, 0, CharacterEnum.MCFACE, "Judd");
+            Assert.That(mC.HitBox.xA, Is.EqualTo(0));
+            Assert.That(mC.HitBox.yA, Is.EqualTo(0));
             Assert.That(mC.HitBox.xB, Is.EqualTo(32));
-            Assert.That(mC.HitBox.yB, Is.EqualTo(16));
-            Assert.That(mC.HitBox.xC, Is.EqualTo(1032));
+            Assert.That(mC.HitBox.yB, Is.EqualTo(0));
+            Assert.That(mC.HitBox.xC, Is.EqualTo(32));
             Assert.That(mC.HitBox.yC, Is.EqualTo(32));
             Assert.That(mC.HitBox.xD, Is.EqualTo(0));
             Assert.That(mC.HitBox.yD, Is.EqualTo(32));
