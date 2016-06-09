@@ -127,6 +127,11 @@ namespace ITI.HistoryTreasures
                 hitboxes.Add(pnj.HitBox);
             }
 
+            foreach (Clue clue in Level.Clues)
+            {
+                hitboxes.Add(clue.HitBox);
+            }
+
             return hitboxes;
         }
     }
