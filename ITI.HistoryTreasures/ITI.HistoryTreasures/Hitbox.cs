@@ -21,14 +21,14 @@ namespace ITI.HistoryTreasures
         /// This constructor allow to create a Rectangle. 
         /// </summary>
         /// <param name="ctx">This parameter reference rectangle contains in character.</param>
-        /// <param name="xA">Coordonate X in a point A.</param>
-        /// <param name="yA">Coordonate Y in a point A.</param>
-        /// <param name="xB">Coordonate X in a point B.</param>
-        /// <param name="yB">Coordonate Y in a point B.</param>
-        /// <param name="xC">Coordonate X in a point C.</param>
-        /// <param name="yC">Coordonate Y in a point C.</param>
-        /// <param name="xD">Coordonate X in a point D.</param>
-        /// <param name="yD">Coordonate Y in a point D.</param>
+        /// <param name="xA">Coordonate X of the point A.</param>
+        /// <param name="yA">Coordonate Y of the point A.</param>
+        /// <param name="xB">Coordonate X of the point B.</param>
+        /// <param name="yB">Coordonate Y of the point B.</param>
+        /// <param name="xC">Coordonate X of the point C.</param>
+        /// <param name="yC">Coordonate Y of the point C.</param>
+        /// <param name="xD">Coordonate X of the point D.</param>
+        /// <param name="yD">Coordonate Y of the point D.</param>
         public Hitbox(int xA, int yA, int xC, int yC)
         {
             _xA = xA;
@@ -86,28 +86,12 @@ namespace ITI.HistoryTreasures
         /// </summary>
         /// <param name="key">The key pressed.</param>
         /// <param name="Speed">The speed of the character.</param>
-        public void UpdateHitbox(KeyEnum key, int Speed)
+        public void UpdateHitbox(int posX, int posY)
         {
-            if (key == KeyEnum.right)
-            {
-                xA = xA + Speed;
-                xC = xC + Speed;
-            }
-            else if (key == KeyEnum.left)
-            {
-                xA = xA - Speed;
-                xC = xC - Speed;
-            }
-            else if (key == KeyEnum.up)
-            {
-                yA = yA - Speed;
-                yC = yC - Speed;
-            }
-            else if (key == KeyEnum.down)
-            {
-                yA = yA + Speed;
-                yC = yC + Speed;
-            }
+            xA = posX;
+            yA = posY + 16;
+            xC = posX + 32;
+            yC = yA + 16;
         }
     }
 }
