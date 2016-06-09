@@ -9,6 +9,7 @@ namespace ITI.HistoryTreasures
     {
         readonly int _speed;
         int _life;
+        Map _mCtx;
         readonly Level _lCtx;
 
         /// <summary>
@@ -67,6 +68,12 @@ namespace ITI.HistoryTreasures
             }
         }
 
+        public Map MCtx
+        {
+            get { return _mCtx; }
+            set { _mCtx = value; }
+        }
+
         /// <summary>
         /// This method served to check life of MainCharacter.
         /// When MainCharacter have 0 life, we send a message : "GameOver".
@@ -86,36 +93,71 @@ namespace ITI.HistoryTreasures
         /// <param name="key"></param>
         public void Movement(KeyEnum key)
         {
-            if (key == KeyEnum.up)
+            if (key == KeyEnum.down)
             {
-                if (positionY == 16)
-                    return;
+                positionY += Speed;
 
-                positionY = positionY - Speed;
-                HitBox.yA--;
-                HitBox.yC--;
+                if (positionY >= (MCtx.TileArray.GetLength(0) * 32) - 32)
+                {
+                    positionY = (MCtx.TileArray.GetLength(0) * 32) - 32;
+                }
+
+                HitBox.UpdateHitbox(positionX, positionY);
+
+                foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
+                {
+                    if (HitBox.Overlaps(hitbox))
+                    {
+                        positionY = hitbox.yA -32;
+                        HitBox.UpdateHitbox(positionX, positionY);
+                    }
+                }
+
+                
             }
-            else if (key == KeyEnum.down)
+            else if (key == KeyEnum.up)
             {
-                positionY = positionY + Speed;
-                HitBox.yA++;
-                HitBox.yC++;
+                positionY -= Speed;
+                HitBox.UpdateHitbox(positionX, positionY);
+                foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
+                {
+                    if (HitBox.Overlaps(hitbox))
+                    {
+                        positionY = hitbox.yC -16;
+                        HitBox.UpdateHitbox(positionX, positionY);
+                    }
+                }
             }
             else if (key == KeyEnum.right)
             {
-                positionX = positionX + Speed;
-                HitBox.xA++;
-                HitBox.xC++;
+                positionX += Speed;
+
+                if (positionX >= (MCtx.TileArray.GetLength(1) * 32) - 32)
+                {
+                    positionX = (MCtx.TileArray.GetLength(1) * 32) - 32;
+                }
+
+                HitBox.UpdateHitbox(positionX, positionY);
+                foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
+                {
+                    if (HitBox.Overlaps(hitbox))
+                    {
+                        positionX = hitbox.xA - 32;
+                        HitBox.UpdateHitbox(positionX, positionY);
+                    }
+                }
             }
             else if (key == KeyEnum.left)
             {
-                if (positionX == 16)
-                    return;
-                else
+                positionX -= Speed;
+                HitBox.UpdateHitbox(positionX, positionY);
+                foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
                 {
-                    positionX = positionX - Speed;
-                    HitBox.xA--;
-                    HitBox.xC--;
+                    if (HitBox.Overlaps(hitbox))
+                    {
+                        positionX = hitbox.xC;
+                        HitBox.UpdateHitbox(positionX, positionY);
+                    }
                 }
             }
         }
@@ -128,8 +170,10 @@ namespace ITI.HistoryTreasures
         {
             if (key == KeyEnum.action)
             {
-                LCtx.InteractionWithPNJ(key);
-                LCtx.InteractionsWithClue(key);
+                LCtx.InteractionWithPNJ
+                    (
+                        key
+                    );
             }
         }
     }

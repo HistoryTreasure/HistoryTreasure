@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,8 +13,8 @@ namespace ITI.HistoryTreasures
         readonly TileEnum _tileName;
         readonly Map _mapContext;
         Hitbox _hitbox;
-        readonly int _posX;
-        readonly int _posY;
+        int _posX;
+        int _posY;
 
         /// <summary>
         /// Tile Constructor create Tile.
@@ -26,11 +27,16 @@ namespace ITI.HistoryTreasures
             _isSolid = isSolid;
             _tileName = tileName;
             _mapContext = mapContext;
+        }
 
-            if (isSolid == true)
-            {
-                _hitbox = new Hitbox(posX - 16, posY + 16, posX + 16, posY - 16);
-            }
+        /// <summary>
+        /// Creates the tile hitbox.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        public void CreateTileHitbox(int x, int y)
+        {
+            //_hitbox = new Hitbox(x,y,Map.Width /2 );
         }
 
         /// <summary>
@@ -38,8 +44,7 @@ namespace ITI.HistoryTreasures
         /// </summary>
         public Map Map
         {
-            get
-            { return _mapContext; }
+            get { return _mapContext; }
         }
 
         /// <summary>
@@ -47,7 +52,7 @@ namespace ITI.HistoryTreasures
         /// </summary>
         public TileEnum TileType
         {
-            get { return _tileName;}
+            get { return _tileName; }
         }
 
         /// <summary>
@@ -62,7 +67,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Gets the position x.
+        /// Gets or sets the position x.
         /// </summary>
         /// <value>
         /// The position x.
@@ -70,10 +75,11 @@ namespace ITI.HistoryTreasures
         public int posX
         {
             get { return _posX; }
+            set { _posX = value; }
         }
 
         /// <summary>
-        /// Gets the position y.
+        /// Gets or sets the position y.
         /// </summary>
         /// <value>
         /// The position y.
@@ -81,6 +87,7 @@ namespace ITI.HistoryTreasures
         public int posY
         {
             get { return _posY; }
+            set { _posY = value; }
         }
 
         /// <summary>
