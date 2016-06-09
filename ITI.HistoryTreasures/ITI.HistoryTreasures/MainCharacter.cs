@@ -93,74 +93,74 @@ namespace ITI.HistoryTreasures
         /// <param name="key"></param>
         public void Movement(KeyEnum key)
         {
-            if (key == KeyEnum.up)
+            if (key == KeyEnum.down)
             {
-                if (positionY == 16)
+                positionY += Speed;
+
+                if (positionY >= (MCtx.TileArray.GetLength(0) * 32) - 32)
                 {
-                    return;
+                    positionY = (MCtx.TileArray.GetLength(0) * 32) - 32;
                 }
+
+                HitBox.UpdateHitbox(positionX, positionY);
 
                 foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
                 {
                     if (HitBox.Overlaps(hitbox))
                     {
-                        return;
+                        positionY = hitbox.yA -32;
+                        HitBox.UpdateHitbox(positionX, positionY);
                     }
                 }
 
+                
+            }
+            else if (key == KeyEnum.up)
+            {
                 positionY -= Speed;
                 HitBox.UpdateHitbox(positionX, positionY);
-            }
-            else if (key == KeyEnum.down)
-            {
                 foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
                 {
                     if (HitBox.Overlaps(hitbox))
                     {
-                        return;
+                        positionY = hitbox.yC -16;
+                        HitBox.UpdateHitbox(positionX, positionY);
                     }
                 }
-
-                positionY += Speed;
-                HitBox.UpdateHitbox(positionX, positionY);
             }
             else if (key == KeyEnum.right)
             {
-                if (positionX == (MCtx.TileArray.GetLength(0) * 32) - 16)
+                positionX += Speed;
+
+                if (positionX >= (MCtx.TileArray.GetLength(1) * 32) - 32)
                 {
-                    return;
+                    positionX = (MCtx.TileArray.GetLength(1) * 32) - 32;
                 }
 
+                HitBox.UpdateHitbox(positionX, positionY);
                 foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
                 {
                     if (HitBox.Overlaps(hitbox))
                     {
-                        return;
+                        positionX = hitbox.xA - 32;
+                        HitBox.UpdateHitbox(positionX, positionY);
                     }
                 }
-
-                positionX += Speed;
-                HitBox.UpdateHitbox(positionX, positionY);
             }
             else if (key == KeyEnum.left)
             {
-                if (positionX == 16)
-                    return;
-
+                positionX -= Speed;
+                HitBox.UpdateHitbox(positionX, positionY);
                 foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
                 {
                     if (HitBox.Overlaps(hitbox))
                     {
-                        return;
+                        positionX = hitbox.xC;
+                        HitBox.UpdateHitbox(positionX, positionY);
                     }
                 }
-
-                positionX -= Speed;
-                HitBox.UpdateHitbox(positionX, positionY);
             }
         }
-
-
 
         /// <summary>
         /// Interacts the specified key.
