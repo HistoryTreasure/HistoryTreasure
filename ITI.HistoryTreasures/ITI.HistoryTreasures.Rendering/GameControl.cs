@@ -100,7 +100,7 @@ namespace ITI.HistoryTreasures.Rendering
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY), screenTileWidth, screenTileHeight);
 
-            Rectangle r = new Rectangle(GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY) + screenTileHeight/2,screenTileWidth, screenTileHeight /2);
+            Rectangle r = new Rectangle(GetArround(coefX * MC.HitBox.xA), GetArround(coefY * MC.HitBox.yA),screenTileWidth, screenTileHeight /2);
             e.Graphics.FillRectangle(Brushes.Red, r);
             
             foreach (PNJ pnj in LevelContext.Pnjs)
@@ -109,7 +109,7 @@ namespace ITI.HistoryTreasures.Rendering
                 e.Graphics.DrawImage(pnjBitmap, GetArround(coefX * pnj.positionX), GetArround(coefY * pnj.positionY),
                     screenTileWidth, screenTileHeight);
 
-                Rectangle r2 = new Rectangle(GetArround(coefX * pnj.positionX), GetArround(coefY * pnj.positionY) + screenTileHeight / 2, screenTileWidth, screenTileHeight / 2);
+                Rectangle r2 = new Rectangle(GetArround(coefX * pnj.HitBox.xA), GetArround(coefY * pnj.HitBox.yA), screenTileWidth, screenTileHeight / 2);
                 e.Graphics.FillRectangle(Brushes.Yellow, r2);
             }
             Clue clue = LevelContext.Clues[0];
@@ -126,7 +126,7 @@ namespace ITI.HistoryTreasures.Rendering
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
 
-            _sound = new Sound();
+         //   _sound = new Sound();
         }
 
         private ResourcesManager GetResourcesManager
