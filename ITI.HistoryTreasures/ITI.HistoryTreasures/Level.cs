@@ -38,7 +38,9 @@ namespace ITI.HistoryTreasures
             _isFinish = false;
             _mainCharacter = CreateMain(ctx, 0, 0, CharacterEnum.MCFACE, "Judd");
             _pnjs = new List<PNJ>();
-            _pnj = CreatePNJ(Theme.Game, 0, 48, CharacterEnum.GUARDFACE, "Kiu", "Dldldldldldldldldldldl !");
+            _pnj = CreatePNJ(Theme.Game, 0, 16, CharacterEnum.GUARDFACE, "lol", "zd !");
+            _pnj = CreatePNJ(Theme.Game, 0, 32, CharacterEnum.GUARDFACE, "re", "qdzqdz !");
+            _pnj = CreatePNJ(Theme.Game, 48, 48, CharacterEnum.GUARDFACE, "Kiu", "Dldldldzqdqdqzdldldldldldldldl !");
             _mCtx = new Map(this, 10, 10);
             _clues = new List<Clue>();
             _clue = CreateClue(this.Theme, 128, 128, ClueEnum.LIVRE, "Livre",
@@ -124,7 +126,6 @@ namespace ITI.HistoryTreasures
         public PNJ CreatePNJ(Game gctx, int X, int Y, CharacterEnum bitMapName, string name, string speech)
         {
             PNJ p = new PNJ(gctx, this, X, Y, bitMapName, name, speech);
-            _pnjs.Add(p);
             return p;
         }
 

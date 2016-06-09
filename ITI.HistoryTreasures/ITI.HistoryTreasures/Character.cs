@@ -44,8 +44,9 @@ namespace ITI.HistoryTreasures
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("You cannot move outside the map");
-                }
+                    _positionX = 0;
+                    return;
+                } 
                 _positionX = value;
             }
         }
@@ -60,7 +61,8 @@ namespace ITI.HistoryTreasures
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("You cannot move outside the map");
+                    _positionY = 0;
+                    return;
                 }
                 _positionY = value;
             }
