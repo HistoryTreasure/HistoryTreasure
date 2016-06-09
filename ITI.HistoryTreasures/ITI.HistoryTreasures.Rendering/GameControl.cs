@@ -16,9 +16,10 @@ namespace ITI.HistoryTreasures.Rendering
     {
         Level _lCtx;
         Game _gCtx;
-        private IContainer components;
+        private IContainer _components;
         ResourcesManager _resourcesManager;
         Sound _sound;
+        static readonly int TileSize = 32;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -48,6 +49,15 @@ namespace ITI.HistoryTreasures.Rendering
         }
 
         /// <summary>
+        /// Gets the arround.
+        /// </summary>
+        /// <returns></returns>
+        public int GetArround(double value)
+        {
+            return Convert.ToInt32(value);
+        }
+
+        /// <summary>
         /// This method paint element on screen.
         /// </summary>
         /// <param name="e"></param>
@@ -58,11 +68,12 @@ namespace ITI.HistoryTreasures.Rendering
             //Size _windowSize = HistoryTreasures.ActiveForm.Size;
             int x = 0;
             int y = 0;
-            int width = this.Width / tileArray.GetLength(0);
-            int height = this.Height / tileArray.GetLength(1);
-            MainCharacter MC = LevelContext.MainCharacter;
+            double coefX = 1.0 * this.Width / (tileArray.GetLength(0) * TileSize);
+            double coefY = 1.0 * this.Height / (tileArray.GetLength(1) * TileSize);
+            int screenTileWidth = GetArround(coefX * TileSize);
+            int screenTileHeight = GetArround(coefY * TileSize);
 
-            _sound = new Sound();
+            MainCharacter MC = LevelContext.MainCharacter;
 
             //Resizing the Form to an almost perfect square
             //  HistoryTreasures.ActiveForm.Size = new Size(this.Height,this.Height);
@@ -73,56 +84,56 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
-                    e.Graphics.DrawImage(tileBitmap, x, y, width, height);
-                    x += this.Width / tileArray.GetLength(0);
+                    e.Graphics.DrawImage(tileBitmap, x, y, screenTileWidth, screenTileHeight);
+                    x += screenTileWidth;
 
                     if (t.IsSolid)
                     {
-                        Rectangle rt = new Rectangle(t.TileHitbox.xA, t.TileHitbox.yA, t.TileHitbox.xB - t.TileHitbox.xA,
-                            t.TileHitbox.yC - t.TileHitbox.yA);
-                        e.Graphics.FillRectangle(Brushes.Red, rt);
+                        //Rectangle rt = new Rectangle(t.TileHitbox.xA, t.TileHitbox.yA, t.TileHitbox.xB - t.TileHitbox.xA,t.TileHitbox.yC - t.TileHitbox.yA);
+                        //e.Graphics.FillRectangle(Brushes.Red, rt);
                     }
                 }
                 x = 0;
-                y += this.Height / tileArray.GetLength(1);
+                y += screenTileHeight;
             }
 
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
-            e.Graphics.DrawImage(characterBitmap, MC.positionX - 16, MC.positionY - 16, width, height);
+            e.Graphics.DrawImage(characterBitmap, GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY), screenTileWidth, screenTileHeight);
 
-            Rectangle r = new Rectangle(MC.HitBox.xA, MC.HitBox.yA, MC.HitBox.xB - MC.HitBox.xA, MC.HitBox.yC - MC.HitBox.yA);
+            Rectangle r = new Rectangle(GetArround(coefX * MC.HitBox.xA), GetArround(coefY * MC.HitBox.yA),screenTileWidth, screenTileHeight /2);
             e.Graphics.FillRectangle(Brushes.Red, r);
+            
+            foreach (PNJ pnj in LevelContext.Pnjs)
+            {
+                Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
+                e.Graphics.DrawImage(pnjBitmap, GetArround(coefX * pnj.positionX), GetArround(coefY * pnj.positionY),
+                    screenTileWidth, screenTileHeight);
 
-            PNJ pnj = LevelContext.Pnjs[0];
-            Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
-            e.Graphics.DrawImage(pnjBitmap, pnj.positionX - 16, pnj.positionY - 16, width, height);
-
+                Rectangle r2 = new Rectangle(GetArround(coefX * pnj.HitBox.xA), GetArround(coefY * pnj.HitBox.yA), screenTileWidth, screenTileHeight / 2);
+                e.Graphics.FillRectangle(Brushes.Yellow, r2);
+            }
             Clue clue = LevelContext.Clues[0];
             Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
-            e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, width, height);
-            Rectangle r2 = new Rectangle(pnj.HitBox.xA, pnj.HitBox.yA, pnj.HitBox.xB - pnj.HitBox.xA, pnj.HitBox.yC - pnj.HitBox.yA);
-            e.Graphics.FillRectangle(Brushes.Red, r2);
-
+            e.Graphics.DrawImage(clueBitmap, clue.X - 16, clue.Y - 16, screenTileWidth, screenTileHeight);
         }
 
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // GameControl
-            // 
+            SuspendLayout();
+
             this.DoubleBuffered = true;
             this.Name = "GameControl";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
 
+         //   _sound = new Sound();
         }
 
         private ResourcesManager GetResourcesManager
         {
             get { return _resourcesManager; }
         }
-        
+
         private void GameControl_KeyDown(object sender, KeyEventArgs e)
         {
             MainCharacter MC = LevelContext.MainCharacter;
@@ -130,30 +141,27 @@ namespace ITI.HistoryTreasures.Rendering
             {
                 MC.Movement(KeyEnum.up);
                 Invalidate();
-                //MessageBox.Show("Haut");
             }
             else if (e.KeyCode == Keys.S)
             {
                 MC.Movement(KeyEnum.down);
                 Invalidate();
-                //MessageBox.Show("Bas");
             }
             else if (e.KeyCode == Keys.Q)
             {
                 MC.Movement(KeyEnum.left);
                 Invalidate();
-                //MessageBox.Show("Gauche");
             }
             else if (e.KeyCode == Keys.D)
             {
                 MC.Movement(KeyEnum.right);
                 Invalidate();
-                //MessageBox.Show("Droite");
             }
             else if (e.KeyCode == Keys.E)
             {
                 MC.Interact(KeyEnum.action);
                 MessageBox.Show(LevelContext.Pnj.Speech);
+                MessageBox.Show(LevelContext.Clue.Speech);
             }
         }
     }

@@ -9,6 +9,7 @@ namespace ITI.HistoryTreasures
     {
         readonly Level _level;
         Tile[,] _tileArray;
+        List<Hitbox> hitboxes;
 
         /// <summary>
         /// This constructor create a Map.
@@ -18,12 +19,11 @@ namespace ITI.HistoryTreasures
         {
             _level = level;
             TileArray = _tileArray;
-            _tileArray = new Tile[/*width, height*/ 5, 5];
+            _tileArray = new Tile[5, 5];
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < height; j++)
                 {
-                    //_tileArray[i, j] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[0, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[0, 1] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[0, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
@@ -51,17 +51,40 @@ namespace ITI.HistoryTreasures
                     _tileArray[4, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
                 }
             }
+            level.MainCharacter.MCtx = this;
+            CreateTileHitbox(TileArray);
+        }
+
+        public void CreateTileHitbox(Tile[,] tileArray)
+        {
+            int x = 0;
+            int y = 0;
+
+            for (int i = 0; i < tileArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < tileArray.GetLength(1); j++)
+                {
+                    if (TileArray[i, j].IsSolid == true)
+                    {
+                        TileArray[i, j].posX = x;
+                        TileArray[i, j].posY = y;
+
+                        TileArray[i, j].CreateTileHitbox(x,y);
+                    }
+                    x += this.Width / tileArray.GetLength(0);
+                }
+                x =0 ;
+                y += this.Height / tileArray.GetLength(1);
+            }
         }
 
         /// <summary>
         /// This property returns a level.
         /// </summary>
         public Level Level
-        { 
+        {
             get { return _level; }
         }
-
-
 
         /// <summary>
         /// This property returns field tilearray.
@@ -77,7 +100,7 @@ namespace ITI.HistoryTreasures
         /// </summary>
         public int Height
         {
-            get { return _tileArray.GetLength(1);  }
+            get { return _tileArray.GetLength(1); }
         }
 
         /// <summary>
@@ -86,6 +109,25 @@ namespace ITI.HistoryTreasures
         public int Width
         {
             get { return _tileArray.GetLength(0); }
+        }
+
+        public List<Hitbox> GetHitboxes(Map map)
+        {
+            hitboxes = new List<Hitbox>();
+            /*foreach (Tile tile in TileArray)
+            {
+                if (tile.IsSolid)
+                {
+                    hitboxes.Add(tile.TileHitbox);
+                }
+            }*/
+
+            foreach (PNJ pnj in Level.Pnjs)
+            {
+                hitboxes.Add(pnj.HitBox);
+            }
+
+            return hitboxes;
         }
     }
 }

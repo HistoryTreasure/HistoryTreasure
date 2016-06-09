@@ -16,20 +16,15 @@ namespace ITI.HistoryTreasures
         int _yC;
         int _xD;
         int _yD;
-
+        
         /// <summary>
-        /// This constructor allow to create a Rectangle. 
+        /// This constructor allow to create a Hitbox. 
         /// </summary>
-        /// <param name="ctx">This parameter reference rectangle contains in character.</param>
-        /// <param name="xA">Coordonate X in a point A.</param>
-        /// <param name="yA">Coordonate Y in a point A.</param>
-        /// <param name="xB">Coordonate X in a point B.</param>
-        /// <param name="yB">Coordonate Y in a point B.</param>
-        /// <param name="xC">Coordonate X in a point C.</param>
-        /// <param name="yC">Coordonate Y in a point C.</param>
-        /// <param name="xD">Coordonate X in a point D.</param>
-        /// <param name="yD">Coordonate Y in a point D.</param>
-        public Hitbox(int xA, int yA,int xC, int yC)
+        /// <param name="xA">Coordonate X of the point A.</param>
+        /// <param name="yA">Coordonate Y of the point A.</param>
+        /// <param name="xC">Coordonate X of the point C.</param>
+        /// <param name="yC">Coordonate Y of the point C.</param>
+        public Hitbox(int xA, int yA, int xC, int yC)
         {
             _xA = xA;
             _yA = yA;
@@ -52,16 +47,46 @@ namespace ITI.HistoryTreasures
         public int yC { get { return _yC; } set { _yC = value; } }
         public int xD { get { return _xD; } set { _xD = value; } }
         public int yD { get { return _yD; } set { _yD = value; } }
+
+        /// <summary>
+        /// Check if a hitbox Overlaps another.
+        /// </summary>
+        /// <param name="other">The other hitbox.</param>
+        /// <returns>True if the hitbox overlaps</returns>
+        public bool Overlaps( Hitbox other)
+        { 
+            return  !(yA >= other.yC || yC <= other.yA || xA >= other.xC || xC <= other.xA);
+        }
         
-        // detect if something collide with the hitbox
-        /*public bool IsCollide(int x1, int y1, int x2, int y2, int xValue, int yValue)
+        /// <summary>
+        /// Length of the hitbox.
+        /// </summary>
+        /// <returns>Return the lenght of the hitbox</returns>
+        public int Length()
         {
-            if((xValue > x1 && xValue < x2) && (yValue == y1 && yValue == y2))
-                return true;
-            else if ((yValue > y1 && yValue < y2) && (xValue == x1 && xValue == x2))
-                return true;
-            else
-                return false;
-        }*/
+            return xB - xA;
+        }
+
+        /// <summary>
+        /// Height of the hitbox.
+        /// </summary>
+        /// <returns>Return the Height of the hitbox</returns>
+        public int Height()
+        {
+            return yC - yA;
+        }
+
+        /// <summary>
+        /// Updates the hitbox.
+        /// </summary>
+        /// <param name="posX">The X coordonate of the character.</param>
+        /// <param name="posY">The Y coordonate of the character.</param>
+        public void UpdateHitbox(int posX, int posY)
+        {
+            xA = posX;
+            yA = posY + 16;
+            xC = posX + 32;
+            yC = yA + 16;
+        }
     }
 }

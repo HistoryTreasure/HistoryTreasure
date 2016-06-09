@@ -36,9 +36,11 @@ namespace ITI.HistoryTreasures
             _ctx = ctx;
             _name = name;
             _isFinish = false;
-            _mainCharacter = CreateMain(ctx,16,16, CharacterEnum.MCFACE, "Judd" );
+            _mainCharacter = CreateMain(ctx, 0, 0, CharacterEnum.MCFACE, "Judd");
             _pnjs = new List<PNJ>();
-            _pnj = CreatePNJ(Theme.Game, 16, 128, CharacterEnum.GUARDFACE, "Hawke", "Hello world !");
+            _pnj = CreatePNJ(Theme.Game, 0, 16, CharacterEnum.GUARDFACE, "lol", "zd !");
+            _pnj = CreatePNJ(Theme.Game, 0, 32, CharacterEnum.GUARDFACE, "re", "qdzqdz !");
+            _pnj = CreatePNJ(Theme.Game, 48, 48, CharacterEnum.GUARDFACE, "Kiu", "Dldldldzqdqdqzdldldldldldldldl !");
             _mCtx = new Map(this, 10, 10);
             _clues = new List<Clue>();
             _clue = CreateClue(this.Theme, 128, 128, ClueEnum.LIVRE, "Livre",
@@ -124,7 +126,6 @@ namespace ITI.HistoryTreasures
         public PNJ CreatePNJ(Game gctx, int X, int Y, CharacterEnum bitMapName, string name, string speech)
         {
             PNJ p = new PNJ(gctx, this, X, Y, bitMapName, name, speech);
-            _pnjs.Add(p);
             return p;
         }
 
@@ -141,9 +142,9 @@ namespace ITI.HistoryTreasures
         public MainCharacter CreateMain(Theme ctx, int x, int y, CharacterEnum bitMapName, string name)
         {
             if (MainCharacter != null)
-                throw new InvalidOperationException("you cannot create two main character");
+            { throw new InvalidOperationException("you cannot create two main character"); }
 
-            return new MainCharacter(ctx.Game, this, x, y, bitMapName, name); 
+            return new MainCharacter(ctx.Game, this, x, y, bitMapName, name);
         }
 
         /// <summary>
@@ -182,12 +183,11 @@ namespace ITI.HistoryTreasures
         public string InteractionWithPNJ(KeyEnum key)
         {
             string _talk = "";
-            for(int i = 0; i < _pnjs.Count; i++)
+            for (int i = 0; i < _pnjs.Count; i++)
             {
-
-                if(((_mainCharacter.HitBox.xA - _pnjs[i].HitBox.xA > 32) || (_mainCharacter.HitBox.xA - _pnjs[i].HitBox.xA < 33)) 
+                if (((_mainCharacter.HitBox.xA - _pnjs[i].HitBox.xA > 32) || (_mainCharacter.HitBox.xA - _pnjs[i].HitBox.xA < 33))
                     || ((_pnjs[i].HitBox.xA - _mainCharacter.HitBox.xA > 32) || (_pnjs[i].HitBox.xA - _mainCharacter.HitBox.xA < 33))
-                    && ((_pnjs[i].HitBox.yA - _mainCharacter.HitBox.yA > 32) || (_pnjs[i].HitBox.yA - _mainCharacter.HitBox.yA < 33)) 
+                    && ((_pnjs[i].HitBox.yA - _mainCharacter.HitBox.yA > 32) || (_pnjs[i].HitBox.yA - _mainCharacter.HitBox.yA < 33))
                     || ((_mainCharacter.HitBox.yA - _pnjs[i].HitBox.yA > 32) || (_mainCharacter.HitBox.yA - _pnjs[i].HitBox.yA < 33)))
                 {
                     key = KeyEnum.action;
@@ -226,14 +226,14 @@ namespace ITI.HistoryTreasures
                 {
                     key = KeyEnum.action;
                     _speech = _clues[i].Speech;
+                    return _speech;
                 }
-
                 else
                 {
                     break;
                 }
             }
-            return _speech;
+            return "";
         }
 
         /// <summary>
@@ -241,7 +241,7 @@ namespace ITI.HistoryTreasures
         /// Allow to quit the level when user win.
         /// </summary>
         /// <value>
-        ///   <c>true</c> if this instance is open; otherwise, <c>false</c>.
+        /// <c>true</c> if this instance is open; otherwise, <c>false</c>.
         /// </value>
         public bool IsOpen
         {
