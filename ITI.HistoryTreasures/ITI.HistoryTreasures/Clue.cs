@@ -33,7 +33,7 @@ namespace ITI.HistoryTreasures
             _x = x;
             _y = y;
             _speech = speech;
-            _hitbox = new Hitbox(x - 16, y, x + 16, y + 16);
+            _hitbox = new Hitbox(x, y, x + 32, y + 32);
 
             if (X < 0 || Y < 0)
             {
