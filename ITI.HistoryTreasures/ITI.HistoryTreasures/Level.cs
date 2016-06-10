@@ -40,7 +40,7 @@ namespace ITI.HistoryTreasures
             _pnjs = new List<PNJ>();
             //_pnj = CreatePNJ(Theme.Game, 0, 16, CharacterEnum.GUARDFACE, "lol", "zd !");
             //_pnj = CreatePNJ(Theme.Game, 0, 32, CharacterEnum.GUARDFACE, "re", "qdzqdz !");
-            _pnj = CreatePNJ(Theme.Game, 48, 48, CharacterEnum.GUARDFACE, "Kiu", "Dldldldzqdqdqzdldldldldldldldl !");
+            _pnj = CreatePNJ(Theme.Game, 48, 48, CharacterEnum.GUARDFACE, "Kiu", "Bonjour étranger.");
             _mCtx = new Map(this, 10, 10);
             _clues = new List<Clue>();
             _clue = CreateClue(this.Theme, 128, 128, ClueEnum.LIVRE, "Livre",
