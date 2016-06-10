@@ -9,6 +9,7 @@ namespace ITI.HistoryTreasures.Rendering
 {
     class ResourcesManager
     {
+        readonly Dictionary <string, string> _riddles;
         readonly Dictionary<TileEnum, Bitmap> _tileBitmaps;
         readonly Dictionary<CharacterEnum, Bitmap> _characterBitmaps;
         readonly Dictionary<ClueEnum, Bitmap> _clueBitmaps;
@@ -18,6 +19,8 @@ namespace ITI.HistoryTreasures.Rendering
         /// </summary>
         public ResourcesManager()
         {
+            _riddles = new Dictionary<string, string>();
+            _riddles["first one"] = "hello world"; 
             _tileBitmaps = new Dictionary<TileEnum, Bitmap>();
             _tileBitmaps[TileEnum.GRASS] = Properties.Resources.herbe;
             _tileBitmaps[TileEnum.WATER] = Properties.Resources.eau;
@@ -33,6 +36,7 @@ namespace ITI.HistoryTreasures.Rendering
         /// </summary>
         /// <param name="tile">This parameter contains a tile.</param>
         /// <returns></returns>
+        
         public Bitmap GetTileBitmap(Tile tile)
         {
             return _tileBitmaps[tile.TileType];
@@ -46,6 +50,10 @@ namespace ITI.HistoryTreasures.Rendering
         public Bitmap GetClueBitmap(Clue clue)
         {
             return _clueBitmaps[clue.ClueBitmapName];
+        }
+        internal Dictionary<Level, string> Riddle
+        {
+            get { return Riddle; }
         }
     }
 }
