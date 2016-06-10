@@ -51,6 +51,7 @@ namespace ITI.HistoryTreasures
                     _tileArray[4, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
                 }
             }
+
             level.MainCharacter.MCtx = this;
             CreateTileHitbox(TileArray);
         }
@@ -64,17 +65,18 @@ namespace ITI.HistoryTreasures
             {
                 for (int j = 0; j < tileArray.GetLength(1); j++)
                 {
+                    TileArray[i, j].posX = x;
+                    TileArray[i, j].posY = y;
+
                     if (TileArray[i, j].IsSolid == true)
                     {
-                        TileArray[i, j].posX = x;
-                        TileArray[i, j].posY = y;
-
-                        TileArray[i, j].CreateTileHitbox(x,y);
+                        TileArray[i, j].CreateTileHitbox(x, y);
                     }
-                    x += this.Width / tileArray.GetLength(0);
+
+                    x += 32;
                 }
-                x =0 ;
-                y += this.Height / tileArray.GetLength(1);
+                x = 0;
+                y += 32;
             }
         }
 
@@ -114,13 +116,13 @@ namespace ITI.HistoryTreasures
         public List<Hitbox> GetHitboxes(Map map)
         {
             hitboxes = new List<Hitbox>();
-            /*foreach (Tile tile in TileArray)
+            foreach (Tile tile in TileArray)
             {
                 if (tile.IsSolid)
                 {
                     hitboxes.Add(tile.TileHitbox);
                 }
-            }*/
+            }
 
             foreach (PNJ pnj in Level.Pnjs)
             {

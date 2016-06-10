@@ -36,7 +36,7 @@ namespace ITI.HistoryTreasures
         /// <param name="y">The y.</param>
         public void CreateTileHitbox(int x, int y)
         {
-            //_hitbox = new Hitbox(x,y,Map.Width /2 );
+            _hitbox = new Hitbox(x,y,x+32,y+32, GetType());
         }
 
         /// <summary>
