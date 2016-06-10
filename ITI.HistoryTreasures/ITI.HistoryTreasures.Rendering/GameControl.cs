@@ -73,6 +73,8 @@ namespace ITI.HistoryTreasures.Rendering
             int screenTileWidth = GetArround(coefX * TileSize);
             int screenTileHeight = GetArround(coefY * TileSize);
 
+            Pen p = new Pen(Color.Red);
+
             MainCharacter MC = LevelContext.MainCharacter;
 
             //Resizing the Form to an almost perfect square
@@ -89,8 +91,8 @@ namespace ITI.HistoryTreasures.Rendering
 
                     if (t.IsSolid)
                     {
-                        //Rectangle rt = new Rectangle(t.TileHitbox.xA, t.TileHitbox.yA, t.TileHitbox.xB - t.TileHitbox.xA,t.TileHitbox.yC - t.TileHitbox.yA);
-                        //e.Graphics.FillRectangle(Brushes.Red, rt);
+                        Rectangle rt = new Rectangle(GetArround(t.TileHitbox.xA),GetArround(t.TileHitbox.yA),screenTileWidth,screenTileHeight);
+                        e.Graphics.DrawRectangle(p,rt);
                     }
                 }
                 x = 0;
@@ -100,7 +102,7 @@ namespace ITI.HistoryTreasures.Rendering
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY), screenTileWidth, screenTileHeight);
 
-            Pen p = new Pen(Color.Red);
+            
 
             Rectangle r = new Rectangle(GetArround(coefX * MC.HitBox.xA), GetArround(coefY * MC.HitBox.yA),screenTileWidth, screenTileHeight /2);
             e.Graphics.DrawRectangle(p, r);
