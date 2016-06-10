@@ -182,22 +182,17 @@ namespace ITI.HistoryTreasures
         /// <returns></returns>
         public string InteractionWithPNJ(KeyEnum key)
         {
-            List < Hitbox > hitboxes = MapContext.GetHitboxes(MapContext);
             string _talk = "";
 
-            foreach (Hitbox h in hitboxes)
-            {
-                for (int i = 0; i < Pnjs.Count; i++)
+            for (int i = 0; i < Pnjs.Count; i++)
                 {
-                    if (h.GetOwnerType == GetType())
+                    if (MainCharacter.CanInteract(Pnj.HitBox))
                     { 
                         key = KeyEnum.action;
                         _talk = _pnjs[i].Speech;
                         break;
                     }
                 }
-            }
-
             return _talk;
         }
 
@@ -220,12 +215,10 @@ namespace ITI.HistoryTreasures
         public string InteractionsWithClue(KeyEnum key)
         {
             string _speech = "";
+
             for (int i = 0; i < _clues.Count; i++)
             {
-                if (((_mainCharacter.HitBox.xA - _clues[i].HitBox.xA > 32) || (_mainCharacter.HitBox.xA - _clues[i].HitBox.xA < 33))
-                   || ((_clues[i].HitBox.xA - _mainCharacter.HitBox.xA > 32) || (_clues[i].HitBox.xA - _mainCharacter.HitBox.xA < 33))
-                   && ((_clues[i].HitBox.yA - _mainCharacter.HitBox.yA > 32) || (_clues[i].HitBox.yA - _mainCharacter.HitBox.yA < 33))
-                   || ((_mainCharacter.HitBox.yA - _clues[i].HitBox.yA > 32) || (_mainCharacter.HitBox.yA - _clues[i].HitBox.yA < 33)))
+                if (MainCharacter.CanInteract(Clue.HitBox))
                 {
                     key = KeyEnum.action;
                     _speech = _clues[i].Speech;
