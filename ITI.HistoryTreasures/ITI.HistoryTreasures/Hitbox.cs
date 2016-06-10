@@ -16,20 +16,16 @@ namespace ITI.HistoryTreasures
         int _yC;
         int _xD;
         int _yD;
+        readonly Type _type;
         
         /// <summary>
-        /// This constructor allow to create a Rectangle. 
+        /// This constructor allow to create a Hitbox. 
         /// </summary>
-        /// <param name="ctx">This parameter reference rectangle contains in character.</param>
-        /// <param name="xA">Coordonate X in a point A.</param>
-        /// <param name="yA">Coordonate Y in a point A.</param>
-        /// <param name="xB">Coordonate X in a point B.</param>
-        /// <param name="yB">Coordonate Y in a point B.</param>
-        /// <param name="xC">Coordonate X in a point C.</param>
-        /// <param name="yC">Coordonate Y in a point C.</param>
-        /// <param name="xD">Coordonate X in a point D.</param>
-        /// <param name="yD">Coordonate Y in a point D.</param>
-        public Hitbox(int xA, int yA, int xC, int yC)
+        /// <param name="xA">Coordonate X of the point A.</param>
+        /// <param name="yA">Coordonate Y of the point A.</param>
+        /// <param name="xC">Coordonate X of the point C.</param>
+        /// <param name="yC">Coordonate Y of the point C.</param>
+        public Hitbox(int xA, int yA, int xC, int yC,Type type)
         {
             _xA = xA;
             _yA = yA;
@@ -39,6 +35,7 @@ namespace ITI.HistoryTreasures
             _yC = yC;
             _xD = xA;
             _yD = yC;
+            _type = type;
         }
 
         /// <summary>
@@ -56,17 +53,17 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// Check if a hitbox Overlaps another.
         /// </summary>
-        /// <param name="other">The other.</param>
-        /// <returns>True if the hitbox overlaps    </returns>
+        /// <param name="other">The other hitbox.</param>
+        /// <returns>True if the hitbox overlaps</returns>
         public bool Overlaps( Hitbox other)
         { 
-            return  !(yA > other.yC || yC < other.yA || xA > other.xC || xC < other.xA);
+            return  !(yA >= other.yC || yC <= other.yA || xA >= other.xC || xC <= other.xA);
         }
         
         /// <summary>
         /// Length of the hitbox.
         /// </summary>
-        /// <returns>The length in a int</returns>
+        /// <returns>Return the lenght of the hitbox</returns>
         public int Length()
         {
             return xB - xA;
@@ -75,39 +72,34 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// Height of the hitbox.
         /// </summary>
-        /// <returns>The Height in a int</returns>
+        /// <returns>Return the Height of the hitbox</returns>
         public int Height()
         {
             return yC - yA;
         }
 
         /// <summary>
-        /// Updates the hitbox position.
+        /// Gets the type of the owner a the hitbox instance.
         /// </summary>
-        /// <param name="key">The key pressed.</param>
-        /// <param name="Speed">The speed of the character.</param>
-        public void UpdateHitbox(KeyEnum key, int Speed)
+        /// <value>
+        /// The type of the owner a the hitbox instance
+        /// </value>
+        public Type GetOwnerType
         {
-            if (key == KeyEnum.right)
-            {
-                xA = xA + Speed;
-                xC = xC + Speed;
-            }
-            else if (key == KeyEnum.left)
-            {
-                xA = xA - Speed;
-                xC = xC - Speed;
-            }
-            else if (key == KeyEnum.up)
-            {
-                yA = yA - Speed;
-                yC = yC - Speed;
-            }
-            else if (key == KeyEnum.down)
-            {
-                yA = yA + Speed;
-                yC = yC + Speed;
-            }
+            get { return _type;}
+        }
+
+        /// <summary>
+        /// Updates the hitbox.
+        /// </summary>
+        /// <param name="posX">The X coordonate of the character.</param>
+        /// <param name="posY">The Y coordonate of the character.</param>
+        public void UpdateHitbox(int posX, int posY)
+        {
+            xA = posX;
+            yA = posY + 16;
+            xC = posX + 32;
+            yC = yA + 16;
         }
     }
 }

@@ -31,7 +31,7 @@ namespace ITI.HistoryTreasures
             _positionY = Y;
             _bitMapName = bitMapName;
             _name = name;
-            _hitBox = new Hitbox(positionX, positionY + 16, positionX + 32, positionY + 32);
+            _hitBox = new Hitbox(positionX, positionY + 16, positionX + 32, positionY + 32, GetType());
         }
 
         /// <summary>
@@ -44,8 +44,9 @@ namespace ITI.HistoryTreasures
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("You cannot move outside the map");
-                }
+                    _positionX = 0;
+                    return;
+                } 
                 _positionX = value;
             }
         }
@@ -60,7 +61,8 @@ namespace ITI.HistoryTreasures
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("You cannot move outside the map");
+                    _positionY = 0;
+                    return;
                 }
                 _positionY = value;
             }
