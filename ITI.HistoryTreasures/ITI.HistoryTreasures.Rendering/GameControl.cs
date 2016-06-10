@@ -170,8 +170,6 @@ namespace ITI.HistoryTreasures.Rendering
             else if (e.KeyCode == Keys.E)
             {
                 MC.Interact(KeyEnum.action);
-                MessageBox.Show(LevelContext.Pnj.Speech);
-                MessageBox.Show(LevelContext.Clue.Speech);
             }
         }
     }
