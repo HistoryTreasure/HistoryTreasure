@@ -77,6 +77,13 @@
     <Compile Include="Rendering.cs" />
     <Compile Include="Resource.cs" />
     <Compile Include="ResourcesManager.cs" />
+    <Compile Include="RiddleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RiddleControl.Designer.cs">
+      <DependentUpon>RiddleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RiddleManager.cs" />
     <Compile Include="Sound.cs" />
     <Compile Include="Sprites.cs" />
     <Compile Include="TileG.cs" />

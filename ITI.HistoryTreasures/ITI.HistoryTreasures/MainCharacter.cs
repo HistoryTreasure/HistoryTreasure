@@ -171,13 +171,19 @@ namespace ITI.HistoryTreasures
         /// Interacts the specified key.
         /// </summary>
         /// <param name="key">The key.</param>
-        public void Interact(KeyEnum key)
+        public string Interact(KeyEnum key)
         {
+            string speech = "";
+
             if (key == KeyEnum.action)
             {
-                LCtx.InteractionWithPNJ(key);
-                LCtx.InteractionsWithClue(key);
+                speech = LCtx.InteractionWithPNJ(key);
+                if (speech == "")
+                {
+                    speech = LCtx.InteractionsWithClue(key);
+                }
             }
+            return speech;
         }
 
         /// <summary>

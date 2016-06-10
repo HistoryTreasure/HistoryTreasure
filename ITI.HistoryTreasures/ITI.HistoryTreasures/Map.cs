@@ -56,6 +56,10 @@ namespace ITI.HistoryTreasures
             CreateTileHitbox(TileArray);
         }
 
+        /// <summary>
+        /// Creates the tile hitbox.
+        /// </summary>
+        /// <param name="tileArray">The tile array.</param>
         public void CreateTileHitbox(Tile[,] tileArray)
         {
             int x = 0;
@@ -113,6 +117,11 @@ namespace ITI.HistoryTreasures
             get { return _tileArray.GetLength(0); }
         }
 
+        /// <summary>
+        /// Gets the hitboxes of all elements in the map except maincharacter.
+        /// </summary>
+        /// <param name="map">The map.</param>
+        /// <returns></returns>
         public List<Hitbox> GetHitboxes(Map map)
         {
             hitboxes = new List<Hitbox>();

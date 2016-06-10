@@ -55,6 +55,8 @@ namespace ITI.HistoryTreasures
             get { return _name; }
         }
 
+       
+
         /// <summary>
         /// Return the PNJ list.
         /// </summary>
@@ -113,6 +115,8 @@ namespace ITI.HistoryTreasures
             get { return _pnj; }
         }
 
+        
+
         /// <summary>
         /// Creates the PNJ.
         /// </summary>
@@ -129,6 +133,7 @@ namespace ITI.HistoryTreasures
             return p;
         }
 
+        
         /// <summary>
         /// Creates the main.
         /// </summary>
@@ -175,6 +180,7 @@ namespace ITI.HistoryTreasures
             get { return _mainCharacter; }
         }
 
+   
         /// <summary>
         /// Interactions the with PNJ.
         /// </summary>
