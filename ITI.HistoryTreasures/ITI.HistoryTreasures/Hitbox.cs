@@ -16,7 +16,7 @@ namespace ITI.HistoryTreasures
         int _yC;
         int _xD;
         int _yD;
-        Type _type;
+        readonly Type _type;
         
         /// <summary>
         /// This constructor allow to create a Hitbox. 
@@ -78,6 +78,12 @@ namespace ITI.HistoryTreasures
             return yC - yA;
         }
 
+        /// <summary>
+        /// Gets the type of the owner a the hitbox instance.
+        /// </summary>
+        /// <value>
+        /// The type of the owner a the hitbox instance
+        /// </value>
         public Type GetOwnerType
         {
             get { return _type;}
