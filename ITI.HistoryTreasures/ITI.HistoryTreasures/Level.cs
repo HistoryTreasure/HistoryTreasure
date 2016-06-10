@@ -182,19 +182,22 @@ namespace ITI.HistoryTreasures
         /// <returns></returns>
         public string InteractionWithPNJ(KeyEnum key)
         {
+            List < Hitbox > hitboxes = MapContext.GetHitboxes(MapContext);
             string _talk = "";
-            for (int i = 0; i < _pnjs.Count; i++)
+
+            foreach (Hitbox h in hitboxes)
             {
-                if (((_mainCharacter.HitBox.xA - _pnjs[i].HitBox.xA > 32) || (_mainCharacter.HitBox.xA - _pnjs[i].HitBox.xA < 33))
-                    || ((_pnjs[i].HitBox.xA - _mainCharacter.HitBox.xA > 32) || (_pnjs[i].HitBox.xA - _mainCharacter.HitBox.xA < 33))
-                    && ((_pnjs[i].HitBox.yA - _mainCharacter.HitBox.yA > 32) || (_pnjs[i].HitBox.yA - _mainCharacter.HitBox.yA < 33))
-                    || ((_mainCharacter.HitBox.yA - _pnjs[i].HitBox.yA > 32) || (_mainCharacter.HitBox.yA - _pnjs[i].HitBox.yA < 33)))
+                for (int i = 0; i < Pnjs.Count; i++)
                 {
-                    key = KeyEnum.action;
-                    _talk = _pnjs[i].Speech;
-                    break;
+                    if (MainCharacter.CanInteract(h))
+                    {
+                        key = KeyEnum.action;
+                        _talk = _pnjs[i].Speech;
+                        break;
+                    }
                 }
             }
+
             return _talk;
         }
 

@@ -176,5 +176,15 @@ namespace ITI.HistoryTreasures
                     );
             }
         }
+
+        /// <summary>
+        /// Talkses the specified other.
+        /// </summary>
+        /// <param name="other">The other.</param>
+        /// <returns></returns>
+        public bool CanInteract(Hitbox other)
+        {
+            return (HitBox.yA == other.yC || HitBox.yC == other.yA || HitBox.xA == other.xC || HitBox.xC == other.xA);
+        }
     }
 }
