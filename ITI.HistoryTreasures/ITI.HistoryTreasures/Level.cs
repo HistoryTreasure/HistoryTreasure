@@ -216,20 +216,16 @@ namespace ITI.HistoryTreasures
         {
             string _speech = "";
 
-            for (int i = 0; i < _clues.Count; i++)
+            for (int i = 0; i < Clues.Count; i++)
             {
                 if (MainCharacter.CanInteract(Clue.HitBox))
                 {
                     key = KeyEnum.action;
                     _speech = _clues[i].Speech;
-                    return _speech;
-                }
-                else
-                {
                     break;
                 }
             }
-            return "";
+            return _speech;
         }
 
         /// <summary>

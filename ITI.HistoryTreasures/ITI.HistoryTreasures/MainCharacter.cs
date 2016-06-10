@@ -68,6 +68,11 @@ namespace ITI.HistoryTreasures
             }
         }
 
+        /// <summary>
+        /// </summary>
+        /// <value>
+        /// The m CTX.
+        /// </value>
         public Map MCtx
         {
             get { return _mCtx; }
@@ -170,10 +175,8 @@ namespace ITI.HistoryTreasures
         {
             if (key == KeyEnum.action)
             {
-                LCtx.InteractionWithPNJ
-                    (
-                        key
-                    );
+                LCtx.InteractionWithPNJ(key);
+                LCtx.InteractionsWithClue(key);
             }
         }
 
