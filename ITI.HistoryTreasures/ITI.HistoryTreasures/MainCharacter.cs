@@ -68,6 +68,11 @@ namespace ITI.HistoryTreasures
             }
         }
 
+        /// <summary>
+        /// </summary>
+        /// <value>
+        /// The m CTX.
+        /// </value>
         public Map MCtx
         {
             get { return _mCtx; }
@@ -166,15 +171,29 @@ namespace ITI.HistoryTreasures
         /// Interacts the specified key.
         /// </summary>
         /// <param name="key">The key.</param>
-        public void Interact(KeyEnum key)
+        public string Interact(KeyEnum key)
         {
+            string speech = "";
+
             if (key == KeyEnum.action)
             {
-                LCtx.InteractionWithPNJ
-                    (
-                        key
-                    );
+                speech = LCtx.InteractionWithPNJ(key);
+                if (speech == "")
+                {
+                    speech = LCtx.InteractionsWithClue(key);
+                }
             }
+            return speech;
+        }
+
+        /// <summary>
+        /// Talkses the specified other.
+        /// </summary>
+        /// <param name="other">The other.</param>
+        /// <returns></returns>
+        public bool CanInteract(Hitbox other)
+        {
+            return (HitBox.yA == other.yC || HitBox.yC == other.yA || HitBox.xA == other.xC || HitBox.xC == other.xA);
         }
     }
 }

@@ -16,6 +16,7 @@ namespace ITI.HistoryTreasures
         int _yC;
         int _xD;
         int _yD;
+        readonly Type _type;
         
         /// <summary>
         /// This constructor allow to create a Hitbox. 
@@ -24,7 +25,7 @@ namespace ITI.HistoryTreasures
         /// <param name="yA">Coordonate Y of the point A.</param>
         /// <param name="xC">Coordonate X of the point C.</param>
         /// <param name="yC">Coordonate Y of the point C.</param>
-        public Hitbox(int xA, int yA, int xC, int yC)
+        public Hitbox(int xA, int yA, int xC, int yC,Type type)
         {
             _xA = xA;
             _yA = yA;
@@ -34,6 +35,7 @@ namespace ITI.HistoryTreasures
             _yC = yC;
             _xD = xA;
             _yD = yC;
+            _type = type;
         }
 
         /// <summary>
@@ -74,6 +76,17 @@ namespace ITI.HistoryTreasures
         public int Height()
         {
             return yC - yA;
+        }
+
+        /// <summary>
+        /// Gets the type of the owner a the hitbox instance.
+        /// </summary>
+        /// <value>
+        /// The type of the owner a the hitbox instance
+        /// </value>
+        public Type GetOwnerType
+        {
+            get { return _type;}
         }
 
         /// <summary>

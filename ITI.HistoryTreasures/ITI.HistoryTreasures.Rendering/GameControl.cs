@@ -73,6 +73,8 @@ namespace ITI.HistoryTreasures.Rendering
             int screenTileWidth = GetArround(coefX * TileSize);
             int screenTileHeight = GetArround(coefY * TileSize);
 
+            Pen p = new Pen(Color.Red, 3);
+
             MainCharacter MC = LevelContext.MainCharacter;
 
             //Resizing the Form to an almost perfect square
@@ -84,14 +86,15 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
-                    e.Graphics.DrawImage(tileBitmap, x, y, screenTileWidth, screenTileHeight);
-                    x += screenTileWidth;
+                    e.Graphics.DrawImage(tileBitmap, GetArround(coefX * t.posX), GetArround(coefY * t.posY), screenTileWidth, screenTileHeight);
 
                     if (t.IsSolid)
                     {
-                        //Rectangle rt = new Rectangle(t.TileHitbox.xA, t.TileHitbox.yA, t.TileHitbox.xB - t.TileHitbox.xA,t.TileHitbox.yC - t.TileHitbox.yA);
-                        //e.Graphics.FillRectangle(Brushes.Red, rt);
+                        Rectangle rt = new Rectangle(GetArround(coefX * t.TileHitbox.xA), GetArround(coefY * t.TileHitbox.yA), screenTileWidth, screenTileHeight);
+                        e.Graphics.DrawRectangle(p, rt);
                     }
+
+                    x += screenTileWidth;
                 }
                 x = 0;
                 y += screenTileHeight;
@@ -100,16 +103,15 @@ namespace ITI.HistoryTreasures.Rendering
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY), screenTileWidth, screenTileHeight);
 
-            Pen p = new Pen(Color.Red);
 
-            Rectangle r = new Rectangle(GetArround(coefX * MC.HitBox.xA), GetArround(coefY * MC.HitBox.yA),screenTileWidth, screenTileHeight /2);
+
+            Rectangle r = new Rectangle(GetArround(coefX * MC.HitBox.xA), GetArround(coefY * MC.HitBox.yA), screenTileWidth, screenTileHeight / 2);
             e.Graphics.DrawRectangle(p, r);
-            
+
             foreach (PNJ pnj in LevelContext.Pnjs)
             {
                 Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
-                e.Graphics.DrawImage(pnjBitmap, GetArround(coefX * pnj.positionX), GetArround(coefY * pnj.positionY),
-                    screenTileWidth, screenTileHeight);
+                e.Graphics.DrawImage(pnjBitmap, GetArround(coefX * pnj.positionX), GetArround(coefY * pnj.positionY), screenTileWidth, screenTileHeight);
 
                 Rectangle r2 = new Rectangle(GetArround(coefX * pnj.HitBox.xA), GetArround(coefY * pnj.HitBox.yA), screenTileWidth, screenTileHeight / 2);
                 e.Graphics.DrawRectangle(p, r2);
@@ -118,11 +120,9 @@ namespace ITI.HistoryTreasures.Rendering
             foreach (Clue clue in LevelContext.Clues)
             {
                 Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
-                e.Graphics.DrawImage(clueBitmap, GetArround(coefX * clue.X), GetArround(coefY * clue.Y),
-                    screenTileWidth, screenTileHeight);
+                e.Graphics.DrawImage(clueBitmap, GetArround(coefX * clue.X), GetArround(coefY * clue.Y), screenTileWidth, screenTileHeight);
 
-                Rectangle r3 = new Rectangle(GetArround(coefX*clue.HitBox.xA), GetArround(coefY*clue.HitBox.yA),
-                    screenTileWidth, screenTileHeight);
+                Rectangle r3 = new Rectangle(GetArround(coefX * clue.HitBox.xA), GetArround(coefY * clue.HitBox.yA), screenTileWidth, screenTileHeight);
                 e.Graphics.DrawRectangle(p, r3);
             }
         }
@@ -136,7 +136,7 @@ namespace ITI.HistoryTreasures.Rendering
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
 
-         //   _sound = new Sound();
+            //   _sound = new Sound();
         }
 
         private ResourcesManager GetResourcesManager
@@ -169,9 +169,11 @@ namespace ITI.HistoryTreasures.Rendering
             }
             else if (e.KeyCode == Keys.E)
             {
-                MC.Interact(KeyEnum.action);
-                MessageBox.Show(LevelContext.Pnj.Speech);
-                MessageBox.Show(LevelContext.Clue.Speech);
+                if (MC.Interact(KeyEnum.action) == "")
+                {
+                    return;
+                }
+                MessageBox.Show(MC.Interact(KeyEnum.action));
             }
         }
     }
