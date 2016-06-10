@@ -73,7 +73,7 @@ namespace ITI.HistoryTreasures.Rendering
             int screenTileWidth = GetArround(coefX * TileSize);
             int screenTileHeight = GetArround(coefY * TileSize);
 
-            Pen p = new Pen(Color.Red,3);
+            Pen p = new Pen(Color.Red, 3);
 
             MainCharacter MC = LevelContext.MainCharacter;
 
@@ -90,7 +90,7 @@ namespace ITI.HistoryTreasures.Rendering
 
                     if (t.IsSolid)
                     {
-                        Rectangle rt = new Rectangle(GetArround(coefX*t.TileHitbox.xA), GetArround(coefY * t.TileHitbox.yA), screenTileWidth, screenTileHeight);
+                        Rectangle rt = new Rectangle(GetArround(coefX * t.TileHitbox.xA), GetArround(coefY * t.TileHitbox.yA), screenTileWidth, screenTileHeight);
                         e.Graphics.DrawRectangle(p, rt);
                     }
 
@@ -120,7 +120,7 @@ namespace ITI.HistoryTreasures.Rendering
             foreach (Clue clue in LevelContext.Clues)
             {
                 Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
-                e.Graphics.DrawImage(clueBitmap, GetArround(coefX * clue.X), GetArround(coefY * clue.Y),screenTileWidth, screenTileHeight);
+                e.Graphics.DrawImage(clueBitmap, GetArround(coefX * clue.X), GetArround(coefY * clue.Y), screenTileWidth, screenTileHeight);
 
                 Rectangle r3 = new Rectangle(GetArround(coefX * clue.HitBox.xA), GetArround(coefY * clue.HitBox.yA), screenTileWidth, screenTileHeight);
                 e.Graphics.DrawRectangle(p, r3);
@@ -169,9 +169,11 @@ namespace ITI.HistoryTreasures.Rendering
             }
             else if (e.KeyCode == Keys.E)
             {
-                MC.Interact(KeyEnum.action);
-                MessageBox.Show(LevelContext.Pnj.Speech);
-                MessageBox.Show(LevelContext.Clue.Speech);
+                if (MC.Interact(KeyEnum.action) == "")
+                {
+                    return;
+                }
+                MessageBox.Show(MC.Interact(KeyEnum.action));
             }
         }
     }
