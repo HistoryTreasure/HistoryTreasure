@@ -189,8 +189,8 @@ namespace ITI.HistoryTreasures
             {
                 for (int i = 0; i < Pnjs.Count; i++)
                 {
-                    if (MainCharacter.CanInteract(h))
-                    {
+                    if (h.GetOwnerType == GetType())
+                    { 
                         key = KeyEnum.action;
                         _talk = _pnjs[i].Speech;
                         break;
