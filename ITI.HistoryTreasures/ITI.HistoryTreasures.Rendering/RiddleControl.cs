@@ -37,7 +37,7 @@ namespace ITI.HistoryTreasures.Rendering
         protected override void OnPaint(PaintEventArgs e)
         {
 
-            e.Graphics.DrawString();
+            //e.Graphics.DrawString();
         }
 
 
