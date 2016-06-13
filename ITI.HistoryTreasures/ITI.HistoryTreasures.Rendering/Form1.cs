@@ -107,5 +107,10 @@ namespace ITI.HistoryTreasures.Rendering
         {
             this.Refresh();
         }
+
+        private void HistoryTreasures_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
