@@ -27,7 +27,7 @@ namespace ITI.HistoryTreasures
             {
                 throw new ArgumentException("You cannot create character to this coordonate");
             }
-            
+
             _speed = 6;
             _life = 3;
             _lCtx = lCtx;
@@ -113,12 +113,12 @@ namespace ITI.HistoryTreasures
                 {
                     if (HitBox.Overlaps(hitbox))
                     {
-                        positionY = hitbox.yA -32;
+                        positionY = hitbox.yA - 32;
                         HitBox.UpdateHitbox(positionX, positionY);
                     }
                 }
 
-                
+
             }
             else if (key == KeyEnum.up)
             {
@@ -128,7 +128,7 @@ namespace ITI.HistoryTreasures
                 {
                     if (HitBox.Overlaps(hitbox))
                     {
-                        positionY = hitbox.yC -16;
+                        positionY = hitbox.yC - 16;
                         HitBox.UpdateHitbox(positionX, positionY);
                     }
                 }
@@ -193,7 +193,8 @@ namespace ITI.HistoryTreasures
         /// <returns></returns>
         public bool CanInteract(Hitbox other)
         {
-            return (HitBox.yA == other.yC || HitBox.yC == other.yA || HitBox.xA == other.xC || HitBox.xC == other.xA);
+            double distance = Math.Sqrt(Math.Pow(HitBox.xA - other.xA, 2) + Math.Pow(HitBox.yA - other.yA, 2));
+            return distance < 40;
         }
     }
 }
