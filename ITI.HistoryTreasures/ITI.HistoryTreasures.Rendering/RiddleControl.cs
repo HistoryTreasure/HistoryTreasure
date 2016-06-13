@@ -28,17 +28,16 @@ namespace ITI.HistoryTreasures.Rendering
             set { _lCtx = value; }
         }
 
-
-
         private ResourcesManager GetResourcesManager
         {
             get { return _resourcesManager; }
         }
-        protected override void OnPaint(PaintEventArgs e)
-        {
 
-            //e.Graphics.DrawString();
-        }
+        //protected override void OnPaint(PaintEventArgs e)
+        //{
+
+        //    //e.Graphics.DrawString();
+        //}
 
 
 
