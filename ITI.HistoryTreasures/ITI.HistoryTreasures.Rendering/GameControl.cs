@@ -54,7 +54,7 @@ namespace ITI.HistoryTreasures.Rendering
         /// <returns></returns>
         public int GetArround(double value)
         {
-            return Convert.ToInt32(value);
+            return (int)(Math.Floor(value));
         }
 
         /// <summary>
@@ -103,8 +103,6 @@ namespace ITI.HistoryTreasures.Rendering
             Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY), screenTileWidth, screenTileHeight);
 
-
-
             Rectangle r = new Rectangle(GetArround(coefX * MC.HitBox.xA), GetArround(coefY * MC.HitBox.yA), screenTileWidth, screenTileHeight / 2);
             e.Graphics.DrawRectangle(p, r);
 
@@ -136,7 +134,7 @@ namespace ITI.HistoryTreasures.Rendering
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
 
-            //   _sound = new Sound();
+             _sound = new Sound();
         }
 
         private ResourcesManager GetResourcesManager
