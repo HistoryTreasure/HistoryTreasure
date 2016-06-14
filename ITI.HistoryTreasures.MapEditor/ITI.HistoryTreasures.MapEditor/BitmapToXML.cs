@@ -8,6 +8,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
+using System.Xml;
 
 namespace ITI.HistoryTreasures.MapEditor
 {
@@ -15,15 +16,15 @@ namespace ITI.HistoryTreasures.MapEditor
     {
         Bitmap b = Properties.Resources._base;
         List<XElement> xElements = new List<XElement>();
+        StringBuilder sb = new StringBuilder();
+        XmlWriterSettings xws = new XmlWriterSettings();
 
         public BitmapToXML()
         {
             XElement map = new XElement("Map",
-                    Translate()
+                Translate()
                 );
-            map.Save("Test.xml");
-            string str = File.ReadAllText("Test.xml");
-            MessageBox.Show(str);
+            map.Save("./Map.xml");
         }
 
         public List<XElement> Translate()
