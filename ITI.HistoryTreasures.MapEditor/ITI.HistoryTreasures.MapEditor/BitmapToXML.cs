@@ -14,50 +14,53 @@ namespace ITI.HistoryTreasures.MapEditor
     public class BitmapToXML
     {
         Bitmap b = Properties.Resources._base;
+        List<XElement> xElements = new List<XElement>();
 
-        public void Translate()
+        public BitmapToXML()
         {
-            List<Color> _colors = new List<Color>();
+            XElement map = new XElement("Map",
+                    Translate()
+                );
+            map.Save("Test.xml");
+            string str = File.ReadAllText("Test.xml");
+            MessageBox.Show(str);
+        }
 
-            XElement map = new XElement("Map");
-
+        public List<XElement> Translate()
+        {
             for (int i = 0; i < b.Height; i++)
             {
                 for (int j = 0; j < b.Width; j++)
                 {
                     Color p = b.GetPixel(i, j);
-                    _colors.Add(p);
+
                     if (p.Name == "ff4040c0")
                     {
-                        new XElement("Tile", "Water");
-
+                        xElements.Add(new XElement("Tile", "Water"));
                     }
                     else if (p.Name == "ff08040")
                     {
-                        new XElement("Tile", "Floor");
+                        xElements.Add(new XElement("Tile", "Floor"));
                     }
                     else if (p.Name == "ff800000")
                     {
-                        new XElement("Tile", "Bridge");
+                        xElements.Add(new XElement("Tile", "Bridge"));
                     }
                     else if (p.Name == "ff000000")
                     {
-                        new XElement("Tile", "Home");
+                        xElements.Add(new XElement("Tile", "Home"));
                     }
                     else if (p.Name == "ff040c0")
                     {
-                        new XElement("Tile", "PNJ");
+                        xElements.Add(new XElement("Tile", "PNJ"));
                     }
                     else if (p.Name == "ffe02040")
                     {
-                        new XElement("Tile", "Clue");
+                        xElements.Add(new XElement("Tile", "Clue"));
                     }
                 }
             }
-
-            map.Save("Test.xml");
-            string str = File.ReadAllText("Test.xml");
-            MessageBox.Show(str);
+            return xElements;
         }
     }
 }
