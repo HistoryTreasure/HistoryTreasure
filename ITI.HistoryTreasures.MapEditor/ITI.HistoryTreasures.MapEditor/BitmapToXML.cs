@@ -11,7 +11,7 @@ namespace ITI.HistoryTreasures.MapEditor
     public class BitmapToXML
     {
         Bitmap b = Properties.Resources._base;
-        
+
         public void Translate()
         {
             List<Color> _colors = new List<Color>();
@@ -21,32 +21,32 @@ namespace ITI.HistoryTreasures.MapEditor
                 {
                     Color p = b.GetPixel(i, j);
                     _colors.Add(p);
-                    //if (p == Color.CornflowerBlue)
-                    //{
-                    //    XElement map = new XElement("Map",
-                    //    new XElement("Tile", "Water")
-                    //      );
-                    //}
-                    //else if (p == Color.SandyBrown)
-                    //{
-                    //    new XElement("Tile", "Floor");
-                    //}
-                    //else if (p == Color.Brown)
-                    //{
-                    //    new XElement("Tile", "Bridge");
-                    //}
-                    //else if (p == Color.Black)
-                    //{
-                    //    new XElement("Tile", "Home");
-                    //}
-                    //else if (p == Color.Violet)
-                    //{
-                    //    new XElement("Tile", "PNJ");
-                    //}
-                    //else if (p == Color.Crimson)
-                    //{
-                    //    new XElement("Tile", "Clue");
-                    //}
+                    if (p.Name == "ff4040c0")
+                    {
+                        XElement map = new XElement("Map",
+                        new XElement("Tile", "Water")
+                          );
+                    }
+                    else if (p.Name == "ff08040")
+                    {
+                        new XElement("Tile", "Floor");
+                    }
+                    else if (p.Name == "ff800000")
+                    {
+                        new XElement("Tile", "Bridge");
+                    }
+                    else if (p.Name == "ff000000")
+                    {
+                        new XElement("Tile", "Home");
+                    }
+                    else if (p.Name == "ff040c0")
+                    {
+                        new XElement("Tile", "PNJ");
+                    }
+                    else if (p.Name == "ffe02040")
+                    {
+                        new XElement("Tile", "Clue");
+                    }
                 }
             }
         }
