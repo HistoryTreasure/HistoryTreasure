@@ -134,7 +134,7 @@ namespace ITI.HistoryTreasures.Rendering
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
 
-             _sound = new Sound();
+            // _sound = new Sound();
         }
 
         private ResourcesManager GetResourcesManager

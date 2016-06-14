@@ -103,6 +103,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RiddleControl.resx">
+      <DependentUpon>RiddleControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="UMLRender.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

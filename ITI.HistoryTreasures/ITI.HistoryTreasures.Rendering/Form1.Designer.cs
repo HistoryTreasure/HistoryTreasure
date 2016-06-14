@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.riddleControl1 = new ITI.HistoryTreasures.Rendering.RiddleControl();
             this.gameControl1 = new ITI.HistoryTreasures.Rendering.GameControl();
             this.SuspendLayout();
@@ -40,23 +39,13 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 600;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-2, 505);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(581, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "En quelle année a eu lieu la prise de la bastille ?\r\n";
-            // 
             // riddleControl1
             // 
+            this.riddleControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.riddleControl1.LevelContext = null;
-            this.riddleControl1.Location = new System.Drawing.Point(3, 475);
+            this.riddleControl1.Location = new System.Drawing.Point(0, 500);
             this.riddleControl1.Name = "riddleControl1";
-            this.riddleControl1.Size = new System.Drawing.Size(569, 74);
+            this.riddleControl1.Size = new System.Drawing.Size(584, 61);
             this.riddleControl1.TabIndex = 1;
             // 
             // gameControl1
@@ -76,7 +65,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(584, 561);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.riddleControl1);
             this.Controls.Add(this.gameControl1);
             this.DoubleBuffered = true;
@@ -84,10 +72,8 @@
             this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "HistoryTreasures";
             this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.HistoryTreasures_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HistoryTreasures_MouseMove);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -96,7 +82,6 @@
         private GameControl gameControl1;
         private System.Windows.Forms.Timer timer1;
         private RiddleControl riddleControl1;
-        private System.Windows.Forms.Label label1;
     }
 }
 
