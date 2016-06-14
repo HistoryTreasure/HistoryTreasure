@@ -22,6 +22,7 @@ namespace ITI.HistoryTreasures.MapEditor
         public BitmapToXML()
         {
             XElement map = new XElement("Map",
+                new XElement("Size", b.Size),
                 Translate()
                 );
             map.Save("./Map.xml");
