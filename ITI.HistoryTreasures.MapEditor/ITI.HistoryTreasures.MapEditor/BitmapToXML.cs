@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
 
 namespace ITI.HistoryTreasures.MapEditor
@@ -15,6 +18,9 @@ namespace ITI.HistoryTreasures.MapEditor
         public void Translate()
         {
             List<Color> _colors = new List<Color>();
+
+            XElement map = new XElement("Map");
+
             for (int i = 0; i < b.Height; i++)
             {
                 for (int j = 0; j < b.Width; j++)
@@ -23,9 +29,8 @@ namespace ITI.HistoryTreasures.MapEditor
                     _colors.Add(p);
                     if (p.Name == "ff4040c0")
                     {
-                        XElement map = new XElement("Map",
-                        new XElement("Tile", "Water")
-                          );
+                        new XElement("Tile", "Water");
+
                     }
                     else if (p.Name == "ff08040")
                     {
@@ -49,6 +54,10 @@ namespace ITI.HistoryTreasures.MapEditor
                     }
                 }
             }
+
+            map.Save("Test.xml");
+            string str = File.ReadAllText("Test.xml");
+            MessageBox.Show(str);
         }
     }
 }
