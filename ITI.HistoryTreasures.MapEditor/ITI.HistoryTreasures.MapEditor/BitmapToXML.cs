@@ -26,6 +26,8 @@ namespace ITI.HistoryTreasures.MapEditor
                 Translate()
                 );
             map.Save("./Map.xml");
+
+            ReadXMLFile();
         }
 
         public List<XElement> Translate()
@@ -63,6 +65,28 @@ namespace ITI.HistoryTreasures.MapEditor
                 }
             }
             return xElements;
+        }
+
+        public void ReadXMLFile()
+        {
+            string tile;
+            XmlTextReader reader = new XmlTextReader("Map.xml");
+            reader.Read();
+            while (reader.Read())
+            {
+                if (reader.IsStartElement())
+                {
+                    if (reader.Name == "Tile")
+                    {
+                        reader.Read();
+                        if (reader.NodeType == XmlNodeType.Text)
+                        {
+                            tile = reader.Value;
+                            reader.Read();
+                        }
+                    }
+                }
+            }
         }
     }
 }
