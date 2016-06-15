@@ -1,4 +1,6 @@
-﻿namespace ITI.HistoryTreasures.Rendering
+﻿using System;
+
+namespace ITI.HistoryTreasures.Rendering
 {
     partial class HistoryTreasures
     {
@@ -30,14 +32,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.gameControl1 = new ITI.HistoryTreasures.Rendering.GameControl();
             this.riddleControl1 = new ITI.HistoryTreasures.Rendering.RiddleControl();
+            this.gameControl1 = new ITI.HistoryTreasures.Rendering.GameControl();
+            this.interactionsControl1 = new ITI.HistoryTreasures.Rendering.InteractionsControl();
             this.SuspendLayout();
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 600;
+            // 
+            // riddleControl1
+            // 
+            this.riddleControl1.LevelContext = null;
+            this.riddleControl1.Location = new System.Drawing.Point(3, 475);
+            this.riddleControl1.Name = "riddleControl1";
+            this.riddleControl1.Size = new System.Drawing.Size(569, 74);
+            this.riddleControl1.TabIndex = 1;
+            this.riddleControl1.Load += new System.EventHandler(this.riddleControl1_Load);
             // 
             // gameControl1
             // 
@@ -47,14 +59,16 @@
             this.gameControl1.Name = "gameControl1";
             this.gameControl1.Size = new System.Drawing.Size(393, 457);
             this.gameControl1.TabIndex = 0;
+            this.gameControl1.Load += new System.EventHandler(this.gameControl1_Load);
             this.gameControl1.SizeChanged += new System.EventHandler(this.gameControl1_SizeChanged);
             // 
-            // riddleControl1
+            // interactionsControl1
             // 
-            this.riddleControl1.Location = new System.Drawing.Point(3, 475);
-            this.riddleControl1.Name = "riddleControl1";
-            this.riddleControl1.Size = new System.Drawing.Size(569, 74);
-            this.riddleControl1.TabIndex = 1;
+            this.interactionsControl1.Location = new System.Drawing.Point(3, 12);
+            this.interactionsControl1.Name = "interactionsControl1";
+            this.interactionsControl1.Size = new System.Drawing.Size(170, 457);
+            this.interactionsControl1.TabIndex = 2;
+            this.interactionsControl1.Load += new System.EventHandler(this.interactionsControl1_Load);
             // 
             // HistoryTreasures
             // 
@@ -62,6 +76,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.interactionsControl1);
             this.Controls.Add(this.riddleControl1);
             this.Controls.Add(this.gameControl1);
             this.DoubleBuffered = true;
@@ -79,6 +94,12 @@
         private GameControl gameControl1;
         private System.Windows.Forms.Timer timer1;
         private RiddleControl riddleControl1;
+        private InteractionsControl interactionsControl1;
+
+        internal void SetInteractionMessage(string message)
+        {
+            interactionsControl1.InteractionText = message;
+        }
     }
 }
 

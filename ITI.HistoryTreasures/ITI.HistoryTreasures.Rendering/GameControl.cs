@@ -134,7 +134,7 @@ namespace ITI.HistoryTreasures.Rendering
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
 
-             _sound = new Sound();
+             //_sound = new Sound();
         }
 
         private ResourcesManager GetResourcesManager
@@ -171,7 +171,9 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     return;
                 }
-                MessageBox.Show(MC.Interact(KeyEnum.action));
+                //MessageBox.Show(MC.Interact(KeyEnum.action));
+                HistoryTreasures parent = (HistoryTreasures)this.ParentForm;
+                parent.SetInteractionMessage(MC.Interact(KeyEnum.action));
             }
         }
     }

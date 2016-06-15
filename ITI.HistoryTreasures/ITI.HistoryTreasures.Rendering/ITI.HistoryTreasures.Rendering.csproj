@@ -70,6 +70,12 @@
     <Compile Include="GameControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="InteractionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InteractionsControl.Designer.cs">
+      <DependentUpon>InteractionsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Items.cs" />
     <Compile Include="MapDesign.cs" />
     <Compile Include="Program.cs" />
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameControl.resx">
       <DependentUpon>GameControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InteractionsControl.resx">
+      <DependentUpon>InteractionsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
