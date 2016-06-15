@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace ITI.HistoryTreasures
 {
@@ -10,6 +12,8 @@ namespace ITI.HistoryTreasures
         readonly Level _level;
         Tile[,] _tileArray;
         List<Hitbox> hitboxes;
+        XmlTextReader test = new XmlTextReader("Map.xml");
+        
 
         /// <summary>
         /// This constructor create a Map.
@@ -18,8 +22,10 @@ namespace ITI.HistoryTreasures
         public Map(Level level, int width, int height)
         {
             _level = level;
-            TileArray = _tileArray;
-            _tileArray = new Tile[5, 5];
+
+            _tileArray = new Tile[ArrayWidth(test),ArrayHeigth(test)];
+            
+            /*_tileArray = new Tile[5, 5];
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < height; j++)
@@ -50,7 +56,7 @@ namespace ITI.HistoryTreasures
                     _tileArray[4, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
                     _tileArray[4, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
                 }
-            }
+            }*/
 
             level.MainCharacter.MCtx = this;
             CreateTileHitbox(TileArray);
@@ -90,6 +96,40 @@ namespace ITI.HistoryTreasures
         public Level Level
         {
             get { return _level; }
+        }
+
+        private int ArrayWidth(XmlTextReader test)
+        {
+            int arrayWidth = 0;
+            
+            while (test.Read())
+            {
+                if (test.Name == "Width")
+                {
+                    test.Read();
+                    arrayWidth = Convert.ToInt32(test.Value);
+                    return arrayWidth;
+                }
+            }
+
+            return 0;
+        }
+
+        private int ArrayHeigth(XmlTextReader test)
+        {
+            int arrayHeight = 0;
+
+            while (test.Read())
+            {
+                if (test.Name == "Height")
+                {
+                    test.Read();
+                    arrayHeight = Convert.ToInt32(test.Value);
+                    return arrayHeight;
+                }
+            }
+
+            return 0;
         }
 
         /// <summary>
