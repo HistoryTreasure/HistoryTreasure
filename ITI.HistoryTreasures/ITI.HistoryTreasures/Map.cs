@@ -143,16 +143,16 @@ namespace ITI.HistoryTreasures
                         xml.Read();
                         if (xml.Value == "Water")
                         {
-                            tileArray[y,x] = new Tile(true,TileEnum.WATER, this);
+                            tileArray[x, y] = new Tile(true,TileEnum.WATER, this);
                             if (x == Width-1)
                             {
-                                tileArray[y, x] = new Tile(true, TileEnum.WATER, this);
+                                tileArray[x, y] = new Tile(true, TileEnum.WATER, this);
                                 x = 0;
                                 y++;
                             }
                             else if(y == Height-1)
                             {
-                                tileArray[y, x] = new Tile(true, TileEnum.WATER, this);
+                                tileArray[x, y] = new Tile(true, TileEnum.WATER, this);
                                 x++;
                             }
                             else
@@ -162,16 +162,16 @@ namespace ITI.HistoryTreasures
                         }
                         if (xml.Value == "Bridge")
                         {
-                            tileArray[y, x] = new Tile(false, TileEnum.BRIDGE, this);
+                            tileArray[x, y] = new Tile(false, TileEnum.BRIDGE, this);
                             if (x == Width-1)
                             {
-                                tileArray[y, x] = new Tile(false, TileEnum.BRIDGE, this);
+                                tileArray[x, y] = new Tile(false, TileEnum.BRIDGE, this);
                                 x = 0;
                                 y++;
                             }
                             else if (y == Height-1)
                             {
-                                tileArray[y, x] = new Tile(true, TileEnum.BRIDGE, this);
+                                tileArray[x, y] = new Tile(false, TileEnum.BRIDGE, this);
                                 x++;
                             }
                             else
@@ -181,16 +181,16 @@ namespace ITI.HistoryTreasures
                         }
                         if (xml.Value == "Home")
                         {
-                            tileArray[y, x] = new Tile(false, TileEnum.HOME, this);
+                            tileArray[x, y] = new Tile(false, TileEnum.HOME, this);
                             if (x == Width - 1)
                             {
-                                tileArray[y, x] = new Tile(false, TileEnum.HOME, this);
+                                tileArray[x, y] = new Tile(false, TileEnum.HOME, this);
                                 x = 0;
                                 y++;
                             }
                             else if (y == Height - 1)
                             {
-                                tileArray[y, x] = new Tile(true, TileEnum.HOME, this);
+                                tileArray[x, y] = new Tile(false, TileEnum.HOME, this);
                                 x++;
                             }
                             else
@@ -200,16 +200,16 @@ namespace ITI.HistoryTreasures
                         }
                         if (xml.Value == "Clue")
                         {
-                            tileArray[y, x] = new Tile(false, TileEnum.CLUE, this);
+                            tileArray[x, y] = new Tile(true, TileEnum.CLUE, this);
                             if (x == Width - 1)
                             {
-                                tileArray[y, x] = new Tile(false, TileEnum.CLUE, this);
+                                tileArray[x, y] = new Tile(true, TileEnum.CLUE, this);
                                 x = 0;
                                 y++;
                             }
                             else if (y == Height - 1)
                             {
-                                tileArray[y, x] = new Tile(true, TileEnum.CLUE, this);
+                                tileArray[x, y] = new Tile(true, TileEnum.CLUE, this);
                                 x++;
                             }
                             else
