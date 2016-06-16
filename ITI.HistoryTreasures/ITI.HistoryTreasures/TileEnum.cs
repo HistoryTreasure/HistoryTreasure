@@ -14,6 +14,7 @@ namespace ITI.HistoryTreasures
     {
        WATER,GRASS,
        BOATFLOOR,BOATWALL,
-       BRIDGE,BRIDGEWALL
+       BRIDGE,BRIDGEWALL,
+       HOME,CLUE
     }
 }

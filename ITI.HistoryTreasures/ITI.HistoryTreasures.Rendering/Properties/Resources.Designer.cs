@@ -92,6 +92,26 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bridge {
+            get {
+                object obj = ResourceManager.GetObject("bridge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clue {
+            get {
+                object obj = ResourceManager.GetObject("clue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap droite {
             get {
                 object obj = ResourceManager.GetObject("droite", resourceCulture);
@@ -122,9 +142,9 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img_X1_Y0 {
+        internal static System.Drawing.Bitmap home {
             get {
-                object obj = ResourceManager.GetObject("img_X1_Y0", resourceCulture);
+                object obj = ResourceManager.GetObject("home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -132,9 +152,9 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img_X4_Y10 {
+        internal static System.Drawing.Bitmap img_X1_Y0 {
             get {
-                object obj = ResourceManager.GetObject("img_X4_Y10", resourceCulture);
+                object obj = ResourceManager.GetObject("img_X1_Y0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

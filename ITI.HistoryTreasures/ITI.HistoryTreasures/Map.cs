@@ -12,7 +12,7 @@ namespace ITI.HistoryTreasures
         readonly Level _level;
         Tile[,] _tileArray;
         List<Hitbox> hitboxes;
-        XmlTextReader test = new XmlTextReader("Map.xml");
+        readonly XmlTextReader test = new XmlTextReader("Map.xml");
         
 
         /// <summary>
@@ -24,40 +24,9 @@ namespace ITI.HistoryTreasures
             _level = level;
 
             _tileArray = new Tile[ArrayWidth(test),ArrayHeigth(test)];
-            
-            /*_tileArray = new Tile[5, 5];
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < height; j++)
-                {
-                    _tileArray[0, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[0, 1] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[0, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[0, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[0, 4] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[1, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[1, 1] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[1, 2] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[1, 3] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[1, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[2, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[2, 1] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[2, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[2, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[2, 4] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[3, 0] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[3, 1] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[3, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[3, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[3, 4] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[4, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[4, 1] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[4, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[4, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[4, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
-                }
-            }*/
 
+            _tileArray = CreateMap(TileArray,test);
+            
             level.MainCharacter.MCtx = this;
             CreateTileHitbox(TileArray);
         }
@@ -140,6 +109,118 @@ namespace ITI.HistoryTreasures
             }
 
             throw new ArgumentException("The XML dosn't contains a height information");
+        }
+
+        /// <summary>
+        /// Creates the map.
+        /// </summary>
+        /// <param name="tileArray">The tile array.</param>
+        /// <param name="xml">The XML.</param>
+        /// <returns>The tilearray of the map</returns>
+        /// <exception cref="System.ArgumentException">
+        /// The tileArray must not be empty
+        /// or
+        /// The XML must not be empty
+        /// </exception>
+        private Tile[,] CreateMap(Tile [,] tileArray,XmlTextReader xml)
+        {
+            int x = 0;
+            int y = 0;
+            if (TileArray == null)
+            {
+                throw new ArgumentException("The tileArray must not be empty");
+            }
+            if (xml == null)
+            {
+                throw new ArgumentException("The XML must not be empty");
+            }
+
+            while (xml.Read())
+            {
+                {
+                    if (xml.Name == "Tile")
+                    {
+                        xml.Read();
+                        if (xml.Value == "Water")
+                        {
+                            tileArray[y,x] = new Tile(true,TileEnum.WATER, this);
+                            if (x == Width-1)
+                            {
+                                tileArray[y, x] = new Tile(true, TileEnum.WATER, this);
+                                x = 0;
+                                y++;
+                            }
+                            else if(y == Height-1)
+                            {
+                                tileArray[y, x] = new Tile(true, TileEnum.WATER, this);
+                                x++;
+                            }
+                            else
+                            {
+                                x++;
+                            }
+                        }
+                        if (xml.Value == "Bridge")
+                        {
+                            tileArray[y, x] = new Tile(false, TileEnum.BRIDGE, this);
+                            if (x == Width-1)
+                            {
+                                tileArray[y, x] = new Tile(false, TileEnum.BRIDGE, this);
+                                x = 0;
+                                y++;
+                            }
+                            else if (y == Height-1)
+                            {
+                                tileArray[y, x] = new Tile(true, TileEnum.BRIDGE, this);
+                                x++;
+                            }
+                            else
+                            {
+                                x++;
+                            }
+                        }
+                        if (xml.Value == "Home")
+                        {
+                            tileArray[y, x] = new Tile(false, TileEnum.HOME, this);
+                            if (x == Width - 1)
+                            {
+                                tileArray[y, x] = new Tile(false, TileEnum.HOME, this);
+                                x = 0;
+                                y++;
+                            }
+                            else if (y == Height - 1)
+                            {
+                                tileArray[y, x] = new Tile(true, TileEnum.HOME, this);
+                                x++;
+                            }
+                            else
+                            {
+                                x++;
+                            }
+                        }
+                        if (xml.Value == "Clue")
+                        {
+                            tileArray[y, x] = new Tile(false, TileEnum.CLUE, this);
+                            if (x == Width - 1)
+                            {
+                                tileArray[y, x] = new Tile(false, TileEnum.CLUE, this);
+                                x = 0;
+                                y++;
+                            }
+                            else if (y == Height - 1)
+                            {
+                                tileArray[y, x] = new Tile(true, TileEnum.CLUE, this);
+                                x++;
+                            }
+                            else
+                            {
+                                x++;
+                            }
+                        }
+                    }
+                }
+            }
+            return tileArray;
         }
 
         /// <summary>
