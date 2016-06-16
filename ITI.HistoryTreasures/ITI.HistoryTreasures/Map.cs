@@ -98,38 +98,48 @@ namespace ITI.HistoryTreasures
             get { return _level; }
         }
 
-        private int ArrayWidth(XmlTextReader test)
+        /// <summary>
+        /// Get the Width of the array from an XML
+        /// </summary>
+        /// <param name="xml">The xml.</param>
+        /// <returns>The width in a int</returns>
+        private int ArrayWidth(XmlTextReader xml)
         {
             int arrayWidth = 0;
             
-            while (test.Read())
+            while (xml.Read())
             {
-                if (test.Name == "Width")
+                if (xml.Name == "Width")
                 {
-                    test.Read();
-                    arrayWidth = Convert.ToInt32(test.Value);
+                    xml.Read();
+                    arrayWidth = Convert.ToInt32(xml.Value);
                     return arrayWidth;
                 }
             }
 
-            return 0;
+            throw new ArgumentException("The XML dosn't contains a width information");
         }
 
-        private int ArrayHeigth(XmlTextReader test)
+        /// <summary>
+        /// Arrays the heigth.
+        /// </summary>
+        /// <param name="xml">The XML.</param>
+        /// <returns>The height in a int</returns>
+        private int ArrayHeigth(XmlTextReader xml)
         {
             int arrayHeight = 0;
 
-            while (test.Read())
+            while (xml.Read())
             {
-                if (test.Name == "Height")
+                if (xml.Name == "Height")
                 {
-                    test.Read();
-                    arrayHeight = Convert.ToInt32(test.Value);
+                    xml.Read();
+                    arrayHeight = Convert.ToInt32(xml.Value);
                     return arrayHeight;
                 }
             }
 
-            return 0;
+            throw new ArgumentException("The XML dosn't contains a height information");
         }
 
         /// <summary>
