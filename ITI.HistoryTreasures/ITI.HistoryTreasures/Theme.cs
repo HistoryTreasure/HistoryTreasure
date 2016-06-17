@@ -31,7 +31,9 @@ namespace ITI.HistoryTreasures
             _name = name;
             _isFinish = false;
             _levels = new List<Level>();
-            ctx.Themes.Add(this);
+            CreateLevel("1_1");
+            CreateLevel("1_2");
+            CreateLevel("1_3");
         }
 
         /// <summary>
@@ -88,8 +90,8 @@ namespace ITI.HistoryTreasures
         /// <param name="name">This parameter define name of Level.</param>
         public Level CreateLevel(string name)
         {
-            Level l = new Level(this, "Level");
-            _levels.Add(l);
+            Level l = new Level(this, name);
+            Levels.Add(l);
             return l;
         }
 
@@ -99,7 +101,7 @@ namespace ITI.HistoryTreasures
         public void FinishTheme()
         {
             bool test = true;
-            foreach (Level l in _levels)
+            foreach (Level l in Levels)
             {
                 if (l.IsFinish != true)
                 {
