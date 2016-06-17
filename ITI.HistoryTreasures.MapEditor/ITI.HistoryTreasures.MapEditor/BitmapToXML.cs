@@ -14,7 +14,7 @@ namespace ITI.HistoryTreasures.MapEditor
 {
     public class BitmapToXML
     {
-        Bitmap b = Properties.Resources._1_2;
+        Bitmap b = Properties.Resources._1_3;
         List<XElement> xElements = new List<XElement>();
         StringBuilder sb = new StringBuilder();
         XmlWriterSettings xws = new XmlWriterSettings();
@@ -26,7 +26,7 @@ namespace ITI.HistoryTreasures.MapEditor
                 new XElement("Height", b.Width),
                 Translate()
                 );
-            map.Save("./1_2.xml");
+            map.Save("./1_3.xml");
 
             ReadXMLFile();
         }
