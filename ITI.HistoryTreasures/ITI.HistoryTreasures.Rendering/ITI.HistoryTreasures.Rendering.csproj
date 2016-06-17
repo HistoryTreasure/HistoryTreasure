@@ -154,6 +154,7 @@
     <None Include="Resources\img_X2_Y8.png" />
     <None Include="Resources\floor.png" />
     <None Include="Resources\rock.png" />
+    <None Include="Resources\stonepath.png" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

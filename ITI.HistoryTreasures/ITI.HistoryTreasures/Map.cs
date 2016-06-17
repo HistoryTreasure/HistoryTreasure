@@ -212,6 +212,34 @@ namespace ITI.HistoryTreasures
                                 x++;
                             }
                         }
+                        else if (xml.Value == "Rock")
+                        {
+                            if (x == Width - 1)
+                            {
+                                tileArray[x, y] = new Tile(true, TileEnum.ROCK, this);
+                                x = 0;
+                                y++;
+                            }
+                            else
+                            {
+                                tileArray[x, y] = new Tile(true, TileEnum.ROCK, this);
+                                x++;
+                            }
+                        }
+                        else if (xml.Value == "StonePath")
+                        {
+                            if (x == Width - 1)
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.STONEPATH, this);
+                                x = 0;
+                                y++;
+                            }
+                            else
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.STONEPATH, this);
+                                x++;
+                            }
+                        }
                     }
                 }
             }
