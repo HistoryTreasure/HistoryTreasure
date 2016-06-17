@@ -22,7 +22,8 @@ namespace ITI.HistoryTreasures.MapEditor
         public BitmapToXML()
         {
             XElement map = new XElement("Map",
-                new XElement("Size", b.Size),
+                new XElement("Width", b.Height),
+                new XElement("Height", b.Width),
                 Translate()
                 );
             map.Save("./Map.xml");
@@ -54,7 +55,7 @@ namespace ITI.HistoryTreasures.MapEditor
                     {
                         xElements.Add(new XElement("Tile", "Home"));
                     }
-                    else if (p.Name == "ffa08040")
+                    else if (p.Name == "ffa040c0")
                     {
                         xElements.Add(new XElement("Tile", "PNJ"));
                     }
