@@ -14,7 +14,7 @@ namespace ITI.HistoryTreasures.MapEditor
 {
     public class BitmapToXML
     {
-        Bitmap b = Properties.Resources._base;
+        Bitmap b = Properties.Resources._1_1;
         List<XElement> xElements = new List<XElement>();
         StringBuilder sb = new StringBuilder();
         XmlWriterSettings xws = new XmlWriterSettings();
@@ -26,7 +26,7 @@ namespace ITI.HistoryTreasures.MapEditor
                 new XElement("Height", b.Width),
                 Translate()
                 );
-            map.Save("./Map.xml");
+            map.Save("./1_1.xml");
 
             ReadXMLFile();
         }
@@ -39,11 +39,11 @@ namespace ITI.HistoryTreasures.MapEditor
                 {
                     Color p = b.GetPixel(i, j);
 
-                    if (p.Name == "ff4040c0")
+                    if (p.Name == "ff3f48cc")
                     {
                         xElements.Add(new XElement("Tile", "Water"));
                     }
-                    else if (p.Name == "ffc08040")
+                    else if (p.Name == "ffb97a57")
                     {
                         xElements.Add(new XElement("Tile", "Floor"));
                     }
@@ -55,14 +55,11 @@ namespace ITI.HistoryTreasures.MapEditor
                     {
                         xElements.Add(new XElement("Tile", "Home"));
                     }
-                    else if (p.Name == "ffa040c0")
+                    else if (p.Name == "ff22b14c")
                     {
-                        xElements.Add(new XElement("Tile", "PNJ"));
+                        xElements.Add(new XElement("Tile", "Grass"));
                     }
-                    else if (p.Name == "ffe02040")
-                    {
-                        xElements.Add(new XElement("Tile", "Clue"));
-                    }
+
                 }
             }
             return xElements;
