@@ -13,7 +13,7 @@ namespace ITI.HistoryTreasures
         Tile[,] _tileArray;
         List<Hitbox> hitboxes;
         readonly XmlTextReader test = new XmlTextReader("Map.xml");
-        
+
 
         /// <summary>
         /// This constructor create a Map.
@@ -23,10 +23,10 @@ namespace ITI.HistoryTreasures
         {
             _level = level;
 
-            _tileArray = new Tile[ArrayWidth(test),ArrayHeigth(test)];
+            _tileArray = new Tile[ArrayWidth(test), ArrayHeigth(test)];
 
-            _tileArray = CreateMap(TileArray,test);
-            
+            _tileArray = CreateMap(TileArray, test);
+
             level.MainCharacter.MCtx = this;
             CreateTileHitbox(TileArray);
         }
@@ -75,7 +75,7 @@ namespace ITI.HistoryTreasures
         private int ArrayWidth(XmlTextReader xml)
         {
             int arrayWidth = 0;
-            
+
             while (xml.Read())
             {
                 if (xml.Name == "Width")
@@ -122,7 +122,7 @@ namespace ITI.HistoryTreasures
         /// or
         /// The XML must not be empty
         /// </exception>
-        private Tile[,] CreateMap(Tile [,] tileArray,XmlTextReader xml)
+        private Tile[,] CreateMap(Tile[,] tileArray, XmlTextReader xml)
         {
             int x = 0;
             int y = 0;
@@ -143,14 +143,13 @@ namespace ITI.HistoryTreasures
                         xml.Read();
                         if (xml.Value == "Water")
                         {
-                            tileArray[x, y] = new Tile(true,TileEnum.WATER, this);
-                            if (x == Width-1)
+                            tileArray[x, y] = new Tile(true, TileEnum.WATER, this);
+                            if (x == Width - 1)
                             {
                                 tileArray[x, y] = new Tile(true, TileEnum.WATER, this);
                                 x = 0;
                                 y++;
                             }
-                                tileArray[x, y] = new Tile(true, TileEnum.WATER, this);
                             else
                             {
                                 x++;
@@ -159,13 +158,13 @@ namespace ITI.HistoryTreasures
                         else if (xml.Value == "Bridge")
                         {
                             tileArray[x, y] = new Tile(false, TileEnum.BRIDGE, this);
-                            if (x == Width-1)
+                            if (x == Width - 1)
                             {
                                 tileArray[x, y] = new Tile(false, TileEnum.BRIDGE, this);
                                 x = 0;
                                 y++;
                             }
-                                tileArray[x, y] = new Tile(false, TileEnum.BRIDGE, this);
+
                             else
                             {
                                 x++;
