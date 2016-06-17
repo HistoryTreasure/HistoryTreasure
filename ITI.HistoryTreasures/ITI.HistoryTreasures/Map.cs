@@ -143,7 +143,6 @@ namespace ITI.HistoryTreasures
                         xml.Read();
                         if (xml.Value == "Water")
                         {
-                            tileArray[x, y] = new Tile(true, TileEnum.WATER, this);
                             if (x == Width - 1)
                             {
                                 tileArray[x, y] = new Tile(true, TileEnum.WATER, this);
@@ -152,27 +151,26 @@ namespace ITI.HistoryTreasures
                             }
                             else
                             {
+                                tileArray[x, y] = new Tile(true, TileEnum.WATER, this);
                                 x++;
                             }
                         }
                         else if (xml.Value == "Bridge")
                         {
-                            tileArray[x, y] = new Tile(false, TileEnum.BRIDGE, this);
                             if (x == Width - 1)
                             {
                                 tileArray[x, y] = new Tile(false, TileEnum.BRIDGE, this);
                                 x = 0;
                                 y++;
                             }
-
                             else
                             {
+                                tileArray[x, y] = new Tile(false, TileEnum.BRIDGE, this);
                                 x++;
                             }
                         }
                         else if (xml.Value == "Home")
                         {
-                            tileArray[x, y] = new Tile(false, TileEnum.HOME, this);
                             if (x == Width - 1)
                             {
                                 tileArray[x, y] = new Tile(false, TileEnum.HOME, this);
@@ -187,44 +185,43 @@ namespace ITI.HistoryTreasures
                         }
                         else if (xml.Value == "Clue")
                         {
-                            tileArray[y, x] = new Tile(false, TileEnum.CLUE, this);
                             if (x == Width - 1)
                             {
-                                tileArray[y, x] = new Tile(false, TileEnum.CLUE, this);
+                                tileArray[x, y] = new Tile(false, TileEnum.CLUE, this);
                                 x = 0;
                                 y++;
                             }
                             else
                             {
+                                tileArray[x, y] = new Tile(false, TileEnum.CLUE, this);
                                 x++;
                             }
                         }
                         else if (xml.Value == "Floor")
                         {
-                            tileArray[x, y] = new Tile(true, TileEnum.CLUE, this);
                             if (x == Width - 1)
                             {
-                                tileArray[x, y] = new Tile(true, TileEnum.CLUE, this);
+                                tileArray[x, y] = new Tile(false, TileEnum.GRASS, this);
                                 x = 0;
                                 y++;
                             }
                             else
                             {
-                                tileArray[x, y] = new Tile(true, TileEnum.CLUE, this);
+                                tileArray[x, y] = new Tile(false, TileEnum.GRASS, this);
                                 x++;
                             }
                         }
                         else if (xml.Value == "PNJ")
                         {
-                            tileArray[x, y] = new Tile(false, TileEnum.PNJ, this);
                             if (x == Width - 1)
                             {
-                                tileArray[y, x] = new Tile(false, TileEnum.PNJ, this);
+                                tileArray[x, y] = new Tile(false, TileEnum.PNJ, this);
                                 x = 0;
                                 y++;
                             }
                             else
                             {
+                                tileArray[x, y] = new Tile(false, TileEnum.PNJ, this);
                                 x++;
                             }
                         }
