@@ -27,6 +27,7 @@ namespace ITI.HistoryTreasures.Rendering
             _tileBitmaps[TileEnum.BRIDGE] = Properties.Resources.bridge;
             _tileBitmaps[TileEnum.HOME] = Properties.Resources.home;
             _tileBitmaps[TileEnum.CLUE] = Properties.Resources.clue;
+            _tileBitmaps[TileEnum.PNJ] = Properties.Resources.pnj;
             _characterBitmaps = new Dictionary<CharacterEnum, Bitmap>();
             _characterBitmaps[CharacterEnum.MCFACE] = Properties.Resources.img_X1_Y0;
             _characterBitmaps[CharacterEnum.GUARDFACE] = Properties.Resources.droite;

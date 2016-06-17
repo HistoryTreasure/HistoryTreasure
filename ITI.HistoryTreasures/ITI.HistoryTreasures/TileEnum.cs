@@ -15,6 +15,7 @@ namespace ITI.HistoryTreasures
        WATER,GRASS,
        BOATFLOOR,BOATWALL,
        BRIDGE,BRIDGEWALL,
-       HOME,CLUE
+       HOME,CLUE,
+       PNJ
     }
 }

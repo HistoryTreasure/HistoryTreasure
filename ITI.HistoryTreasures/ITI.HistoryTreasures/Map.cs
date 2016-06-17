@@ -150,17 +150,12 @@ namespace ITI.HistoryTreasures
                                 x = 0;
                                 y++;
                             }
-                            else if(y == Height-1)
-                            {
-                                tileArray[y, x] = new Tile(true, TileEnum.WATER, this);
-                                x++;
-                            }
                             else
                             {
                                 x++;
                             }
                         }
-                        if (xml.Value == "Bridge")
+                        else if (xml.Value == "Bridge")
                         {
                             tileArray[y, x] = new Tile(false, TileEnum.BRIDGE, this);
                             if (x == Width-1)
@@ -169,17 +164,12 @@ namespace ITI.HistoryTreasures
                                 x = 0;
                                 y++;
                             }
-                            else if (y == Height-1)
-                            {
-                                tileArray[y, x] = new Tile(true, TileEnum.BRIDGE, this);
-                                x++;
-                            }
                             else
                             {
                                 x++;
                             }
                         }
-                        if (xml.Value == "Home")
+                        else if (xml.Value == "Home")
                         {
                             tileArray[y, x] = new Tile(false, TileEnum.HOME, this);
                             if (x == Width - 1)
@@ -188,17 +178,12 @@ namespace ITI.HistoryTreasures
                                 x = 0;
                                 y++;
                             }
-                            else if (y == Height - 1)
-                            {
-                                tileArray[y, x] = new Tile(true, TileEnum.HOME, this);
-                                x++;
-                            }
                             else
                             {
                                 x++;
                             }
                         }
-                        if (xml.Value == "Clue")
+                        else if (xml.Value == "Clue")
                         {
                             tileArray[y, x] = new Tile(false, TileEnum.CLUE, this);
                             if (x == Width - 1)
@@ -207,10 +192,33 @@ namespace ITI.HistoryTreasures
                                 x = 0;
                                 y++;
                             }
-                            else if (y == Height - 1)
+                            else
                             {
-                                tileArray[y, x] = new Tile(true, TileEnum.CLUE, this);
                                 x++;
+                            }
+                        }
+                        else if (xml.Value == "Floor")
+                        {
+                            tileArray[x,y] = new Tile(false, TileEnum.GRASS, this);
+                            if (x == Width - 1)
+                            {
+                                tileArray[y, x] = new Tile(false, TileEnum.GRASS, this);
+                                x = 0;
+                                y++;
+                            }
+                            else
+                            {
+                                x++;
+                            }
+                        }
+                        else if (xml.Value == "Pnj")
+                        {
+                            tileArray[x, y] = new Tile(false, TileEnum.PNJ, this);
+                            if (x == Width - 1)
+                            {
+                                tileArray[y, x] = new Tile(false, TileEnum.PNJ, this);
+                                x = 0;
+                                y++;
                             }
                             else
                             {

@@ -162,6 +162,16 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pnj {
+            get {
+                object obj = ResourceManager.GetObject("pnj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pont_vertcal {
             get {
                 object obj = ResourceManager.GetObject("pont_vertcal", resourceCulture);
