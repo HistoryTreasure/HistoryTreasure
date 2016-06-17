@@ -16,6 +16,6 @@ namespace ITI.HistoryTreasures
        BOATFLOOR,BOATWALL,
        BRIDGE,BRIDGEWALL,
        HOME,CLUE,
-       PNJ
+       PNJ, FLOOR
     }
 }

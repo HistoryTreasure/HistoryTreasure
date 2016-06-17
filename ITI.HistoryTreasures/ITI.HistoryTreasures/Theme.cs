@@ -32,8 +32,8 @@ namespace ITI.HistoryTreasures
             _isFinish = false;
             _levels = new List<Level>();
             CreateLevel("1_1");
-            CreateLevel("1_2");
-            CreateLevel("1_3");
+            //CreateLevel("1_2");
+            //CreateLevel("1_3");
         }
 
         /// <summary>
