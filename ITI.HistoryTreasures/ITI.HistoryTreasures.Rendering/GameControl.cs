@@ -28,6 +28,7 @@ namespace ITI.HistoryTreasures.Rendering
         {
             _resourcesManager = new ResourcesManager();
             InitializeComponent();
+            PlaySound();
         }
 
         /// <summary>
@@ -136,13 +137,17 @@ namespace ITI.HistoryTreasures.Rendering
             this.Name = "GameControl";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
-
-            // _sound = new Sound();
         }
 
         private ResourcesManager GetResourcesManager
         {
             get { return _resourcesManager; }
+        }
+
+        private Sound PlaySound()
+        {
+            _sound = new Sound();
+            return _sound;
         }
 
         private void GameControl_KeyDown(object sender, KeyEventArgs e)
