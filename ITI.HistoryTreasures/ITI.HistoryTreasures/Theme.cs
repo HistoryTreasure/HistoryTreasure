@@ -89,7 +89,7 @@ namespace ITI.HistoryTreasures
         public Level CreateLevel(string name)
         {
             Level l = new Level(this, "Level");
-            _levels.Add(l);
+            Levels.Add(l);
             return l;
         }
 
@@ -99,7 +99,7 @@ namespace ITI.HistoryTreasures
         public void FinishTheme()
         {
             bool test = true;
-            foreach (Level l in _levels)
+            foreach (Level l in Levels)
             {
                 if (l.IsFinish != true)
                 {
