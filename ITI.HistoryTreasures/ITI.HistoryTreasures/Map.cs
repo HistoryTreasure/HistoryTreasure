@@ -214,7 +214,7 @@ namespace ITI.HistoryTreasures
                                 x++;
                             }
                         }
-                        else if (xml.Value == "Pnj")
+                        else if (xml.Value == "PNJ")
                         {
                             tileArray[x, y] = new Tile(false, TileEnum.PNJ, this);
                             if (x == Width - 1)
