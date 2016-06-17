@@ -31,9 +31,9 @@ namespace ITI.HistoryTreasures
             _name = name;
             _isFinish = false;
             _levels = new List<Level>();
-            Levels.Add(CreateLevel("1_1"));
-            Levels.Add(CreateLevel("1_2"));
-            Levels.Add(CreateLevel("1_3"));
+            CreateLevel("1_1");
+            CreateLevel("1_2");
+            CreateLevel("1_3");
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace ITI.HistoryTreasures
         /// <param name="name">This parameter define name of Level.</param>
         public Level CreateLevel(string name)
         {
-            Level l = new Level(this, "Level");
+            Level l = new Level(this, name);
             Levels.Add(l);
             return l;
         }

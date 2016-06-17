@@ -16,8 +16,8 @@ namespace ITI.HistoryTreasures
         /// </summary>
         public Game()
         {
-            _themes = new List<Theme>();  
-            Themes.Add(CreateTheme("1"));          
+            _themes = new List<Theme>();
+            Themes.Add(CreateTheme("1"));
         }
 
         /// <summary>
@@ -38,5 +38,32 @@ namespace ITI.HistoryTreasures
         {
             get { return _themes; }
         }
+
+        public Level Check()
+        {
+            foreach (Theme t in Themes)
+            {
+                if (t.IsFinish)
+                {
+                    continue;
+                }
+                else
+                {
+                    foreach (Level l in t.Levels)
+                    {
+                        if (l.IsFinish)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return l;
+                        }
+                    }
+                }
+            }
+            throw new InvalidOperationException("Not possible");
+        }
     }
 }
+
