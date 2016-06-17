@@ -55,8 +55,6 @@ namespace ITI.HistoryTreasures
             get { return _name; }
         }
 
-       
-
         /// <summary>
         /// Return the PNJ list.
         /// </summary>
@@ -69,10 +67,10 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Gets the clues.
+        /// Gets the clues list.
         /// </summary>
         /// <value>
-        /// The clues.
+        /// The clues list.
         /// </value>
         public List<Clue> Clues
         {
@@ -115,10 +113,8 @@ namespace ITI.HistoryTreasures
             get { return _pnj; }
         }
 
-        
-
         /// <summary>
-        /// Creates the PNJ.
+        /// Creates a PNJ.
         /// </summary>
         /// <param name="gctx">The GCTX.</param>
         /// <param name="X">The x position .</param>
@@ -133,7 +129,7 @@ namespace ITI.HistoryTreasures
             return p;
         }
 
-        
+
         /// <summary>
         /// Creates the main.
         /// </summary>
@@ -153,7 +149,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Creates the clue.
+        /// Creates a clue.
         /// </summary>
         /// <param name="ctx">The CTX.</param>
         /// <param name="x">The x.</param>
@@ -180,7 +176,7 @@ namespace ITI.HistoryTreasures
             get { return _mainCharacter; }
         }
 
-   
+
         /// <summary>
         /// Interactions the with PNJ.
         /// </summary>
@@ -191,14 +187,14 @@ namespace ITI.HistoryTreasures
             string _talk = "";
 
             for (int i = 0; i < Pnjs.Count; i++)
+            {
+                if (MainCharacter.CanInteract(Pnj.HitBox))
                 {
-                    if (MainCharacter.CanInteract(Pnj.HitBox))
-                    { 
-                        key = KeyEnum.action;
-                        _talk = _pnjs[i].Speech;
-                        break;
-                    }
+                    key = KeyEnum.action;
+                    _talk = _pnjs[i].Speech;
+                    break;
                 }
+            }
             return _talk;
         }
 
