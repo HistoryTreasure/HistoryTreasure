@@ -12,14 +12,18 @@ namespace ITI.HistoryTreasures.Rendering
 {
     public partial class RiddleControl : UserControl
     {
+        Label _riddle;
         Level _lCtx;
-        ResourcesManager _resourcesManager;
 
         //RiddleManager _riddleManager;
         public RiddleControl()
         {
-            _resourcesManager = new ResourcesManager();
-            InitializeComponent();
+            //InitializeComponent();
+            
+            this._riddle = new Label();
+            this._riddle.Size = new Size(584, 61);
+            this._riddle.Text = "En quelle année a eu lieu la prise de la Bastille ?";
+            this.Controls.Add(this._riddle);
         }
 
         public Level LevelContext
@@ -28,10 +32,16 @@ namespace ITI.HistoryTreasures.Rendering
             set { _lCtx = value; }
         }
 
-        private ResourcesManager GetResourcesManager
-        {
-            get { return _resourcesManager; }
-        }
+        
+
+
+        //private void RiddleControl(object sender, EventArgs e)
+        //{
+        //    this._riddle = new Label();
+        //    this._riddle.Text = "efje";  
+        //}
+
+
 
         //protected override void OnPaint(PaintEventArgs e)
         //{
