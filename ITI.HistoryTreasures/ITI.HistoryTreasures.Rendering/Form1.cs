@@ -107,5 +107,12 @@ namespace ITI.HistoryTreasures.Rendering
         {
             this.Refresh();
         }
+
+        private void RiddleControl(object sender, EventArgs e)
+        {
+            this.Refresh();
+        }
+
+        
     }
 }
