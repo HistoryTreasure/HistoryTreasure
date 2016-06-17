@@ -16,7 +16,8 @@ namespace ITI.HistoryTreasures
         /// </summary>
         public Game()
         {
-            _themes = new List<Theme>();            
+            _themes = new List<Theme>();  
+            Themes.Add(CreateTheme("1"));          
         }
 
         /// <summary>
@@ -26,7 +27,7 @@ namespace ITI.HistoryTreasures
         public Theme CreateTheme(string name)
         {
             Theme t = new Theme(this, name);
-            _themes.Add(t);
+            Themes.Add(t);
             return t;
         }
 

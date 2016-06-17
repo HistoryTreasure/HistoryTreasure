@@ -31,7 +31,9 @@ namespace ITI.HistoryTreasures
             _name = name;
             _isFinish = false;
             _levels = new List<Level>();
-            ctx.Themes.Add(this);
+            Levels.Add(CreateLevel("1_1"));
+            Levels.Add(CreateLevel("1_2"));
+            Levels.Add(CreateLevel("1_3"));
         }
 
         /// <summary>
