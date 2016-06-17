@@ -12,16 +12,17 @@ namespace ITI.HistoryTreasures
         readonly Level _level;
         Tile[,] _tileArray;
         List<Hitbox> hitboxes;
-        readonly XmlTextReader test = new XmlTextReader("Map.xml");
-
+        readonly XmlTextReader test;
 
         /// <summary>
         /// This constructor create a Map.
         /// </summary>
         /// <param name="level">Level context.</param>
-        public Map(Level level, int width, int height)
+        public Map(Level level)
         {
             _level = level;
+
+            test = new XmlTextReader(level.Name + ".xml");
 
             _tileArray = new Tile[ArrayWidth(test), ArrayHeigth(test)];
 
@@ -183,24 +184,24 @@ namespace ITI.HistoryTreasures
                                 x++;
                             }
                         }
-                        else if (xml.Value == "Clue")
-                        {
-                            if (x == Width - 1)
-                            {
-                                tileArray[x, y] = new Tile(false, TileEnum.CLUE, this);
-                                x = 0;
-                                y++;
-                            }
-                            else
-                            {
-                                tileArray[x, y] = new Tile(false, TileEnum.CLUE, this);
-                                x++;
-                            }
-                        }
                         else if (xml.Value == "Floor")
                         {
                             if (x == Width - 1)
                             {
+                                tileArray[x, y] = new Tile(false, TileEnum.FLOOR, this);
+                                x = 0;
+                                y++;
+                            }
+                            else
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.FLOOR, this);
+                                x++;
+                            }
+                        }
+                        else if (xml.Value == "Grass")
+                        {
+                            if (x == Width - 1)
+                            {
                                 tileArray[x, y] = new Tile(false, TileEnum.GRASS, this);
                                 x = 0;
                                 y++;
@@ -211,17 +212,31 @@ namespace ITI.HistoryTreasures
                                 x++;
                             }
                         }
-                        else if (xml.Value == "PNJ")
+                        else if (xml.Value == "Rock")
                         {
                             if (x == Width - 1)
                             {
-                                tileArray[x, y] = new Tile(false, TileEnum.PNJ, this);
+                                tileArray[x, y] = new Tile(true, TileEnum.ROCK, this);
                                 x = 0;
                                 y++;
                             }
                             else
                             {
-                                tileArray[x, y] = new Tile(false, TileEnum.PNJ, this);
+                                tileArray[x, y] = new Tile(true, TileEnum.ROCK, this);
+                                x++;
+                            }
+                        }
+                        else if (xml.Value == "StonePath")
+                        {
+                            if (x == Width - 1)
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.STONEPATH, this);
+                                x = 0;
+                                y++;
+                            }
+                            else
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.STONEPATH, this);
                                 x++;
                             }
                         }

@@ -132,6 +132,16 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap floor {
+            get {
+                object obj = ResourceManager.GetObject("floor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap herbe {
             get {
                 object obj = ResourceManager.GetObject("herbe", resourceCulture);
@@ -175,6 +185,26 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         internal static System.Drawing.Bitmap pont_vertcal {
             get {
                 object obj = ResourceManager.GetObject("pont_vertcal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rock {
+            get {
+                object obj = ResourceManager.GetObject("rock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stonepath {
+            get {
+                object obj = ResourceManager.GetObject("stonepath", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

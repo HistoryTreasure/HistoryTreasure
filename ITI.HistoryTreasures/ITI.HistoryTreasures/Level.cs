@@ -38,10 +38,8 @@ namespace ITI.HistoryTreasures
             _isFinish = false;
             _mainCharacter = CreateMain(ctx, 0, 0, CharacterEnum.MCFACE, "Judd");
             _pnjs = new List<PNJ>();
-            //_pnj = CreatePNJ(Theme.Game, 0, 16, CharacterEnum.GUARDFACE, "lol", "zd !");
-            //_pnj = CreatePNJ(Theme.Game, 0, 32, CharacterEnum.GUARDFACE, "re", "qdzqdz !");
             _pnj = CreatePNJ(Theme.Game, 48, 48, CharacterEnum.GUARDFACE, "Kiu", "Bonjour étranger.");
-            _mCtx = new Map(this, 10, 10);
+            _mCtx = new Map(this);
             _clues = new List<Clue>();
             _clue = CreateClue(this.Theme, 128, 128, ClueEnum.LIVRE, "Livre",
                 "You want to know the true ? Sorry I didn't do that");
@@ -55,8 +53,6 @@ namespace ITI.HistoryTreasures
             get { return _name; }
         }
 
-       
-
         /// <summary>
         /// Return the PNJ list.
         /// </summary>
@@ -69,10 +65,10 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Gets the clues.
+        /// Gets the clues list.
         /// </summary>
         /// <value>
-        /// The clues.
+        /// The clues list.
         /// </value>
         public List<Clue> Clues
         {
@@ -115,10 +111,8 @@ namespace ITI.HistoryTreasures
             get { return _pnj; }
         }
 
-        
-
         /// <summary>
-        /// Creates the PNJ.
+        /// Creates a PNJ.
         /// </summary>
         /// <param name="gctx">The GCTX.</param>
         /// <param name="X">The x position .</param>
@@ -133,7 +127,7 @@ namespace ITI.HistoryTreasures
             return p;
         }
 
-        
+
         /// <summary>
         /// Creates the main.
         /// </summary>
@@ -153,7 +147,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Creates the clue.
+        /// Creates a clue.
         /// </summary>
         /// <param name="ctx">The CTX.</param>
         /// <param name="x">The x.</param>
@@ -180,7 +174,7 @@ namespace ITI.HistoryTreasures
             get { return _mainCharacter; }
         }
 
-   
+
         /// <summary>
         /// Interactions the with PNJ.
         /// </summary>
@@ -191,14 +185,14 @@ namespace ITI.HistoryTreasures
             string _talk = "";
 
             for (int i = 0; i < Pnjs.Count; i++)
+            {
+                if (MainCharacter.CanInteract(Pnj.HitBox))
                 {
-                    if (MainCharacter.CanInteract(Pnj.HitBox))
-                    { 
-                        key = KeyEnum.action;
-                        _talk = _pnjs[i].Speech;
-                        break;
-                    }
+                    key = KeyEnum.action;
+                    _talk = _pnjs[i].Speech;
+                    break;
                 }
+            }
             return _talk;
         }
 
