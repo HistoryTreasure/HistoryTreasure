@@ -40,7 +40,7 @@ namespace ITI.HistoryTreasures.MapEditor
                     {
                         xElements.Add(new XElement("Tile", "Water"));
                     }
-                    else if (p.Name == "ff08040")
+                    else if (p.Name == "ffc08040")
                     {
                         xElements.Add(new XElement("Tile", "Floor"));
                     }
@@ -52,7 +52,7 @@ namespace ITI.HistoryTreasures.MapEditor
                     {
                         xElements.Add(new XElement("Tile", "Home"));
                     }
-                    else if (p.Name == "ff040c0")
+                    else if (p.Name == "ffa08040")
                     {
                         xElements.Add(new XElement("Tile", "PNJ"));
                     }
