@@ -38,11 +38,10 @@ namespace ITI.HistoryTreasures
             _isFinish = false;
             _mainCharacter = CreateMain(ctx, 0, 0, CharacterEnum.MCFACE, "Judd");
             _pnjs = new List<PNJ>();
-            _pnj = CreatePNJ(Theme.Game, 48, 48, CharacterEnum.GUARDFACE, "Kiu", "Bonjour étranger.");
+            AddPnj(Name);
             _mCtx = new Map(this);
             _clues = new List<Clue>();
-            _clue = CreateClue(this.Theme, 128, 128, ClueEnum.LIVRE, "Livre",
-                "You want to know the true ? Sorry I didn't do that");
+            AddClues(Name);
         }
 
         /// <summary>
@@ -238,6 +237,37 @@ namespace ITI.HistoryTreasures
         public bool IsOpen
         {
             get { return _isOpen; }
+        }
+
+        /// <summary>
+        /// Adds the PNJ.
+        /// </summary>
+        /// <returns></returns>
+        public List<PNJ> AddPnj(string name)
+        {
+            if (name == "1_1")
+            {
+                Pnjs.Add(CreatePNJ(Theme.Game, 256, 256, CharacterEnum.GUARDFACE, "Hawke", "Hello world !"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 369, 369, CharacterEnum.GUARDFACE, "Kiu", "Good morning !"));
+            }
+            return Pnjs;
+        }
+
+        /// <summary>
+        /// Adds the clues.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        public List<Clue> AddClues(string name)
+        {
+            if (name == "1_1")
+            {
+                Clues.Add(CreateClue(_ctx, 150, 150, ClueEnum.LIVRE, "Book",
+                    "You want to know ? Sorry I don't do that ?"));
+                Clues.Add(CreateClue(_ctx, 300, 300, ClueEnum.LIVRE, "Livre",
+                    "I know the story"));
+            }
+            return Clues;
         }
     }
 }
