@@ -15,6 +15,9 @@ namespace ITI.HistoryTreasures.MapEditor
         public MapEditor()
         {
             InitializeComponent();
+
+            BitmapToXML p = new BitmapToXML();
+            p.Translate();
         }
 
         /// <summary>
