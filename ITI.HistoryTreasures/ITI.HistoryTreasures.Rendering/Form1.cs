@@ -110,6 +110,18 @@ namespace ITI.HistoryTreasures.Rendering
             this.Refresh();
         }
 
-        
+        private void interactionsControl1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void gameControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void riddleControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

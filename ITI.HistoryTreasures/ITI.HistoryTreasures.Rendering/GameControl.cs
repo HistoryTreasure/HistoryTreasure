@@ -179,7 +179,9 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     return;
                 }
-                MessageBox.Show(MC.Interact(KeyEnum.action));
+                //MessageBox.Show(MC.Interact(KeyEnum.action));
+                HistoryTreasures parent = (HistoryTreasures)this.ParentForm;
+                parent.SetInteractionMessage(MC.Interact(KeyEnum.action));
             }
         }
     }
