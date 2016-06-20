@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace ITI.HistoryTreasures
 {
@@ -9,47 +11,52 @@ namespace ITI.HistoryTreasures
     {
         readonly Level _level;
         Tile[,] _tileArray;
+        List<Hitbox> hitboxes;
+        readonly XmlTextReader test;
 
         /// <summary>
         /// This constructor create a Map.
         /// </summary>
         /// <param name="level">Level context.</param>
-        public Map(Level level, int width, int height)
+        public Map(Level level)
         {
             _level = level;
-            TileArray = _tileArray;
-            _tileArray = new Tile[/*width, height*/ 5, 5];
-            for (int i = 0; i < width; i++)
+
+            test = new XmlTextReader(level.Name + ".xml");
+
+            _tileArray = new Tile[ArrayWidth(test), ArrayHeigth(test)];
+
+            _tileArray = CreateMap(TileArray, test);
+
+            level.MainCharacter.MCtx = this;
+            CreateTileHitbox(TileArray);
+        }
+
+        /// <summary>
+        /// Creates the tile hitbox.
+        /// </summary>
+        /// <param name="tileArray">The tile array.</param>
+        public void CreateTileHitbox(Tile[,] tileArray)
+        {
+            int x = 0;
+            int y = 0;
+
+            for (int i = 0; i < tileArray.GetLength(0); i++)
             {
-                for (int j = 0; j < height; j++)
+                for (int j = 0; j < tileArray.GetLength(1); j++)
                 {
-                    //_tileArray[i, j] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[0, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[0, 1] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[0, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[0, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[0, 4] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[1, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[1, 1] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[1, 2] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[1, 3] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[1, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[2, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[2, 1] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[2, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[2, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[2, 4] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[3, 0] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[3, 1] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[3, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[3, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[3, 4] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[4, 0] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[4, 1] = new Tile(true, TileEnum.WATER, level.MapContext);
-                    _tileArray[4, 2] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[4, 3] = new Tile(false, TileEnum.GRASS, level.MapContext);
-                    _tileArray[4, 4] = new Tile(true, TileEnum.WATER, level.MapContext);
+                    TileArray[i, j].posX = x;
+                    TileArray[i, j].posY = y;
+
+                    if (TileArray[i, j].IsSolid == true)
+                    {
+                        TileArray[i, j].CreateTileHitbox(x, y);
+                    }
+
+                    x += 32;
                 }
+                x = 0;
+                y += 32;
             }
         }
 
@@ -57,11 +64,187 @@ namespace ITI.HistoryTreasures
         /// This property returns a level.
         /// </summary>
         public Level Level
-        { 
+        {
             get { return _level; }
         }
 
+        /// <summary>
+        /// Get the Width of the array from an XML
+        /// </summary>
+        /// <param name="xml">The xml.</param>
+        /// <returns>The width in a int</returns>
+        private int ArrayWidth(XmlTextReader xml)
+        {
+            int arrayWidth = 0;
 
+            while (xml.Read())
+            {
+                if (xml.Name == "Width")
+                {
+                    xml.Read();
+                    arrayWidth = Convert.ToInt32(xml.Value);
+                    return arrayWidth;
+                }
+            }
+
+            throw new ArgumentException("The XML dosn't contains a width information");
+        }
+
+        /// <summary>
+        /// Arrays the heigth.
+        /// </summary>
+        /// <param name="xml">The XML.</param>
+        /// <returns>The height in a int</returns>
+        private int ArrayHeigth(XmlTextReader xml)
+        {
+            int arrayHeight = 0;
+
+            while (xml.Read())
+            {
+                if (xml.Name == "Height")
+                {
+                    xml.Read();
+                    arrayHeight = Convert.ToInt32(xml.Value);
+                    return arrayHeight;
+                }
+            }
+
+            throw new ArgumentException("The XML dosn't contains a height information");
+        }
+
+        /// <summary>
+        /// Creates the map.
+        /// </summary>
+        /// <param name="tileArray">The tile array.</param>
+        /// <param name="xml">The XML.</param>
+        /// <returns>The tilearray of the map</returns>
+        /// <exception cref="System.ArgumentException">
+        /// The tileArray must not be empty
+        /// or
+        /// The XML must not be empty
+        /// </exception>
+        private Tile[,] CreateMap(Tile[,] tileArray, XmlTextReader xml)
+        {
+            int x = 0;
+            int y = 0;
+            if (TileArray == null)
+            {
+                throw new ArgumentException("The tileArray must not be empty");
+            }
+            if (xml == null)
+            {
+                throw new ArgumentException("The XML must not be empty");
+            }
+
+            while (xml.Read())
+            {
+                {
+                    if (xml.Name == "Tile")
+                    {
+                        xml.Read();
+                        if (xml.Value == "Water")
+                        {
+                            if (x == Width - 1)
+                            {
+                                tileArray[x, y] = new Tile(true, TileEnum.WATER, this);
+                                x = 0;
+                                y++;
+                            }
+                            else
+                            {
+                                tileArray[x, y] = new Tile(true, TileEnum.WATER, this);
+                                x++;
+                            }
+                        }
+                        else if (xml.Value == "Bridge")
+                        {
+                            if (x == Width - 1)
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.BRIDGE, this);
+                                x = 0;
+                                y++;
+                            }
+                            else
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.BRIDGE, this);
+                                x++;
+                            }
+                        }
+                        else if (xml.Value == "Home")
+                        {
+                            if (x == Width - 1)
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.HOME, this);
+                                x = 0;
+                                y++;
+                            }
+                            else
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.HOME, this);
+                                x++;
+                            }
+                        }
+                        else if (xml.Value == "Floor")
+                        {
+                            if (x == Width - 1)
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.FLOOR, this);
+                                x = 0;
+                                y++;
+                            }
+                            else
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.FLOOR, this);
+                                x++;
+                            }
+                        }
+                        else if (xml.Value == "Grass")
+                        {
+                            if (x == Width - 1)
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.GRASS, this);
+                                x = 0;
+                                y++;
+                            }
+                            else
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.GRASS, this);
+                                x++;
+                            }
+                        }
+                        else if (xml.Value == "Rock")
+                        {
+                            if (x == Width - 1)
+                            {
+                                tileArray[x, y] = new Tile(true, TileEnum.ROCK, this);
+                                x = 0;
+                                y++;
+                            }
+                            else
+                            {
+                                tileArray[x, y] = new Tile(true, TileEnum.ROCK, this);
+                                x++;
+                            }
+                        }
+                        else if (xml.Value == "StonePath")
+                        {
+                            if (x == Width - 1)
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.STONEPATH, this);
+                                x = 0;
+                                y++;
+                            }
+                            else
+                            {
+                                tileArray[x, y] = new Tile(false, TileEnum.STONEPATH, this);
+                                x++;
+                            }
+                        }
+                    }
+                }
+            }
+            return tileArray;
+        }
 
         /// <summary>
         /// This property returns field tilearray.
@@ -77,7 +260,7 @@ namespace ITI.HistoryTreasures
         /// </summary>
         public int Height
         {
-            get { return _tileArray.GetLength(1);  }
+            get { return _tileArray.GetLength(1); }
         }
 
         /// <summary>
@@ -86,6 +269,35 @@ namespace ITI.HistoryTreasures
         public int Width
         {
             get { return _tileArray.GetLength(0); }
+        }
+
+        /// <summary>
+        /// Gets the hitboxes of all elements in the map except maincharacter.
+        /// </summary>
+        /// <param name="map">The map.</param>
+        /// <returns></returns>
+        public List<Hitbox> GetHitboxes(Map map)
+        {
+            hitboxes = new List<Hitbox>();
+            foreach (Tile tile in TileArray)
+            {
+                if (tile.IsSolid)
+                {
+                    hitboxes.Add(tile.TileHitbox);
+                }
+            }
+
+            foreach (PNJ pnj in Level.Pnjs)
+            {
+                hitboxes.Add(pnj.HitBox);
+            }
+
+            foreach (Clue clue in Level.Clues)
+            {
+                hitboxes.Add(clue.HitBox);
+            }
+
+            return hitboxes;
         }
     }
 }

@@ -9,11 +9,14 @@ namespace ITI.HistoryTreasures
     {
         readonly string _name;
         bool _isFinish;
-        readonly List<PNJ> _pnj;
+        readonly List<PNJ> _pnjs;
+        readonly PNJ _pnj;
         readonly Theme _ctx;
         readonly MainCharacter _mainCharacter;
         public List<Clue> _clues;
+        readonly Clue _clue;
         readonly Map _mCtx;
+        bool _isOpen;
 
         /// <summary>
         /// This constructor create a level.
@@ -22,9 +25,9 @@ namespace ITI.HistoryTreasures
         /// <param name="name">This parameter reference name of level.</param>
         public Level(Theme ctx, string name)
         {
-            for(int i = 0; i < ctx.Levels.Count; i++)
+            for (int i = 0; i < ctx.Levels.Count; i++)
             {
-                if(ctx.Levels[i].Name == name)
+                if (ctx.Levels[i].Name == name)
                 {
                     throw new InvalidOperationException("You cannot create two levels with same name");
                 }
@@ -33,10 +36,12 @@ namespace ITI.HistoryTreasures
             _ctx = ctx;
             _name = name;
             _isFinish = false;
-            _mainCharacter = CreateMain(ctx,16,16,"Test", "Judd" );
-            _pnj = new List<PNJ>();
-            _mCtx = new Map(this, 10, 10);
+            _mainCharacter = CreateMain(ctx, 0, 0, CharacterEnum.MCFACE, "Judd");
+            _pnjs = new List<PNJ>();
+            AddPnj(Name);
+            _mCtx = new Map(this);
             _clues = new List<Clue>();
+            AddClues(Name);
         }
 
         /// <summary>
@@ -53,14 +58,31 @@ namespace ITI.HistoryTreasures
         /// <value>
         /// The PNJ.
         /// </value>
-        public List<PNJ> PNJ
+        public List<PNJ> Pnjs
         {
-            get { return _pnj; }
+            get { return _pnjs; }
         }
 
+        /// <summary>
+        /// Gets the clues list.
+        /// </summary>
+        /// <value>
+        /// The clues list.
+        /// </value>
         public List<Clue> Clues
         {
             get { return _clues; }
+        }
+
+        /// <summary>
+        /// Gets the clue.
+        /// </summary>
+        /// <value>
+        /// The clue.
+        /// </value>
+        public Clue Clue
+        {
+            get { return _clue; }
         }
 
         /// <summary>
@@ -81,7 +103,15 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Creates the PNJ.
+        /// This property returns PNJ.
+        /// </summary>
+        public PNJ Pnj
+        {
+            get { return _pnj; }
+        }
+
+        /// <summary>
+        /// Creates a PNJ.
         /// </summary>
         /// <param name="gctx">The GCTX.</param>
         /// <param name="X">The x position .</param>
@@ -90,46 +120,75 @@ namespace ITI.HistoryTreasures
         /// <param name="name">The name.</param>
         /// <param name="speech">The speech.</param>
         /// <returns></returns>
-        public PNJ CreatePNJ(Game gctx, int X, int Y, string bitMapName, string name, string speech)
+        public PNJ CreatePNJ(Game gctx, int X, int Y, CharacterEnum bitMapName, string name, string speech)
         {
             PNJ p = new PNJ(gctx, this, X, Y, bitMapName, name, speech);
-            _pnj.Add(p);
             return p;
         }
 
-        public MainCharacter CreateMain(Theme ctx, int x, int y, string bitMapName, string name)
+
+        /// <summary>
+        /// Creates the main.
+        /// </summary>
+        /// <param name="ctx">The CTX.</param>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="bitMapName">Name of the bit map.</param>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        /// <exception cref="System.InvalidOperationException">you cannot create two main character</exception>
+        public MainCharacter CreateMain(Theme ctx, int x, int y, CharacterEnum bitMapName, string name)
         {
             if (MainCharacter != null)
-                throw new InvalidOperationException("you cannot crate two main character");
+            { throw new InvalidOperationException("you cannot create two main character"); }
 
-            return new MainCharacter(ctx.Game, x, y, bitMapName, name); 
-
+            return new MainCharacter(ctx.Game, this, x, y, bitMapName, name);
         }
 
         /// <summary>
-        /// This property returns the MainCharacter.
+        /// Creates a clue.
         /// </summary>
+        /// <param name="ctx">The CTX.</param>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
+        /// <param name="bitMapName">Name of the bit map.</param>
+        /// <param name="name">The name.</param>
+        /// <param name="speech">The speech.</param>
+        /// <returns></returns>
+        public Clue CreateClue(Theme ctx, int x, int y, ClueEnum bitMapName, string name, string speech)
+        {
+            Clue c = new Clue(name, this, bitMapName, x, y, speech);
+            _clues.Add(c);
+            return c;
+        }
+
+        /// <summary>
+        /// Gets the main character.
+        /// </summary>
+        /// <value>
+        /// The main character.
+        /// </value>
         public MainCharacter MainCharacter
         {
             get { return _mainCharacter; }
         }
 
+
+        /// <summary>
+        /// Interactions the with PNJ.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns></returns>
         public string InteractionWithPNJ(KeyEnum key)
         {
             string _talk = "";
-            for(int i = 0; i < _pnj.Count; i++)
-            {
 
-                if(((_mainCharacter.HitBox.xA - _pnj[i].HitBox.xA > 32) || (_mainCharacter.HitBox.xA - _pnj[i].HitBox.xA < 33)) 
-                    || ((_pnj[i].HitBox.xA - _mainCharacter.HitBox.xA > 32) || (_pnj[i].HitBox.xA - _mainCharacter.HitBox.xA < 33))
-                    && ((_pnj[i].HitBox.yA - _mainCharacter.HitBox.yA > 32) || (_pnj[i].HitBox.yA - _mainCharacter.HitBox.yA < 33)) 
-                    || ((_mainCharacter.HitBox.yA - _pnj[i].HitBox.yA > 32) || (_mainCharacter.HitBox.yA - _pnj[i].HitBox.yA < 33)))
+            for (int i = 0; i < Pnjs.Count; i++)
+            {
+                if (MainCharacter.CanInteract(Pnjs[i].HitBox))
                 {
                     key = KeyEnum.action;
-                    _talk = _pnj[i].Speech;
-                }
-                else
-                {
+                    _talk = _pnjs[i].Speech;
                     break;
                 }
             }
@@ -147,27 +206,68 @@ namespace ITI.HistoryTreasures
             get { return _mCtx; }
         }
 
-        /*public string InteractionsWithClue(KeyEnum key)
+        /// <summary>
+        /// Interactionses the with clue.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns></returns>
+        public string InteractionsWithClue(KeyEnum key)
         {
             string _speech = "";
-            for (int i = 0; i < _clues.Count; i++)
+
+            for (int i = 0; i < Clues.Count; i++)
             {
-                if (((_mainCharacter.HitBox.xA - _clues[i].HitBox.xA > 32) || (_mainCharacter.HitBox.xA - _clues[i].HitBox.xA < 33))
-                   || ((_clues[i].HitBox.xA - _mainCharacter.HitBox.xA > 32) || (_clues[i].HitBox.xA - _mainCharacter.HitBox.xA < 33))
-                   && ((_clues[i].HitBox.yA - _mainCharacter.HitBox.yA > 32) || (_clues[i].HitBox.yA - _mainCharacter.HitBox.yA < 33))
-                   || ((_mainCharacter.HitBox.yA - _clues[i].HitBox.yA > 32) || (_mainCharacter.HitBox.yA - _clues[i].HitBox.yA < 33)))
+                if (MainCharacter.CanInteract(Clues[i].HitBox))
                 {
                     key = KeyEnum.action;
                     _speech = _clues[i].Speech;
-                }
-
-                else
-                {
                     break;
                 }
             }
-
             return _speech;
-        }*/
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether this instance is open.
+        /// Allow to quit the level when user win.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is open; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsOpen
+        {
+            get { return _isOpen; }
+        }
+
+        /// <summary>
+        /// Adds the PNJ.
+        /// </summary>
+        /// <returns></returns>
+        public List<PNJ> AddPnj(string name)
+        {
+            if (name == "1_1")
+            {
+                Pnjs.Add(CreatePNJ(Theme.Game, 256, 256, CharacterEnum.GUARDFACE, "Hawke", "Hello world !"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 369, 369, CharacterEnum.GUARDFACE, "Kiu", "Good morning !"));
+            }
+            return Pnjs;
+        }
+
+        /// <summary>
+        /// Adds the clues.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        public List<Clue> AddClues(string name)
+        {
+            if (name == "1_1")
+            {
+                Clues.Add(CreateClue(_ctx, 150, 150, ClueEnum.LIVRE, "Book",
+                    "You want to know ? Sorry I don't do that ?"));
+                Clues.Add(CreateClue(_ctx, 300, 300, ClueEnum.LIVRE, "Livre",
+                    "I know the story"));
+            }
+            return Clues;
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace ITI.HistoryTreasures
     {
         int _positionX;
         int _positionY;
-        string _bitMapName;
+        CharacterEnum _bitMapName;
         string _name;
         readonly Game _ctx;
         readonly Hitbox _hitBox;
@@ -24,14 +24,14 @@ namespace ITI.HistoryTreasures
         /// <param name="Y">This parameter reference vertical position with an int.</param>
         /// <param name="bitMapName">This parameter reference appaerance of Character.</param>
         /// <param name="name">This parameter reference name of Character.</param>
-        public Character(Game ctx, int X, int Y, string bitMapName, string name)
+        public Character(Game ctx, int X, int Y, CharacterEnum bitMapName, string name)
         {
             _ctx = ctx;
             _positionX = X;
             _positionY = Y;
             _bitMapName = bitMapName;
             _name = name;
-            _hitBox = new Hitbox(positionX -16, positionY, positionX + 16, positionY + 16);
+            _hitBox = new Hitbox(positionX, positionY + 16, positionX + 32, positionY + 32, GetType());
         }
 
         /// <summary>
@@ -44,9 +44,10 @@ namespace ITI.HistoryTreasures
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("You cannot move outside the map");
-                }
-                    _positionX = value;      
+                    _positionX = 0;
+                    return;
+                } 
+                _positionX = value;
             }
         }
 
@@ -60,20 +61,22 @@ namespace ITI.HistoryTreasures
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("You cannot move outside the map");
+                    _positionY = 0;
+                    return;
                 }
-
                 _positionY = value;
             }
         }
 
         /// <summary>
-        /// This property returns appaerance of Character.
+        /// Gets the name of the character bitmap.
         /// </summary>
-        public string BitMapName
+        /// <value>
+        /// The name of the character bitmap.
+        /// </value>
+        public CharacterEnum CharacterBitmapName
         {
             get { return _bitMapName; }
-            set { _bitMapName = value; }
         }
 
         /// <summary>
@@ -101,6 +104,6 @@ namespace ITI.HistoryTreasures
             get { return _hitBox; }
         }
 
-        
+
     }
 }

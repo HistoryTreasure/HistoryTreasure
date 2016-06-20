@@ -9,6 +9,8 @@ namespace ITI.HistoryTreasures
     {
         readonly int _speed;
         int _life;
+        Map _mCtx;
+        readonly Level _lCtx;
 
         /// <summary>
         /// This constructor allow to create MainCharacter.
@@ -18,7 +20,7 @@ namespace ITI.HistoryTreasures
         /// <param name="Y">This parameter reference vertical position with an int.</param>
         /// <param name="bitMapName">This parameter reference appaerance of Character.</param>
         /// <param name="name">This parameter reference name of PNJ.</param>
-        public MainCharacter(Game ctx, int X, int Y, string bitMapName, string name)
+        public MainCharacter(Game ctx, Level lCtx, int X, int Y, CharacterEnum bitMapName, string name)
             : base(ctx, X, Y, bitMapName, name)
         {
             if (X < 0 || Y < 0)
@@ -26,18 +28,9 @@ namespace ITI.HistoryTreasures
                 throw new ArgumentException("You cannot create character to this coordonate");
             }
 
-            else if (X < 16)
-            {
-                throw new ArgumentException("You cannot create a character with his hitbox outside the map.");
-            }
-
-            /*else if(this != null)
-            {
-                throw new InvalidOperationException();
-            }*/
-
-            _speed = 1;
+            _speed = 6;
             _life = 3;
+            _lCtx = lCtx;
         }
 
         /// <summary>
@@ -46,6 +39,16 @@ namespace ITI.HistoryTreasures
         public int Speed
         {
             get { return _speed; }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <value>
+        /// The l CTX.
+        /// </value>
+        public Level LCtx
+        {
+            get { return _lCtx; }
         }
 
         /// <summary>
@@ -63,6 +66,17 @@ namespace ITI.HistoryTreasures
 
                 _life = value;
             }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <value>
+        /// The m CTX.
+        /// </value>
+        public Map MCtx
+        {
+            get { return _mCtx; }
+            set { _mCtx = value; }
         }
 
         /// <summary>
@@ -84,40 +98,103 @@ namespace ITI.HistoryTreasures
         /// <param name="key"></param>
         public void Movement(KeyEnum key)
         {
-            if (key == KeyEnum.up)
+            if (key == KeyEnum.down)
             {
-                positionY = positionY - Speed;
-                HitBox.yA--;
-                HitBox.yC--;
-            }
-            else if (key == KeyEnum.down)
-            {
-                if (positionY == 16)
-                    return;
-                else
+                positionY += Speed;
+
+                if (positionY >= (MCtx.TileArray.GetLength(0) * 32) - 32)
                 {
-                    positionY = positionY + Speed;
-                    HitBox.yA++;
-                    HitBox.yC++;
+                    positionY = (MCtx.TileArray.GetLength(0) * 32) - 32;
+                }
+
+                HitBox.UpdateHitbox(positionX, positionY);
+
+                foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
+                {
+                    if (HitBox.Overlaps(hitbox))
+                    {
+                        positionY = hitbox.yA - 32;
+                        HitBox.UpdateHitbox(positionX, positionY);
+                    }
+                }
+
+
+            }
+            else if (key == KeyEnum.up)
+            {
+                positionY -= Speed;
+                HitBox.UpdateHitbox(positionX, positionY);
+                foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
+                {
+                    if (HitBox.Overlaps(hitbox))
+                    {
+                        positionY = hitbox.yC - 16;
+                        HitBox.UpdateHitbox(positionX, positionY);
+                    }
                 }
             }
             else if (key == KeyEnum.right)
             {
-                positionX = positionX + Speed;
-                HitBox.xA++;
-                HitBox.xC++;
+                positionX += Speed;
+
+                if (positionX >= (MCtx.TileArray.GetLength(1) * 32) - 32)
+                {
+                    positionX = (MCtx.TileArray.GetLength(1) * 32) - 32;
+                }
+
+                HitBox.UpdateHitbox(positionX, positionY);
+                foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
+                {
+                    if (HitBox.Overlaps(hitbox))
+                    {
+                        positionX = hitbox.xA - 32;
+                        HitBox.UpdateHitbox(positionX, positionY);
+                    }
+                }
             }
             else if (key == KeyEnum.left)
             {
-                if (positionX == 16)
-                    return;
-                else
+                positionX -= Speed;
+                HitBox.UpdateHitbox(positionX, positionY);
+                foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
                 {
-                    positionX = positionX - Speed;
-                    HitBox.xA--;
-                    HitBox.xC--;
+                    if (HitBox.Overlaps(hitbox))
+                    {
+                        positionX = hitbox.xC;
+                        HitBox.UpdateHitbox(positionX, positionY);
+                    }
                 }
             }
+        }
+
+        /// <summary>
+        /// Interacts the specified key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        public string Interact(KeyEnum key)
+        {
+            string speech = "";
+
+            if (key == KeyEnum.action)
+            {
+                speech = LCtx.InteractionWithPNJ(key);
+                if (speech == "")
+                {
+                    speech = LCtx.InteractionsWithClue(key);
+                }
+            }
+            return speech;
+        }
+
+        /// <summary>
+        /// Talkses the specified other.
+        /// </summary>
+        /// <param name="other">The other.</param>
+        /// <returns></returns>
+        public bool CanInteract(Hitbox other)
+        {
+            double distance = Math.Sqrt(Math.Pow(HitBox.xA - other.xA, 2) + Math.Pow(HitBox.yA - other.yA, 2));
+            return distance < 40;
         }
     }
 }

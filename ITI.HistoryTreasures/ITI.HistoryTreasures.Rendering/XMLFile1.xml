@@ -14,6 +14,26 @@
       <Tile type ="Bridge"/>
       <Tile type ="Bridge"/>
     </Tiles>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+   <xs:element name="water" type="w1"/>
+   <xs:complexType name="w1"/>
+
+   <xs:element name="grass" type="g1" substitutionGroup="water"/>
+      <xs:complexType name="g1">
+         <xs:complexContent>
+            <xs:extension base="w1">
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+
+   <xs:complexType name="bridge">
+      <xs:sequence>
+         <xs:element ref="water"/>
+         <xs:element name="grass" type="xs:int"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
     <Size width ="30" height="30"/>
   </map>
 

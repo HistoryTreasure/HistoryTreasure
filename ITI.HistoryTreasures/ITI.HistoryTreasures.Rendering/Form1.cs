@@ -19,7 +19,7 @@ namespace ITI.HistoryTreasures.Rendering
         
         Bitmap _herb = Properties.Resources.herbe;
         Theme _tCtx;
-
+        Level _level;
 
         /// <summary>
         /// This contructor instantiate HistoryTreasures.
@@ -28,8 +28,7 @@ namespace ITI.HistoryTreasures.Rendering
         {
             InitializeComponent();
             Game g = new Game();
-            _tCtx = g.CreateTheme("Theme");
-            gameControl1.LevelContext = new Level(_tCtx, "Test");
+            gameControl1.LevelContext = g.Check();
         }
 
         //public void EnableDoubleBuffering()
@@ -104,6 +103,25 @@ namespace ITI.HistoryTreasures.Rendering
         private void gameControl1_SizeChanged(object sender, EventArgs e)
         {
             this.Refresh();
+        }
+
+        private void RiddleControl(object sender, EventArgs e)
+        {
+            this.Refresh();
+        }
+
+        private void interactionsControl1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void gameControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void riddleControl1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -70,6 +70,12 @@
     <Compile Include="GameControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="InteractionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InteractionsControl.Designer.cs">
+      <DependentUpon>InteractionsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Items.cs" />
     <Compile Include="MapDesign.cs" />
     <Compile Include="Program.cs" />
@@ -77,6 +83,13 @@
     <Compile Include="Rendering.cs" />
     <Compile Include="Resource.cs" />
     <Compile Include="ResourcesManager.cs" />
+    <Compile Include="RiddleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RiddleControl.Designer.cs">
+      <DependentUpon>RiddleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RiddleManager.cs" />
     <Compile Include="Sound.cs" />
     <Compile Include="Sprites.cs" />
     <Compile Include="TileG.cs" />
@@ -85,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameControl.resx">
       <DependentUpon>GameControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InteractionsControl.resx">
+      <DependentUpon>InteractionsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,6 +112,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RiddleControl.resx">
+      <DependentUpon>RiddleControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="UMLRender.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -129,6 +148,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\base.bmp" />
+    <None Include="Resources\droite.png" />
+    <None Include="Resources\img_X4_Y10.png" />
+    <None Include="Resources\pont vertcal.png" />
+    <None Include="Resources\img_X1_Y0.png" />
+    <None Include="Resources\audio.wav" />
+    <None Include="Resources\livre.png" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\img_X0_Y39.png" />
+    <None Include="Resources\img_X5_Y1.png" />
+    <None Include="Resources\img_X6_Y40.png" />
+    <None Include="Resources\img_X0_Y3.png" />
+    <None Include="Resources\img_X2_Y8.png" />
+    <None Include="Resources\floor.png" />
+    <None Include="Resources\rock.png" />
+    <None Include="Resources\stonepath.png" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
