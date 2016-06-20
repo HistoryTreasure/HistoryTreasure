@@ -185,7 +185,7 @@ namespace ITI.HistoryTreasures
 
             for (int i = 0; i < Pnjs.Count; i++)
             {
-                if (MainCharacter.CanInteract(Pnj.HitBox))
+                if (MainCharacter.CanInteract(Pnjs[i].HitBox))
                 {
                     key = KeyEnum.action;
                     _talk = _pnjs[i].Speech;
@@ -217,7 +217,7 @@ namespace ITI.HistoryTreasures
 
             for (int i = 0; i < Clues.Count; i++)
             {
-                if (MainCharacter.CanInteract(Clue.HitBox))
+                if (MainCharacter.CanInteract(Clues[i].HitBox))
                 {
                     key = KeyEnum.action;
                     _speech = _clues[i].Speech;
