@@ -111,5 +111,16 @@ namespace ITI.HistoryTreasures.Rendering
         }
 
         
+        }
+
+        private void gameControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void riddleControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
