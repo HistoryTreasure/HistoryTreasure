@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace ITI.HistoryTreasures
 {
@@ -12,6 +14,8 @@ namespace ITI.HistoryTreasures
         string _name;
         string _path;
         Game _gCtx;
+        Theme _tCtx;
+        Level _lCtx;
 
         //level / theme en cours a sauvegarder
         //sauvegarde entre chaque niveau
@@ -21,20 +25,47 @@ namespace ITI.HistoryTreasures
         /// </summary>
         /// <param name="gCtx">The g CTX.</param>
         /// <param name="name">The name.</param>
-        public GameState(Game gCtx, string name)
+        public GameState(Game gCtx, Theme tCtx, Level lCtx, string name)
         {
             _gCtx = gCtx;
+            _tCtx = tCtx;
+            _lCtx = lCtx;
             _name = name;
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            XElement game = new XElement("GameState",
+                new XElement("Game", GCtx),
+                new XElement("Theme", TCtx),
+                new XElement("Level", LCtx)
+                );
+            game.Save("./GameState.xml");
+
+            Load();
         }
 
         public void Load()
         {
-            throw new NotImplementedException();
+            string save;
+            XmlTextReader reader = new XmlTextReader("GameState.xml");
+            reader.Read();
+            
+            while (reader.Read())
+            {
+                if (reader.IsStartElement())
+                {
+                    if (reader.Name == "Level")
+                    {
+                        reader.Read();
+                        if (reader.NodeType == XmlNodeType.Text)
+                        {
+                            save = reader.Value;
+                            reader.Read();
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -45,6 +76,26 @@ namespace ITI.HistoryTreasures
         public Game GCtx
         {
             get { return _gCtx; }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <value>
+        /// The t CTX.
+        /// </value>
+        public Theme TCtx
+        {
+            get { return _tCtx; }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <value>
+        /// The l CTX.
+        /// </value>
+        public Level LCtx
+        {
+            get { return _lCtx; }
         }
 
         /// <summary>
