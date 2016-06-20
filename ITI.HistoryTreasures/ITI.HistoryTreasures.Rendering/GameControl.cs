@@ -69,12 +69,12 @@ namespace ITI.HistoryTreasures.Rendering
             //Size _windowSize = HistoryTreasures.ActiveForm.Size;
             int x = 0;
             int y = 0;
-            double coefX = 1.0 * this.Width / (tileArray.GetLength(0) * TileSize);
-            double coefY = 1.0 * this.Height / (tileArray.GetLength(1) * TileSize);
+            float coefX = Width / (tileArray.GetLength(0) * TileSize);
+            float coefY = Height / (tileArray.GetLength(1) * TileSize);
             int screenTileWidth = GetArround(coefX * TileSize);
             int screenTileHeight = GetArround(coefY * TileSize);
 
-            e.Graphics.ScaleTransform(1.0f, 1.0f);
+            e.Graphics.ScaleTransform(coefX,coefY);
             //e.Graphics.RotateTransform(25);
             
             Pen p = new Pen(Color.Red, 3);
