@@ -16,7 +16,7 @@ namespace ITI.HistoryTreasures.Rendering
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HistoryTreasures());
+            Application.Run(new Form2());
         }
     }
 }
