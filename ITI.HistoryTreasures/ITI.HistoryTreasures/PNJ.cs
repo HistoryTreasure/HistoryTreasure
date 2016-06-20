@@ -8,6 +8,7 @@ namespace ITI.HistoryTreasures
     public class PNJ : Character
     {
         readonly string _speech;
+        readonly string _name;
         readonly Level _ctx;
 
         /// <summary>
@@ -53,6 +54,7 @@ namespace ITI.HistoryTreasures
                 }
             }
             _speech = speech;
+            _name = name;
 
             
         }
@@ -65,6 +67,10 @@ namespace ITI.HistoryTreasures
             get { return _speech; }
         }
 
+        public string Name
+        {
+            get { return _name; }
+        }
         /// <summary>
         /// This properties return the context of the level.
         /// </summary>
