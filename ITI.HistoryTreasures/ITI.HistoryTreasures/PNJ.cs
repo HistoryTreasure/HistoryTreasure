@@ -54,7 +54,7 @@ namespace ITI.HistoryTreasures
             }
             _speech = speech;
 
-            //ctx.Pnjs.Add(this);
+            
         }
 
         /// <summary>
