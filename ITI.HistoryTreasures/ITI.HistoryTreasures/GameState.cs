@@ -68,6 +68,32 @@ namespace ITI.HistoryTreasures
             }
         }
 
+        public Level Check()
+        {
+            foreach (Theme t in _gCtx.Themes)
+            {
+                if (t.IsFinish)
+                {
+                    continue;
+                }
+                else
+                {
+                    foreach (Level l in t.Levels)
+                    {
+                        if (l.IsFinish)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return l;
+                        }
+                    }
+                }
+            }
+            throw new InvalidOperationException("Not possible");
+        }
+
         /// <summary>
         /// </summary>
         /// <value>
