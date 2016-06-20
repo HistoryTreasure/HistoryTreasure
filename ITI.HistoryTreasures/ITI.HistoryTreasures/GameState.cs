@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace ITI.HistoryTreasures
 {
-    class GameState
+    public class GameState
     {
         string _name;
         string _path;

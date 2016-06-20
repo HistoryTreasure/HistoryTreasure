@@ -12,6 +12,11 @@ namespace ITI.HistoryTreasures.Rendering
 {
     public partial class Form2 : Form
     {
+        Game _gCtx;
+        Theme _tCtx;
+        Level _lCtx;
+        string _name;
+
         public Form2()
         {
             InitializeComponent();
@@ -22,6 +27,12 @@ namespace ITI.HistoryTreasures.Rendering
             HistoryTreasures frm = new HistoryTreasures();
             frm.Show();
             Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GameState gm = new GameState(_gCtx, _tCtx, _lCtx, _name);
+            gm.Load();
         }
     }
 }
