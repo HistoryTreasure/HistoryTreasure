@@ -53,6 +53,7 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             // gameControl1
             // 
+            this.gameControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gameControl1.GameContext = null;
             this.gameControl1.LevelContext = null;
             this.gameControl1.Location = new System.Drawing.Point(179, 12);
@@ -63,13 +64,11 @@ namespace ITI.HistoryTreasures.Rendering
             this.gameControl1.SizeChanged += new System.EventHandler(this.gameControl1_SizeChanged);
             // 
             // interactionsControl1
-            // 
             this.interactionsControl1.Location = new System.Drawing.Point(3, 12);
             this.interactionsControl1.Name = "interactionsControl1";
             this.interactionsControl1.Size = new System.Drawing.Size(170, 457);
             this.interactionsControl1.TabIndex = 2;
             this.interactionsControl1.Load += new System.EventHandler(this.interactionsControl1_Load);
-            // 
             // HistoryTreasures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

@@ -38,13 +38,10 @@ namespace ITI.HistoryTreasures
             _isFinish = false;
             _mainCharacter = CreateMain(ctx, 0, 0, CharacterEnum.MCFACE, "Judd");
             _pnjs = new List<PNJ>();
-            //_pnj = CreatePNJ(Theme.Game, 0, 16, CharacterEnum.GUARDFACE, "lol", "zd !");
-            //_pnj = CreatePNJ(Theme.Game, 0, 32, CharacterEnum.GUARDFACE, "re", "qdzqdz !");
-            _pnj = CreatePNJ(Theme.Game, 48, 48, CharacterEnum.GUARDFACE, "Kiu", "Bonjour étranger.");
-            _mCtx = new Map(this, 10, 10);
+            AddPnj(Name);
+            _mCtx = new Map(this);
             _clues = new List<Clue>();
-            _clue = CreateClue(this.Theme, 128, 128, ClueEnum.LIVRE, "Livre",
-                "You want to know the true ? Sorry I didn't do that");
+            AddClues(Name);
         }
 
         /// <summary>
@@ -54,8 +51,6 @@ namespace ITI.HistoryTreasures
         {
             get { return _name; }
         }
-
-       
 
         /// <summary>
         /// Return the PNJ list.
@@ -69,10 +64,10 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Gets the clues.
+        /// Gets the clues list.
         /// </summary>
         /// <value>
-        /// The clues.
+        /// The clues list.
         /// </value>
         public List<Clue> Clues
         {
@@ -115,10 +110,8 @@ namespace ITI.HistoryTreasures
             get { return _pnj; }
         }
 
-        
-
         /// <summary>
-        /// Creates the PNJ.
+        /// Creates a PNJ.
         /// </summary>
         /// <param name="gctx">The GCTX.</param>
         /// <param name="X">The x position .</param>
@@ -133,7 +126,7 @@ namespace ITI.HistoryTreasures
             return p;
         }
 
-        
+
         /// <summary>
         /// Creates the main.
         /// </summary>
@@ -153,7 +146,7 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Creates the clue.
+        /// Creates a clue.
         /// </summary>
         /// <param name="ctx">The CTX.</param>
         /// <param name="x">The x.</param>
@@ -180,7 +173,7 @@ namespace ITI.HistoryTreasures
             get { return _mainCharacter; }
         }
 
-   
+
         /// <summary>
         /// Interactions the with PNJ.
         /// </summary>
@@ -191,14 +184,14 @@ namespace ITI.HistoryTreasures
             string _talk = "";
 
             for (int i = 0; i < Pnjs.Count; i++)
+            {
+                if (MainCharacter.CanInteract(Pnjs[i].HitBox))
                 {
-                    if (MainCharacter.CanInteract(Pnj.HitBox))
-                    { 
-                        key = KeyEnum.action;
-                        _talk = _pnjs[i].Speech;
-                        break;
-                    }
+                    key = KeyEnum.action;
+                    _talk = _pnjs[i].Speech;
+                    break;
                 }
+            }
             return _talk;
         }
 
@@ -224,7 +217,7 @@ namespace ITI.HistoryTreasures
 
             for (int i = 0; i < Clues.Count; i++)
             {
-                if (MainCharacter.CanInteract(Clue.HitBox))
+                if (MainCharacter.CanInteract(Clues[i].HitBox))
                 {
                     key = KeyEnum.action;
                     _speech = _clues[i].Speech;
@@ -244,6 +237,37 @@ namespace ITI.HistoryTreasures
         public bool IsOpen
         {
             get { return _isOpen; }
+        }
+
+        /// <summary>
+        /// Adds the PNJ.
+        /// </summary>
+        /// <returns></returns>
+        public List<PNJ> AddPnj(string name)
+        {
+            if (name == "1_1")
+            {
+                Pnjs.Add(CreatePNJ(Theme.Game, 256, 256, CharacterEnum.GUARDFACE, "Hawke", "Hello world !"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 369, 369, CharacterEnum.GUARDFACE, "Kiu", "Good morning !"));
+            }
+            return Pnjs;
+        }
+
+        /// <summary>
+        /// Adds the clues.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        public List<Clue> AddClues(string name)
+        {
+            if (name == "1_1")
+            {
+                Clues.Add(CreateClue(_ctx, 150, 150, ClueEnum.LIVRE, "Book",
+                    "You want to know ? Sorry I don't do that ?"));
+                Clues.Add(CreateClue(_ctx, 300, 300, ClueEnum.LIVRE, "Livre",
+                    "I know the story"));
+            }
+            return Clues;
         }
     }
 }
