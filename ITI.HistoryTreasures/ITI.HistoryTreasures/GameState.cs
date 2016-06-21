@@ -45,49 +45,37 @@ namespace ITI.HistoryTreasures
             Load();
         }
 
-        public void Load()
+        public string Load()
         {
             string save;
             XmlTextReader reader = new XmlTextReader("GameState.xml");
             reader.Read();
-            
+
             while (reader.Read())
             {
-                if (reader.IsStartElement())
+                if (reader.Name == "Level")
                 {
-                    if (reader.Name == "Level")
-                    {
-                        reader.Read();
-                        if (reader.NodeType == XmlNodeType.Text)
-                        {
-                            save = reader.Value;
-                            reader.Read();
-                        }
-                    }
+                    reader.Read();
+                    return reader.Value;
                 }
             }
+
+            return "";
         }
 
         public Level Check()
         {
             foreach (Theme t in GCtx.Themes)
             {
-                if (t.IsFinish)
+                foreach (Level l in t.Levels)
                 {
-                    continue;
-                }
-                else
-                {
-                    foreach (Level l in t.Levels)
+                    if (l.Name != Load())
                     {
-                        if (l.IsFinish)
-                        {
-                            continue;
-                        }
-                        else
-                        {
-                            return l;
-                        }
+                        l.IsFinish = true;
+                    }
+                    else
+                    {
+                        return l
                     }
                 }
             }

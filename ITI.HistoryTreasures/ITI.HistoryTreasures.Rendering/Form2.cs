@@ -36,7 +36,6 @@ namespace ITI.HistoryTreasures.Rendering
             frm = new HistoryTreasures();
             GameState gm = new GameState(_gCtx, _tCtx, _lCtx, _name);
             gm.Check();
-            gm.Load();
             frm.Show();
             Hide();
         }
