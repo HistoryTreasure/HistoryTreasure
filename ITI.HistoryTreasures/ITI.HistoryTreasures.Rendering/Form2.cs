@@ -34,7 +34,7 @@ namespace ITI.HistoryTreasures.Rendering
         private void button1_Click(object sender, EventArgs e) //Button continue
         {
             frm = new HistoryTreasures();
-            GameState gm = new GameState(_gCtx, _tCtx, _lCtx, _name);
+            GameState gm = new GameState();
             gm.Check();
             frm.Show();
             Hide();

@@ -25,12 +25,11 @@ namespace ITI.HistoryTreasures
         /// </summary>
         /// <param name="gCtx">The g CTX.</param>
         /// <param name="name">The name.</param>
-        public GameState(Game gCtx, Theme tCtx, Level lCtx, string name)
+        public GameState()
         {
-            _gCtx = gCtx;
-            _tCtx = tCtx;
-            _lCtx = lCtx;
-            _name = name;
+            _gCtx = new Game();
+            _tCtx = _gCtx.CreateTheme(Name);
+            _lCtx = _tCtx.CreateLevel(Name);
         }
 
         public void Save()
@@ -48,15 +47,15 @@ namespace ITI.HistoryTreasures
         public string Load()
         {
             string save;
-            XmlTextReader reader = new XmlTextReader("GameState.xml");
-            reader.Read();
+            XmlTextReader xml = new XmlTextReader("GameState.xml");
+            xml.Read();
 
-            while (reader.Read())
+            while (xml.Read())
             {
-                if (reader.Name == "Level")
+                if (xml.Name == "Level")
                 {
-                    reader.Read();
-                    return reader.Value;
+                    xml.Read();
+                    return xml.Value;
                 }
             }
 
@@ -75,7 +74,7 @@ namespace ITI.HistoryTreasures
                     }
                     else
                     {
-                        return l
+                        return l;
                     }
                 }
             }
