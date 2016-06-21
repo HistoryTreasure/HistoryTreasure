@@ -28,7 +28,7 @@ namespace ITI.HistoryTreasures
         public GameState()
         {
             _gCtx = new Game();
-            _tCtx = _gCtx.CreateTheme(Name);
+            //_tCtx = _gCtx.CreateTheme(Name);
         }
 
         public void Save()
