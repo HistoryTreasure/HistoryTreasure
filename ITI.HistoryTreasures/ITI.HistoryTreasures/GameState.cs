@@ -70,7 +70,7 @@ namespace ITI.HistoryTreasures
 
         public Level Check()
         {
-            foreach (Theme t in _gCtx.Themes)
+            foreach (Theme t in GCtx.Themes)
             {
                 if (t.IsFinish)
                 {
