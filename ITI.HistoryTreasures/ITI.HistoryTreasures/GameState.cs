@@ -29,7 +29,6 @@ namespace ITI.HistoryTreasures
         {
             _gCtx = new Game();
             _tCtx = _gCtx.CreateTheme(Name);
-            _lCtx = _tCtx.CreateLevel(Name);
         }
 
         public void Save()
