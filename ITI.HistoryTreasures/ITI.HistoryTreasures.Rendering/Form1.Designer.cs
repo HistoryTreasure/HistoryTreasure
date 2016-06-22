@@ -99,6 +99,11 @@ namespace ITI.HistoryTreasures.Rendering
         {
             interactionsControl1.InteractionText = message;
         }
+
+        internal void IsInteractionAClue(bool isClue)
+        {
+            interactionsControl1.IsClue = isClue;
+        }
     }
 }
 
