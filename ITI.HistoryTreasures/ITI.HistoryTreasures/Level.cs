@@ -188,7 +188,7 @@ namespace ITI.HistoryTreasures
                 if (MainCharacter.CanInteract(Pnjs[i].HitBox))
                 {
                     key = KeyEnum.action;
-                    _talk = _pnjs[i].Speech;
+                    _talk = _pnjs[i].Name + (": ") + _pnjs[i].Speech;
                     break;
                 }
             }
@@ -220,7 +220,7 @@ namespace ITI.HistoryTreasures
                 if (MainCharacter.CanInteract(Clues[i].HitBox))
                 {
                     key = KeyEnum.action;
-                    _speech = _clues[i].Speech;
+                    _speech = _clues[i].Name +  (": ") + _clues[i].Speech;
                     break;
                 }
             }

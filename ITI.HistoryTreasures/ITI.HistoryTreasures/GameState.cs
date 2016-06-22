@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace ITI.HistoryTreasures
 {
-    class GameState
+    public class GameState
     {
         string _name;
         string _path;
@@ -25,12 +25,10 @@ namespace ITI.HistoryTreasures
         /// </summary>
         /// <param name="gCtx">The g CTX.</param>
         /// <param name="name">The name.</param>
-        public GameState(Game gCtx, Theme tCtx, Level lCtx, string name)
+        public GameState()
         {
-            _gCtx = gCtx;
-            _tCtx = tCtx;
-            _lCtx = lCtx;
-            _name = name;
+            _gCtx = new Game();
+            //_tCtx = _gCtx.CreateTheme(Name);
         }
 
         public void Save()
@@ -45,27 +43,41 @@ namespace ITI.HistoryTreasures
             Load();
         }
 
-        public void Load()
+        public string Load()
         {
             string save;
-            XmlTextReader reader = new XmlTextReader("GameState.xml");
-            reader.Read();
-            
-            while (reader.Read())
+            XmlTextReader xml = new XmlTextReader("GameState.xml");
+            xml.Read();
+
+            while (xml.Read())
             {
-                if (reader.IsStartElement())
+                if (xml.Name == "Level")
                 {
-                    if (reader.Name == "Level")
+                    xml.Read();
+                    return xml.Value;
+                }
+            }
+
+            return "";
+        }
+
+        public List<Theme> Check()
+        {
+            foreach (Theme t in GCtx.Themes)
+            {
+                foreach (Level l in t.Levels)
+                {
+                    if (l.Name != Load())
                     {
-                        reader.Read();
-                        if (reader.NodeType == XmlNodeType.Text)
-                        {
-                            save = reader.Value;
-                            reader.Read();
-                        }
+                        l.IsFinish = true;
+                    }
+                    else
+                    {
+                        return GCtx.Themes;
                     }
                 }
             }
+            throw new InvalidOperationException("Not possible");
         }
 
         /// <summary>

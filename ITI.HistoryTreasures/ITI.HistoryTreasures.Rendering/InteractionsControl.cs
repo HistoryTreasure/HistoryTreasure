@@ -12,8 +12,20 @@ namespace ITI.HistoryTreasures.Rendering
 {
     public partial class InteractionsControl : UserControl
     {
-        private ListBox _interactionList;
-        private string _interactionText;
+        private Label _ClueinteractionBox;
+        private Label _PNJinteractionBox;
+        private Label _PNJDialogBox;
+        private Label _ClueDialogBox;
+        private string _interactionText = "";
+        private int indexClue = 0;
+        private int indexPNJ = 0;
+        private bool _isAClue;
+
+        public bool IsClue
+        {
+            get { return _isAClue; }
+            set { _isAClue = value; }
+        }
 
         public string InteractionText
         {
@@ -21,45 +33,64 @@ namespace ITI.HistoryTreasures.Rendering
             set
             {
                 _interactionText = value;
-                _interactionList.Items.Add(_interactionText);
-                _interactionList.TopIndex = _interactionList.Items.Count - 1;
+                if (_isAClue)
+                {
+                    indexClue++;
+                    if (indexClue == 8)
+                    {
+                        _ClueinteractionBox.Text = ("\r\n") + _interactionText;
+                        indexClue = 1;
+                    }
+                    else
+                    {
+                        _ClueinteractionBox.Text += ("\r\n") + _interactionText;
+                    }
+                }
+
+                if (!_isAClue)
+                {
+                    indexPNJ++;
+                    if (indexPNJ == 8)
+                    {
+                        _PNJinteractionBox.Text = ("\r\n") + _interactionText;
+                        indexPNJ = 1;
+                    }
+                    else
+                    {
+                        _PNJinteractionBox.Text += ("\r\n") + _interactionText;
+                    }
+                }
             }
         }
 
         public InteractionsControl()
         {
-            this._interactionList = new ListBox();
-            this._interactionList.Enabled = false;
-            this._interactionList.Location = new Point(0, 0);
-            this._interactionList.Size = new Size(170, 458);
-            this.Controls.Add(this._interactionList);
+            this._ClueDialogBox = new Label();
+            this._ClueDialogBox.Location = new Point(0, 0);
+            this._ClueDialogBox.Size = new Size(50, 15);
+            this._ClueDialogBox.Text = "Clues :";
+            this.Controls.Add(this._ClueDialogBox);
+
+            this._PNJDialogBox = new Label();
+            this._PNJDialogBox.Location = new Point(0, 245);
+            this._PNJDialogBox.Size = new Size(50,15);
+            this._PNJDialogBox.Text = "Dialogs :";
+            this.Controls.Add(this._PNJDialogBox);
+
+            this._ClueinteractionBox = new Label();
+            this._ClueinteractionBox.Location = new Point(0, 5);
+            this._ClueinteractionBox.Size = new Size(170, 225);
+            this._ClueinteractionBox.Text = "";
+            this.Controls.Add(this._ClueinteractionBox);
+
+            this._PNJinteractionBox = new Label();
+            this._PNJinteractionBox.Location = new Point(0, 250);
+            this._PNJinteractionBox.Size = new Size(170, 225);
+            this._PNJinteractionBox.Text = "";
+            this.Controls.Add(this._PNJinteractionBox);
+
+
         }
-
-        //private Label _interactionBox;
-        //private string _interactionText = "";
-        //private List<string> _interactionList = new List<string>();
-        //private int index = 0;
-
-        //public string InteractionText
-        //{
-        //    get { return _interactionText; }
-        //    set
-        //    {
-        //        _interactionText = value;
-        //        _interactionList.Add(value);
-        //        index++;
-        //        _interactionBox.Text = _interactionList[index - 1];
-        //    }
-        //}
-
-        //public InteractionsControl()
-        //{
-        //    this._interactionBox = new Label();
-        //    this._interactionBox.Location = new Point(0, 0);
-        //    this._interactionBox.Size = new Size(170, 457);
-        //    this._interactionBox.Text = "";
-        //    this.Controls.Add(this._interactionBox);
-        //}
 
 
     }
