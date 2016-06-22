@@ -66,11 +66,7 @@ namespace ITI.HistoryTreasures
         {
             get { return _speech; }
         }
-
-        public string Name
-        {
-            get { return _name; }
-        }
+        
         /// <summary>
         /// This properties return the context of the level.
         /// </summary>

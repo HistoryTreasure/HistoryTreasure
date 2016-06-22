@@ -182,8 +182,11 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     return;
                 }
+                
                 HistoryTreasures parent = (HistoryTreasures)this.ParentForm;
+                parent.IsInteractionAClue(MC.IsClue);
                 parent.SetInteractionMessage(MC.Interact(KeyEnum.action));
+
             }
         }
     }

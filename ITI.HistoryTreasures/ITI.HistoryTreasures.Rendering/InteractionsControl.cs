@@ -14,8 +14,18 @@ namespace ITI.HistoryTreasures.Rendering
     {
         private Label _ClueinteractionBox;
         private Label _PNJinteractionBox;
+        private Label _PNJDialogBox;
+        private Label _ClueDialogBox;
         private string _interactionText = "";
-        private int index = 0;
+        private int indexClue = 0;
+        private int indexPNJ = 0;
+        private bool _isAClue;
+
+        public bool IsClue
+        {
+            get { return _isAClue; }
+            set { _isAClue = value; }
+        }
 
         public string InteractionText
         {
@@ -23,23 +33,52 @@ namespace ITI.HistoryTreasures.Rendering
             set
             {
                 _interactionText = value;
-                index++;
-                if (index == 7)
+                if (_isAClue)
                 {
-                    _ClueinteractionBox.Text = ("\r\n") + _interactionText;
-                    index = 1;
+                    indexClue++;
+                    if (indexClue == 8)
+                    {
+                        _ClueinteractionBox.Text = ("\r\n") + _interactionText;
+                        indexClue = 1;
+                    }
+                    else
+                    {
+                        _ClueinteractionBox.Text += ("\r\n") + _interactionText;
+                    }
                 }
-                else
+
+                if (!_isAClue)
                 {
-                    _ClueinteractionBox.Text += ("\r\n") + _interactionText;
+                    indexPNJ++;
+                    if (indexPNJ == 8)
+                    {
+                        _PNJinteractionBox.Text = ("\r\n") + _interactionText;
+                        indexPNJ = 1;
+                    }
+                    else
+                    {
+                        _PNJinteractionBox.Text += ("\r\n") + _interactionText;
+                    }
                 }
             }
         }
 
         public InteractionsControl()
         {
+            this._ClueDialogBox = new Label();
+            this._ClueDialogBox.Location = new Point(0, 0);
+            this._ClueDialogBox.Size = new Size(50, 15);
+            this._ClueDialogBox.Text = "Clues :";
+            this.Controls.Add(this._ClueDialogBox);
+
+            this._PNJDialogBox = new Label();
+            this._PNJDialogBox.Location = new Point(0, 245);
+            this._PNJDialogBox.Size = new Size(50,15);
+            this._PNJDialogBox.Text = "Dialogs :";
+            this.Controls.Add(this._PNJDialogBox);
+
             this._ClueinteractionBox = new Label();
-            this._ClueinteractionBox.Location = new Point(0, 0);
+            this._ClueinteractionBox.Location = new Point(0, 5);
             this._ClueinteractionBox.Size = new Size(170, 225);
             this._ClueinteractionBox.Text = "";
             this.Controls.Add(this._ClueinteractionBox);
@@ -49,6 +88,8 @@ namespace ITI.HistoryTreasures.Rendering
             this._PNJinteractionBox.Size = new Size(170, 225);
             this._PNJinteractionBox.Text = "";
             this.Controls.Add(this._PNJinteractionBox);
+
+
         }
 
 
