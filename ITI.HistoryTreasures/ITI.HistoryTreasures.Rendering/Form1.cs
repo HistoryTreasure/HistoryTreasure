@@ -20,59 +20,16 @@ namespace ITI.HistoryTreasures.Rendering
         Bitmap _herb = Properties.Resources.herbe;
         Theme _tCtx;
         Level _level;
+        Game g;
 
         /// <summary>
         /// This contructor instantiate HistoryTreasures.
         /// </summary>
-        public HistoryTreasures()
+        public HistoryTreasures(Game g)
         {
             InitializeComponent();
-            Game g = new Game();
             gameControl1.LevelContext = g.Check();
         }
-
-        //public void EnableDoubleBuffering()
-        //{
-        //    // Set the value of the double-buffering style bits to true.
-        //    this.SetStyle(ControlStyles.DoubleBuffer |
-        //       ControlStyles.UserPaint |
-        //       ControlStyles.AllPaintingInWmPaint,
-        //       true);
-        //    DoubleBuffered = true;
-        //    this.UpdateStyles();
-        //}
-
-
-
-
-
-        /*protected override void OnPaint(PaintEventArgs e)
-        {
-            Graphics dc = e.Graphics;
-#if  My_Debug
-
-
-            // the position,style and composition of X and Y
-            TextFormatFlags flags = TextFormatFlags.Left | TextFormatFlags.EndEllipsis;
-            Font _font = new System.Drawing.Font("Stencil", 12, FontStyle.Regular);
-            TextRenderer.DrawText(dc, "X=" + _cursX.ToString() + ":" + "Y=" + _cursY.ToString(), _font,
-               new Rectangle(900,700, 120, 20), SystemColors.ControlText, flags);
-#endif
-
-            //position of the tile
-            for (int ix = 0; ix < 800; ix += 32)
-            {
-                for (int iy = 0; iy < 600; iy += 32)
-                {
-                    _Eau = new MapDesign(g, _herb) { left = ix, Top = iy };
-                    _Eau.drawImage(dc);
-                }
-            }
-            
-            base.OnPaint(e);
-        }*/
-
-
 
         /// <summary>
         /// This method update position of the mouse for show it on screen.
@@ -87,18 +44,6 @@ namespace ITI.HistoryTreasures.Rendering
 
             this.Refresh();
         }
-
-        /// <summary>
-        /// This method refresh the screen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        //private void timer1_Tick(object sender, EventArgs e)
-        //{
-        //    this.Invalidate();
-            
-        //}
 
         private void gameControl1_SizeChanged(object sender, EventArgs e)
         {
