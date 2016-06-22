@@ -61,7 +61,7 @@ namespace ITI.HistoryTreasures
             return "";
         }
 
-        public Level Check()
+        public List<Theme> Check()
         {
             foreach (Theme t in GCtx.Themes)
             {
@@ -73,7 +73,7 @@ namespace ITI.HistoryTreasures
                     }
                     else
                     {
-                        return l;
+                        return GCtx.Themes;
                     }
                 }
             }

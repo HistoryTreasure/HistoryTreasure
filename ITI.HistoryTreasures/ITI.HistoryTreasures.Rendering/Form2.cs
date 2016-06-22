@@ -33,10 +33,10 @@ namespace ITI.HistoryTreasures.Rendering
 
         private void button1_Click(object sender, EventArgs e) //Button continue
         {
-            frm = new HistoryTreasures(Game);
             GameState gm = new GameState();
             gm.Load();
-            gm.Check();
+            Game.Themes = gm.Check();
+            frm = new HistoryTreasures(Game);
             frm.Show();
             Hide();
         }
