@@ -31,6 +31,7 @@ namespace ITI.HistoryTreasures.Rendering
             Game g = new Game();
             _tCtx = g.CreateTheme("Theme");
             _level = new Level(_tCtx, "Test");
+
             gameControl1.LevelContext = _level;
         }
 
