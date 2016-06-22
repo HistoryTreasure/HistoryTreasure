@@ -70,6 +70,12 @@
     <Compile Include="GameControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="InteractionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InteractionsControl.Designer.cs">
+      <DependentUpon>InteractionsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Items.cs" />
     <Compile Include="MapDesign.cs" />
     <Compile Include="Program.cs" />
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameControl.resx">
       <DependentUpon>GameControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InteractionsControl.resx">
+      <DependentUpon>InteractionsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -147,6 +156,14 @@
     <None Include="Resources\audio.wav" />
     <None Include="Resources\livre.png" />
     <None Include="Resources\book.png" />
+    <None Include="Resources\img_X0_Y39.png" />
+    <None Include="Resources\img_X5_Y1.png" />
+    <None Include="Resources\img_X6_Y40.png" />
+    <None Include="Resources\img_X0_Y3.png" />
+    <None Include="Resources\img_X2_Y8.png" />
+    <None Include="Resources\floor.png" />
+    <None Include="Resources\rock.png" />
+    <None Include="Resources\stonepath.png" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

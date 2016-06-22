@@ -28,6 +28,7 @@ namespace ITI.HistoryTreasures.Rendering
         {
             _resourcesManager = new ResourcesManager();
             InitializeComponent();
+            PlaySound();
         }
 
         /// <summary>
@@ -73,6 +74,9 @@ namespace ITI.HistoryTreasures.Rendering
             int screenTileWidth = GetArround(coefX * TileSize);
             int screenTileHeight = GetArround(coefY * TileSize);
 
+            e.Graphics.ScaleTransform(1.0f, 1.0f);
+            //e.Graphics.RotateTransform(25);
+            
             Pen p = new Pen(Color.Red, 3);
 
             MainCharacter MC = LevelContext.MainCharacter;
@@ -86,7 +90,7 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
-                    e.Graphics.DrawImage(tileBitmap, GetArround(coefX * t.posX), GetArround(coefY * t.posY), screenTileWidth, screenTileHeight);
+                    e.Graphics.DrawImage(tileBitmap, GetArround(coefX * t.posX), GetArround(coefY * t.posY));
 
                     if (t.IsSolid)
                     {
@@ -133,13 +137,17 @@ namespace ITI.HistoryTreasures.Rendering
             this.Name = "GameControl";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
-
-            // _sound = new Sound();
         }
 
         private ResourcesManager GetResourcesManager
         {
             get { return _resourcesManager; }
+        }
+
+        private Sound PlaySound()
+        {
+            _sound = new Sound();
+            return _sound;
         }
 
         private void GameControl_KeyDown(object sender, KeyEventArgs e)
@@ -171,7 +179,9 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     return;
                 }
-                MessageBox.Show(MC.Interact(KeyEnum.action));
+                //MessageBox.Show(MC.Interact(KeyEnum.action));
+                HistoryTreasures parent = (HistoryTreasures)this.ParentForm;
+                parent.SetInteractionMessage(MC.Interact(KeyEnum.action));
             }
         }
     }
