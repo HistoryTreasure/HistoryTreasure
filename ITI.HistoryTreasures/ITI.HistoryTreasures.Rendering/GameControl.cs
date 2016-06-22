@@ -20,6 +20,8 @@ namespace ITI.HistoryTreasures.Rendering
         ResourcesManager _resourcesManager;
         Sound _sound;
         static readonly int TileSize = 32;
+        Bitmap characterBitmap;
+        private bool right = false;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -104,7 +106,7 @@ namespace ITI.HistoryTreasures.Rendering
                 y += screenTileHeight;
             }
 
-            Bitmap characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
+            characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY), screenTileWidth, screenTileHeight);
 
             Rectangle r = new Rectangle(GetArround(coefX * MC.HitBox.xA), GetArround(coefY * MC.HitBox.yA), screenTileWidth, screenTileHeight / 2);
@@ -156,24 +158,61 @@ namespace ITI.HistoryTreasures.Rendering
         private void GameControl_KeyDown(object sender, KeyEventArgs e)
         {
             MainCharacter MC = LevelContext.MainCharacter;
+            
             if (e.KeyCode == Keys.Z)
             {
                 MC.Movement(KeyEnum.up);
+                if (right == true)
+                {
+                    characterBitmap = Properties.Resources.upLeft;
+                    right = false;
+                }
+                else
+                {
+                    characterBitmap = Properties.Resources.upRight;
+                }
                 Invalidate();
             }
             else if (e.KeyCode == Keys.S)
             {
                 MC.Movement(KeyEnum.down);
+                if (right == true)
+                {
+                    characterBitmap = Properties.Resources.downLeft;
+                    right = false;
+                }
+                else
+                {
+                    characterBitmap = Properties.Resources.downRight;
+                }
                 Invalidate();
             }
             else if (e.KeyCode == Keys.Q)
             {
                 MC.Movement(KeyEnum.left);
+                if (right == true)
+                {
+                    characterBitmap = Properties.Resources.leftLeft;
+                    right = false;
+                }
+                else
+                {
+                    characterBitmap = Properties.Resources.leftRight;
+                }
                 Invalidate();
             }
             else if (e.KeyCode == Keys.D)
             {
                 MC.Movement(KeyEnum.right);
+                if (right == true)
+                {
+                    characterBitmap = Properties.Resources.rightLeft;
+                    right = false;
+                }
+                else
+                {
+                    characterBitmap = Properties.Resources.rightRight;
+                }
                 Invalidate();
             }
             else if (e.KeyCode == Keys.E)
@@ -188,6 +227,12 @@ namespace ITI.HistoryTreasures.Rendering
                 parent.SetInteractionMessage(MC.Interact(KeyEnum.action));
 
             }
+        }
+
+        public Bitmap MCBitmap
+        {
+            get { return characterBitmap; }
+            set { characterBitmap = value; }
         }
     }
 }
