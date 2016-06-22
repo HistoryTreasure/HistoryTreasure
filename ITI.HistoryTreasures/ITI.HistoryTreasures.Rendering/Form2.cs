@@ -17,11 +17,13 @@ namespace ITI.HistoryTreasures.Rendering
         string _name;
         HistoryTreasures frm;
         Game _g;
+        Sound _sound;
 
         public Form2()
         {
             InitializeComponent();
             _g = new Game();
+            _sound = new Sound();
         }
 
         private void button2_Click(object sender, EventArgs e) //Button new game
@@ -44,6 +46,11 @@ namespace ITI.HistoryTreasures.Rendering
         public Game Game
         {
             get { return _g; }
+        }
+
+        public Sound PlaySound
+        {
+            get { return _sound; }
         }
     }
 }
