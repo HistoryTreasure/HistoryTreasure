@@ -11,6 +11,8 @@ namespace ITI.HistoryTreasures
         int _life;
         Map _mCtx;
         readonly Level _lCtx;
+        public bool _isClue;
+        bool _isPNJ;
 
         /// <summary>
         /// This constructor allow to create MainCharacter.
@@ -32,6 +34,7 @@ namespace ITI.HistoryTreasures
             _life = 3;
             _lCtx = lCtx;
         }
+        
 
         /// <summary>
         /// This property returns a speed with an int.
@@ -177,15 +180,21 @@ namespace ITI.HistoryTreasures
 
             if (key == KeyEnum.action)
             {
+                _isClue = false;
                 speech = LCtx.InteractionWithPNJ(key);
                 if (speech == "")
                 {
+                    _isClue = true;
                     speech = LCtx.InteractionsWithClue(key);
                 }
             }
             return speech;
         }
 
+        public bool IsClue
+        {
+            get { return _isClue; }
+        }
         /// <summary>
         /// Talkses the specified other.
         /// </summary>

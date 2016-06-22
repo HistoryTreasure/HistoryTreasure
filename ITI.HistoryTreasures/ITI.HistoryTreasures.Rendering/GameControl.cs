@@ -131,12 +131,15 @@ namespace ITI.HistoryTreasures.Rendering
 
         private void InitializeComponent()
         {
-            SuspendLayout();
-
+            this.SuspendLayout();
+            // 
+            // GameControl
+            // 
             this.DoubleBuffered = true;
             this.Name = "GameControl";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
+
         }
 
         private ResourcesManager GetResourcesManager
@@ -179,9 +182,11 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     return;
                 }
-                //MessageBox.Show(MC.Interact(KeyEnum.action));
+                
                 HistoryTreasures parent = (HistoryTreasures)this.ParentForm;
+                parent.IsInteractionAClue(MC.IsClue);
                 parent.SetInteractionMessage(MC.Interact(KeyEnum.action));
+
             }
         }
     }
