@@ -28,14 +28,8 @@ namespace ITI.HistoryTreasures.Rendering
         {
             InitializeComponent();
             Game g = new Game();
-<<<<<<< HEAD
-            _tCtx = g.CreateTheme("Theme");
-            _level = new Level(_tCtx, "Test");
 
-            gameControl1.LevelContext = _level;
-=======
             gameControl1.LevelContext = g.Check();
->>>>>>> 42cefe1a045221106244a08cba7b6a0c3c139ddc
         }
 
         //public void EnableDoubleBuffering()
