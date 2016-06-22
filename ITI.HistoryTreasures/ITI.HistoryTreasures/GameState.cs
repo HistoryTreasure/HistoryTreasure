@@ -4,14 +4,18 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace ITI.HistoryTreasures
 {
-    class GameState
+    public class GameState
     {
         string _name;
         string _path;
         Game _gCtx;
+        Theme _tCtx;
+        Level _lCtx;
 
         //level / theme en cours a sauvegarder
         //sauvegarde entre chaque niveau
@@ -21,20 +25,59 @@ namespace ITI.HistoryTreasures
         /// </summary>
         /// <param name="gCtx">The g CTX.</param>
         /// <param name="name">The name.</param>
-        public GameState(Game gCtx, string name)
+        public GameState()
         {
-            _gCtx = gCtx;
-            _name = name;
+            _gCtx = new Game();
+            //_tCtx = _gCtx.CreateTheme(Name);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            XElement game = new XElement("GameState",
+                new XElement("Game", GCtx),
+                new XElement("Theme", TCtx),
+                new XElement("Level", LCtx)
+                );
+            game.Save("./GameState.xml");
+
+            Load();
         }
 
-        public void Load()
+        public string Load()
         {
-            throw new NotImplementedException();
+            string save;
+            XmlTextReader xml = new XmlTextReader("GameState.xml");
+            xml.Read();
+
+            while (xml.Read())
+            {
+                if (xml.Name == "Level")
+                {
+                    xml.Read();
+                    return xml.Value;
+                }
+            }
+
+            return "";
+        }
+
+        public List<Theme> Check()
+        {
+            foreach (Theme t in GCtx.Themes)
+            {
+                foreach (Level l in t.Levels)
+                {
+                    if (l.Name != Load())
+                    {
+                        l.IsFinish = true;
+                    }
+                    else
+                    {
+                        return GCtx.Themes;
+                    }
+                }
+            }
+            throw new InvalidOperationException("Not possible");
         }
 
         /// <summary>
@@ -45,6 +88,26 @@ namespace ITI.HistoryTreasures
         public Game GCtx
         {
             get { return _gCtx; }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <value>
+        /// The t CTX.
+        /// </value>
+        public Theme TCtx
+        {
+            get { return _tCtx; }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <value>
+        /// The l CTX.
+        /// </value>
+        public Level LCtx
+        {
+            get { return _lCtx; }
         }
 
         /// <summary>
