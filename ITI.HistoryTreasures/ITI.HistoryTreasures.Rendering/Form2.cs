@@ -23,7 +23,7 @@ namespace ITI.HistoryTreasures.Rendering
         {
             InitializeComponent();
             _g = new Game();
-            _sound = new Sound();
+            //_sound = new Sound();
         }
 
         private void button2_Click(object sender, EventArgs e) //Button new game
@@ -48,9 +48,9 @@ namespace ITI.HistoryTreasures.Rendering
             get { return _g; }
         }
 
-        public Sound PlaySound
-        {
-            get { return _sound; }
-        }
+        //public Sound PlaySound
+        //{
+        //    get { return _sound; }
+        //}
     }
 }
