@@ -251,6 +251,16 @@ namespace ITI.HistoryTreasures
                 Pnjs.Add(CreatePNJ(Theme.Game, 256, 256, CharacterEnum.GUARDFACE, "Hawke", "Hello world !"));
                 Pnjs.Add(CreatePNJ(Theme.Game, 369, 369, CharacterEnum.GUARDFACE, "Kiu", "Good morning !"));
             }
+            else if (name == "1_2")
+            {
+                Pnjs.Add(CreatePNJ(Theme.Game, 256, 256, CharacterEnum.GUARDFACE, "Kuro", "Son nom est Henri !"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 369, 369, CharacterEnum.GUARDFACE, "Shiro", "Un chiffre ? 4"));
+            }
+            else if (name == "1_3")
+            {
+                Pnjs.Add(CreatePNJ(Theme.Game, 256, 256, CharacterEnum.GUARDFACE, "Murasaki", "Test"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 369, 369, CharacterEnum.GUARDFACE, "Midori", "Tu ne comprend pas ?"));
+            }
             return Pnjs;
         }
 
@@ -267,6 +277,20 @@ namespace ITI.HistoryTreasures
                     "You want to know ? Sorry I don't do that ?"));
                 Clues.Add(CreateClue(_ctx, 300, 300, ClueEnum.LIVRE, "Livre",
                     "I know the story"));
+            }
+            else if (name == "1_2")
+            {
+                Clues.Add(CreateClue(_ctx, 150, 150, ClueEnum.LIVRE, "History",
+                    "Il a inventé l'école"));
+                Clues.Add(CreateClue(_ctx, 300, 300, ClueEnum.LIVRE, "Test",
+                    "I looking at you"));
+            }
+            else if (name == "1_3")
+            {
+                Clues.Add(CreateClue(_ctx, 150, 150, ClueEnum.LIVRE, "1",
+                    "It's a essai"));
+                Clues.Add(CreateClue(_ctx, 300, 300, ClueEnum.LIVRE, "2",
+                    "You know nothing Jon Snow"));
             }
             return Clues;
         }
