@@ -136,9 +136,6 @@
   <data name="_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\base.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="img_X1_Y0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img_X1_Y0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="audio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\audio.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -162,5 +159,41 @@
   </data>
   <data name="stonepath" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stonepath.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leftLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\leftLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leftRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\leftRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leftStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\leftStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rightLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rightLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rightRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rightRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rightStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rightStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="upLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\upLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="upRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\upRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="upStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\upStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
