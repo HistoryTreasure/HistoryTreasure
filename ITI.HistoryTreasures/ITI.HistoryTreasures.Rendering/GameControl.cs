@@ -28,7 +28,7 @@ namespace ITI.HistoryTreasures.Rendering
         {
             _resourcesManager = new ResourcesManager();
             InitializeComponent();
-            PlaySound();
+            //PlaySound();
         }
 
         /// <summary>
@@ -147,11 +147,11 @@ namespace ITI.HistoryTreasures.Rendering
             get { return _resourcesManager; }
         }
 
-        private Sound PlaySound()
+        /*private Sound PlaySound()
         {
             _sound = new Sound();
             return _sound;
-        }
+        }*/
 
         private void GameControl_KeyDown(object sender, KeyEventArgs e)
         {
