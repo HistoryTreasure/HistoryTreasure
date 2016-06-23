@@ -164,12 +164,12 @@ namespace ITI.HistoryTreasures.Rendering
                 MC.Movement(KeyEnum.up);
                 if (right == true)
                 {
-                    characterBitmap = Properties.Resources.upLeft;
+                    MC.CharacterBitmapName = CharacterEnum.MCBACK;
                     right = false;
                 }
                 else
                 {
-                    characterBitmap = Properties.Resources.upRight;
+                    MC.CharacterBitmapName = CharacterEnum.MCBACK;
                 }
                 Invalidate();
             }
@@ -178,12 +178,12 @@ namespace ITI.HistoryTreasures.Rendering
                 MC.Movement(KeyEnum.down);
                 if (right == true)
                 {
-                    characterBitmap = Properties.Resources.downLeft;
+                    MC.CharacterBitmapName = CharacterEnum.MCFACE;
                     right = false;
                 }
                 else
                 {
-                    characterBitmap = Properties.Resources.downRight;
+                    MC.CharacterBitmapName = CharacterEnum.MCFACE;
                 }
                 Invalidate();
             }
@@ -192,12 +192,12 @@ namespace ITI.HistoryTreasures.Rendering
                 MC.Movement(KeyEnum.left);
                 if (right == true)
                 {
-                    characterBitmap = Properties.Resources.leftLeft;
+                    MC.CharacterBitmapName = CharacterEnum.MCLEFT;
                     right = false;
                 }
                 else
                 {
-                    characterBitmap = Properties.Resources.leftRight;
+                    MC.CharacterBitmapName = CharacterEnum.MCLEFT;
                 }
                 Invalidate();
             }
@@ -206,12 +206,12 @@ namespace ITI.HistoryTreasures.Rendering
                 MC.Movement(KeyEnum.right);
                 if (right == true)
                 {
-                    characterBitmap = Properties.Resources.rightLeft;
+                    MC.CharacterBitmapName = CharacterEnum.MCRIGHT;
                     right = false;
                 }
                 else
                 {
-                    characterBitmap = Properties.Resources.rightRight;
+                    MC.CharacterBitmapName = CharacterEnum.MCRIGHT;
                 }
                 Invalidate();
             }
