@@ -28,6 +28,7 @@ namespace ITI.HistoryTreasures.Rendering
         public HistoryTreasures(Game g)
         {
             InitializeComponent();
+
             gameControl1.LevelContext = g.Check();
         }
 

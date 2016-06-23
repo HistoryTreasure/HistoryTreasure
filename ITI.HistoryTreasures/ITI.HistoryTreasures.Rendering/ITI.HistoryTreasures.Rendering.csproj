@@ -172,8 +172,18 @@
     <None Include="Resources\img_X2_Y8.png" />
     <None Include="Resources\floor.png" />
     <None Include="Resources\stonepath.png" />
-    <None Include="Resources\herbe.png" />
-    <None Include="Resources\rock.png" />
+    <None Include="Resources\rightRight.png" />
+    <None Include="Resources\rightStand.png" />
+    <None Include="Resources\upLeft.png" />
+    <None Include="Resources\upRight.png" />
+    <None Include="Resources\upStand.png" />
+    <None Include="Resources\downLeft.png" />
+    <None Include="Resources\downRight.png" />
+    <None Include="Resources\downStand.png" />
+    <None Include="Resources\leftLeft.png" />
+    <None Include="Resources\leftRight.png" />
+    <None Include="Resources\leftStand.png" />
+    <None Include="Resources\rightLeft.png" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
