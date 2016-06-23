@@ -9,7 +9,6 @@ namespace ITI.HistoryTreasures.Rendering
 {
     class ResourcesManager
     {
-        readonly Dictionary <string, string> _riddles;
         readonly Dictionary<TileEnum, Bitmap> _tileBitmaps;
         readonly Dictionary<CharacterEnum, Bitmap> _characterBitmaps;
         readonly Dictionary<ClueEnum, Bitmap> _clueBitmaps;
@@ -19,8 +18,6 @@ namespace ITI.HistoryTreasures.Rendering
         /// </summary>
         public ResourcesManager()
         {
-            _riddles = new Dictionary<string, string>();
-            _riddles["first one"] = "hello world"; 
             _tileBitmaps = new Dictionary<TileEnum, Bitmap>();
             _tileBitmaps[TileEnum.GRASS] = Properties.Resources.herbe;
             _tileBitmaps[TileEnum.WATER] = Properties.Resources.eau;
@@ -30,7 +27,18 @@ namespace ITI.HistoryTreasures.Rendering
             _tileBitmaps[TileEnum.ROCK] = Properties.Resources.rock;
             _tileBitmaps[TileEnum.STONEPATH] = Properties.Resources.stonepath;
             _characterBitmaps = new Dictionary<CharacterEnum, Bitmap>();
-            _characterBitmaps[CharacterEnum.MCFACE] = Properties.Resources.img_X1_Y0;
+            _characterBitmaps[CharacterEnum.MCFACE] = Properties.Resources.downStand;
+            _characterBitmaps[CharacterEnum.MCFACERIGHT] = Properties.Resources.downRight;
+            _characterBitmaps[CharacterEnum.MCFACELEFT] = Properties.Resources.downLeft;
+            _characterBitmaps[CharacterEnum.MCBACK] = Properties.Resources.upStand;
+            _characterBitmaps[CharacterEnum.MCBACKLEFT] = Properties.Resources.upLeft;
+            _characterBitmaps[CharacterEnum.MCBACKRIGHT] = Properties.Resources.upRight;
+            _characterBitmaps[CharacterEnum.MCLEFT] = Properties.Resources.leftStand;
+            _characterBitmaps[CharacterEnum.MCLEFTRIGHT] = Properties.Resources.leftRight;
+            _characterBitmaps[CharacterEnum.MCLEFTLEFT] = Properties.Resources.leftLeft;
+            _characterBitmaps[CharacterEnum.MCRIGHT] = Properties.Resources.rightStand;
+            _characterBitmaps[CharacterEnum.MCRIGHTRIGHT] = Properties.Resources.rightRight;
+            _characterBitmaps[CharacterEnum.MCRIGHTLEFT] = Properties.Resources.rightLeft;
             _characterBitmaps[CharacterEnum.GUARDFACE] = Properties.Resources.droite;
             _clueBitmaps = new Dictionary<ClueEnum, Bitmap>();
             _clueBitmaps[ClueEnum.LIVRE] = Properties.Resources.book;
@@ -56,9 +64,6 @@ namespace ITI.HistoryTreasures.Rendering
         {
             return _clueBitmaps[clue.ClueBitmapName];
         }
-        internal Dictionary<Level, string> Riddle
-        {
-            get { return Riddle; }
-        }
+    
     }
 }
