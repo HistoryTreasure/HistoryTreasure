@@ -25,9 +25,10 @@ namespace ITI.HistoryTreasures.Rendering
         /// <summary>
         /// This contructor instantiate HistoryTreasures.
         /// </summary>
-        public HistoryTreasures(Game g)
+        public HistoryTreasures()
         {
             InitializeComponent();
+            Game g = new Game();
             gameControl1.LevelContext = g.Check();
         }
 
