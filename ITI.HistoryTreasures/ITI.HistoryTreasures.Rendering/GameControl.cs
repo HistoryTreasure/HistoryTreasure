@@ -97,7 +97,7 @@ namespace ITI.HistoryTreasures.Rendering
                     if (t.IsSolid)
                     {
                         Rectangle rt = new Rectangle(GetArround(coefX * t.TileHitbox.xA), GetArround(coefY * t.TileHitbox.yA), screenTileWidth, screenTileHeight);
-                        e.Graphics.DrawRectangle(p, rt);
+                        //e.Graphics.DrawRectangle(p, rt);
                     }
 
                     x += screenTileWidth;
@@ -110,7 +110,7 @@ namespace ITI.HistoryTreasures.Rendering
             e.Graphics.DrawImage(characterBitmap, GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY), screenTileWidth, screenTileHeight);
 
             Rectangle r = new Rectangle(GetArround(coefX * MC.HitBox.xA), GetArround(coefY * MC.HitBox.yA), screenTileWidth, screenTileHeight / 2);
-            e.Graphics.DrawRectangle(p, r);
+            //e.Graphics.DrawRectangle(p, r);
 
             foreach (PNJ pnj in LevelContext.Pnjs)
             {
@@ -118,7 +118,7 @@ namespace ITI.HistoryTreasures.Rendering
                 e.Graphics.DrawImage(pnjBitmap, GetArround(coefX * pnj.positionX), GetArround(coefY * pnj.positionY), screenTileWidth, screenTileHeight);
 
                 Rectangle r2 = new Rectangle(GetArround(coefX * pnj.HitBox.xA), GetArround(coefY * pnj.HitBox.yA), screenTileWidth, screenTileHeight / 2);
-                e.Graphics.DrawRectangle(p, r2);
+                //e.Graphics.DrawRectangle(p, r2);
             }
 
             foreach (Clue clue in LevelContext.Clues)
@@ -127,7 +127,7 @@ namespace ITI.HistoryTreasures.Rendering
                 e.Graphics.DrawImage(clueBitmap, GetArround(coefX * clue.X), GetArround(coefY * clue.Y), screenTileWidth, screenTileHeight);
 
                 Rectangle r3 = new Rectangle(GetArround(coefX * clue.HitBox.xA), GetArround(coefY * clue.HitBox.yA), screenTileWidth, screenTileHeight);
-                e.Graphics.DrawRectangle(p, r3);
+                //e.Graphics.DrawRectangle(p, r3);
             }
         }
 
@@ -164,12 +164,13 @@ namespace ITI.HistoryTreasures.Rendering
                 MC.Movement(KeyEnum.up);
                 if (right == true)
                 {
-                    MC.CharacterBitmapName = CharacterEnum.MCBACK;
+                    MC.CharacterBitmapName = CharacterEnum.MCBACKLEFT;
                     right = false;
                 }
                 else
                 {
-                    MC.CharacterBitmapName = CharacterEnum.MCBACK;
+                    MC.CharacterBitmapName = CharacterEnum.MCBACKRIGHT;
+                    right = true;
                 }
                 Invalidate();
             }
@@ -178,12 +179,13 @@ namespace ITI.HistoryTreasures.Rendering
                 MC.Movement(KeyEnum.down);
                 if (right == true)
                 {
-                    MC.CharacterBitmapName = CharacterEnum.MCFACE;
+                    MC.CharacterBitmapName = CharacterEnum.MCFACELEFT;
                     right = false;
                 }
                 else
                 {
-                    MC.CharacterBitmapName = CharacterEnum.MCFACE;
+                    MC.CharacterBitmapName = CharacterEnum.MCFACERIGHT;
+                    right = true;
                 }
                 Invalidate();
             }
@@ -192,12 +194,13 @@ namespace ITI.HistoryTreasures.Rendering
                 MC.Movement(KeyEnum.left);
                 if (right == true)
                 {
-                    MC.CharacterBitmapName = CharacterEnum.MCLEFT;
+                    MC.CharacterBitmapName = CharacterEnum.MCLEFTLEFT;
                     right = false;
                 }
                 else
                 {
-                    MC.CharacterBitmapName = CharacterEnum.MCLEFT;
+                    MC.CharacterBitmapName = CharacterEnum.MCLEFTRIGHT;
+                    right = true;
                 }
                 Invalidate();
             }
@@ -206,12 +209,13 @@ namespace ITI.HistoryTreasures.Rendering
                 MC.Movement(KeyEnum.right);
                 if (right == true)
                 {
-                    MC.CharacterBitmapName = CharacterEnum.MCRIGHT;
+                    MC.CharacterBitmapName = CharacterEnum.MCRIGHTLEFT;
                     right = false;
                 }
                 else
                 {
-                    MC.CharacterBitmapName = CharacterEnum.MCRIGHT;
+                    MC.CharacterBitmapName = CharacterEnum.MCRIGHTRIGHT;
+                    right = true;
                 }
                 Invalidate();
             }
