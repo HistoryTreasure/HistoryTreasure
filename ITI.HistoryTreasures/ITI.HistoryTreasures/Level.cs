@@ -237,6 +237,7 @@ namespace ITI.HistoryTreasures
         public bool IsOpen
         {
             get { return _isOpen; }
+            set { _isOpen = value; }
         }
 
         /// <summary>
