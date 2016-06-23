@@ -185,6 +185,21 @@
     <None Include="Resources\leftRight.png" />
     <None Include="Resources\leftStand.png" />
     <None Include="Resources\rightLeft.png" />
+    <None Include="Resources\rightBlond.png" />
+    <None Include="Resources\downBlond.png" />
+    <None Include="Resources\leftBlond.png" />
+    <None Include="Resources\rightUndertaker.png" />
+    <None Include="Resources\downUndertaker.png" />
+    <None Include="Resources\leftUndertaker.png" />
+    <None Include="Resources\rightGirl.png" />
+    <None Include="Resources\downGirl.png" />
+    <None Include="Resources\leftGirl.png" />
+    <None Include="Resources\rightGuard.png" />
+    <None Include="Resources\downGuard.png" />
+    <None Include="Resources\leftGuard.png" />
+    <None Include="Resources\rightPnj.png" />
+    <None Include="Resources\downPnj.png" />
+    <None Include="Resources\leftPnj.png" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

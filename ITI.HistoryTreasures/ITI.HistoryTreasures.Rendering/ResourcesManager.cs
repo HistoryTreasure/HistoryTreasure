@@ -39,7 +39,7 @@ namespace ITI.HistoryTreasures.Rendering
             _characterBitmaps[CharacterEnum.MCRIGHT] = Properties.Resources.rightStand;
             _characterBitmaps[CharacterEnum.MCRIGHTRIGHT] = Properties.Resources.rightRight;
             _characterBitmaps[CharacterEnum.MCRIGHTLEFT] = Properties.Resources.rightLeft;
-            _characterBitmaps[CharacterEnum.GUARDFACE] = Properties.Resources.droite;
+            _characterBitmaps[CharacterEnum.GUARDFACE] = Properties.Resources.rightBlond;
             _clueBitmaps = new Dictionary<ClueEnum, Bitmap>();
             _clueBitmaps[ClueEnum.LIVRE] = Properties.Resources.book;
         }
