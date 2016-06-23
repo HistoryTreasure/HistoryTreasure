@@ -181,18 +181,19 @@ namespace ITI.HistoryTreasures
         /// <returns></returns>
         public string InteractionWithPNJ(KeyEnum key)
         {
-            string _talk = "";
+            string talk = "";
 
             for (int i = 0; i < Pnjs.Count; i++)
             {
                 if (MainCharacter.CanInteract(Pnjs[i].HitBox))
                 {
                     key = KeyEnum.action;
-                    _talk = _pnjs[i].Name + (": ") + _pnjs[i].Speech;
+                    talk = Pnjs[i].Name + (": ") + Pnjs[i].Speech;
+                    Pnjs[i].Talk = true;
                     break;
                 }
             }
-            return _talk;
+            return talk;
         }
 
         /// <summary>
@@ -220,7 +221,8 @@ namespace ITI.HistoryTreasures
                 if (MainCharacter.CanInteract(Clues[i].HitBox))
                 {
                     key = KeyEnum.action;
-                    _speech = _clues[i].Name +  (": ") + _clues[i].Speech;
+                    _speech = Clues[i].Name +  (": ") + Clues[i].Speech;
+                    Clues[i].Talk = true;
                     break;
                 }
             }
