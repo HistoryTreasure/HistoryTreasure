@@ -18,7 +18,7 @@ namespace ITI.HistoryTreasures.Rendering
         Game _gCtx;
         private IContainer _components;
         ResourcesManager _resourcesManager;
-        Sound _sound;
+        //Sound _sound;
         static readonly int TileSize = 32;
 
         /// <summary>
