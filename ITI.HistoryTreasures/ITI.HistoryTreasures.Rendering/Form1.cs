@@ -69,5 +69,10 @@ namespace ITI.HistoryTreasures.Rendering
         {
 
         }
+
+        private void menuControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
