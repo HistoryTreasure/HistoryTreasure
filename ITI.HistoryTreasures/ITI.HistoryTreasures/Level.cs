@@ -158,7 +158,6 @@ namespace ITI.HistoryTreasures
         public Clue CreateClue(Theme ctx, int x, int y, ClueEnum bitMapName, string name, string speech)
         {
             Clue c = new Clue(name, this, bitMapName, x, y, speech);
-            _clues.Add(c);
             return c;
         }
 
@@ -193,6 +192,7 @@ namespace ITI.HistoryTreasures
                     break;
                 }
             }
+            CanAnswer();
             return talk;
         }
 
@@ -226,6 +226,7 @@ namespace ITI.HistoryTreasures
                     break;
                 }
             }
+            CanAnswer();
             return _speech;
         }
 
@@ -295,6 +296,41 @@ namespace ITI.HistoryTreasures
                     "You know nothing Jon Snow"));
             }
             return Clues;
+        }
+
+        private bool CanAnswer()
+        {
+            bool pnj = false;
+            bool clue = false;
+
+            foreach (PNJ p in Pnjs)
+            {
+                if (p.Talk == true)
+                {
+                    pnj = true;
+                }
+                else
+                {
+                    pnj = false;
+                    break;
+                }
+
+            }
+
+            foreach (Clue c in Clues)
+            {
+                if (c.Talk == true)
+                {
+                    clue = true;
+                }
+                else
+                {
+                    clue = false;
+                    break;
+                }
+            }
+
+            return (clue && pnj);
         }
     }
 }
