@@ -10,14 +10,13 @@ namespace ITI.HistoryTreasures
         readonly string _name;
         bool _isFinish;
         readonly List<PNJ> _pnjs;
-        readonly PNJ _pnj;
         readonly Theme _ctx;
         readonly MainCharacter _mainCharacter;
-        readonly public List<Clue> _clues;
-        readonly Clue _clue;
+        public readonly List<Clue> _clues;
         readonly Map _mCtx;
         bool _isOpen;
         readonly string _answer;
+        readonly string _riddle;
 
         /// <summary>
         /// This constructor create a level.
@@ -43,29 +42,30 @@ namespace ITI.HistoryTreasures
             _mCtx = new Map(this);
             _clues = new List<Clue>();
             AddClues(Name);
-            _answer = CreateAnwser();
+            _answer = CreateAnwser(Name);
+            _riddle = CreateRiddle(Name);
         }
 
         /// <summary>
         /// Creates the anwser.
         /// </summary>
         /// <returns>The answer</returns>
-        private string CreateAnwser()
+        private string CreateAnwser(string name)
         {
-            if (Name == "1_1")
+            if (name == "1_1")
             {
                 return "1789";
             }
-            else if (Name == "1_2")
+            else if (name == "1_2")
             {
-                return "Henry 4";
+                return "Louis XVI";
             }
-            else if (Name == "1_3")
+            else if (name == "1_3")
             {
                 return "Test";
             }
 
-            return "";
+            throw new InvalidOperationException("The level has no answer");
         }
 
         /// <summary>
@@ -99,17 +99,6 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Gets the clue.
-        /// </summary>
-        /// <value>
-        /// The clue.
-        /// </value>
-        public Clue Clue
-        {
-            get { return _clue; }
-        }
-
-        /// <summary>
         /// This properties return if a level is finish.
         /// </summary>
         public bool IsFinish
@@ -125,15 +114,7 @@ namespace ITI.HistoryTreasures
         {
             get { return _ctx; }
         }
-
-        /// <summary>
-        /// This property returns PNJ.
-        /// </summary>
-        public PNJ Pnj
-        {
-            get { return _pnj; }
-        }
-
+        
         /// <summary>
         /// Creates a PNJ.
         /// </summary>
@@ -149,8 +130,7 @@ namespace ITI.HistoryTreasures
             PNJ p = new PNJ(gctx, this, X, Y, bitMapName, name, speech);
             return p;
         }
-
-
+        
         /// <summary>
         /// Creates the main.
         /// </summary>
@@ -278,6 +258,11 @@ namespace ITI.HistoryTreasures
             get { return _answer; }
         }
 
+        public string Riddle
+        {
+            get { return _riddle; }
+        }
+
         /// <summary>
         /// Adds the PNJ.
         /// </summary>
@@ -286,13 +271,13 @@ namespace ITI.HistoryTreasures
         {
             if (name == "1_1")
             {
-                Pnjs.Add(CreatePNJ(Theme.Game, 256, 256, CharacterEnum.GUARDFACE, "Hawke", "Hello world !"));
-                Pnjs.Add(CreatePNJ(Theme.Game, 369, 369, CharacterEnum.GUARDFACE, "Kiu", "Good morning !"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 256, 256, CharacterEnum.GUARDFACE, "Hawke", "Cette année nous prendrons la bastille !"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 369, 369, CharacterEnum.GUARDFACE, "Kiu", "La révolution est en marche"));
             }
             else if (name == "1_2")
             {
-                Pnjs.Add(CreatePNJ(Theme.Game, 256, 256, CharacterEnum.GUARDFACE, "Kuro", "Son nom est Henri !"));
-                Pnjs.Add(CreatePNJ(Theme.Game, 369, 369, CharacterEnum.GUARDFACE, "Shiro", "Un chiffre ? 4"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 256, 256, CharacterEnum.GUARDFACE, "Kuro", "Le roi est mort !"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 369, 369, CharacterEnum.GUARDFACE, "Shiro", "Son nombre est 16"));
             }
             else if (name == "1_3")
             {
@@ -312,16 +297,16 @@ namespace ITI.HistoryTreasures
             if (name == "1_1")
             {
                 Clues.Add(CreateClue(_ctx, 150, 150, ClueEnum.LIVRE, "Book",
-                    "You want to know ? Sorry I don't do that ?"));
+                    "L'histoire se souviendra de l'an 17... le reste est illisible"));
                 Clues.Add(CreateClue(_ctx, 300, 300, ClueEnum.LIVRE, "Livre",
-                    "I know the story"));
+                    "La bastille fut prise 11 ans avant la fin du siecle"));
             }
             else if (name == "1_2")
             {
                 Clues.Add(CreateClue(_ctx, 150, 150, ClueEnum.LIVRE, "History",
-                    "Il a inventé l'école"));
+                    "Le roi fut décapité le 21 janviers 1793"));
                 Clues.Add(CreateClue(_ctx, 300, 300, ClueEnum.LIVRE, "Test",
-                    "I looking at you"));
+                    "Sa mort marqua la fin de la monarchie et le début de la première république."));
             }
             else if (name == "1_3")
             {
@@ -382,6 +367,24 @@ namespace ITI.HistoryTreasures
             {
                 IsOpen = true;
             }
+        }
+
+        private string CreateRiddle(string name)
+        {
+            if (name == "1_1")
+            {
+                return "Quelle est la date de la prise de la bastille ?";
+            }
+            else if (name == "1_2")
+            {
+                return "Quel est le nom du roi qui a été décapité ?";
+            }
+            else if (name == "1_3")
+            {
+                return "Test";
+            }
+
+            throw new InvalidOperationException("The level has no riddle");
         }
     }
 }
