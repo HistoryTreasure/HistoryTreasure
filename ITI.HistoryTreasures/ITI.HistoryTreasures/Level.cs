@@ -13,10 +13,11 @@ namespace ITI.HistoryTreasures
         readonly PNJ _pnj;
         readonly Theme _ctx;
         readonly MainCharacter _mainCharacter;
-        public List<Clue> _clues;
+        readonly public List<Clue> _clues;
         readonly Clue _clue;
         readonly Map _mCtx;
         bool _isOpen;
+        readonly string _answer;
 
         /// <summary>
         /// This constructor create a level.
@@ -42,6 +43,29 @@ namespace ITI.HistoryTreasures
             _mCtx = new Map(this);
             _clues = new List<Clue>();
             AddClues(Name);
+            _answer = CreateAnwser();
+        }
+
+        /// <summary>
+        /// Creates the anwser.
+        /// </summary>
+        /// <returns>The answer</returns>
+        private string CreateAnwser()
+        {
+            if (Name == "1_1")
+            {
+                return "1789";
+            }
+            else if (Name == "1_2")
+            {
+                return "Henry 4";
+            }
+            else if (Name == "1_3")
+            {
+                return "Test";
+            }
+
+            return "";
         }
 
         /// <summary>
@@ -244,6 +268,17 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
+        /// Gets the answer of the riddle.
+        /// </summary>
+        /// <value>
+        /// The answer.
+        /// </value>
+        public string Answer
+        {
+            get { return _answer; }
+        }
+
+        /// <summary>
         /// Adds the PNJ.
         /// </summary>
         /// <returns></returns>
@@ -298,6 +333,10 @@ namespace ITI.HistoryTreasures
             return Clues;
         }
 
+        /// <summary>
+        /// Check if player can answer
+        /// </summary>
+        /// <returns>true if the player can answer</returns>
         private bool CanAnswer()
         {
             bool pnj = false;
@@ -331,6 +370,18 @@ namespace ITI.HistoryTreasures
             }
 
             return (clue && pnj);
+        }
+
+        /// <summary>
+        /// Tests the answer.
+        /// </summary>
+        /// <param name="answer">The answer.</param>
+        private void TestAnswer(string answer)
+        {
+            if (answer == Answer)
+            {
+                IsOpen = true;
+            }
         }
     }
 }
