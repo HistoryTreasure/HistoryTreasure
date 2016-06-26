@@ -46,6 +46,8 @@ namespace ITI.HistoryTreasures.Rendering
             // menuControl1
             // 
             this.menuControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuControl1.Game = null;
+            this.menuControl1.GameControl = null;
             this.menuControl1.Location = new System.Drawing.Point(0, 0);
             this.menuControl1.Name = "menuControl1";
             this.menuControl1.Size = new System.Drawing.Size(584, 561);

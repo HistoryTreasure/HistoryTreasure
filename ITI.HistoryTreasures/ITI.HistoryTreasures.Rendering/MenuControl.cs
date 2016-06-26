@@ -12,7 +12,7 @@ namespace ITI.HistoryTreasures.Rendering
 {
     public partial class MenuControl : UserControl
     {
-        GameControl gc = new GameControl();
+        GameControl gc;
         Game _g;
 
         /// <summary>
@@ -21,6 +21,7 @@ namespace ITI.HistoryTreasures.Rendering
         public MenuControl()
         {
             InitializeComponent();
+            rulesControl1.Hide();
         }
 
         /// <summary>
@@ -32,6 +33,16 @@ namespace ITI.HistoryTreasures.Rendering
         public Game Game
         {
             get { return _g; }
+            set { _g = value; }
+        }
+
+        /// <summary>
+        /// Gets the Game control
+        /// </summary>
+        public GameControl GameControl
+        {
+            get { return gc; }
+            set { gc = value; }
         }
 
         /// <summary>
@@ -55,10 +66,15 @@ namespace ITI.HistoryTreasures.Rendering
             GameState gs = new GameState();
             gs.Load();
             Game.Themes = gs.Check();
-            gc = new GameControl();
+            gc.LevelContext = Game.Check();
             gc.Show();
             Hide();
         }
 
+        private void button4_Click(object sender, EventArgs e) //Button rules
+        {
+            RulesControl rc = rulesControl1;
+            rc.Show();
+        }
     }
 }

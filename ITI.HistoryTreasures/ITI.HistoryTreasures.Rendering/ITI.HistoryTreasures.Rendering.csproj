@@ -96,6 +96,12 @@
       <DependentUpon>RiddleControl.cs</DependentUpon>
     </Compile>
     <Compile Include="RiddleManager.cs" />
+    <Compile Include="RulesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RulesControl.Designer.cs">
+      <DependentUpon>RulesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sound.cs" />
     <Compile Include="Sprites.cs" />
     <Compile Include="TileG.cs" />
@@ -123,6 +129,9 @@
     </Compile>
     <EmbeddedResource Include="RiddleControl.resx">
       <DependentUpon>RiddleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RulesControl.resx">
+      <DependentUpon>RulesControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="UMLRender.cd" />
     <None Include="Properties\Settings.settings">
