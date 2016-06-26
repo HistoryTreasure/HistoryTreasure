@@ -369,6 +369,12 @@ namespace ITI.HistoryTreasures
             }
         }
 
+        /// <summary>
+        /// Creates the riddle.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        /// <exception cref="System.InvalidOperationException">The level has no riddle</exception>
         private string CreateRiddle(string name)
         {
             if (name == "1_1")
