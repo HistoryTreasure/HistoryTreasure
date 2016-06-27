@@ -96,6 +96,17 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
+        /// Gets a value indicating whether this instance is clue.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance is clue; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsClue
+        {
+            get { return _isClue; }
+        }
+
+        /// <summary>
         /// This method allow to move the MainCharacter.
         /// </summary>
         /// <param name="key"></param>
