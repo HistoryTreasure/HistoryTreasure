@@ -18,7 +18,7 @@ namespace ITI.HistoryTreasures.Rendering
         Game _gCtx;
         private IContainer _components;
         ResourcesManager _resourcesManager;
-        Sound _sound;
+        //Sound _sound;
         static readonly int TileSize = 32;
         Bitmap characterBitmap;
         private bool right = false;
@@ -30,7 +30,7 @@ namespace ITI.HistoryTreasures.Rendering
         {
             _resourcesManager = new ResourcesManager();
             InitializeComponent();
-            PlaySound();
+            //PlaySound();
         }
 
         /// <summary>
@@ -149,11 +149,11 @@ namespace ITI.HistoryTreasures.Rendering
             get { return _resourcesManager; }
         }
 
-        private Sound PlaySound()
+        /*private Sound PlaySound()
         {
             _sound = new Sound();
             return _sound;
-        }
+        }*/
 
         private void GameControl_KeyDown(object sender, KeyEventArgs e)
         {
