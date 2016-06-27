@@ -32,15 +32,37 @@ namespace ITI.HistoryTreasures.Rendering
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.menuControl1 = new ITI.HistoryTreasures.Rendering.MenuControl();
+            this.interactionsControl1 = new ITI.HistoryTreasures.Rendering.InteractionsControl();
             this.riddleControl1 = new ITI.HistoryTreasures.Rendering.RiddleControl();
             this.gameControl1 = new ITI.HistoryTreasures.Rendering.GameControl();
-            this.interactionsControl1 = new ITI.HistoryTreasures.Rendering.InteractionsControl();
             this.SuspendLayout();
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 600;
+            // 
+            // menuControl1
+            // 
+            this.menuControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuControl1.Game = null;
+            this.menuControl1.GameControl = null;
+            this.menuControl1.Location = new System.Drawing.Point(0, 0);
+            this.menuControl1.Name = "menuControl1";
+            this.menuControl1.Size = new System.Drawing.Size(584, 561);
+            this.menuControl1.TabIndex = 3;
+            this.menuControl1.Load += new System.EventHandler(this.menuControl1_Load);
+            // 
+            // interactionsControl1
+            // 
+            this.interactionsControl1.InteractionText = "";
+            this.interactionsControl1.IsClue = false;
+            this.interactionsControl1.Location = new System.Drawing.Point(3, 12);
+            this.interactionsControl1.Name = "interactionsControl1";
+            this.interactionsControl1.Size = new System.Drawing.Size(170, 457);
+            this.interactionsControl1.TabIndex = 2;
+            this.interactionsControl1.Load += new System.EventHandler(this.interactionsControl1_Load);
             // 
             // riddleControl1
             // 
@@ -63,18 +85,13 @@ namespace ITI.HistoryTreasures.Rendering
             this.gameControl1.Load += new System.EventHandler(this.gameControl1_Load);
             this.gameControl1.SizeChanged += new System.EventHandler(this.gameControl1_SizeChanged);
             // 
-            // interactionsControl1
-            this.interactionsControl1.Location = new System.Drawing.Point(3, 12);
-            this.interactionsControl1.Name = "interactionsControl1";
-            this.interactionsControl1.Size = new System.Drawing.Size(170, 457);
-            this.interactionsControl1.TabIndex = 2;
-            this.interactionsControl1.Load += new System.EventHandler(this.interactionsControl1_Load);
             // HistoryTreasures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.menuControl1);
             this.Controls.Add(this.interactionsControl1);
             this.Controls.Add(this.riddleControl1);
             this.Controls.Add(this.gameControl1);
@@ -104,6 +121,8 @@ namespace ITI.HistoryTreasures.Rendering
         {
             interactionsControl1.IsClue = isClue;
         }
+
+        private MenuControl menuControl1;
     }
 }
 
