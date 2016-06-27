@@ -16,6 +16,7 @@ namespace ITI.HistoryTreasures
         readonly Hitbox _hitbox;
         readonly string _speech;
         ClueEnum _bitMapName;
+        bool _talk;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Clue"/> class.
@@ -85,7 +86,7 @@ namespace ITI.HistoryTreasures
                 throw new InvalidOperationException("You cannot create Clue on MainCharacter.");
             }
 
-
+            _talk = false;
         }
 
         /// <summary>
@@ -162,6 +163,18 @@ namespace ITI.HistoryTreasures
         public string Speech
         {
             get { return _speech; }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="Clue"/> is talk.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if talk; otherwise, <c>false</c>.
+        /// </value>
+        public bool Talk
+        {
+            get { return _talk; }
+            set { _talk = value; }
         }
     }
 }

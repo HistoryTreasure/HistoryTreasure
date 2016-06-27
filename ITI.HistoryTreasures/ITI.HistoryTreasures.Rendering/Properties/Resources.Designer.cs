@@ -112,9 +112,79 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap droite {
+        internal static System.Drawing.Bitmap downBlond {
             get {
-                object obj = ResourceManager.GetObject("droite", resourceCulture);
+                object obj = ResourceManager.GetObject("downBlond", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap downGirl {
+            get {
+                object obj = ResourceManager.GetObject("downGirl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap downGuard {
+            get {
+                object obj = ResourceManager.GetObject("downGuard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap downLeft {
+            get {
+                object obj = ResourceManager.GetObject("downLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap downPnj {
+            get {
+                object obj = ResourceManager.GetObject("downPnj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap downRight {
+            get {
+                object obj = ResourceManager.GetObject("downRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap downStand {
+            get {
+                object obj = ResourceManager.GetObject("downStand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap downUndertaker {
+            get {
+                object obj = ResourceManager.GetObject("downUndertaker", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -162,9 +232,79 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img_X1_Y0 {
+        internal static System.Drawing.Bitmap leftBlond {
             get {
-                object obj = ResourceManager.GetObject("img_X1_Y0", resourceCulture);
+                object obj = ResourceManager.GetObject("leftBlond", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leftGirl {
+            get {
+                object obj = ResourceManager.GetObject("leftGirl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leftGuard {
+            get {
+                object obj = ResourceManager.GetObject("leftGuard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leftLeft {
+            get {
+                object obj = ResourceManager.GetObject("leftLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leftPnj {
+            get {
+                object obj = ResourceManager.GetObject("leftPnj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leftRight {
+            get {
+                object obj = ResourceManager.GetObject("leftRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leftStand {
+            get {
+                object obj = ResourceManager.GetObject("leftStand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leftUndertaker {
+            get {
+                object obj = ResourceManager.GetObject("leftUndertaker", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -192,6 +332,86 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rightBlond {
+            get {
+                object obj = ResourceManager.GetObject("rightBlond", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rightGirl {
+            get {
+                object obj = ResourceManager.GetObject("rightGirl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rightGuard {
+            get {
+                object obj = ResourceManager.GetObject("rightGuard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rightLeft {
+            get {
+                object obj = ResourceManager.GetObject("rightLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rightPnj {
+            get {
+                object obj = ResourceManager.GetObject("rightPnj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rightRight {
+            get {
+                object obj = ResourceManager.GetObject("rightRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rightStand {
+            get {
+                object obj = ResourceManager.GetObject("rightStand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rightUndertaker {
+            get {
+                object obj = ResourceManager.GetObject("rightUndertaker", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rock {
             get {
                 object obj = ResourceManager.GetObject("rock", resourceCulture);
@@ -205,6 +425,36 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         internal static System.Drawing.Bitmap stonepath {
             get {
                 object obj = ResourceManager.GetObject("stonepath", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap upLeft {
+            get {
+                object obj = ResourceManager.GetObject("upLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap upRight {
+            get {
+                object obj = ResourceManager.GetObject("upRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap upStand {
+            get {
+                object obj = ResourceManager.GetObject("upStand", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

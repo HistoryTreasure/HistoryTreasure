@@ -77,6 +77,7 @@ namespace ITI.HistoryTreasures
         public CharacterEnum CharacterBitmapName
         {
             get { return _bitMapName; }
+            set { _bitMapName = value; }
         }
 
         /// <summary>

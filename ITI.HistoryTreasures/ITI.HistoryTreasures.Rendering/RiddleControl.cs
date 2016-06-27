@@ -15,6 +15,7 @@ namespace ITI.HistoryTreasures.Rendering
         Label _riddle;
         Level _lCtx;
 
+
         //RiddleManager _riddleManager;
         public RiddleControl()
         {
@@ -22,6 +23,7 @@ namespace ITI.HistoryTreasures.Rendering
             
             this._riddle = new Label();
             this._riddle.Size = new Size(584, 61);
+            //this._riddle.Text = "level:" + _lCtx;
             this._riddle.Text = "En quelle année a eu lieu la prise de la Bastille ?";
             this.Controls.Add(this._riddle);
         }
@@ -29,10 +31,23 @@ namespace ITI.HistoryTreasures.Rendering
         public Level LevelContext
         {
             get { return _lCtx; }
-            set { _lCtx = value; }
+            set
+            {
+                if( _lCtx != value )
+                {
+                    _lCtx = value;
+                    UpdateFromLevelContext();
+                }
+            }
+        }
+        /// <summary>
+        /// change the correct riddle with the level
+        /// </summary>
+        private void UpdateFromLevelContext()
+        {
+
         }
 
-        
 
 
         //private void RiddleControl(object sender, EventArgs e)
