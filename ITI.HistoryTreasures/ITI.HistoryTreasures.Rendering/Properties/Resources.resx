@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="droite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\droite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="eau" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -195,5 +192,50 @@
   </data>
   <data name="upStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downBlond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downBlond.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downGirl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downGirl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downGuard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downGuard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downPnj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downPnj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downUndertaker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downUndertaker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leftBlond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\leftBlond.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leftGirl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\leftGirl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leftGuard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\leftGuard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leftPnj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\leftPnj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leftUndertaker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\leftUndertaker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rightBlond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rightBlond.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rightGirl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rightGirl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rightGuard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rightGuard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rightPnj" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rightPnj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rightUndertaker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rightUndertaker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
