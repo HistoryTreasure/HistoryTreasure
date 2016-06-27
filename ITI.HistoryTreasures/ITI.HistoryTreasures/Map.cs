@@ -12,7 +12,7 @@ namespace ITI.HistoryTreasures
         readonly Level _level;
         Tile[,] _tileArray;
         List<Hitbox> hitboxes;
-        readonly XmlTextReader test;
+        readonly XmlTextReader xmlMap;
 
         /// <summary>
         /// This constructor create a Map.
@@ -22,11 +22,11 @@ namespace ITI.HistoryTreasures
         {
             _level = level;
 
-            test = new XmlTextReader(level.Name + ".xml");
+            xmlMap = new XmlTextReader(level.Name + ".xml");
 
-            _tileArray = new Tile[ArrayWidth(test), ArrayHeigth(test)];
+            _tileArray = new Tile[ArrayWidth(xmlMap), ArrayHeigth(xmlMap)];
 
-            _tileArray = CreateMap(TileArray, test);
+            _tileArray = CreateMap(TileArray, xmlMap);
 
             level.MainCharacter.MCtx = this;
             CreateTileHitbox(TileArray);
