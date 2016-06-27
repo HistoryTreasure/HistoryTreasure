@@ -10,6 +10,7 @@ namespace ITI.HistoryTreasures
         readonly string _speech;
         readonly string _name;
         readonly Level _ctx;
+        bool _talk;
 
         /// <summary>
         /// This constructor allow to create a PNJ.
@@ -55,8 +56,8 @@ namespace ITI.HistoryTreasures
             }
             _speech = speech;
             _name = name;
+            _talk = false;
 
-            
         }
 
         /// <summary>
@@ -74,6 +75,18 @@ namespace ITI.HistoryTreasures
         {
             get
             { return _ctx; }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="PNJ"/> is talk.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if talk; otherwise, <c>false</c>.
+        /// </value>
+        public bool Talk
+        {
+            get { return _talk; }
+            set { _talk = value; }
         }
     }
 }

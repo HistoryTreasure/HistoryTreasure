@@ -13,7 +13,7 @@ namespace ITI.HistoryTreasures.Rendering
         public Sound()
         {
             SoundPlayer audio = new SoundPlayer(Resources.audio);
-            audio.Play();
+            //audio.Play();
         }
     }
 }
