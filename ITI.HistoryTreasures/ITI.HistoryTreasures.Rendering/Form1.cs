@@ -16,20 +16,19 @@ namespace ITI.HistoryTreasures.Rendering
     {
         int _cursX = 0;
         int _cursY = 0;
-        
+
         Bitmap _herb = Properties.Resources.herbe;
-        Theme _tCtx;
-        Level _level;
-        Game g;
 
         /// <summary>
         /// This contructor instantiate HistoryTreasures.
         /// </summary>
-        public HistoryTreasures(Game g)
+        public HistoryTreasures()
         {
             InitializeComponent();
-
+            Game g = new Game();
             gameControl1.LevelContext = g.Check();
+            menuControl1.GameControl = gameControl1;
+            menuControl1.Game = g;
         }
 
         /// <summary>
@@ -66,6 +65,11 @@ namespace ITI.HistoryTreasures.Rendering
         }
 
         private void riddleControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuControl1_Load(object sender, EventArgs e)
         {
 
         }
