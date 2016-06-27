@@ -191,10 +191,6 @@ namespace ITI.HistoryTreasures
             return speech;
         }
 
-        public bool IsClue
-        {
-            get { return _isClue; }
-        }
         /// <summary>
         /// Talkses the specified other.
         /// </summary>
