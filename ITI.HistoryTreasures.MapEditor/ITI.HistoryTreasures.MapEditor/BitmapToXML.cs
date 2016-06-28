@@ -53,7 +53,7 @@ namespace ITI.HistoryTreasures.MapEditor
                     }
                     else if (p.Name == "ff000000")
                     {
-                        xElements.Add(new XElement("Tile", "Home"));
+                        xElements.Add(new XElement("Tile", "Hole"));
                     }
                     else if (p.Name == "ff22b14c")
                     {
