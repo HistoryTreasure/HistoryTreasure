@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace ITI.HistoryTreasures
@@ -366,6 +367,22 @@ namespace ITI.HistoryTreasures
             if (answer == Answer)
             {
                 IsOpen = true;
+            }
+        }
+
+        /// <summary>
+        /// Exits the level.
+        /// </summary>
+        /// <param name="X">The x.</param>
+        /// <param name="Y">The y.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
+        private void ExitLevel(int X, int Y)
+        {
+            if (IsOpen == true) //rajouter et logique avec x et y concernant
+            {
+                IsFinish = true;
+                GameState gm = new GameState();
+                gm.Save();
             }
         }
 
