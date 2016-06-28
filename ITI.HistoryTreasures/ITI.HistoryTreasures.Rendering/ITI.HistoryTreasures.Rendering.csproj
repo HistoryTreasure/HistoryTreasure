@@ -209,6 +209,7 @@
     <None Include="Resources\rightPnj.png" />
     <None Include="Resources\downPnj.png" />
     <None Include="Resources\leftPnj.png" />
+    <None Include="Resources\logo.png" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
