@@ -170,17 +170,17 @@ namespace ITI.HistoryTreasures
                                 x++;
                             }
                         }
-                        else if (xml.Value == "Home")
+                        else if (xml.Value == "Hole")
                         {
                             if (x == Width - 1)
                             {
-                                tileArray[x, y] = new Tile(false, TileEnum.HOME, this);
+                                tileArray[x, y] = new Tile(false, TileEnum.HOLE, this);
                                 x = 0;
                                 y++;
                             }
                             else
                             {
-                                tileArray[x, y] = new Tile(false, TileEnum.HOME, this);
+                                tileArray[x, y] = new Tile(false, TileEnum.HOLE, this);
                                 x++;
                             }
                         }
