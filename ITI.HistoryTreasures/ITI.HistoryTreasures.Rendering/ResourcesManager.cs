@@ -26,6 +26,7 @@ namespace ITI.HistoryTreasures.Rendering
             _tileBitmaps[TileEnum.FLOOR] = Properties.Resources.floor;
             _tileBitmaps[TileEnum.ROCK] = Properties.Resources.rock;
             _tileBitmaps[TileEnum.STONEPATH] = Properties.Resources.stonepath;
+            _tileBitmaps[TileEnum.HOLE] = Properties.Resources.hole;
             _characterBitmaps = new Dictionary<CharacterEnum, Bitmap>();
             _characterBitmaps[CharacterEnum.MCFACE] = Properties.Resources.downStand;
             _characterBitmaps[CharacterEnum.MCFACERIGHT] = Properties.Resources.downRight;

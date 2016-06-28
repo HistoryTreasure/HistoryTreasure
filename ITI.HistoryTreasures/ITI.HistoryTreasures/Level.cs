@@ -115,7 +115,7 @@ namespace ITI.HistoryTreasures
         {
             get { return _ctx; }
         }
-        
+
         /// <summary>
         /// Creates a PNJ.
         /// </summary>
@@ -131,7 +131,7 @@ namespace ITI.HistoryTreasures
             PNJ p = new PNJ(gctx, this, X, Y, bitMapName, name, speech);
             return p;
         }
-        
+
         /// <summary>
         /// Creates the main.
         /// </summary>
@@ -226,7 +226,7 @@ namespace ITI.HistoryTreasures
                 if (MainCharacter.CanInteract(Clues[i].HitBox))
                 {
                     key = KeyEnum.action;
-                    _speech = Clues[i].Name +  (": ") + Clues[i].Speech;
+                    _speech = Clues[i].Name + (": ") + Clues[i].Speech;
                     Clues[i].Talk = true;
                     break;
                 }
