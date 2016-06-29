@@ -15,7 +15,6 @@ namespace ITI.HistoryTreasures.Rendering
         Label _riddle;
         Level _lCtx;
 
-
         //RiddleManager _riddleManager;
         public RiddleControl()
         {

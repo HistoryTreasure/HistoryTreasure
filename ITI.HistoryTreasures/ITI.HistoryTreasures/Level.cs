@@ -258,6 +258,12 @@ namespace ITI.HistoryTreasures
             get { return _answer; }
         }
 
+        /// <summary>
+        /// Gets the riddle.
+        /// </summary>
+        /// <value>
+        /// The riddle.
+        /// </value>
         public string Riddle
         {
             get { return _riddle; }

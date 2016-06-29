@@ -14,8 +14,7 @@ namespace ITI.HistoryTreasures
         string _name;
         readonly Game _ctx;
         readonly Hitbox _hitBox;
-        MainCharacter _mc;
-
+        
         /// <summary>
         /// This constructor allow to create a Character.
         /// </summary>

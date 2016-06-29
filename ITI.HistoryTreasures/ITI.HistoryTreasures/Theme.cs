@@ -27,6 +27,7 @@ namespace ITI.HistoryTreasures
                     throw new InvalidOperationException("You cannot create two themes with same name");
                 }
             }
+
             _ctx = ctx;
             _name = name;
             _isFinish = false;

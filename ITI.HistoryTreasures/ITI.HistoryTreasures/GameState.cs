@@ -17,20 +17,17 @@ namespace ITI.HistoryTreasures
         Theme _tCtx;
         Level _lCtx;
 
-        //level / theme en cours a sauvegarder
-        //sauvegarde entre chaque niveau
-
         /// <summary>
         /// Initializes a new instance of the <see cref="GameState"/> class.
         /// </summary>
-        /// <param name="gCtx">The g CTX.</param>
-        /// <param name="name">The name.</param>
         public GameState()
         {
             _gCtx = new Game();
-            //_tCtx = _gCtx.CreateTheme(Name);
         }
 
+        /// <summary>
+        /// Saves the current game.
+        /// </summary>
         public void Save()
         {
             XElement game = new XElement("GameState",
@@ -43,9 +40,12 @@ namespace ITI.HistoryTreasures
             Load();
         }
 
+        /// <summary>
+        /// Loads the previous party.
+        /// </summary>
+        /// <returns></returns>
         public string Load()
         {
-            string save;
             XmlTextReader xml = new XmlTextReader("GameState.xml");
             xml.Read();
 
@@ -61,6 +61,11 @@ namespace ITI.HistoryTreasures
             return "";
         }
 
+        /// <summary>
+        /// Checks the current level.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.InvalidOperationException">Not possible</exception>
         public List<Theme> Check()
         {
             foreach (Theme t in GCtx.Themes)

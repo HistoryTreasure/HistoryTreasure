@@ -10,6 +10,9 @@ namespace ITI.HistoryTreasures.Rendering
 {
     public class Sound : Resource
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Sound"/> class.
+        /// </summary>
         public Sound()
         {
             SoundPlayer audio = new SoundPlayer(Resources.audio);

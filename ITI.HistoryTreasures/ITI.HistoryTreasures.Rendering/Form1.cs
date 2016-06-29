@@ -14,11 +14,6 @@ namespace ITI.HistoryTreasures.Rendering
 {
     public partial class HistoryTreasures : Form
     {
-        int _cursX = 0;
-        int _cursY = 0;
-
-        Bitmap _herb = Properties.Resources.herbe;
-
         /// <summary>
         /// This contructor instantiate HistoryTreasures.
         /// </summary>
@@ -32,43 +27,59 @@ namespace ITI.HistoryTreasures.Rendering
         }
 
         /// <summary>
-        /// This method update position of the mouse for show it on screen.
+        /// Handles the SizeChanged event of the gameControl1 control.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void HistoryTreasures_MouseMove(object sender, MouseEventArgs e)
-        {
-
-            _cursX = e.X;
-            _cursY = e.Y;
-
-            this.Refresh();
-        }
-
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void gameControl1_SizeChanged(object sender, EventArgs e)
         {
             this.Refresh();
         }
 
+        /// <summary>
+        /// Riddles the control.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void RiddleControl(object sender, EventArgs e)
         {
             this.Refresh();
         }
 
+        /// <summary>
+        /// Handles the Load event of the interactionsControl1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void interactionsControl1_Load(object sender, EventArgs e)
         {
         }
 
+        /// <summary>
+        /// Handles the Load event of the gameControl1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void gameControl1_Load(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the Load event of the riddleControl1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void riddleControl1_Load(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the Load event of the menuControl1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void menuControl1_Load(object sender, EventArgs e)
         {
 
