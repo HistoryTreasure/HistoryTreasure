@@ -387,7 +387,7 @@ namespace ITI.HistoryTreasures
             if ((IsOpen == true) && (MapContext.TileArray[19, 19].posX == X) && (MapContext.TileArray[19, 19].posY == Y))
             {
                 IsFinish = true;
-                GameState gm = new GameState();
+                GameState gm = new GameState(Theme.Game);
                 gm.Save();
             }
         }
