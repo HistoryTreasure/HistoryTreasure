@@ -25,14 +25,17 @@ namespace ITI.HistoryTreasures
         /// </summary>
         /// <param name="gCtx">The g CTX.</param>
         /// <param name="name">The name.</param>
-        public GameState()
+        public GameState(Game gctx)
         {
-            _gCtx = new Game();
+            _gCtx = gctx;
             //_tCtx = _gCtx.CreateTheme(Name);
         }
 
         public void Save()
         {
+            LCtx = GCtx.Check();
+            TCtx = LCtx.Theme;
+
             XElement game = new XElement("GameState",
                 new XElement("Game", GCtx),
                 new XElement("Theme", TCtx),
@@ -98,6 +101,7 @@ namespace ITI.HistoryTreasures
         public Theme TCtx
         {
             get { return _tCtx; }
+            set { _tCtx = value; }
         }
 
         /// <summary>
@@ -108,6 +112,7 @@ namespace ITI.HistoryTreasures
         public Level LCtx
         {
             get { return _lCtx; }
+            set { _lCtx = value; }
         }
 
         /// <summary>
