@@ -17,6 +17,7 @@ namespace ITI.HistoryTreasures
        BRIDGE,BRIDGEWALL,
        HOME,CLUE,
        PNJ, FLOOR, 
-       ROCK, STONEPATH
+       ROCK, STONEPATH,
+       HOLE,
     }
 }

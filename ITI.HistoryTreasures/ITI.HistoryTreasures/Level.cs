@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace ITI.HistoryTreasures
@@ -114,7 +115,7 @@ namespace ITI.HistoryTreasures
         {
             get { return _ctx; }
         }
-        
+
         /// <summary>
         /// Creates a PNJ.
         /// </summary>
@@ -130,7 +131,7 @@ namespace ITI.HistoryTreasures
             PNJ p = new PNJ(gctx, this, X, Y, bitMapName, name, speech);
             return p;
         }
-        
+
         /// <summary>
         /// Creates the main.
         /// </summary>
@@ -225,7 +226,7 @@ namespace ITI.HistoryTreasures
                 if (MainCharacter.CanInteract(Clues[i].HitBox))
                 {
                     key = KeyEnum.action;
-                    _speech = Clues[i].Name +  (": ") + Clues[i].Speech;
+                    _speech = Clues[i].Name + (": ") + Clues[i].Speech;
                     Clues[i].Talk = true;
                     break;
                 }
@@ -372,6 +373,22 @@ namespace ITI.HistoryTreasures
             if (answer == Answer)
             {
                 IsOpen = true;
+            }
+        }
+
+        /// <summary>
+        /// Exits the level.
+        /// </summary>
+        /// <param name="X">The x.</param>
+        /// <param name="Y">The y.</param>
+        /// <exception cref="System.NotImplementedException"></exception>
+        private void ExitLevel(int X, int Y)
+        {
+            if ((IsOpen == true) && (MapContext.TileArray[19, 19].posX == X) && (MapContext.TileArray[19, 19].posY == Y))
+            {
+                IsFinish = true;
+                GameState gm = new GameState();
+                gm.Save();
             }
         }
 
