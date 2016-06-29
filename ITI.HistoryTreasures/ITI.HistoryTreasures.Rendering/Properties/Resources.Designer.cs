@@ -430,6 +430,16 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] rock1 {
+            get {
+                object obj = ResourceManager.GetObject("rock1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap stonepath {
