@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,15 +69,10 @@ namespace ITI.HistoryTreasures.Rendering
         {
             if (LevelContext == null) return;
             Tile[,] tileArray = LevelContext.MapContext.TileArray;
-            //Size _windowSize = HistoryTreasures.ActiveForm.Size;
-            int x = 0;
-            int y = 0;
-            double coefX = 1.0 * this.Width / (tileArray.GetLength(0) * TileSize);
-            double coefY = 1.0 * this.Height / (tileArray.GetLength(1) * TileSize);
-            int screenTileWidth = GetArround(coefX * TileSize);
-            int screenTileHeight = GetArround(coefY * TileSize);
+            float coefX = 1.0f * Width / (tileArray.GetLength(0) * TileSize);
+            float coefY = 1.0f * Height / (tileArray.GetLength(1) * TileSize);
 
-            e.Graphics.ScaleTransform(0.5f, 0.5f);
+            e.Graphics.ScaleTransform(coefX, coefY);
             //e.Graphics.RotateTransform(25);
 
             Pen p = new Pen(Color.Red, 3);
@@ -96,20 +92,16 @@ namespace ITI.HistoryTreasures.Rendering
 
                     if (t.IsSolid)
                     {
-                        Rectangle rt = new Rectangle(GetArround(coefX * t.TileHitbox.xA), GetArround(coefY * t.TileHitbox.yA), screenTileWidth, screenTileHeight);
+                        //Rectangle rt = new Rectangle(GetArround(coefX * t.TileHitbox.xA), GetArround(coefY * t.TileHitbox.yA), screenTileWidth, screenTileHeight);
                         //e.Graphics.DrawRectangle(p, rt);
                     }
-
-                    x += screenTileWidth;
                 }
-                x = 0;
-                y += screenTileHeight;
             }
 
             characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX, MC.positionY);
 
-            Rectangle r = new Rectangle(GetArround(coefX * MC.HitBox.xA), GetArround(coefY * MC.HitBox.yA), screenTileWidth, screenTileHeight / 2);
+            //Rectangle r = new Rectangle(GetArround(coefX * MC.HitBox.xA), GetArround(coefY * MC.HitBox.yA), screenTileWidth, screenTileHeight / 2);
             //e.Graphics.DrawRectangle(p, r);
 
             foreach (PNJ pnj in LevelContext.Pnjs)
@@ -117,7 +109,7 @@ namespace ITI.HistoryTreasures.Rendering
                 Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
                 e.Graphics.DrawImage(pnjBitmap, pnj.positionX, pnj.positionY);
 
-                Rectangle r2 = new Rectangle(GetArround(coefX * pnj.HitBox.xA), GetArround(coefY * pnj.HitBox.yA), screenTileWidth, screenTileHeight / 2);
+                //Rectangle r2 = new Rectangle(GetArround(coefX * pnj.HitBox.xA), GetArround(coefY * pnj.HitBox.yA), screenTileWidth, screenTileHeight / 2);
                 //e.Graphics.DrawRectangle(p, r2);
             }
 
@@ -126,9 +118,10 @@ namespace ITI.HistoryTreasures.Rendering
                 Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
                 e.Graphics.DrawImage(clueBitmap, clue.X, clue.Y);
 
-                Rectangle r3 = new Rectangle(GetArround(coefX * clue.HitBox.xA), GetArround(coefY * clue.HitBox.yA), screenTileWidth, screenTileHeight);
+                //Rectangle r3 = new Rectangle(GetArround(coefX * clue.HitBox.xA), GetArround(coefY * clue.HitBox.yA), screenTileWidth, screenTileHeight);
                 //e.Graphics.DrawRectangle(p, r3);
             }
+
         }
 
         private void InitializeComponent()
