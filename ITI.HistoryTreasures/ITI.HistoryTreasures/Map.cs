@@ -55,6 +55,7 @@ namespace ITI.HistoryTreasures
 
                     x += 32;
                 }
+
                 x = 0;
                 y += 32;
             }
@@ -243,6 +244,7 @@ namespace ITI.HistoryTreasures
                     }
                 }
             }
+
             return tileArray;
         }
 

@@ -50,21 +50,29 @@ namespace ITI.HistoryTreasures.Rendering
         /// </summary>
         /// <param name="tile">This parameter contains a tile.</param>
         /// <returns></returns>
-        
         public Bitmap GetTileBitmap(Tile tile)
         {
             return _tileBitmaps[tile.TileType];
         }
 
+        /// <summary>
+        /// Gets the character bitmap.
+        /// </summary>
+        /// <param name="character">The character.</param>
+        /// <returns></returns>
         public Bitmap GetCharacterBitmap(Character character)
         {
             return _characterBitmaps[character.CharacterBitmapName];
         }
 
+        /// <summary>
+        /// Gets the clue bitmap.
+        /// </summary>
+        /// <param name="clue">The clue.</param>
+        /// <returns></returns>
         public Bitmap GetClueBitmap(Clue clue)
         {
             return _clueBitmaps[clue.ClueBitmapName];
         }
-    
     }
 }

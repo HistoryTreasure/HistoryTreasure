@@ -259,6 +259,12 @@ namespace ITI.HistoryTreasures
             get { return _answer; }
         }
 
+        /// <summary>
+        /// Gets the riddle.
+        /// </summary>
+        /// <value>
+        /// The riddle.
+        /// </value>
         public string Riddle
         {
             get { return _riddle; }
@@ -381,7 +387,7 @@ namespace ITI.HistoryTreasures
             if ((IsOpen == true) && (MapContext.TileArray[19, 19].posX == X) && (MapContext.TileArray[19, 19].posY == Y))
             {
                 IsFinish = true;
-                GameState gm = new GameState();
+                GameState gm = new GameState(Theme.Game);
                 gm.Save();
             }
         }
