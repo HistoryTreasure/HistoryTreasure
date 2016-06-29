@@ -76,9 +76,9 @@ namespace ITI.HistoryTreasures.Rendering
             int screenTileWidth = GetArround(coefX * TileSize);
             int screenTileHeight = GetArround(coefY * TileSize);
 
-            e.Graphics.ScaleTransform(1.0f, 1.0f);
+            e.Graphics.ScaleTransform(0.5f, 0.5f);
             //e.Graphics.RotateTransform(25);
-            
+
             Pen p = new Pen(Color.Red, 3);
 
             MainCharacter MC = LevelContext.MainCharacter;
@@ -92,7 +92,7 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     Tile t = tileArray[i, j];
                     Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
-                    e.Graphics.DrawImage(tileBitmap, GetArround(coefX * t.posX), GetArround(coefY * t.posY));
+                    e.Graphics.DrawImage(tileBitmap, t.posX, t.posY);
 
                     if (t.IsSolid)
                     {
@@ -107,7 +107,7 @@ namespace ITI.HistoryTreasures.Rendering
             }
 
             characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
-            e.Graphics.DrawImage(characterBitmap, GetArround(coefX * MC.positionX), GetArround(coefY * MC.positionY), screenTileWidth, screenTileHeight);
+            e.Graphics.DrawImage(characterBitmap, MC.positionX, MC.positionY);
 
             Rectangle r = new Rectangle(GetArround(coefX * MC.HitBox.xA), GetArround(coefY * MC.HitBox.yA), screenTileWidth, screenTileHeight / 2);
             //e.Graphics.DrawRectangle(p, r);
@@ -115,7 +115,7 @@ namespace ITI.HistoryTreasures.Rendering
             foreach (PNJ pnj in LevelContext.Pnjs)
             {
                 Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
-                e.Graphics.DrawImage(pnjBitmap, GetArround(coefX * pnj.positionX), GetArround(coefY * pnj.positionY), screenTileWidth, screenTileHeight);
+                e.Graphics.DrawImage(pnjBitmap, pnj.positionX, pnj.positionY);
 
                 Rectangle r2 = new Rectangle(GetArround(coefX * pnj.HitBox.xA), GetArround(coefY * pnj.HitBox.yA), screenTileWidth, screenTileHeight / 2);
                 //e.Graphics.DrawRectangle(p, r2);
@@ -124,7 +124,7 @@ namespace ITI.HistoryTreasures.Rendering
             foreach (Clue clue in LevelContext.Clues)
             {
                 Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
-                e.Graphics.DrawImage(clueBitmap, GetArround(coefX * clue.X), GetArround(coefY * clue.Y), screenTileWidth, screenTileHeight);
+                e.Graphics.DrawImage(clueBitmap, clue.X, clue.Y);
 
                 Rectangle r3 = new Rectangle(GetArround(coefX * clue.HitBox.xA), GetArround(coefY * clue.HitBox.yA), screenTileWidth, screenTileHeight);
                 //e.Graphics.DrawRectangle(p, r3);
@@ -158,7 +158,7 @@ namespace ITI.HistoryTreasures.Rendering
         private void GameControl_KeyDown(object sender, KeyEventArgs e)
         {
             MainCharacter MC = LevelContext.MainCharacter;
-            
+
             if (e.KeyCode == Keys.Z)
             {
                 MC.Movement(KeyEnum.up);
@@ -225,7 +225,7 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     return;
                 }
-                
+
                 HistoryTreasures parent = (HistoryTreasures)this.ParentForm;
                 parent.IsInteractionAClue(MC.IsClue);
                 parent.SetInteractionMessage(MC.Interact(KeyEnum.action));
