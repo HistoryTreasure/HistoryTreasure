@@ -40,6 +40,11 @@ namespace ITI.HistoryTreasures
             set { _themes = value; }
         }
 
+        /// <summary>
+        /// Checks the first unfinished level.
+        /// </summary>
+        /// <returns>Returns the first finished level.</returns>
+        /// <exception cref="System.InvalidOperationException">Not possible</exception>
         public Level Check()
         {
             foreach (Theme t in Themes)
