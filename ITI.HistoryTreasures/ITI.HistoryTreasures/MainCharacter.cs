@@ -34,7 +34,7 @@ namespace ITI.HistoryTreasures
             _life = 3;
             _lCtx = lCtx;
         }
-        
+
 
         /// <summary>
         /// This property returns a speed with an int.
@@ -132,8 +132,8 @@ namespace ITI.HistoryTreasures
                     }
                 }
 
-
             }
+
             else if (key == KeyEnum.up)
             {
                 positionY -= Speed;
@@ -147,6 +147,7 @@ namespace ITI.HistoryTreasures
                     }
                 }
             }
+
             else if (key == KeyEnum.right)
             {
                 positionX += Speed;
@@ -157,6 +158,7 @@ namespace ITI.HistoryTreasures
                 }
 
                 HitBox.UpdateHitbox(positionX, positionY);
+
                 foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
                 {
                     if (HitBox.Overlaps(hitbox))
@@ -166,10 +168,12 @@ namespace ITI.HistoryTreasures
                     }
                 }
             }
+
             else if (key == KeyEnum.left)
             {
                 positionX -= Speed;
                 HitBox.UpdateHitbox(positionX, positionY);
+
                 foreach (Hitbox hitbox in MCtx.GetHitboxes(MCtx))
                 {
                     if (HitBox.Overlaps(hitbox))

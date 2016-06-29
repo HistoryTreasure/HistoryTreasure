@@ -63,7 +63,7 @@ namespace ITI.HistoryTreasures.Rendering
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void button1_Click(object sender, EventArgs e) //Button Continue
         {
-            GameState gs = new GameState();
+            GameState gs = new GameState(Game);
             gs.Load();
             Game.Themes = gs.Check();
             gc.LevelContext = Game.Check();

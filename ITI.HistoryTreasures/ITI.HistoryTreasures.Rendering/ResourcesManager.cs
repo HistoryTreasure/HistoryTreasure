@@ -26,6 +26,7 @@ namespace ITI.HistoryTreasures.Rendering
             _tileBitmaps[TileEnum.FLOOR] = Properties.Resources.floor;
             _tileBitmaps[TileEnum.ROCK] = Properties.Resources.rock;
             _tileBitmaps[TileEnum.STONEPATH] = Properties.Resources.stonepath;
+            _tileBitmaps[TileEnum.HOLE] = Properties.Resources.hole;
             _characterBitmaps = new Dictionary<CharacterEnum, Bitmap>();
             _characterBitmaps[CharacterEnum.MCFACE] = Properties.Resources.downStand;
             _characterBitmaps[CharacterEnum.MCFACERIGHT] = Properties.Resources.downRight;
@@ -49,21 +50,29 @@ namespace ITI.HistoryTreasures.Rendering
         /// </summary>
         /// <param name="tile">This parameter contains a tile.</param>
         /// <returns></returns>
-        
         public Bitmap GetTileBitmap(Tile tile)
         {
             return _tileBitmaps[tile.TileType];
         }
 
+        /// <summary>
+        /// Gets the character bitmap.
+        /// </summary>
+        /// <param name="character">The character.</param>
+        /// <returns></returns>
         public Bitmap GetCharacterBitmap(Character character)
         {
             return _characterBitmaps[character.CharacterBitmapName];
         }
 
+        /// <summary>
+        /// Gets the clue bitmap.
+        /// </summary>
+        /// <param name="clue">The clue.</param>
+        /// <returns></returns>
         public Bitmap GetClueBitmap(Clue clue)
         {
             return _clueBitmaps[clue.ClueBitmapName];
         }
-    
     }
 }
