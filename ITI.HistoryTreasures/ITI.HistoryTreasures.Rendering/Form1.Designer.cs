@@ -31,6 +31,7 @@ namespace ITI.HistoryTreasures.Rendering
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryTreasures));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuControl1 = new ITI.HistoryTreasures.Rendering.MenuControl();
             this.interactionsControl1 = new ITI.HistoryTreasures.Rendering.InteractionsControl();
@@ -45,6 +46,7 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             // menuControl1
             // 
+            this.menuControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuControl1.BackgroundImage")));
             this.menuControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuControl1.Game = null;
             this.menuControl1.GameControl = null;
@@ -66,6 +68,8 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             // riddleControl1
             // 
+            this.riddleControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.riddleControl1.LevelContext = null;
             this.riddleControl1.Location = new System.Drawing.Point(3, 475);
             this.riddleControl1.Name = "riddleControl1";
@@ -75,10 +79,14 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             // gameControl1
             // 
+            this.gameControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gameControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gameControl1.GameContext = null;
             this.gameControl1.LevelContext = null;
             this.gameControl1.Location = new System.Drawing.Point(179, 12);
+            this.gameControl1.MCBitmap = null;
             this.gameControl1.Name = "gameControl1";
             this.gameControl1.Size = new System.Drawing.Size(393, 457);
             this.gameControl1.TabIndex = 0;

@@ -210,8 +210,8 @@
     <None Include="Resources\downPnj.png" />
     <None Include="Resources\leftPnj.png" />
     <None Include="Resources\logo.png" />
-    <None Include="Resources\herbe.png" />
     <None Include="Resources\rock.png" />
+    <None Include="Resources\herbe.png" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
