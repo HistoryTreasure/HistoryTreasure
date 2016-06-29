@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Map>
-  <Width>30</Width>
-  <Height>30</Height>
+  <Width>20</Width>
+  <Height>20</Height>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -10,17 +10,9 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -38,14 +30,6 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
@@ -61,34 +45,19 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
+  <Tile>Rock</Tile>
+  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
+  <Tile>Rock</Tile>
+  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -96,29 +65,19 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
   <Tile>Rock</Tile>
   <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Rock</Tile>
   <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -126,16 +85,11 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
+  <Tile>Grass</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
@@ -146,39 +100,22 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -193,22 +130,12 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -223,69 +150,66 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
+  <Tile>StonePath</Tile>
+  <Tile>StonePath</Tile>
+  <Tile>StonePath</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
@@ -301,26 +225,14 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -333,36 +245,19 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
+  <Tile>Rock</Tile>
+  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -370,30 +265,19 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
+  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -401,20 +285,14 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -422,8 +300,6 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -434,27 +310,15 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -466,15 +330,9 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -482,10 +340,6 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -496,27 +350,15 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -531,23 +373,12 @@
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -559,347 +390,16 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>StonePath</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
+  <Tile>Hole</Tile>
 </Map>

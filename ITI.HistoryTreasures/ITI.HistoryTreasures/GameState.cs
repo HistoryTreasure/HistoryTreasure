@@ -17,22 +17,22 @@ namespace ITI.HistoryTreasures
         Theme _tCtx;
         Level _lCtx;
 
-        //level / theme en cours a sauvegarder
-        //sauvegarde entre chaque niveau
-
         /// <summary>
         /// Initializes a new instance of the <see cref="GameState"/> class.
         /// </summary>
-        /// <param name="gCtx">The g CTX.</param>
-        /// <param name="name">The name.</param>
-        public GameState()
+        public GameState(Game gctx)
         {
-            _gCtx = new Game();
-            //_tCtx = _gCtx.CreateTheme(Name);
+            _gCtx = gctx;
         }
 
+        /// <summary>
+        /// Saves the current game.
+        /// </summary>
         public void Save()
         {
+            LCtx = GCtx.Check();
+            TCtx = LCtx.Theme;
+
             XElement game = new XElement("GameState",
                 new XElement("Game", GCtx),
                 new XElement("Theme", TCtx),
@@ -43,9 +43,12 @@ namespace ITI.HistoryTreasures
             Load();
         }
 
+        /// <summary>
+        /// Loads the previous party.
+        /// </summary>
+        /// <returns></returns>
         public string Load()
         {
-            string save;
             XmlTextReader xml = new XmlTextReader("GameState.xml");
             xml.Read();
 
@@ -61,6 +64,11 @@ namespace ITI.HistoryTreasures
             return "";
         }
 
+        /// <summary>
+        /// Checks the current level.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.InvalidOperationException">Not possible</exception>
         public List<Theme> Check()
         {
             foreach (Theme t in GCtx.Themes)
@@ -98,6 +106,7 @@ namespace ITI.HistoryTreasures
         public Theme TCtx
         {
             get { return _tCtx; }
+            set { _tCtx = value; }
         }
 
         /// <summary>
@@ -108,6 +117,7 @@ namespace ITI.HistoryTreasures
         public Level LCtx
         {
             get { return _lCtx; }
+            set { _lCtx = value; }
         }
 
         /// <summary>
