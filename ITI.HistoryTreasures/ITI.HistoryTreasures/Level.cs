@@ -18,7 +18,6 @@ namespace ITI.HistoryTreasures
         bool _isOpen;
         readonly string _answer;
         readonly string _riddle;
-        GameState gm = new GameState();
 
         /// <summary>
         /// This constructor create a level.
@@ -46,7 +45,6 @@ namespace ITI.HistoryTreasures
             AddClues(Name);
             _answer = CreateAnwser(Name);
             _riddle = CreateRiddle(Name);
-            
         }
 
         /// <summary>
@@ -383,6 +381,7 @@ namespace ITI.HistoryTreasures
             if ((IsOpen == true) && (MapContext.TileArray[19, 19].posX == X) && (MapContext.TileArray[19, 19].posY == Y))
             {
                 IsFinish = true;
+                GameState gm = new GameState();
                 gm.Save();
             }
         }
