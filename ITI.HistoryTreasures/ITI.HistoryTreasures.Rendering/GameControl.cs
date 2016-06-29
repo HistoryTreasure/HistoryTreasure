@@ -130,6 +130,9 @@ namespace ITI.HistoryTreasures.Rendering
             e.Graphics.DrawImage(characterBitmap, MC.positionX, MC.positionY);
         }
 
+        /// <summary>
+        /// Initializes the component.
+        /// </summary>
         private void InitializeComponent()
         {
             this.SuspendLayout();
@@ -143,6 +146,12 @@ namespace ITI.HistoryTreasures.Rendering
 
         }
 
+        /// <summary>
+        /// Gets the get resources manager.
+        /// </summary>
+        /// <value>
+        /// The get resources manager.
+        /// </value>
         private ResourcesManager GetResourcesManager
         {
             get { return _resourcesManager; }
@@ -154,6 +163,11 @@ namespace ITI.HistoryTreasures.Rendering
             return _sound;
         }*/
 
+        /// <summary>
+        /// Handles the KeyDown event of the GameControl control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="KeyEventArgs"/> instance containing the event data.</param>
         private void GameControl_KeyDown(object sender, KeyEventArgs e)
         {
             MainCharacter MC = LevelContext.MainCharacter;
@@ -232,6 +246,12 @@ namespace ITI.HistoryTreasures.Rendering
             }
         }
 
+        /// <summary>
+        /// Gets or sets the mc bitmap.
+        /// </summary>
+        /// <value>
+        /// The mc bitmap.
+        /// </value>
         public Bitmap MCBitmap
         {
             get { return characterBitmap; }
