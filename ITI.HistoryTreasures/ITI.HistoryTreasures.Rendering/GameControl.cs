@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace ITI.HistoryTreasures.Rendering
         static readonly int TileSize = 32;
         Bitmap characterBitmap;
         private bool right = false;
+        Bitmap _backGround;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -49,7 +51,54 @@ namespace ITI.HistoryTreasures.Rendering
         public Level LevelContext
         {
             get { return _lCtx; }
-            set { _lCtx = value; }
+            set
+            {
+                if (_lCtx != value)
+                {
+                    if (value == null)
+                    {
+                        Debug.Assert(_backGround != null);
+                        _backGround.Dispose();
+                        _backGround = null;
+                        _lCtx = null;
+                        return;
+                    }
+
+                    _lCtx = value;
+
+                    if (_backGround == null)
+                    {
+                        _backGround = new Bitmap(32*30, 32*30);
+                    }
+
+                    using (Graphics g = Graphics.FromImage(_backGround))
+                    {
+                        Tile[,] tileArray = LevelContext.MapContext.TileArray;
+                        for (int i = 0; i < LevelContext.MapContext.Height; i++)
+                        {
+                            for (int j = 0; j < LevelContext.MapContext.Width; j++)
+                            {
+                                Tile t = tileArray[i, j];
+                                Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
+                                Debug.Assert(t.posY == i * 32 && t.posX == j * 32);
+                                g.DrawImage(tileBitmap, t.posX, t.posY);
+                            }
+                        }
+
+                        foreach (PNJ pnj in LevelContext.Pnjs)
+                        {
+                            Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
+                            g.DrawImage(pnjBitmap, pnj.positionX, pnj.positionY);
+                        }
+
+                        foreach (Clue clue in LevelContext.Clues)
+                        {
+                            Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
+                            g.DrawImage(clueBitmap, clue.X, clue.Y);
+                        }
+                    }  
+                }           
+            }
         }
 
         /// <summary>
@@ -72,56 +121,13 @@ namespace ITI.HistoryTreasures.Rendering
             float coefX = 1.0f * Width / (tileArray.GetLength(0) * TileSize);
             float coefY = 1.0f * Height / (tileArray.GetLength(1) * TileSize);
 
-            e.Graphics.ScaleTransform(coefX, coefY);
-            //e.Graphics.RotateTransform(25);
-
-            Pen p = new Pen(Color.Red, 3);
+            e.Graphics.ScaleTransform(coefX,coefY);
+            e.Graphics.DrawImage(_backGround, 0, 0);
 
             MainCharacter MC = LevelContext.MainCharacter;
 
-            //Resizing the Form to an almost perfect square
-            //  HistoryTreasures.ActiveForm.Size = new Size(this.Height,this.Height);
-
-            for (int i = 0; i < LevelContext.MapContext.Height; i++)
-            {
-                for (int j = 0; j < LevelContext.MapContext.Width; j++)
-                {
-                    Tile t = tileArray[i, j];
-                    Bitmap tileBitmap = GetResourcesManager.GetTileBitmap(t);
-                    e.Graphics.DrawImage(tileBitmap, t.posX, t.posY);
-
-                    if (t.IsSolid)
-                    {
-                        //Rectangle rt = new Rectangle(GetArround(coefX * t.TileHitbox.xA), GetArround(coefY * t.TileHitbox.yA), screenTileWidth, screenTileHeight);
-                        //e.Graphics.DrawRectangle(p, rt);
-                    }
-                }
-            }
-
             characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX, MC.positionY);
-
-            //Rectangle r = new Rectangle(GetArround(coefX * MC.HitBox.xA), GetArround(coefY * MC.HitBox.yA), screenTileWidth, screenTileHeight / 2);
-            //e.Graphics.DrawRectangle(p, r);
-
-            foreach (PNJ pnj in LevelContext.Pnjs)
-            {
-                Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
-                e.Graphics.DrawImage(pnjBitmap, pnj.positionX, pnj.positionY);
-
-                //Rectangle r2 = new Rectangle(GetArround(coefX * pnj.HitBox.xA), GetArround(coefY * pnj.HitBox.yA), screenTileWidth, screenTileHeight / 2);
-                //e.Graphics.DrawRectangle(p, r2);
-            }
-
-            foreach (Clue clue in LevelContext.Clues)
-            {
-                Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
-                e.Graphics.DrawImage(clueBitmap, clue.X, clue.Y);
-
-                //Rectangle r3 = new Rectangle(GetArround(coefX * clue.HitBox.xA), GetArround(coefY * clue.HitBox.yA), screenTileWidth, screenTileHeight);
-                //e.Graphics.DrawRectangle(p, r3);
-            }
-
         }
 
         private void InitializeComponent()
