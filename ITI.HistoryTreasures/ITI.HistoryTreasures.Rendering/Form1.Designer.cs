@@ -108,7 +108,6 @@ namespace ITI.HistoryTreasures.Rendering
             this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "HistoryTreasures";
             this.ShowInTaskbar = false;
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HistoryTreasures_MouseMove);
             this.ResumeLayout(false);
 
         }

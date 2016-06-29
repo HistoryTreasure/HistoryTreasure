@@ -18,7 +18,6 @@ namespace ITI.HistoryTreasures.Rendering
     {
         Level _lCtx;
         Game _gCtx;
-        private IContainer _components;
         ResourcesManager _resourcesManager;
         //Sound _sound;
         static readonly int TileSize = 32;
@@ -180,60 +179,78 @@ namespace ITI.HistoryTreasures.Rendering
                     MC.CharacterBitmapName = CharacterEnum.MCBACKLEFT;
                     right = false;
                 }
+
                 else
                 {
                     MC.CharacterBitmapName = CharacterEnum.MCBACKRIGHT;
                     right = true;
                 }
+
                 Invalidate();
             }
+
             else if (e.KeyCode == Keys.S)
             {
                 MC.Movement(KeyEnum.down);
+
                 if (right == true)
                 {
                     MC.CharacterBitmapName = CharacterEnum.MCFACELEFT;
                     right = false;
                 }
+
                 else
                 {
                     MC.CharacterBitmapName = CharacterEnum.MCFACERIGHT;
                     right = true;
                 }
+
                 Invalidate();
             }
+
             else if (e.KeyCode == Keys.Q)
             {
                 MC.Movement(KeyEnum.left);
+
                 if (right == true)
                 {
                     MC.CharacterBitmapName = CharacterEnum.MCLEFTLEFT;
                     right = false;
                 }
+
                 else
                 {
                     MC.CharacterBitmapName = CharacterEnum.MCLEFTRIGHT;
                     right = true;
                 }
+
                 Invalidate();
+
             }
+
             else if (e.KeyCode == Keys.D)
             {
                 MC.Movement(KeyEnum.right);
+
                 if (right == true)
                 {
                     MC.CharacterBitmapName = CharacterEnum.MCRIGHTLEFT;
                     right = false;
                 }
+
                 else
                 {
                     MC.CharacterBitmapName = CharacterEnum.MCRIGHTRIGHT;
                     right = true;
                 }
+
                 Invalidate();
+
             }
+
             else if (e.KeyCode == Keys.E)
             {
+
                 if (MC.Interact(KeyEnum.action) == "")
                 {
                     return;
@@ -242,7 +259,6 @@ namespace ITI.HistoryTreasures.Rendering
                 HistoryTreasures parent = (HistoryTreasures)this.ParentForm;
                 parent.IsInteractionAClue(MC.IsClue);
                 parent.SetInteractionMessage(MC.Interact(KeyEnum.action));
-
             }
         }
 

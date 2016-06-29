@@ -15,7 +15,7 @@ namespace ITI.HistoryTreasures
         readonly int _y;
         readonly Hitbox _hitbox;
         readonly string _speech;
-        ClueEnum _bitMapName;
+        readonly ClueEnum _bitMapName;
         bool _talk;
 
         /// <summary>
