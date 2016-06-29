@@ -8,7 +8,6 @@ namespace ITI.HistoryTreasures
     public class PNJ : Character
     {
         readonly string _speech;
-        readonly string _name;
         readonly Level _ctx;
         bool _talk;
 
@@ -44,6 +43,7 @@ namespace ITI.HistoryTreasures
             }
 
             _ctx = ctx;
+
             if (Level.Pnjs.Count != 0)
             {
                 foreach (PNJ p in Level.Pnjs)
@@ -54,10 +54,9 @@ namespace ITI.HistoryTreasures
                     }
                 }
             }
-            _speech = speech;
-            _name = name;
-            _talk = false;
 
+            _speech = speech;
+            _talk = false;
         }
 
         /// <summary>
