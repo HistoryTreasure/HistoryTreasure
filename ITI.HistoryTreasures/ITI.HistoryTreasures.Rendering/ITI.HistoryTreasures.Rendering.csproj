@@ -128,7 +128,6 @@
     <EmbeddedResource Include="RulesControl.resx">
       <DependentUpon>RulesControl.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Resources\rock.pdn" />
     <None Include="UMLRender.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
