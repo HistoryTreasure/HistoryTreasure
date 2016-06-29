@@ -20,9 +20,9 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// Initializes a new instance of the <see cref="GameState"/> class.
         /// </summary>
-        public GameState()
+        public GameState(Game gctx)
         {
-            _gCtx = new Game();
+            _gCtx = gctx;
         }
 
         /// <summary>
@@ -30,6 +30,9 @@ namespace ITI.HistoryTreasures
         /// </summary>
         public void Save()
         {
+            LCtx = GCtx.Check();
+            TCtx = LCtx.Theme;
+
             XElement game = new XElement("GameState",
                 new XElement("Game", GCtx),
                 new XElement("Theme", TCtx),
@@ -103,6 +106,7 @@ namespace ITI.HistoryTreasures
         public Theme TCtx
         {
             get { return _tCtx; }
+            set { _tCtx = value; }
         }
 
         /// <summary>
@@ -113,6 +117,7 @@ namespace ITI.HistoryTreasures
         public Level LCtx
         {
             get { return _lCtx; }
+            set { _lCtx = value; }
         }
 
         /// <summary>
