@@ -68,6 +68,8 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             // riddleControl1
             // 
+            this.riddleControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.riddleControl1.LevelContext = null;
             this.riddleControl1.Location = new System.Drawing.Point(3, 475);
             this.riddleControl1.Name = "riddleControl1";
