@@ -47,6 +47,7 @@ namespace ITI.HistoryTreasures.Rendering
             // menuControl1
             // 
             this.menuControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuControl1.BackgroundImage")));
+            this.menuControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.menuControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuControl1.Game = null;
             this.menuControl1.GameControl = null;
@@ -104,10 +105,12 @@ namespace ITI.HistoryTreasures.Rendering
             this.Controls.Add(this.riddleControl1);
             this.Controls.Add(this.gameControl1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "HistoryTreasures";
             this.ShowInTaskbar = false;
+            this.Text = "History Treasures";
             this.ResumeLayout(false);
 
         }
