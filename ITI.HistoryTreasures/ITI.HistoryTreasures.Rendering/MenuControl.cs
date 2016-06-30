@@ -52,6 +52,7 @@ namespace ITI.HistoryTreasures.Rendering
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void button2_Click(object sender, EventArgs e) //Button New Game
         {
+            gc.LevelContext = Game.Check();
             gc.Show();
             Hide();
         }

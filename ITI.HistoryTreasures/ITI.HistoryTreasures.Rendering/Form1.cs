@@ -21,7 +21,6 @@ namespace ITI.HistoryTreasures.Rendering
         {
             InitializeComponent();
             Game g = new Game();
-            gameControl1.LevelContext = g.Check();
             menuControl1.GameControl = gameControl1;
             menuControl1.Game = g;
         }
