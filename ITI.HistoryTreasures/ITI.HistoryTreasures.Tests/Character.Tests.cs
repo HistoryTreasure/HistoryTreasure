@@ -87,7 +87,7 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void PNJ_cannot_be_created_with_his_hitbox_outside_the_map()
         {
-            Assert.Throws<ArgumentException>(() => l.Pnjs[0].positionX = 170);
+            Assert.Throws<ArgumentException>(() => l.CreatePNJ(g, -1, -1, CharacterEnum.GUARDFACE, "Test", "Hello world !"));
         }
 
         [Test]
@@ -117,7 +117,7 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void MainCharacter_have_a_name_and_a_speed()
         {
-            MainCharacter mC = new MainCharacter(g, l, 16, 16, CharacterEnum.MCFACE, "Judd");
+            mC = new MainCharacter(g, l, 16, 16, CharacterEnum.MCFACE, "Judd");
             string name = "Judd";
             int speed = 6;
 
@@ -128,8 +128,9 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void MainCharacter_cannot_be_created_if_his_position_is_negative()
         {
-            Assert.Throws<ArgumentException>(() => l.MainCharacter.positionX = -1);
-            Assert.Throws<ArgumentException>(() => new MainCharacter(g, l, -1, 0, CharacterEnum.MCFACE, "Judd"));
+            mC = null;
+            
+            Assert.Throws<ArgumentException>(() => new MainCharacter(g, l, -1, -1, CharacterEnum.MCFACE, "Judd"));
         }
 
         [Test]
@@ -223,10 +224,11 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
-        [Ignore("Not complete")]
         public void MainCharacter_cannot_be_created_with_his_hitbox_outside_the_map()
         {
-            Assert.Throws<ArgumentException>(() => l.CreateMain(t, 15, 15, CharacterEnum.MCFACE, "Judd"));
+            mC = null;
+
+            Assert.Throws<ArgumentException>(() => new MainCharacter(g, l, -1, -1, CharacterEnum.MCFACE, "Judd"));
         }
 
         [Test]
