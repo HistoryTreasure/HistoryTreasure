@@ -10,19 +10,21 @@ namespace ITI.HistoryTreasures.Rendering
 {
     public class Sound : Resource
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Sound"/> class.
-        /// </summary>
-        /// 
         SoundPlayer _audio;
         string _levelName;
         bool _playMusic = false;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Sound"/> class.
+        /// </summary>
         public Sound()
         {
             _audio = new SoundPlayer(Resources.menu);
         }
 
+        /// <summary>
+        /// Plays the correct sound according to the level in loop
+        /// </summary>
         public void Play()
         {
             if (PlayMusic)
@@ -44,17 +46,26 @@ namespace ITI.HistoryTreasures.Rendering
 
         }
 
+        /// <summary>
+        /// Stop the current playing sound
+        /// </summary>
         public void Stop()
         {
             _audio.Stop();
         }
 
+        /// <summary>
+        /// Mute the sound if set to false
+        /// </summary>
         public bool PlayMusic
         {
             get { return _playMusic; }
             set { _playMusic = value; }
         }
 
+        /// <summary>
+        /// Return the name of the current level
+        /// </summary>
         public string GetLevel
         {
             get { return _levelName; }

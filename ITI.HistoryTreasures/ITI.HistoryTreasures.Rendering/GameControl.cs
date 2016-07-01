@@ -159,6 +159,9 @@ namespace ITI.HistoryTreasures.Rendering
             get { return _resourcesManager; }
         }
 
+        /// <summary>
+        /// Returns the Sound
+        /// </summary>
         public Sound PlaySound
         {
             get { return _sound; }
