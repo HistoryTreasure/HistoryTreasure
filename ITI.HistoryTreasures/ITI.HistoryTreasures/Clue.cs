@@ -178,17 +178,5 @@ namespace ITI.HistoryTreasures
             get { return _talk; }
             set { _talk = value; }
         }
-
-        public Level Level
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
     }
 }
