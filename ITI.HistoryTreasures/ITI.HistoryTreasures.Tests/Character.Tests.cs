@@ -19,16 +19,16 @@ namespace ITI.HistoryTreasures.Tests
         public void PNJSetUp()
         {
             g = new Game();
-            t = g.CreateTheme("Theme");
-            l = t.CreateLevel("Level");
-            p = l.Pnj;
+            t = g.Themes[0];
+            l = t.Levels[0];
+            p = l.Pnjs[0];
         }
 
         [Test]
         public void PNJ_can_be_created_with_a_context_a_name_and_a_speech()
         {
-            string speech = "Hello world !";
-            Assert.That(p.Speech, Is.EqualTo(speech)); //Verify if the speech is correct
+            string speech = "Cette année nous prendrons la bastille !";
+            Assert.That(p.Speech, Is.EqualTo(speech));
             Assert.That(p.Level, Is.EqualTo(l));
             Assert.That(l.Pnjs.Contains(p));
         }
@@ -48,25 +48,25 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void PNJ_return_correct_coordinate() //Return position of PNJ
         {
-            Assert.That(p.positionX, Is.EqualTo(16));
-            Assert.That(p.positionY, Is.EqualTo(128));
+            Assert.That(p.positionX, Is.EqualTo(256));
+            Assert.That(p.positionY, Is.EqualTo(256));
             Assert.That(l.Pnjs.Contains(p));
         }
 
         [Test]
         public void PNJ_return_speech_correctly()
         {
-            Assert.That(p.Speech, Is.EqualTo("Hello world !"));
+            Assert.That(p.Speech, Is.EqualTo("Cette année nous prendrons la bastille !"));
             Assert.That(l.Pnjs.Contains(p));
         }
 
         [Test]
         public void PNJ_We_can_created_two_pnj_different_and_they_return_two_speech_different()
         {
-            PNJ n = l.CreatePNJ(g, 32, 32, CharacterEnum.MCFACE, "Marth", "You have to search the good questions !");
+            PNJ n = l.Pnjs[1];
 
-            Assert.That(p.Speech, Is.EqualTo("Hello world !"));
-            Assert.That(n.Speech, Is.EqualTo("You have to search the good questions !"));
+            Assert.That(p.Speech, Is.EqualTo("Cette année nous prendrons la bastille !"));
+            Assert.That(n.Speech, Is.EqualTo("La révolution est en marche"));
             Assert.That(l.Pnjs.Contains(p));
             Assert.That(l.Pnjs.Contains(n));
         }
@@ -74,20 +74,20 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void PNJ_hitbox_return_good_value()
         {
-            Assert.That(p.HitBox.xA, Is.EqualTo(0));
-            Assert.That(p.HitBox.yA, Is.EqualTo(128));
-            Assert.That(p.HitBox.xB, Is.EqualTo(32));
-            Assert.That(p.HitBox.yB, Is.EqualTo(128));
-            Assert.That(p.HitBox.xC, Is.EqualTo(32));
-            Assert.That(p.HitBox.yC, Is.EqualTo(144));
-            Assert.That(p.HitBox.xD, Is.EqualTo(0));
-            Assert.That(p.HitBox.yD, Is.EqualTo(144));
+            Assert.That(p.HitBox.xA, Is.EqualTo(256));
+            Assert.That(p.HitBox.yA, Is.EqualTo(272));
+            Assert.That(p.HitBox.xB, Is.EqualTo(288));
+            Assert.That(p.HitBox.yB, Is.EqualTo(272));
+            Assert.That(p.HitBox.xC, Is.EqualTo(288));
+            Assert.That(p.HitBox.yC, Is.EqualTo(288));
+            Assert.That(p.HitBox.xD, Is.EqualTo(256));
+            Assert.That(p.HitBox.yD, Is.EqualTo(288));
         }
 
         [Test]
         public void PNJ_cannot_be_created_with_his_hitbox_outside_the_map()
         {
-            Assert.Throws<ArgumentException>(() => l.CreatePNJ(g, 15, 15, CharacterEnum.GUARDFACE, "Hawke", "Hello world !"));
+            Assert.Throws<ArgumentException>(() => l.Pnjs[0].positionX = 170);
         }
 
         [Test]
@@ -109,8 +109,8 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacterSetUp()
         {
             g = new Game();
-            t = g.CreateTheme("Theme");
-            l = t.CreateLevel("Level");
+            t = g.Themes[0];
+            l = t.Levels[0];
             mC = l.MainCharacter;
         }
 
@@ -138,7 +138,7 @@ namespace ITI.HistoryTreasures.Tests
             for (int i = 0; i < 10; i++)
                 l.MainCharacter.Movement(KeyEnum.down);
 
-            Assert.That(l.MainCharacter.positionY, Is.EqualTo(76));
+            Assert.That(l.MainCharacter.positionY, Is.EqualTo(60));
         }
 
         [Test]
@@ -148,7 +148,7 @@ namespace ITI.HistoryTreasures.Tests
             for (int i = 0; i < 10; i++)
                 l.MainCharacter.Movement(KeyEnum.right);
 
-            Assert.That(l.MainCharacter.positionX, Is.EqualTo(76));
+            Assert.That(l.MainCharacter.positionX, Is.EqualTo(60));
         }
 
         [Test]
@@ -167,7 +167,7 @@ namespace ITI.HistoryTreasures.Tests
         [Ignore("We have to found a new operation")]
         public void MainCharacter_cannot_move_outside_the_map_by_the_right()
         {
-            Map m = new Map(l, 5, 5);
+            Map m = new Map(l);
 
             for (int i = 0; i < 1000; i++)
             {

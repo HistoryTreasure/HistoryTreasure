@@ -11,8 +11,8 @@ namespace ITI.HistoryTreasures
     {
         readonly string _name;
         readonly Level _lCtx;
-        readonly int _x;
-        readonly int _y;
+        int _x;
+        int _y;
         readonly Hitbox _hitbox;
         readonly string _speech;
         readonly ClueEnum _bitMapName;
@@ -38,7 +38,7 @@ namespace ITI.HistoryTreasures
 
             if (X < 0 || Y < 0)
             {
-                throw new ArgumentException("You cannot create a PNJ with this coordonate");
+                throw new ArgumentException("You cannot create a Clue with this coordonate");
             }
 
             for (int i = 0; i < lCtx.Clues.Count; i++)
@@ -130,6 +130,7 @@ namespace ITI.HistoryTreasures
         public int X
         {
             get { return _x; }
+            set { _x = value; }
         }
 
         /// <summary>
@@ -141,6 +142,7 @@ namespace ITI.HistoryTreasures
         public int Y
         {
             get { return _y; }
+            set { _y = value; }
         }
 
         /// <summary>

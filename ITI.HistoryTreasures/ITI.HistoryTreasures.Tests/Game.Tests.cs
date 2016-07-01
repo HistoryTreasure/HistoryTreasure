@@ -28,13 +28,13 @@ namespace ITI.HistoryTreasures.Tests
         public void ThemeSetUp()
         {
             g = new Game();
-            t = g.CreateTheme("Theme");
+            t = g.Themes[0];
         }
 
         [Test]
         public void Themes_are_created_and_have_a_name_and_is_correctly_add_to_his_list()
         {
-            string name = "Theme";
+            string name = "1";
             
             Assert.That(t.Name, Is.EqualTo(name));
             Assert.That(g.Themes.Contains(t));
@@ -43,9 +43,11 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void Themes_is_finish_if_all_levels_are_complete()
         {
-            Level l = t.CreateLevel("Level");
+            foreach (Level l in t.Levels)
+            {
+                l.IsFinish = true;
+            }
 
-            l.IsFinish = true;
             t.FinishTheme();
 
             Assert.That(g.Themes[0].IsFinish == true);
@@ -54,7 +56,7 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void A_theme_cannot_be_created_two_times_with_same_name()
         {
-            Assert.Throws<InvalidOperationException>(() => g.CreateTheme("Theme"));
+            Assert.Throws<InvalidOperationException>(() => g.CreateTheme("1"));
         }
     }
 
@@ -65,20 +67,22 @@ namespace ITI.HistoryTreasures.Tests
         Theme t;
         Level l;
         Clue c;
+        PNJ p;
 
         [TestFixtureSetUp]
         public void LevelSetUp()
         {
             g = new Game();
-            t = g.CreateTheme("Theme");
-            l = t.CreateLevel("Level");
-            c = l.CreateClue(t, 32, 32, ClueEnum.LIVRE, "Livre", "Un indice ? Son nom est Henri !");
+            t = g.Themes[0];
+            l = t.Levels[0];
+            c = l.Clues[0];
+            p = l.Pnjs[0];
         }
 
         [Test]
         public void Levels_are_created_and_have_a_name_and_is_correctly_add_to_his_list()
         {
-            string name = "Level";
+            string name = "1_1";
 
             Assert.That(l.Name, Is.EqualTo(name));
             Assert.That(t.Levels.Contains(l));
@@ -95,50 +99,44 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void Levels_return_correctly_PNJ()
         {
-            PNJ p = l.Pnj;
-
             Assert.That(l.Pnjs.Contains(p));
         }
         
         [Test]
         public void A_level_cannot_be_created_two_times_with_same_name()
         {
-            Assert.Throws<InvalidOperationException>(() => t.CreateLevel("Level"));
+            Assert.Throws<InvalidOperationException>(() => t.CreateLevel("1_1"));
         }
         [Test]
         public void Level_method_interaction_work_between_MainCharacter_and_PNJ()
         {
-            PNJ pnj = l.Pnj;
-
-            Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
+            Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo(l.Pnjs[0].Speech));
         }
 
         [Test]
         public void Level_method_interaction_work_in_diagonal_between_MainCharacter_and_PNJ()
         {
-            PNJ pnj = l.Pnj;
-
-            Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hello world !"));
+            Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo(l.Pnjs[0].Speech));
         }
 
         [Test]
         public void Level_method_interaction_works_between_MainCharacter_and_Clue()
         {
-            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo("Un indice ? Son nom est Henri !"));
+            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo(l.Clues[0].Speech));
         }
 
         [Test]
         public void Level_method_interaction_works_in_diagonal_between_MainCharacter_and_Clue()
         {
-            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo("Un indice ? Son nom est Henri !"));
+            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo(l.Clues[0].Speech));
         }
 
         [Test]
         public void Levels_return_correctly_main_character()
         {
             Assert.That(l.MainCharacter.Game == g);
-            Assert.That(l.MainCharacter.positionX == 16);
-            Assert.That(l.MainCharacter.positionY == 16);
+            Assert.That(l.MainCharacter.positionX == 0);
+            Assert.That(l.MainCharacter.positionY == 0);
             Assert.That(l.MainCharacter.CharacterBitmapName == CharacterEnum.MCFACE);
             Assert.That(l.MainCharacter.Name == "Judd");
         }
@@ -147,19 +145,19 @@ namespace ITI.HistoryTreasures.Tests
         public void Levels_returns_correctly_Clue()
         {
             Assert.That(c.LCtx == l);
-            Assert.That(c.X == 128);
-            Assert.That(c.Y == 128);
-            Assert.That(c.Name == "Livre");
-            Assert.That(c.Speech == "Un indice ? Son nom est Henri !");
+            Assert.That(c.X == 150);
+            Assert.That(c.Y == 150);
+            Assert.That(c.Name == "Book");
+            Assert.That(c.Speech == "L'histoire se souviendra de l'an 17... le reste est illisible");
         }
 
         [Test]
         public void Level_can_create_several_clue_and_return_several_speech_different()
         {
-            Clue c2 = l.CreateClue(t, 52, 52, ClueEnum.LIVRE, "Tableau", "Un indice ? Son cheval est blanc !");
+            Clue c2 = l.Clues[1];
 
-            Assert.That(c.Speech, Is.EqualTo("Un indice ? Son nom est Henri !"));
-            Assert.That(c2.Speech, Is.EqualTo("Un indice ? Son cheval est blanc !"));
+            Assert.That(c.Speech, Is.EqualTo("L'histoire se souviendra de l'an 17... le reste est illisible"));
+            Assert.That(c2.Speech, Is.EqualTo( "La bastille fut prise 11 ans avant la fin du siecle"));
             Assert.That(l.Clues.Contains(c));
             Assert.That(l.Clues.Contains(c2));
         }
@@ -185,9 +183,9 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void Level_Clue_cannot_be_created_outside_the_map()
         {
-            Map m = new Map(l, 5, 5);
+            Map m = new Map(l);
 
-            Assert.Throws<ArgumentException>(() => l.CreateClue(t, 170, 170, ClueEnum.LIVRE, "Truc", "Truc"));
+            Assert.Throws<ArgumentException>(() => l.Clues[0].X = 4480);
         }
 
         [Test]
@@ -199,8 +197,6 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void Level_Clue_cannot_be_create_on_a_PNJ()
         {
-            PNJ p = l.Pnj;
-
             Assert.Throws<InvalidOperationException>(() => l.CreateClue(t, 16, 128, ClueEnum.LIVRE, "Livre", "Un indice ? Son nom est Henri !"));
         }
 
@@ -213,8 +209,8 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void Level_Clue_returns_correctly_his_hitbox()
         {
-            Assert.That(c.HitBox.xD, Is.EqualTo(112));
-            Assert.That(c.HitBox.yD, Is.EqualTo(144));
+            Assert.That(c.HitBox.xD, Is.EqualTo(150));
+            Assert.That(c.HitBox.yD, Is.EqualTo(182));
         }
     }
 }
