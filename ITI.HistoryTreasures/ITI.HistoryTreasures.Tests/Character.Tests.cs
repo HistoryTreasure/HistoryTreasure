@@ -129,17 +129,17 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_cannot_be_created_if_his_position_is_negative()
         {
             mC = null;
-            
+
             Assert.Throws<ArgumentException>(() => new MainCharacter(g, l, -1, -1, CharacterEnum.MCFACE, "Judd"));
         }
 
         [Test]
         public void MainCharacter_can_move_down()
-        {            
-            for (int i = 0; i < 10; i++)
+        {
+            for (int i = 0; i < 30; i++)
                 l.MainCharacter.Movement(KeyEnum.down);
 
-            Assert.That(l.MainCharacter.positionY, Is.EqualTo(60));
+            Assert.That(l.MainCharacter.positionY, Is.EqualTo(180));
         }
 
         [Test]
@@ -153,7 +153,6 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
-        [Ignore("Hitbox not correct for the moment")]
         public void MainCharacter_cannot_move_outside_the_map()
         {
             for (int i = 32; i > 10; i--)
@@ -161,21 +160,20 @@ namespace ITI.HistoryTreasures.Tests
                 l.MainCharacter.Movement(KeyEnum.left);
             }
 
-            Assert.That(l.MainCharacter.positionX == 16);
+            Assert.That(l.MainCharacter.positionX == 0);
         }
 
         [Test]
-        [Ignore("We have to found a new operation")]
         public void MainCharacter_cannot_move_outside_the_map_by_the_right()
         {
-            Map m = new Map(l);
+            Map m = l.MapContext;
 
             for (int i = 0; i < 1000; i++)
             {
                 l.MainCharacter.Movement(KeyEnum.right);
             }
 
-            Assert.That(l.MainCharacter.positionX == 144);
+            Assert.That(l.MainCharacter.positionX == (m.TileArray.GetLength(0) * 32) - 32);
         }
 
         [Test]
@@ -184,15 +182,15 @@ namespace ITI.HistoryTreasures.Tests
         {
             PNJ pnj = l.Pnjs[0];
 
+            mC.positionY = pnj.positionY + 40;
+            mC.positionX = pnj.positionX;
+
             for (int i = 0; i < 10; i++)
             {
-                if ((mC.HitBox.yA != pnj.HitBox.yD) && (mC.HitBox.yB != pnj.HitBox.yC))
-                {
-                    mC.Movement(KeyEnum.up);
-                }
+                mC.Movement(KeyEnum.up);
             }
 
-            Assert.That(mC.positionX == 16 && mC.positionY == 16);
+            Assert.That(mC.positionX == pnj.positionX && mC.positionY == pnj.positionY + 32);
         }
 
         [Test]
@@ -203,24 +201,23 @@ namespace ITI.HistoryTreasures.Tests
 
         [Test]
         public void MainCharacter_game_over_return_false_if_life_equal_zero()
-        {            
+        {
             Assert.That(l.MainCharacter.GameOver, Is.EqualTo(true));
             l.MainCharacter.Life = 0;
             Assert.That(l.MainCharacter.GameOver, Is.EqualTo(false));
         }
 
         [Test]
-        [Ignore("Not complete")]
         public void MainCharacter_hitbox_return_good_value()
         {
-            Assert.That(mC.HitBox.xA, Is.EqualTo(0));
-            Assert.That(mC.HitBox.yA, Is.EqualTo(0));
-            Assert.That(mC.HitBox.xB, Is.EqualTo(32));
-            Assert.That(mC.HitBox.yB, Is.EqualTo(0));
-            Assert.That(mC.HitBox.xC, Is.EqualTo(32));
-            Assert.That(mC.HitBox.yC, Is.EqualTo(32));
-            Assert.That(mC.HitBox.xD, Is.EqualTo(0));
-            Assert.That(mC.HitBox.yD, Is.EqualTo(32));
+            Assert.That(mC.HitBox.xA, Is.EqualTo(16));
+            Assert.That(mC.HitBox.yA, Is.EqualTo(32));
+            Assert.That(mC.HitBox.xB, Is.EqualTo(48));
+            Assert.That(mC.HitBox.yB, Is.EqualTo(32));
+            Assert.That(mC.HitBox.xC, Is.EqualTo(48));
+            Assert.That(mC.HitBox.yC, Is.EqualTo(48));
+            Assert.That(mC.HitBox.xD, Is.EqualTo(16));
+            Assert.That(mC.HitBox.yD, Is.EqualTo(48));
         }
 
         [Test]
@@ -235,6 +232,6 @@ namespace ITI.HistoryTreasures.Tests
         public void MainCharacter_cannot_be_create_two_times()
         {
             Assert.Throws<InvalidOperationException>(() => l.CreateMain(t, 16, 16, CharacterEnum.MCFACE, "Judd"));
-        }         
+        }
     }
 }
