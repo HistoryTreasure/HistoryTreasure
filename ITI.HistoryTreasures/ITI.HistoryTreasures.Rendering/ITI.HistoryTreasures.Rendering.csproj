@@ -166,7 +166,6 @@
     <None Include="Resources\img_X4_Y10.png" />
     <None Include="Resources\pont vertcal.png" />
     <None Include="Resources\img_X1_Y0.png" />
-    <None Include="Resources\audio.wav" />
     <None Include="Resources\livre.png" />
     <None Include="Resources\book.png" />
     <None Include="Resources\img_X0_Y39.png" />
@@ -207,6 +206,11 @@
     <None Include="Resources\rock.png" />
     <None Include="Resources\img_X2_Y134.png" />
     <None Include="Resources\herbe.png" />
+    <None Include="Resources\Music\menu.wav" />
+    <None Include="Resources\T1_1.wav" />
+    <None Include="Resources\T1_2.wav" />
+    <None Include="Resources\T1_3.wav" />
+    <None Include="Resources\menu.wav" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

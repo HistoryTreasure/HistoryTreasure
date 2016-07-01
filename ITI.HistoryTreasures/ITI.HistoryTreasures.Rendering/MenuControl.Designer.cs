@@ -54,6 +54,7 @@
             this.button2.Text = "Nouvelle Partie";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button2_MouseClick);
             // 
             // button4
             // 
@@ -76,7 +77,7 @@
             // 
             // rulesControl1
             // 
-            this.rulesControl1.Location = new System.Drawing.Point(91, 6);
+            this.rulesControl1.Location = new System.Drawing.Point(87, 3);
             this.rulesControl1.Name = "rulesControl1";
             this.rulesControl1.Size = new System.Drawing.Size(407, 439);
             this.rulesControl1.TabIndex = 5;

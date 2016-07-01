@@ -19,7 +19,7 @@ namespace ITI.HistoryTreasures.Rendering
         Level _lCtx;
         Game _gCtx;
         ResourcesManager _resourcesManager;
-        //Sound _sound;
+        Sound _sound;
         static readonly int TileSize = 32;
         Bitmap characterBitmap;
         private bool right = false;
@@ -32,7 +32,9 @@ namespace ITI.HistoryTreasures.Rendering
         {
             _resourcesManager = new ResourcesManager();
             InitializeComponent();
-            //PlaySound();
+            _sound = new Sound();
+            _sound.PlayMusic = true;
+            _sound.Play();
         }
 
         /// <summary>
@@ -64,6 +66,7 @@ namespace ITI.HistoryTreasures.Rendering
                     }
 
                     _lCtx = value;
+                    _sound.GetLevel = LevelContext.Name;
 
                     if (_backGround == null)
                     {
@@ -156,11 +159,10 @@ namespace ITI.HistoryTreasures.Rendering
             get { return _resourcesManager; }
         }
 
-        /*private Sound PlaySound()
+        public Sound PlaySound
         {
-            _sound = new Sound();
-            return _sound;
-        }*/
+            get { return _sound; }
+        }
 
         /// <summary>
         /// Handles the KeyDown event of the GameControl control.

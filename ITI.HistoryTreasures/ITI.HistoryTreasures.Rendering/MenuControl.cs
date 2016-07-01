@@ -69,12 +69,20 @@ namespace ITI.HistoryTreasures.Rendering
             gc.LevelContext = Game.Check();
             gc.Show();
             Hide();
+            gc.PlaySound.Stop();
+            gc.PlaySound.Play();
         }
 
         private void button4_Click(object sender, EventArgs e) //Button rules
         {
             RulesControl rc = rulesControl1;
             rc.Show();
+        }
+
+        private void button2_MouseClick(object sender, MouseEventArgs e)
+        {
+            gc.PlaySound.Stop();
+            gc.PlaySound.Play();
         }
     }
 }

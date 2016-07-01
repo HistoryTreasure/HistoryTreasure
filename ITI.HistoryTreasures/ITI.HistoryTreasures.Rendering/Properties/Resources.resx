@@ -133,9 +133,6 @@
   <data name="_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\base.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="audio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\audio.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="book" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -243,5 +240,17 @@
   </data>
   <data name="hole" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img_X2_Y134.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\T1_1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="T1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\T1_2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="T1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\T1_3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
