@@ -181,7 +181,7 @@ namespace ITI.HistoryTreasures.Tests
         [Ignore("Not complete")]
         public void MainCharacter_cannot_move_if_he_collide_a_PNJ_by_the_botom()
         {
-            PNJ pnj = l.CreatePNJ(g, 32, 32, CharacterEnum.GUARDFACE, "Edward", "Bonjour");
+            PNJ pnj = l.Pnjs[0];
 
             for (int i = 0; i < 10; i++)
             {
@@ -212,7 +212,6 @@ namespace ITI.HistoryTreasures.Tests
         [Ignore("Not complete")]
         public void MainCharacter_hitbox_return_good_value()
         {
-            MainCharacter mC = new MainCharacter(g, l, 0, 0, CharacterEnum.MCFACE, "Judd");
             Assert.That(mC.HitBox.xA, Is.EqualTo(0));
             Assert.That(mC.HitBox.yA, Is.EqualTo(0));
             Assert.That(mC.HitBox.xB, Is.EqualTo(32));
