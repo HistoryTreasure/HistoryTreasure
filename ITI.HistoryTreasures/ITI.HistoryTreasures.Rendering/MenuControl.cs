@@ -13,6 +13,7 @@ namespace ITI.HistoryTreasures.Rendering
     public partial class MenuControl : UserControl
     {
         GameControl gc;
+        RiddleControl rc;
         Game _g;
 
         /// <summary>
@@ -45,6 +46,12 @@ namespace ITI.HistoryTreasures.Rendering
             set { gc = value; }
         }
 
+        public RiddleControl RiddleControl
+        {
+            get { return rc; }
+            set { rc = value; }
+        }
+
         /// <summary>
         /// Handles the Click event of the button2 control.
         /// </summary>
@@ -67,6 +74,7 @@ namespace ITI.HistoryTreasures.Rendering
             gs.Load();
             Game.Themes = gs.Check();
             gc.LevelContext = Game.Check();
+            rc.LevelContext = Game.Check();
             gc.Show();
             Hide();
         }

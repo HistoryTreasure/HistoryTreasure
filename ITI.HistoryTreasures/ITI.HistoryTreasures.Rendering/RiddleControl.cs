@@ -18,53 +18,30 @@ namespace ITI.HistoryTreasures.Rendering
         //RiddleManager _riddleManager;
         public RiddleControl()
         {
-            //InitializeComponent();
-            
+            InitializeComponent();
+
             this._riddle = new Label();
             this._riddle.Size = new Size(584, 61);
-            //this._riddle.Text = "level:" + _lCtx;
-            this._riddle.Text = "En quelle année a eu lieu la prise de la Bastille ?";
             this.Controls.Add(this._riddle);
         }
 
         public Level LevelContext
         {
             get { return _lCtx; }
-            set
-            {
-                if( _lCtx != value )
-                {
-                    _lCtx = value;
-                    UpdateFromLevelContext();
-                }
-            }
+            set { _lCtx = value; }
         }
         /// <summary>
         /// change the correct riddle with the level
         /// </summary>
         private void UpdateFromLevelContext()
         {
-
+            _riddle.Text = LevelContext.Riddle;
         }
 
-
-
-        //private void RiddleControl(object sender, EventArgs e)
-        //{
-        //    this._riddle = new Label();
-        //    this._riddle.Text = "efje";  
-        //}
-
-
-
-        //protected override void OnPaint(PaintEventArgs e)
-        //{
-
-        //    //e.Graphics.DrawString();
-        //}
-
-
-
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            UpdateFromLevelContext();
+        }
 
     }
 }

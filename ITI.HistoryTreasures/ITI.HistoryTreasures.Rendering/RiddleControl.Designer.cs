@@ -34,6 +34,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(91, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
@@ -44,9 +45,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.label1);
-            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Name = "RiddleControl";
             this.Size = new System.Drawing.Size(313, 177);
             this.ResumeLayout(false);

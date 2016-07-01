@@ -14,10 +14,10 @@ namespace ITI.HistoryTreasures
         readonly Theme _ctx;
         readonly MainCharacter _mainCharacter;
         public readonly List<Clue> _clues;
+        private Dictionary<string, string> _riddles;
         readonly Map _mCtx;
         bool _isOpen;
         readonly string _answer;
-        readonly string _riddle;
 
         /// <summary>
         /// This constructor create a level.
@@ -44,7 +44,8 @@ namespace ITI.HistoryTreasures
             _clues = new List<Clue>();
             AddClues(Name);
             _answer = CreateAnwser(Name);
-            _riddle = CreateRiddle(Name);
+            _riddles = new Dictionary<string, string>();
+            CreateRiddle();
         }
 
         /// <summary>
@@ -267,7 +268,7 @@ namespace ITI.HistoryTreasures
         /// </value>
         public string Riddle
         {
-            get { return _riddle; }
+            get { return _riddles[Name]; }
         }
 
         /// <summary>
@@ -398,22 +399,13 @@ namespace ITI.HistoryTreasures
         /// <param name="name">The name.</param>
         /// <returns></returns>
         /// <exception cref="System.InvalidOperationException">The level has no riddle</exception>
-        private string CreateRiddle(string name)
+        private void CreateRiddle()
         {
-            if (name == "1_1")
-            {
-                return "Quelle est la date de la prise de la bastille ?";
-            }
-            else if (name == "1_2")
-            {
-                return "Quel est le nom du roi qui a été décapité ?";
-            }
-            else if (name == "1_3")
-            {
-                return "Test";
-            }
+            _riddles.Add("1_1", "Quelle est la date de la prise de la bastille ?");
+            _riddles.Add("1_2", "Quel est le nom du roi qui a été décapité ?");
+            _riddles.Add("1_3", "Test");
 
-            throw new InvalidOperationException("The level has no riddle");
+            //throw new InvalidOperationException("The level has no riddle");
         }
     }
 }
