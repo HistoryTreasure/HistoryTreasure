@@ -155,7 +155,9 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void MainCharacter_cannot_move_outside_the_map()
         {
-            for (int i = 32; i > 10; i--)
+            l.MainCharacter.positionX = 15;
+
+            for (int i = 32; i > 0; i--)
             {
                 l.MainCharacter.Movement(KeyEnum.left);
             }
@@ -166,6 +168,8 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void MainCharacter_cannot_move_outside_the_map_by_the_right()
         {
+            l.MainCharacter.positionY = 0;
+
             Map m = l.MapContext;
 
             for (int i = 0; i < 1000; i++)
@@ -177,20 +181,19 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
-        [Ignore("Not complete")]
         public void MainCharacter_cannot_move_if_he_collide_a_PNJ_by_the_botom()
         {
             PNJ pnj = l.Pnjs[0];
 
-            mC.positionY = pnj.positionY + 40;
-            mC.positionX = pnj.positionX;
+            l.MainCharacter.positionY = pnj.positionY + 32;
+            l.MainCharacter.positionX = pnj.positionX;
 
             for (int i = 0; i < 10; i++)
             {
-                mC.Movement(KeyEnum.up);
+                l.MainCharacter.Movement(KeyEnum.up);
             }
 
-            Assert.That(mC.positionX == pnj.positionX && mC.positionY == pnj.positionY + 32);
+            Assert.That(l.MainCharacter.positionX == pnj.positionX && l.MainCharacter.positionY == pnj.positionY + 16);
         }
 
         [Test]

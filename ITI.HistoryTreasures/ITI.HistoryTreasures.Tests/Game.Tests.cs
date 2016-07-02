@@ -111,35 +111,36 @@ namespace ITI.HistoryTreasures.Tests
         }
 
         [Test]
-        [Ignore("Not complete")]
         public void Level_method_interaction_work_between_MainCharacter_and_PNJ()
         {
-            mC.positionX = l.Pnjs[0].positionX + 32;
-            mC.positionY = l.Pnjs[0].positionY;
+            l.MainCharacter.positionX = l.Pnjs[0].positionX;
+            l.MainCharacter.positionY = l.Pnjs[0].positionY + 32;
+            l.MainCharacter.HitBox.xA = l.MainCharacter.positionX;
+            l.MainCharacter.HitBox.yA = l.MainCharacter.positionY;
 
-            Assert.That(mC.CanInteract(p.HitBox), Is.EqualTo(l.Pnjs[0].Speech));
-            //Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo(l.Pnjs[0].Speech));
+            Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hawke: "+l.Pnjs[0].Speech));
         }
 
         [Test]
-        [Ignore("Not complete")]
         public void Level_method_interaction_work_in_diagonal_between_MainCharacter_and_PNJ()
         {
-            Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo(l.Pnjs[0].Speech));
+            l.MainCharacter.positionX = l.Pnjs[0].positionX + 32;
+            l.MainCharacter.positionY = l.Pnjs[0].positionY + 32;
+            l.MainCharacter.HitBox.xA = l.MainCharacter.positionX;
+            l.MainCharacter.HitBox.yA = l.MainCharacter.positionY;
+
+            Assert.That(l.InteractionWithPNJ(KeyEnum.action), Is.EqualTo("Hawke: "+l.Pnjs[0].Speech));
         }
 
         [Test]
-        [Ignore("Not complete")]
         public void Level_method_interaction_works_between_MainCharacter_and_Clue()
         {
-            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo(l.Clues[0].Speech));
-        }
+            l.MainCharacter.positionX = l.Clues[0].X;
+            l.MainCharacter.positionY = l.Clues[0].Y + 32;
+            l.MainCharacter.HitBox.xA = l.MainCharacter.positionX;
+            l.MainCharacter.HitBox.yA = l.MainCharacter.positionY;
 
-        [Test]
-        [Ignore("Not complete")]
-        public void Level_method_interaction_works_in_diagonal_between_MainCharacter_and_Clue()
-        {
-            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo(l.Clues[0].Speech));
+            Assert.That(l.InteractionsWithClue(KeyEnum.action), Is.EqualTo("Book: "+l.Clues[0].Speech));
         }
 
         [Test]
