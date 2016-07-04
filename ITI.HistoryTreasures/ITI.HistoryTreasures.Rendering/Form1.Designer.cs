@@ -46,13 +46,13 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             // menuControl1
             // 
-            this.menuControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuControl1.BackgroundImage")));
+            this.menuControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.menuControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.menuControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuControl1.Game = null;
             this.menuControl1.GameControl = null;
             this.menuControl1.Location = new System.Drawing.Point(0, 0);
             this.menuControl1.Name = "menuControl1";
+            this.menuControl1.RiddleControl = null;
             this.menuControl1.Size = new System.Drawing.Size(584, 561);
             this.menuControl1.TabIndex = 3;
             this.menuControl1.Load += new System.EventHandler(this.menuControl1_Load);
@@ -71,6 +71,8 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             this.riddleControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.riddleControl1.BackColor = System.Drawing.SystemColors.Control;
+            this.riddleControl1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.riddleControl1.LevelContext = null;
             this.riddleControl1.Location = new System.Drawing.Point(3, 475);
             this.riddleControl1.Name = "riddleControl1";
@@ -89,6 +91,7 @@ namespace ITI.HistoryTreasures.Rendering
             this.gameControl1.Location = new System.Drawing.Point(179, 12);
             this.gameControl1.MCBitmap = null;
             this.gameControl1.Name = "gameControl1";
+            this.gameControl1.RulesControl = null;
             this.gameControl1.Size = new System.Drawing.Size(393, 457);
             this.gameControl1.TabIndex = 0;
             this.gameControl1.Load += new System.EventHandler(this.gameControl1_Load);

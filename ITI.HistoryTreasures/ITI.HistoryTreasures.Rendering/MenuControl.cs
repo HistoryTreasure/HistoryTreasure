@@ -16,6 +16,7 @@ namespace ITI.HistoryTreasures.Rendering
         RiddleControl rc;
         Game _g;
         RulesControl rulesControl;
+        InteractionsControl iC;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuControl"/> class.
@@ -61,6 +62,18 @@ namespace ITI.HistoryTreasures.Rendering
         }
 
         /// <summary>
+        /// Gets or sets the interactions control.
+        /// </summary>
+        /// <value>
+        /// The interactions control.
+        /// </value>
+        public InteractionsControl InteractionsControl
+        {
+            get { return iC; }
+            set { iC = value; }
+        }
+
+        /// <summary>
         /// Handles the Click event of the button2 control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
@@ -68,6 +81,8 @@ namespace ITI.HistoryTreasures.Rendering
         private void button2_Click(object sender, EventArgs e) //Button New Game
         {
             gc.Show();
+            iC.Show();
+            rc.Show();
             Hide();
         }
 
@@ -83,7 +98,9 @@ namespace ITI.HistoryTreasures.Rendering
             Game.Themes = gs.Check();
             gc.LevelContext = Game.Check();
             rc.LevelContext = Game.Check();
+            iC.Show();
             gc.Show();
+            rc.Show();
             Hide();
         }
 
