@@ -22,9 +22,9 @@ namespace ITI.HistoryTreasures.Rendering
         //Sound _sound;
         static readonly int TileSize = 32;
         Bitmap characterBitmap;
-        private bool right = false;
+        bool right = false;
+        RulesControl rulesControl1;
         Bitmap _backGround;
-        private RulesControl rulesControl1;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -141,9 +141,13 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             // rulesControl1
             // 
+            this.rulesControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rulesControl1.AutoSize = true;
             this.rulesControl1.Location = new System.Drawing.Point(0, 0);
             this.rulesControl1.Name = "rulesControl1";
-            this.rulesControl1.Size = new System.Drawing.Size(407, 439);
+            this.rulesControl1.Size = new System.Drawing.Size(625, 583);
             this.rulesControl1.TabIndex = 0;
             // 
             // GameControl
@@ -151,8 +155,10 @@ namespace ITI.HistoryTreasures.Rendering
             this.Controls.Add(this.rulesControl1);
             this.DoubleBuffered = true;
             this.Name = "GameControl";
+            this.Size = new System.Drawing.Size(625, 583);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -273,7 +279,7 @@ namespace ITI.HistoryTreasures.Rendering
             }
             else if (e.KeyCode == Keys.Escape)
             {
-                RulesControl.Show();
+                rulesControl1.Show();
             }
         }
 
@@ -289,17 +295,5 @@ namespace ITI.HistoryTreasures.Rendering
             set { characterBitmap = value; }
         }
         
-        public RulesControl RulesControl
-        {
-            get
-            {
-                return rulesControl1;
-            }
-
-            set
-            {
-                rulesControl1 = value;
-            }
-        }
     }
 }

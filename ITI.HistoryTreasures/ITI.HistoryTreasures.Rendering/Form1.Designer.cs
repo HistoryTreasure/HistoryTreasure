@@ -92,7 +92,6 @@ namespace ITI.HistoryTreasures.Rendering
             this.gameControl1.Location = new System.Drawing.Point(179, 12);
             this.gameControl1.MCBitmap = null;
             this.gameControl1.Name = "gameControl1";
-            this.gameControl1.RulesControl = null;
             this.gameControl1.Size = new System.Drawing.Size(393, 457);
             this.gameControl1.TabIndex = 0;
             this.gameControl1.Load += new System.EventHandler(this.gameControl1_Load);
