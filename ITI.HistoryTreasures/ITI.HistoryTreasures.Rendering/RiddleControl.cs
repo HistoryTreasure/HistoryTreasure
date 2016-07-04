@@ -61,17 +61,17 @@ namespace ITI.HistoryTreasures.Rendering
             if (textBox1.Text == _lCtx.Answer)
             {
                 textBox1.Enabled = false;
-                MessageBox.Show("Right answer, go to the exit!");
+                MessageBox.Show("Bonne réponse, dirigez-vous vers la sortie !");
                 _lCtx.IsOpen = true;
             }
             else if(textBox1.Text == "")
             {
-                MessageBox.Show("Please enter an answer!");
+                MessageBox.Show("Entrez la réponse s'il-vous-plaît.");
             }
             else
             {
                 textBox1.Text = "";
-                MessageBox.Show("Wrong answer, retry!");
+                MessageBox.Show("Mauvaise réponse, réessayer !");
             }
         }
     }
