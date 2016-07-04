@@ -62,6 +62,7 @@ namespace ITI.HistoryTreasures.Rendering
             {
                 textBox1.Enabled = false;
                 MessageBox.Show("Right answer, go to the exit!");
+                _lCtx.IsOpen = true;
             }
             else if(textBox1.Text == "")
             {

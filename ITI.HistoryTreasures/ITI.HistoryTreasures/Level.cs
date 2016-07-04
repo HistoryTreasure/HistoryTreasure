@@ -67,25 +67,7 @@ namespace ITI.HistoryTreasures
         {
             get { return _answers[Name]; }
         }
-
-        //private string CreateAnwser(string name)
-        //{
-        //    if (name == "1_1")
-        //    {
-        //        return "1789";
-        //    }
-        //    else if (name == "1_2")
-        //    {
-        //        return "Louis XVI";
-        //    }
-        //    else if (name == "1_3")
-        //    {
-        //        return "Test";
-        //    }
-
-        //    throw new InvalidOperationException("The level has no answer");
-        //}
-
+        
         /// <summary>
         /// This properties return the name of the level.
         /// </summary>
@@ -266,17 +248,6 @@ namespace ITI.HistoryTreasures
         }
 
         /// <summary>
-        /// Gets the answer of the riddle.
-        /// </summary>
-        /// <value>
-        /// The answer.
-        /// </value>
-        //public string Answer
-        //{
-        //    get { return _answer; }
-        //}
-
-        /// <summary>
         /// Gets the riddle.
         /// </summary>
         /// <value>
@@ -380,19 +351,7 @@ namespace ITI.HistoryTreasures
 
             return (clue && pnj);
         }
-
-        /// <summary>
-        /// Tests the answer.
-        /// </summary>
-        /// <param name="answer">The answer.</param>
-        //private void TestAnswer(string answer)
-        //{
-        //    if (answer == Answer)
-        //    {
-        //        IsOpen = true;
-        //    }
-        //}
-
+        
         /// <summary>
         /// Exits the level.
         /// </summary>
