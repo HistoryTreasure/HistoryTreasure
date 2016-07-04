@@ -14,12 +14,11 @@ namespace ITI.HistoryTreasures
         readonly Theme _ctx;
         readonly MainCharacter _mainCharacter;
         public readonly List<Clue> _clues;
-        private Dictionary<string, string> _riddles;
-        private Dictionary<string, string> _answers;
+        Dictionary<string, string> _riddles;
+        Dictionary<string, string> _answers;
         readonly Map _mCtx;
         bool _isOpen;
-        //readonly string _answer;
-
+        
         /// <summary>
         /// This constructor create a level.
         /// </summary>
@@ -46,7 +45,6 @@ namespace ITI.HistoryTreasures
             AddClues(Name);
             _answers = new Dictionary<string, string>();
             CreateAnswer();
-            //_answer = CreateAnwser(Name);
             _riddles = new Dictionary<string, string>();
             CreateRiddle();
         }
@@ -55,21 +53,23 @@ namespace ITI.HistoryTreasures
         /// Creates the anwser.
         /// </summary>
         /// <returns>The answer</returns>
-
-        private void CreateAnswer()
+        void CreateAnswer()
         {
             _answers.Add("1_1", "1789");
             _answers.Add("1_2", "louis xvi");
             _answers.Add("1_3", "test");
         }
 
+        /// <summary>
+        /// This property returns the answer of the Level.
+        /// </summary>
         public string Answer
         {
             get { return _answers[Name]; }
         }
 
         /// <summary>
-        /// This properties return the name of the level.
+        /// This property returns the name of the Level.
         /// </summary>
         public string Name
         {
@@ -190,7 +190,6 @@ namespace ITI.HistoryTreasures
             {
                 if (MainCharacter.CanInteract(Pnjs[i].HitBox))
                 {
-                    key = KeyEnum.action;
                     talk = Pnjs[i].Name + (": ") + Pnjs[i].Speech;
                     Pnjs[i].Talk = true;
                     break;
@@ -224,7 +223,6 @@ namespace ITI.HistoryTreasures
             {
                 if (MainCharacter.CanInteract(Clues[i].HitBox))
                 {
-                    key = KeyEnum.action;
                     _speech = Clues[i].Name + (": ") + Clues[i].Speech;
                     Clues[i].Talk = true;
                     break;
@@ -296,6 +294,7 @@ namespace ITI.HistoryTreasures
                 Clues.Add(CreateClue(_ctx, 300, 300, ClueEnum.LIVRE, "Livre",
                     "La bastille fut prise 11 ans avant la fin du siecle"));
             }
+
             else if (name == "1_2")
             {
                 Clues.Add(CreateClue(_ctx, 150, 150, ClueEnum.LIVRE, "History",
@@ -303,6 +302,7 @@ namespace ITI.HistoryTreasures
                 Clues.Add(CreateClue(_ctx, 300, 300, ClueEnum.LIVRE, "Test",
                     "Sa mort marqua la fin de la monarchie et le début de la première république."));
             }
+
             else if (name == "1_3")
             {
                 Clues.Add(CreateClue(_ctx, 150, 150, ClueEnum.LIVRE, "1",
@@ -310,14 +310,15 @@ namespace ITI.HistoryTreasures
                 Clues.Add(CreateClue(_ctx, 300, 300, ClueEnum.LIVRE, "2",
                     "You know nothing Jon Snow"));
             }
+
             return Clues;
         }
 
         /// <summary>
-        /// Check if player can answer
+        /// Check if player can answer.
         /// </summary>
         /// <returns>true if the player can answer</returns>
-        private bool CanAnswer()
+        bool CanAnswer()
         {
             bool pnj = false;
             bool clue = false;
@@ -328,12 +329,12 @@ namespace ITI.HistoryTreasures
                 {
                     pnj = true;
                 }
+
                 else
                 {
                     pnj = false;
                     break;
                 }
-
             }
 
             foreach (Clue c in Clues)
@@ -342,6 +343,7 @@ namespace ITI.HistoryTreasures
                 {
                     clue = true;
                 }
+
                 else
                 {
                     clue = false;
@@ -358,13 +360,15 @@ namespace ITI.HistoryTreasures
         /// <param name="X">The x.</param>
         /// <param name="Y">The y.</param>
         /// <exception cref="System.NotImplementedException"></exception>
-        private void ExitLevel(int X, int Y)
+        internal void ExitLevel(int X, int Y)
         {
-            if ((IsOpen == true) && (MapContext.TileArray[19, 19].posX == X) && (MapContext.TileArray[19, 19].posY == Y))
+            if ((IsOpen == true) && (MapContext.TileArray[MapContext.TileArray.GetLength(0) - 1, MapContext.TileArray.GetLength(1) - 1].posX == X) && (MapContext.TileArray[MapContext.TileArray.GetLength(0) - 1, MapContext.TileArray.GetLength(1) - 1].posY == Y))
             {
                 IsFinish = true;
                 GameState gm = new GameState(Theme.Game);
-                gm.Save();
+                Theme.Game.Check();
+                gm.SaveGame();
+                gm.Load();
             }
         }
 

@@ -94,7 +94,7 @@ namespace ITI.HistoryTreasures.Rendering
         private void button1_Click(object sender, EventArgs e) //Button Continue
         {
             GameState gs = new GameState(Game);
-            gs.Load();
+            //gs.Load();
             Game.Themes = gs.Check();
             gc.LevelContext = Game.Check();
             rc.LevelContext = Game.Check();
