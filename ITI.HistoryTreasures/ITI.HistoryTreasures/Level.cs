@@ -15,9 +15,10 @@ namespace ITI.HistoryTreasures
         readonly MainCharacter _mainCharacter;
         public readonly List<Clue> _clues;
         private Dictionary<string, string> _riddles;
+        private Dictionary<string, string> _answers;
         readonly Map _mCtx;
         bool _isOpen;
-        readonly string _answer;
+        //readonly string _answer;
 
         /// <summary>
         /// This constructor create a level.
@@ -43,7 +44,9 @@ namespace ITI.HistoryTreasures
             _mCtx = new Map(this);
             _clues = new List<Clue>();
             AddClues(Name);
-            _answer = CreateAnwser(Name);
+            _answers = new Dictionary<string, string>();
+            CreateAnswer();
+            //_answer = CreateAnwser(Name);
             _riddles = new Dictionary<string, string>();
             CreateRiddle();
         }
@@ -52,23 +55,36 @@ namespace ITI.HistoryTreasures
         /// Creates the anwser.
         /// </summary>
         /// <returns>The answer</returns>
-        private string CreateAnwser(string name)
-        {
-            if (name == "1_1")
-            {
-                return "1789";
-            }
-            else if (name == "1_2")
-            {
-                return "Louis XVI";
-            }
-            else if (name == "1_3")
-            {
-                return "Test";
-            }
 
-            throw new InvalidOperationException("The level has no answer");
+        private void CreateAnswer()
+        {
+            _answers.Add("1_1","1789");
+            _answers.Add("1_2", "louis xvi");
+            _answers.Add("1_3", "test");
         }
+
+        public string Answer
+        {
+            get { return _answers[Name]; }
+        }
+
+        //private string CreateAnwser(string name)
+        //{
+        //    if (name == "1_1")
+        //    {
+        //        return "1789";
+        //    }
+        //    else if (name == "1_2")
+        //    {
+        //        return "Louis XVI";
+        //    }
+        //    else if (name == "1_3")
+        //    {
+        //        return "Test";
+        //    }
+
+        //    throw new InvalidOperationException("The level has no answer");
+        //}
 
         /// <summary>
         /// This properties return the name of the level.
@@ -255,10 +271,10 @@ namespace ITI.HistoryTreasures
         /// <value>
         /// The answer.
         /// </value>
-        public string Answer
-        {
-            get { return _answer; }
-        }
+        //public string Answer
+        //{
+        //    get { return _answer; }
+        //}
 
         /// <summary>
         /// Gets the riddle.
@@ -369,13 +385,13 @@ namespace ITI.HistoryTreasures
         /// Tests the answer.
         /// </summary>
         /// <param name="answer">The answer.</param>
-        private void TestAnswer(string answer)
-        {
-            if (answer == Answer)
-            {
-                IsOpen = true;
-            }
-        }
+        //private void TestAnswer(string answer)
+        //{
+        //    if (answer == Answer)
+        //    {
+        //        IsOpen = true;
+        //    }
+        //}
 
         /// <summary>
         /// Exits the level.

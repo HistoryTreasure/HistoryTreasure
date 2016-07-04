@@ -14,6 +14,8 @@ namespace ITI.HistoryTreasures.Rendering
     {
         Label _riddle;
         Level _lCtx;
+        TextBox _answerUser;
+        
 
         //RiddleManager _riddleManager;
         public RiddleControl()
@@ -21,8 +23,9 @@ namespace ITI.HistoryTreasures.Rendering
             InitializeComponent();
 
             this._riddle = new Label();
-            this._riddle.Size = new Size(584, 61);
+            this._riddle.Size = new Size(590, 61);
             this.Controls.Add(this._riddle);
+
         }
 
         public Level LevelContext
@@ -30,6 +33,7 @@ namespace ITI.HistoryTreasures.Rendering
             get { return _lCtx; }
             set { _lCtx = value; }
         }
+
         /// <summary>
         /// change the correct riddle with the level
         /// </summary>
@@ -38,10 +42,36 @@ namespace ITI.HistoryTreasures.Rendering
             _riddle.Text = LevelContext.Riddle;
         }
 
+        /// <summary>
+        /// change the riddle on the screen
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnPaint(PaintEventArgs e)
         {
             UpdateFromLevelContext();
         }
 
+        /// <summary>
+        /// button use to validate the answer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == _lCtx.Answer)
+            {
+                textBox1.Enabled = false;
+                MessageBox.Show("Right answer, go to the exit!");
+            }
+            else if(textBox1.Text == "")
+            {
+                MessageBox.Show("Please enter an answer!");
+            }
+            else
+            {
+                textBox1.Text = "";
+                MessageBox.Show("Wrong answer, retry!");
+            }
+        }
     }
 }
