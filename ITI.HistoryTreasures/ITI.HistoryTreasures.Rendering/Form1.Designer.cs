@@ -50,6 +50,7 @@ namespace ITI.HistoryTreasures.Rendering
             this.menuControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.menuControl1.Game = null;
             this.menuControl1.GameControl = null;
+            this.menuControl1.InteractionsControl = null;
             this.menuControl1.Location = new System.Drawing.Point(0, 0);
             this.menuControl1.Name = "menuControl1";
             this.menuControl1.RiddleControl = null;
@@ -109,7 +110,6 @@ namespace ITI.HistoryTreasures.Rendering
             this.Controls.Add(this.gameControl1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "HistoryTreasures";
             this.ShowInTaskbar = false;
