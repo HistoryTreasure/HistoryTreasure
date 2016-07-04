@@ -23,8 +23,8 @@ namespace ITI.HistoryTreasures.Rendering
         static readonly int TileSize = 32;
         Bitmap characterBitmap;
         bool right = false;
-        RulesControl rulesControl1;
         Bitmap _backGround;
+        RulesControl rc;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -33,7 +33,6 @@ namespace ITI.HistoryTreasures.Rendering
         {
             _resourcesManager = new ResourcesManager();
             InitializeComponent();
-            rulesControl1.Hide();
             //PlaySound();
         }
 
@@ -69,7 +68,7 @@ namespace ITI.HistoryTreasures.Rendering
 
                     if (_backGround == null)
                     {
-                        _backGround = new Bitmap(32*30, 32*30);
+                        _backGround = new Bitmap(32 * 30, 32 * 30);
                     }
 
                     using (Graphics g = Graphics.FromImage(_backGround))
@@ -97,8 +96,8 @@ namespace ITI.HistoryTreasures.Rendering
                             Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
                             g.DrawImage(clueBitmap, clue.X, clue.Y);
                         }
-                    }  
-                }           
+                    }
+                }
             }
         }
 
@@ -122,7 +121,7 @@ namespace ITI.HistoryTreasures.Rendering
             float coefX = 1.0f * Width / (tileArray.GetLength(0) * TileSize);
             float coefY = 1.0f * Height / (tileArray.GetLength(1) * TileSize);
 
-            e.Graphics.ScaleTransform(coefX,coefY);
+            e.Graphics.ScaleTransform(coefX, coefY);
             e.Graphics.DrawImage(_backGround, 0, 0);
 
             MainCharacter MC = LevelContext.MainCharacter;
@@ -136,29 +135,15 @@ namespace ITI.HistoryTreasures.Rendering
         /// </summary>
         private void InitializeComponent()
         {
-            this.rulesControl1 = new ITI.HistoryTreasures.Rendering.RulesControl();
             this.SuspendLayout();
-            // 
-            // rulesControl1
-            // 
-            this.rulesControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rulesControl1.AutoSize = true;
-            this.rulesControl1.Location = new System.Drawing.Point(0, 0);
-            this.rulesControl1.Name = "rulesControl1";
-            this.rulesControl1.Size = new System.Drawing.Size(625, 583);
-            this.rulesControl1.TabIndex = 0;
             // 
             // GameControl
             // 
-            this.Controls.Add(this.rulesControl1);
             this.DoubleBuffered = true;
             this.Name = "GameControl";
             this.Size = new System.Drawing.Size(625, 583);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -279,8 +264,14 @@ namespace ITI.HistoryTreasures.Rendering
             }
             else if (e.KeyCode == Keys.Escape)
             {
-                rulesControl1.Show();
+                rc.Show();
             }
+        }
+
+        public RulesControl Rc
+        {
+            get { return rc; }
+            set { rc = value; }
         }
 
         /// <summary>
@@ -294,6 +285,6 @@ namespace ITI.HistoryTreasures.Rendering
             get { return characterBitmap; }
             set { characterBitmap = value; }
         }
-        
+
     }
 }

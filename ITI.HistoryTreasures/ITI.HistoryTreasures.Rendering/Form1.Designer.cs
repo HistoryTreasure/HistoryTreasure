@@ -37,6 +37,7 @@ namespace ITI.HistoryTreasures.Rendering
             this.interactionsControl1 = new ITI.HistoryTreasures.Rendering.InteractionsControl();
             this.riddleControl1 = new ITI.HistoryTreasures.Rendering.RiddleControl();
             this.gameControl1 = new ITI.HistoryTreasures.Rendering.GameControl();
+            this.rulesControl1 = new ITI.HistoryTreasures.Rendering.RulesControl();
             this.SuspendLayout();
             // 
             // timer1
@@ -97,12 +98,20 @@ namespace ITI.HistoryTreasures.Rendering
             this.gameControl1.Load += new System.EventHandler(this.gameControl1_Load);
             this.gameControl1.SizeChanged += new System.EventHandler(this.gameControl1_SizeChanged);
             // 
+            // rulesControl1
+            // 
+            this.rulesControl1.Location = new System.Drawing.Point(82, 12);
+            this.rulesControl1.Name = "rulesControl1";
+            this.rulesControl1.Size = new System.Drawing.Size(407, 439);
+            this.rulesControl1.TabIndex = 4;
+            // 
             // HistoryTreasures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.rulesControl1);
             this.Controls.Add(this.menuControl1);
             this.Controls.Add(this.interactionsControl1);
             this.Controls.Add(this.riddleControl1);
@@ -135,6 +144,7 @@ namespace ITI.HistoryTreasures.Rendering
         }
 
         private MenuControl menuControl1;
+        private RulesControl rulesControl1;
     }
 }
 

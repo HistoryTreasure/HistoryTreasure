@@ -15,7 +15,6 @@ namespace ITI.HistoryTreasures
         down,
         left,
         right,
-        action,
-        escape
+        action
     }
 }
