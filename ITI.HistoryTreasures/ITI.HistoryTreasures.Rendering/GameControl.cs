@@ -24,7 +24,7 @@ namespace ITI.HistoryTreasures.Rendering
         Bitmap characterBitmap;
         private bool right = false;
         Bitmap _backGround;
-        RulesControl rulesControl;
+        private RulesControl rulesControl1;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -33,6 +33,7 @@ namespace ITI.HistoryTreasures.Rendering
         {
             _resourcesManager = new ResourcesManager();
             InitializeComponent();
+            rulesControl1.Hide();
             //PlaySound();
         }
 
@@ -135,10 +136,19 @@ namespace ITI.HistoryTreasures.Rendering
         /// </summary>
         private void InitializeComponent()
         {
+            this.rulesControl1 = new ITI.HistoryTreasures.Rendering.RulesControl();
             this.SuspendLayout();
+            // 
+            // rulesControl1
+            // 
+            this.rulesControl1.Location = new System.Drawing.Point(0, 0);
+            this.rulesControl1.Name = "rulesControl1";
+            this.rulesControl1.Size = new System.Drawing.Size(407, 439);
+            this.rulesControl1.TabIndex = 0;
             // 
             // GameControl
             // 
+            this.Controls.Add(this.rulesControl1);
             this.DoubleBuffered = true;
             this.Name = "GameControl";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
@@ -263,7 +273,7 @@ namespace ITI.HistoryTreasures.Rendering
             }
             else if (e.KeyCode == Keys.Escape)
             {
-                rulesControl.Show();
+                RulesControl.Show();
             }
         }
 
@@ -283,12 +293,12 @@ namespace ITI.HistoryTreasures.Rendering
         {
             get
             {
-                return rulesControl;
+                return rulesControl1;
             }
 
             set
             {
-                rulesControl = value;
+                rulesControl1 = value;
             }
         }
     }
