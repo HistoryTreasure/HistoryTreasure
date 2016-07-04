@@ -58,7 +58,7 @@ namespace ITI.HistoryTreasures
 
         private void CreateAnswer()
         {
-            _answers.Add("1_1","1789");
+            _answers.Add("1_1", "1789");
             _answers.Add("1_2", "louis xvi");
             _answers.Add("1_3", "test");
         }
@@ -67,7 +67,7 @@ namespace ITI.HistoryTreasures
         {
             get { return _answers[Name]; }
         }
-        
+
         /// <summary>
         /// This properties return the name of the level.
         /// </summary>
@@ -351,7 +351,7 @@ namespace ITI.HistoryTreasures
 
             return (clue && pnj);
         }
-        
+
         /// <summary>
         /// Exits the level.
         /// </summary>
@@ -379,8 +379,6 @@ namespace ITI.HistoryTreasures
             _riddles.Add("1_1", "Quelle est la date de la prise de la bastille ?");
             _riddles.Add("1_2", "Quel est le nom du roi qui a été décapité ?");
             _riddles.Add("1_3", "Test");
-
-            //throw new InvalidOperationException("The level has no riddle");
         }
     }
 }
