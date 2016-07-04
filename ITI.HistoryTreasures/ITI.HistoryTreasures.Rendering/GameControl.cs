@@ -24,6 +24,7 @@ namespace ITI.HistoryTreasures.Rendering
         Bitmap characterBitmap;
         private bool right = false;
         Bitmap _backGround;
+        RulesControl rulesControl;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -260,6 +261,10 @@ namespace ITI.HistoryTreasures.Rendering
                 parent.IsInteractionAClue(MC.IsClue);
                 parent.SetInteractionMessage(MC.Interact(KeyEnum.action));
             }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                rulesControl.Show();
+            }
         }
 
         /// <summary>
@@ -272,6 +277,19 @@ namespace ITI.HistoryTreasures.Rendering
         {
             get { return characterBitmap; }
             set { characterBitmap = value; }
+        }
+        
+        public RulesControl RulesControl
+        {
+            get
+            {
+                return rulesControl;
+            }
+
+            set
+            {
+                rulesControl = value;
+            }
         }
     }
 }

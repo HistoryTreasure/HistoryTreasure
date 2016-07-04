@@ -15,6 +15,7 @@ namespace ITI.HistoryTreasures.Rendering
         GameControl gc;
         RiddleControl rc;
         Game _g;
+        RulesControl rulesControl;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuControl"/> class.
@@ -22,6 +23,7 @@ namespace ITI.HistoryTreasures.Rendering
         public MenuControl()
         {
             InitializeComponent();
+            rulesControl = rulesControl1;
             rulesControl1.Hide();
         }
 
@@ -50,6 +52,12 @@ namespace ITI.HistoryTreasures.Rendering
         {
             get { return rc; }
             set { rc = value; }
+        }
+
+        public RulesControl RulesControl1
+        {
+            get { return rulesControl; }
+            set { rulesControl = value; }
         }
 
         /// <summary>
@@ -81,8 +89,7 @@ namespace ITI.HistoryTreasures.Rendering
 
         private void button4_Click(object sender, EventArgs e) //Button rules
         {
-            RulesControl rc = rulesControl1;
-            rc.Show();
+            rulesControl.Show();
         }
     }
 }

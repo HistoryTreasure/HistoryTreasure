@@ -23,6 +23,7 @@ namespace ITI.HistoryTreasures.Rendering
             Game g = new Game();
             gameControl1.LevelContext = g.Check();
             menuControl1.RiddleControl = riddleControl1;
+            gameControl1.RulesControl = menuControl1.RulesControl1;
             riddleControl1.LevelContext = g.Check();
             menuControl1.GameControl = gameControl1;
             menuControl1.Game = g;
