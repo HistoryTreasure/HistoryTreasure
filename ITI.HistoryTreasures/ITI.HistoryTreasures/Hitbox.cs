@@ -101,5 +101,29 @@ namespace ITI.HistoryTreasures
             xC = posX + 32;
             yC = yA + 16;
         }
+
+        public Character Character
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public Tile Tile
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
     }
 }

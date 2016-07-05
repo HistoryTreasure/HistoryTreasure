@@ -37,6 +37,7 @@ namespace ITI.HistoryTreasures.Rendering
             this.interactionsControl1 = new ITI.HistoryTreasures.Rendering.InteractionsControl();
             this.riddleControl1 = new ITI.HistoryTreasures.Rendering.RiddleControl();
             this.gameControl1 = new ITI.HistoryTreasures.Rendering.GameControl();
+            this.rulesControl1 = new ITI.HistoryTreasures.Rendering.RulesControl();
             this.SuspendLayout();
             // 
             // timer1
@@ -46,12 +47,14 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             // menuControl1
             // 
-            this.menuControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuControl1.BackgroundImage")));
-            this.menuControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.menuControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.menuControl1.Game = null;
             this.menuControl1.GameControl = null;
+            this.menuControl1.InteractionsControl = null;
             this.menuControl1.Location = new System.Drawing.Point(0, 0);
             this.menuControl1.Name = "menuControl1";
+            this.menuControl1.RiddleControl = null;
             this.menuControl1.Size = new System.Drawing.Size(584, 561);
             this.menuControl1.TabIndex = 3;
             this.menuControl1.Load += new System.EventHandler(this.menuControl1_Load);
@@ -70,6 +73,8 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             this.riddleControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.riddleControl1.BackColor = System.Drawing.SystemColors.Control;
+            this.riddleControl1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.riddleControl1.LevelContext = null;
             this.riddleControl1.Location = new System.Drawing.Point(3, 475);
             this.riddleControl1.Name = "riddleControl1";
@@ -93,21 +98,30 @@ namespace ITI.HistoryTreasures.Rendering
             this.gameControl1.Load += new System.EventHandler(this.gameControl1_Load);
             this.gameControl1.SizeChanged += new System.EventHandler(this.gameControl1_SizeChanged);
             // 
+            // rulesControl1
+            // 
+            this.rulesControl1.Location = new System.Drawing.Point(82, 12);
+            this.rulesControl1.Name = "rulesControl1";
+            this.rulesControl1.Size = new System.Drawing.Size(407, 439);
+            this.rulesControl1.TabIndex = 4;
+            // 
             // HistoryTreasures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.rulesControl1);
             this.Controls.Add(this.menuControl1);
             this.Controls.Add(this.interactionsControl1);
             this.Controls.Add(this.riddleControl1);
             this.Controls.Add(this.gameControl1);
             this.DoubleBuffered = true;
-            this.MaximizeBox = false;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "HistoryTreasures";
             this.ShowInTaskbar = false;
+            this.Text = "History Treasures";
             this.ResumeLayout(false);
 
         }
@@ -130,6 +144,7 @@ namespace ITI.HistoryTreasures.Rendering
         }
 
         private MenuControl menuControl1;
+        private RulesControl rulesControl1;
     }
 }
 

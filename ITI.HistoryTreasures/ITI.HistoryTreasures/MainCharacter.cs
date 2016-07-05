@@ -119,6 +119,7 @@ namespace ITI.HistoryTreasures
                 if (positionY >= (MCtx.TileArray.GetLength(0) * 32) - 32)
                 {
                     positionY = (MCtx.TileArray.GetLength(0) * 32) - 32;
+                    LCtx.ExitLevel(positionX, positionY);
                 }
 
                 HitBox.UpdateHitbox(positionX, positionY);
@@ -155,6 +156,7 @@ namespace ITI.HistoryTreasures
                 if (positionX >= (MCtx.TileArray.GetLength(1) * 32) - 32)
                 {
                     positionX = (MCtx.TileArray.GetLength(1) * 32) - 32;
+                    LCtx.ExitLevel(positionX, positionY);
                 }
 
                 HitBox.UpdateHitbox(positionX, positionY);

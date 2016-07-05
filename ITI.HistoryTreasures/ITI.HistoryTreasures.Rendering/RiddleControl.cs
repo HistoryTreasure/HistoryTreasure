@@ -14,57 +14,66 @@ namespace ITI.HistoryTreasures.Rendering
     {
         Label _riddle;
         Level _lCtx;
+        TextBox _answerUser;
+
 
         //RiddleManager _riddleManager;
         public RiddleControl()
         {
-            //InitializeComponent();
-            
+            InitializeComponent();
+
             this._riddle = new Label();
-            this._riddle.Size = new Size(584, 61);
-            //this._riddle.Text = "level:" + _lCtx;
-            this._riddle.Text = "En quelle année a eu lieu la prise de la Bastille ?";
+            this._riddle.Size = new Size(590, 61);
             this.Controls.Add(this._riddle);
+
         }
 
         public Level LevelContext
         {
             get { return _lCtx; }
-            set
-            {
-                if( _lCtx != value )
-                {
-                    _lCtx = value;
-                    UpdateFromLevelContext();
-                }
-            }
+            set { _lCtx = value; }
         }
+
         /// <summary>
         /// change the correct riddle with the level
         /// </summary>
         private void UpdateFromLevelContext()
         {
-
+            _riddle.Text = LevelContext.Riddle;
         }
 
+        /// <summary>
+        /// change the riddle on the screen
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            UpdateFromLevelContext();
+        }
 
-
-        //private void RiddleControl(object sender, EventArgs e)
-        //{
-        //    this._riddle = new Label();
-        //    this._riddle.Text = "efje";  
-        //}
-
-
-
-        //protected override void OnPaint(PaintEventArgs e)
-        //{
-
-        //    //e.Graphics.DrawString();
-        //}
-
-
-
-
+        /// <summary>
+        /// button use to validate the answer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == _lCtx.Answer)
+            {
+                LevelContext.HasReply = true;
+                textBox1.Enabled = false;
+                MessageBox.Show("Bonne réponse, dirigez-vous vers la sortie !");
+                _lCtx.IsOpen = true;
+            }
+            else if (textBox1.Text == "")
+            {
+                MessageBox.Show("Entrez la réponse s'il-vous-plaît.");
+            }
+            else
+            {
+                textBox1.Text = "";
+                MessageBox.Show("Mauvaise réponse, réessayer !");
+            }
+        }
     }
 }
