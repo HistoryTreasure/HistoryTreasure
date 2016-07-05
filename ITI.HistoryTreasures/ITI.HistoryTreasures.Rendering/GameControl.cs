@@ -26,6 +26,7 @@ namespace ITI.HistoryTreasures.Rendering
         Bitmap _backGround;
         RulesControl rc;
         RiddleControl rd;
+        InteractionsControl iC;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -124,6 +125,8 @@ namespace ITI.HistoryTreasures.Rendering
                 RdControl.LevelContext = GameContext.Check();
                 RdControl.textBox1.Enabled = true;
                 RdControl.textBox1.Text = "";
+                InteractionControl.PnJinteractionBox.Text = "";
+                InteractionControl.ClueinteractionBox.Text = "";
                 LevelContext = GameContext.Check();
             }
 
@@ -320,6 +323,18 @@ namespace ITI.HistoryTreasures.Rendering
         {
             get { return rd; }
             set { rd = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the interactions control.
+        /// </summary>
+        /// <value>
+        /// The interactions control.
+        /// </value>
+        public InteractionsControl InteractionControl
+        {
+            get { return iC; }
+            set { iC = value; }
         }
     }
 }
