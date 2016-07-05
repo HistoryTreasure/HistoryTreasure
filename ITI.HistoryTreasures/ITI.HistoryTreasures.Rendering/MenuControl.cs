@@ -80,6 +80,7 @@ namespace ITI.HistoryTreasures.Rendering
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void button2_Click(object sender, EventArgs e) //Button New Game
         {
+            gc.LevelContext = Game.Check();
             gc.Show();
             iC.Show();
             rc.Show();
@@ -102,11 +103,19 @@ namespace ITI.HistoryTreasures.Rendering
             gc.Show();
             rc.Show();
             Hide();
+            gc.PlaySound.Stop();
+            gc.PlaySound.Play();
         }
 
         private void button4_Click(object sender, EventArgs e) //Button rules
         {
             rulesControl.Show();
+        }
+
+        private void button2_MouseClick(object sender, MouseEventArgs e)
+        {
+            gc.PlaySound.Stop();
+            gc.PlaySound.Play();
         }
     }
 }

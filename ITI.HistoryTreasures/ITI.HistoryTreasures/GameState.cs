@@ -141,5 +141,17 @@ namespace ITI.HistoryTreasures
         {
             get { return _path; }
         }
+
+        public Game Game
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
     }
 }

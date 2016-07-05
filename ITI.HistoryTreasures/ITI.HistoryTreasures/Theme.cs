@@ -109,8 +109,6 @@ namespace ITI.HistoryTreasures
                     test = false;
                     break;
                 }
-                else
-                    continue;
             }
 
             if(test != true)
