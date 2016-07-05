@@ -57,7 +57,7 @@ namespace ITI.HistoryTreasures
         {
             _answers.Add("1_1", "1789");
             _answers.Add("1_2", "louis xvi");
-            _answers.Add("1_3", "test");
+            _answers.Add("1_3", "1799");
         }
 
         /// <summary>
@@ -382,7 +382,7 @@ namespace ITI.HistoryTreasures
         {
             _riddles.Add("1_1", "Quelle est la date de la prise de la bastille ?");
             _riddles.Add("1_2", "Quel est le nom du roi qui a été décapité ?");
-            _riddles.Add("1_3", "Test");
+            _riddles.Add("1_3", "En quelle année a eu lieu le coup d'Etat de  Napoléon Bonaparte ?");
         }
     }
 }
