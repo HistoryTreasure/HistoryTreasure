@@ -155,8 +155,8 @@ namespace ITI.HistoryTreasures.Tests
         public void Levels_returns_correctly_Clue()
         {
             Assert.That(c.LCtx == l);
-            Assert.That(c.X == 150);
-            Assert.That(c.Y == 150);
+            Assert.That(c.X == 608);
+            Assert.That(c.Y == 160);
             Assert.That(c.Name == "Book");
             Assert.That(c.Speech == "L'histoire se souviendra de l'an 17... le reste est illisible");
         }
@@ -219,8 +219,8 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void Level_Clue_returns_correctly_his_hitbox()
         {
-            Assert.That(c.HitBox.xD, Is.EqualTo(150));
-            Assert.That(c.HitBox.yD, Is.EqualTo(182));
+            Assert.That(c.HitBox.xD, Is.EqualTo(608));
+            Assert.That(c.HitBox.yD, Is.EqualTo(192));
         }
     }
 }
