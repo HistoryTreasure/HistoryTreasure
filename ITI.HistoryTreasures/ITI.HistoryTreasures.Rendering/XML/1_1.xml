@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Map>
-  <Width>20</Width>
-  <Height>20</Height>
+  <Width>30</Width>
+  <Height>30</Height>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -9,67 +9,9 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
@@ -77,8 +19,6 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>StonePath</Tile>
-  <Tile>StonePath</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -87,13 +27,6 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -113,10 +46,6 @@
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -129,11 +58,6 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -148,8 +72,6 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
@@ -169,13 +91,6 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -187,33 +102,17 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -222,18 +121,7 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -242,58 +130,23 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
   <Tile>Grass</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -305,15 +158,17 @@
   <Tile>Water</Tile>
   <Tile>Water</Tile>
   <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -326,14 +181,24 @@
   <Tile>Water</Tile>
   <Tile>Water</Tile>
   <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -346,18 +211,6 @@
   <Tile>Water</Tile>
   <Tile>Water</Tile>
   <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Rock</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
-  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -365,15 +218,17 @@
   <Tile>Water</Tile>
   <Tile>Water</Tile>
   <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Water</Tile>
-  <Tile>Rock</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
-  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
@@ -386,9 +241,16 @@
   <Tile>Water</Tile>
   <Tile>Water</Tile>
   <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
   <Tile>Water</Tile>
   <Tile>Water</Tile>
   <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
   <Tile>Floor</Tile>
@@ -401,5 +263,643 @@
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
   <Tile>Grass</Tile>
-  <Tile>Hole</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Water</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Floor</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Grass</Tile>
+  <Tile>Home</Tile>
 </Map>
