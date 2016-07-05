@@ -33,6 +33,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.rulesControl1 = new ITI.HistoryTreasures.Rendering.RulesControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -81,18 +83,29 @@
             this.rulesControl1.Size = new System.Drawing.Size(407, 439);
             this.rulesControl1.TabIndex = 5;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ITI.HistoryTreasures.Rendering.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(14, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(550, 404);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // MenuControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::ITI.HistoryTreasures.Rendering.Properties.Resources.logo;
             this.Controls.Add(this.rulesControl1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "MenuControl";
             this.Size = new System.Drawing.Size(581, 448);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +118,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private RulesControl rulesControl1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

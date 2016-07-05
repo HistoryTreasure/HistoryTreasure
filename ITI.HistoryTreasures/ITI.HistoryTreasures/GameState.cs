@@ -16,6 +16,7 @@ namespace ITI.HistoryTreasures
         Game _gCtx;
         Theme _tCtx;
         Level _lCtx;
+        XElement gamestate;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameState"/> class.
@@ -28,17 +29,16 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// Saves the current game.
         /// </summary>
-        public void Save()
+        public void SaveGame()
         {
             LCtx = GCtx.Check();
             TCtx = LCtx.Theme;
 
-            XElement game = new XElement("GameState",
-                new XElement("Game", GCtx),
-                new XElement("Theme", TCtx),
-                new XElement("Level", LCtx)
+            gamestate = new XElement("GameState",
+                new XElement("Theme", TCtx.Name),
+                new XElement("Level", LCtx.Name)
                 );
-            game.Save("./GameState.xml");
+            gamestate.Save("./GameState.xml");
 
             Load();
         }
@@ -91,7 +91,7 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// </summary>
         /// <value>
-        /// The g CTX.
+        /// The game CTX.
         /// </value>
         public Game GCtx
         {
@@ -101,7 +101,7 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// </summary>
         /// <value>
-        /// The t CTX.
+        /// The theme CTX.
         /// </value>
         public Theme TCtx
         {

@@ -22,8 +22,11 @@ namespace ITI.HistoryTreasures.Rendering
         //Sound _sound;
         static readonly int TileSize = 32;
         Bitmap characterBitmap;
-        private bool right = false;
+        bool right = false;
         Bitmap _backGround;
+        RulesControl rc;
+        RiddleControl rd;
+        InteractionsControl iC;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -67,7 +70,7 @@ namespace ITI.HistoryTreasures.Rendering
 
                     if (_backGround == null)
                     {
-                        _backGround = new Bitmap(32*30, 32*30);
+                        _backGround = new Bitmap(32 * 30, 32 * 30);
                     }
 
                     using (Graphics g = Graphics.FromImage(_backGround))
@@ -95,8 +98,8 @@ namespace ITI.HistoryTreasures.Rendering
                             Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
                             g.DrawImage(clueBitmap, clue.X, clue.Y);
                         }
-                    }  
-                }           
+                    }
+                }
             }
         }
 
@@ -116,11 +119,31 @@ namespace ITI.HistoryTreasures.Rendering
         protected override void OnPaint(PaintEventArgs e)
         {
             if (LevelContext == null) return;
+
+            if (LevelContext.IsFinish)
+            {
+                RdControl.LevelContext = GameContext.Check();
+                RdControl.textBox1.Enabled = true;
+                RdControl.textBox1.Text = "";
+                InteractionControl.PnJinteractionBox.Text = "";
+                InteractionControl.ClueinteractionBox.Text = "";
+                LevelContext = GameContext.Check();
+            }
+
+            if (LevelContext.CanAnswer() && LevelContext.HasReply == false)
+            {
+                RdControl.textBox1.Enabled = true;
+            }
+            else
+            {
+                RdControl.textBox1.Enabled = false;
+            }
+
             Tile[,] tileArray = LevelContext.MapContext.TileArray;
             float coefX = 1.0f * Width / (tileArray.GetLength(0) * TileSize);
             float coefY = 1.0f * Height / (tileArray.GetLength(1) * TileSize);
 
-            e.Graphics.ScaleTransform(coefX,coefY);
+            e.Graphics.ScaleTransform(coefX, coefY);
             e.Graphics.DrawImage(_backGround, 0, 0);
 
             MainCharacter MC = LevelContext.MainCharacter;
@@ -140,6 +163,7 @@ namespace ITI.HistoryTreasures.Rendering
             // 
             this.DoubleBuffered = true;
             this.Name = "GameControl";
+            this.Size = new System.Drawing.Size(625, 583);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameControl_KeyDown);
             this.ResumeLayout(false);
 
@@ -260,6 +284,21 @@ namespace ITI.HistoryTreasures.Rendering
                 parent.IsInteractionAClue(MC.IsClue);
                 parent.SetInteractionMessage(MC.Interact(KeyEnum.action));
             }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                rc.Show();
+            }
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <value>
+        /// The rc.
+        /// </value>
+        public RulesControl Rc
+        {
+            get { return rc; }
+            set { rc = value; }
         }
 
         /// <summary>
@@ -272,6 +311,30 @@ namespace ITI.HistoryTreasures.Rendering
         {
             get { return characterBitmap; }
             set { characterBitmap = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the rd control.
+        /// </summary>
+        /// <value>
+        /// The rd control.
+        /// </value>
+        public RiddleControl RdControl
+        {
+            get { return rd; }
+            set { rd = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the interactions control.
+        /// </summary>
+        /// <value>
+        /// The interactions control.
+        /// </value>
+        public InteractionsControl InteractionControl
+        {
+            get { return iC; }
+            set { iC = value; }
         }
     }
 }
