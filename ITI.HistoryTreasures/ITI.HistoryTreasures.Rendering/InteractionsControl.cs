@@ -80,6 +80,18 @@ namespace ITI.HistoryTreasures.Rendering
             }
         }
 
+        public Label PnJinteractionBox
+        {
+            get { return _PNJinteractionBox; }
+            set { _PNJinteractionBox = value; }
+        }
+
+        public Label ClueinteractionBox
+        {
+            get { return _ClueinteractionBox; }
+            set { _ClueinteractionBox = value; }
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="InteractionsControl"/> class.
         /// </summary>
