@@ -15,7 +15,7 @@ namespace ITI.HistoryTreasures.Rendering
         Label _riddle;
         Level _lCtx;
         TextBox _answerUser;
-        
+
 
         //RiddleManager _riddleManager;
         public RiddleControl()
@@ -64,7 +64,7 @@ namespace ITI.HistoryTreasures.Rendering
                 MessageBox.Show("Bonne réponse, dirigez-vous vers la sortie !");
                 _lCtx.IsOpen = true;
             }
-            else if(textBox1.Text == "")
+            else if (textBox1.Text == "")
             {
                 MessageBox.Show("Entrez la réponse s'il-vous-plaît.");
             }

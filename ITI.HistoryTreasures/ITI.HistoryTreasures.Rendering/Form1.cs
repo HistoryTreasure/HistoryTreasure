@@ -24,6 +24,7 @@ namespace ITI.HistoryTreasures.Rendering
             gameControl1.LevelContext = g.Check();
             gameControl1.Rc = rulesControl1;
             gameControl1.GameContext = g;
+            gameControl1.RdControl = riddleControl1;
             menuControl1.RiddleControl = riddleControl1;
             menuControl1.InteractionsControl = interactionsControl1;
             riddleControl1.LevelContext = g.Check();

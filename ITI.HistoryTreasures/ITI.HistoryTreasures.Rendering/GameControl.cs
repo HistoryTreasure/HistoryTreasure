@@ -25,6 +25,7 @@ namespace ITI.HistoryTreasures.Rendering
         bool right = false;
         Bitmap _backGround;
         RulesControl rc;
+        RiddleControl rd;
 
         /// <summary>
         /// This constructor instantiate GameControl. 
@@ -120,6 +121,9 @@ namespace ITI.HistoryTreasures.Rendering
 
             if (LevelContext.IsFinish)
             {
+                RdControl.LevelContext = GameContext.Check();
+                RdControl.textBox1.Enabled = true;
+                RdControl.textBox1.Text = "";
                 LevelContext = GameContext.Check();
             }
 
@@ -297,5 +301,16 @@ namespace ITI.HistoryTreasures.Rendering
             set { characterBitmap = value; }
         }
 
+        /// <summary>
+        /// Gets or sets the rd control.
+        /// </summary>
+        /// <value>
+        /// The rd control.
+        /// </value>
+        public RiddleControl RdControl
+        {
+            get { return rd; }
+            set { rd = value; }
+        }
     }
 }
