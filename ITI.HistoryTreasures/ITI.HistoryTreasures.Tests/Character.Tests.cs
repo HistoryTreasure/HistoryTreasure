@@ -48,7 +48,7 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void PNJ_return_correct_coordinate() //Return position of PNJ
         {
-            Assert.That(p.positionX, Is.EqualTo(256));
+            Assert.That(p.positionX, Is.EqualTo(320));
             Assert.That(p.positionY, Is.EqualTo(256));
             Assert.That(l.Pnjs.Contains(p));
         }
@@ -74,13 +74,13 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void PNJ_hitbox_return_good_value()
         {
-            Assert.That(p.HitBox.xA, Is.EqualTo(256));
+            Assert.That(p.HitBox.xA, Is.EqualTo(320));
             Assert.That(p.HitBox.yA, Is.EqualTo(272));
-            Assert.That(p.HitBox.xB, Is.EqualTo(288));
+            Assert.That(p.HitBox.xB, Is.EqualTo(352));
             Assert.That(p.HitBox.yB, Is.EqualTo(272));
-            Assert.That(p.HitBox.xC, Is.EqualTo(288));
+            Assert.That(p.HitBox.xC, Is.EqualTo(352));
             Assert.That(p.HitBox.yC, Is.EqualTo(288));
-            Assert.That(p.HitBox.xD, Is.EqualTo(256));
+            Assert.That(p.HitBox.xD, Is.EqualTo(320));
             Assert.That(p.HitBox.yD, Is.EqualTo(288));
         }
 
