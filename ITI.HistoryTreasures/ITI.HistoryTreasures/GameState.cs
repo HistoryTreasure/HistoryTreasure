@@ -91,7 +91,7 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// </summary>
         /// <value>
-        /// The g CTX.
+        /// The game CTX.
         /// </value>
         public Game GCtx
         {
@@ -101,7 +101,7 @@ namespace ITI.HistoryTreasures
         /// <summary>
         /// </summary>
         /// <value>
-        /// The t CTX.
+        /// The theme CTX.
         /// </value>
         public Theme TCtx
         {

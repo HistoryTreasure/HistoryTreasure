@@ -117,6 +117,12 @@ namespace ITI.HistoryTreasures.Rendering
         protected override void OnPaint(PaintEventArgs e)
         {
             if (LevelContext == null) return;
+
+            if (LevelContext.IsFinish)
+            {
+                LevelContext = GameContext.Check();
+            }
+
             Tile[,] tileArray = LevelContext.MapContext.TileArray;
             float coefX = 1.0f * Width / (tileArray.GetLength(0) * TileSize);
             float coefY = 1.0f * Height / (tileArray.GetLength(1) * TileSize);
@@ -268,6 +274,11 @@ namespace ITI.HistoryTreasures.Rendering
             }
         }
 
+        /// <summary>
+        /// </summary>
+        /// <value>
+        /// The rc.
+        /// </value>
         public RulesControl Rc
         {
             get { return rc; }
