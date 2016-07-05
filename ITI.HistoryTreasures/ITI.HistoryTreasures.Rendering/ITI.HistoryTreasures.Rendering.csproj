@@ -167,7 +167,6 @@
     <None Include="Resources\pont vertcal.png" />
     <None Include="Resources\img_X1_Y0.png" />
     <None Include="Resources\livre.png" />
-    <None Include="Resources\book.png" />
     <None Include="Resources\img_X0_Y39.png" />
     <None Include="Resources\img_X5_Y1.png" />
     <None Include="Resources\img_X6_Y40.png" />
@@ -212,6 +211,7 @@
     <None Include="Resources\T1_2.wav" />
     <None Include="Resources\T1_3.wav" />
     <None Include="Resources\menu.wav" />
+    <None Include="Resources\book.png" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
