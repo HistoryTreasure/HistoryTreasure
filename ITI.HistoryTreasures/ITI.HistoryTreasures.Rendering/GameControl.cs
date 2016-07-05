@@ -127,6 +127,15 @@ namespace ITI.HistoryTreasures.Rendering
                 LevelContext = GameContext.Check();
             }
 
+            if (LevelContext.CanAnswer())
+            {
+                RdControl.textBox1.Enabled = true;
+            }
+            else
+            {
+                RdControl.textBox1.Enabled = false;
+            }
+
             Tile[,] tileArray = LevelContext.MapContext.TileArray;
             float coefX = 1.0f * Width / (tileArray.GetLength(0) * TileSize);
             float coefY = 1.0f * Height / (tileArray.GetLength(1) * TileSize);

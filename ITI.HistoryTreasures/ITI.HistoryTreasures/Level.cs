@@ -318,7 +318,7 @@ namespace ITI.HistoryTreasures
         /// Check if player can answer.
         /// </summary>
         /// <returns>true if the player can answer</returns>
-        bool CanAnswer()
+        public bool CanAnswer()
         {
             bool pnj = false;
             bool clue = false;
