@@ -63,48 +63,9 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _base {
-            get {
-                object obj = ResourceManager.GetObject("_base", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream audio {
-            get {
-                return ResourceManager.GetStream("audio", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap book {
             get {
                 object obj = ResourceManager.GetObject("book", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bridge {
-            get {
-                object obj = ResourceManager.GetObject("bridge", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap clue {
-            get {
-                object obj = ResourceManager.GetObject("clue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -330,22 +291,11 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.Drawing.Bitmap pnj {
+        internal static System.IO.UnmanagedMemoryStream menu {
             get {
-                object obj = ResourceManager.GetObject("pnj", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pont_vertcal {
-            get {
-                object obj = ResourceManager.GetObject("pont_vertcal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetStream("menu", resourceCulture);
             }
         }
         
@@ -446,6 +396,33 @@ namespace ITI.HistoryTreasures.Rendering.Properties {
             get {
                 object obj = ResourceManager.GetObject("stonepath", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream T1_1 {
+            get {
+                return ResourceManager.GetStream("T1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream T1_2 {
+            get {
+                return ResourceManager.GetStream("T1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream T1_3 {
+            get {
+                return ResourceManager.GetStream("T1_3", resourceCulture);
             }
         }
         

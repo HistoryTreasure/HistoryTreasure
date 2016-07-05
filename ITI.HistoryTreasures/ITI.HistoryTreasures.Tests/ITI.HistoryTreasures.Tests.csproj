@@ -48,8 +48,6 @@
     <Compile Include="Game.Tests.cs" />
     <Compile Include="Map.Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rendering.Tests.cs" />
-    <Compile Include="Resources.Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ITI.HistoryTreasures\ITI.HistoryTreasures.csproj">
