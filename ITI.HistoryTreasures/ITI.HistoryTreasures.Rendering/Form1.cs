@@ -21,8 +21,19 @@ namespace ITI.HistoryTreasures.Rendering
         {
             InitializeComponent();
             Game g = new Game();
+            gameControl1.Rc = rulesControl1;
+            gameControl1.GameContext = g;
+            gameControl1.RdControl = riddleControl1;
+            gameControl1.InteractionControl = interactionsControl1;
+            menuControl1.RiddleControl = riddleControl1;
+            menuControl1.InteractionsControl = interactionsControl1;
+            riddleControl1.LevelContext = g.Check();
             menuControl1.GameControl = gameControl1;
             menuControl1.Game = g;
+            rulesControl1.Hide();
+            gameControl1.Hide();
+            riddleControl1.Hide();
+            interactionsControl1.Hide();
         }
 
         /// <summary>

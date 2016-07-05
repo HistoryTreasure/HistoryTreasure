@@ -87,13 +87,13 @@ namespace ITI.HistoryTreasures.Tests
         [Test]
         public void PNJ_cannot_be_created_with_his_hitbox_outside_the_map()
         {
-            Assert.Throws<ArgumentException>(() => l.CreatePNJ(g, -1, -1, CharacterEnum.GUARDFACE, "Test", "Hello world !"));
+            Assert.Throws<ArgumentException>(() => l.CreatePNJ(g, -1, -1, CharacterEnum.PNJCREED, "Test", "Hello world !"));
         }
 
         [Test]
         public void PNJ_have_a_unique_speech()
         {
-            Assert.Throws<InvalidOperationException>(() => l.CreatePNJ(g, 32, 32, CharacterEnum.GUARDFACE, "Hawke", "Hello world !"));
+            Assert.Throws<InvalidOperationException>(() => l.CreatePNJ(g, 32, 32, CharacterEnum.PNJCREED, "Hawke", "Hello world !"));
         }
     }
 
