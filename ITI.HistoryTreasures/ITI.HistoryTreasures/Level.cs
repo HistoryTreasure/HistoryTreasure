@@ -18,6 +18,7 @@ namespace ITI.HistoryTreasures
         Dictionary<string, string> _answers;
         readonly Map _mCtx;
         bool _isOpen;
+        bool _hasReply = false;
         
         /// <summary>
         /// This constructor create a level.
@@ -383,6 +384,18 @@ namespace ITI.HistoryTreasures
             _riddles.Add("1_1", "Quelle est la date de la prise de la bastille ?");
             _riddles.Add("1_2", "Quel est le nom du roi qui a été décapité ?");
             _riddles.Add("1_3", "En quelle année a eu lieu le coup d'Etat de Napoléon Bonaparte ?");
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance has reply.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if this instance has reply; otherwise, <c>false</c>.
+        /// </value>
+        public bool HasReply
+        {
+            get { return _hasReply; }
+            set { _hasReply = value; }
         }
     }
 }

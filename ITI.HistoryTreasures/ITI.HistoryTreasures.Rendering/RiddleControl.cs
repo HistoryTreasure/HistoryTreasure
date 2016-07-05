@@ -60,6 +60,7 @@ namespace ITI.HistoryTreasures.Rendering
         {
             if (textBox1.Text == _lCtx.Answer)
             {
+                LevelContext.HasReply = true;
                 textBox1.Enabled = false;
                 MessageBox.Show("Bonne réponse, dirigez-vous vers la sortie !");
                 _lCtx.IsOpen = true;

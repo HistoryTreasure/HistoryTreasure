@@ -130,7 +130,7 @@ namespace ITI.HistoryTreasures.Rendering
                 LevelContext = GameContext.Check();
             }
 
-            if (LevelContext.CanAnswer())
+            if (LevelContext.CanAnswer() && LevelContext.HasReply == false)
             {
                 RdControl.textBox1.Enabled = true;
             }
