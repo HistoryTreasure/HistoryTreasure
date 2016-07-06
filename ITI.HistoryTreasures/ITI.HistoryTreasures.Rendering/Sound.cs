@@ -41,6 +41,18 @@ namespace ITI.HistoryTreasures.Rendering
                 {
                     _audio = new SoundPlayer(Resources.T1_3);
                 }
+                if (GetLevel == "2_1")
+                {
+                    _audio = new SoundPlayer(Resources.T2_1);
+                }
+                if (GetLevel == "2_2")
+                {
+                    _audio = new SoundPlayer(Resources.T2_2);
+                }
+                if (GetLevel == "2_3")
+                {
+                    _audio = new SoundPlayer(Resources.T2_3);
+                }
                 _audio.PlayLooping();
             }
 
