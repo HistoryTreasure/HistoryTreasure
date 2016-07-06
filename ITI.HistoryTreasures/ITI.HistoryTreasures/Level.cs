@@ -191,10 +191,23 @@ namespace ITI.HistoryTreasures
             {
                 if (MainCharacter.CanInteract(Pnjs[i].HitBox))
                 {
-                    if (MainCharacter.positionX < Pnjs[i].positionX)
+                    if (Pnjs[i].positionX - MainCharacter.positionX > 0 )
                     {
                         Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "left");
                     }
+                    else if (Pnjs[i].positionY - MainCharacter.positionY > 0)
+                    {
+                        Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "up");
+                    }
+                    else if (Pnjs[i].positionX - MainCharacter.positionX < 0 )
+                    {
+                        Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "right");
+                    }
+                    else if (Pnjs[i].positionY - MainCharacter.positionY < 0)
+                    {
+                        Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "down");
+                    }
+
                     talk = Pnjs[i].Name + (": ") + Pnjs[i].Speech;
                     Pnjs[i].Talk = true;
                     break;

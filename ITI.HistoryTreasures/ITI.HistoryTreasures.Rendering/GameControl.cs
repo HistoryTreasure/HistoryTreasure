@@ -120,8 +120,8 @@ namespace ITI.HistoryTreasures.Rendering
                 InteractionControl.ClueinteractionBox.Text = "";
                 LevelContext = GameContext.Check();
             }
-            
-                
+
+
 
             if (LevelContext.CanAnswer() && LevelContext.HasReply == false)
             {
@@ -156,7 +156,7 @@ namespace ITI.HistoryTreasures.Rendering
                 e.Graphics.DrawImage(clueBitmap, clue.X, clue.Y);
             }
 
-            
+
         }
 
         /// <summary>
@@ -296,6 +296,44 @@ namespace ITI.HistoryTreasures.Rendering
             else if (e.KeyCode == Keys.Escape)
             {
                 rc.Show();
+            }
+            else if (e.KeyCode == Keys.Z && e.KeyCode == Keys.Q)
+            {
+                MC.Movement(KeyEnum.left);
+                MC.Movement(KeyEnum.up);
+
+                MC.CharacterBitmapName = CharacterEnum.MCRIGHTRIGHT;
+                right = true;
+                Invalidate();
+
+            }
+            else if (e.KeyCode == Keys.Z && e.KeyCode == Keys.D)
+            {
+                MC.Movement(KeyEnum.right);
+                MC.Movement(KeyEnum.up);
+
+                MC.CharacterBitmapName = CharacterEnum.MCRIGHTRIGHT;
+                right = true;
+                Invalidate();
+
+            }
+            else if (e.KeyCode == Keys.S && e.KeyCode == Keys.D)
+            {
+                MC.Movement(KeyEnum.right);
+                MC.Movement(KeyEnum.down);
+
+                MC.CharacterBitmapName = CharacterEnum.MCRIGHTRIGHT;
+                right = true;
+                Invalidate();
+            }
+            else if (e.KeyCode == Keys.S && e.KeyCode == Keys.Q)
+            {
+                MC.Movement(KeyEnum.right);
+                MC.Movement(KeyEnum.down);
+
+                MC.CharacterBitmapName = CharacterEnum.MCRIGHTRIGHT;
+                right = true;
+                Invalidate();
             }
         }
 
