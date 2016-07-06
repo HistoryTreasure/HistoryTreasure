@@ -191,6 +191,10 @@ namespace ITI.HistoryTreasures
             {
                 if (MainCharacter.CanInteract(Pnjs[i].HitBox))
                 {
+                    if (MainCharacter.positionX < Pnjs[i].positionX)
+                    {
+                        Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "left");
+                    }
                     talk = Pnjs[i].Name + (": ") + Pnjs[i].Speech;
                     Pnjs[i].Talk = true;
                     break;
@@ -396,6 +400,27 @@ namespace ITI.HistoryTreasures
         {
             get { return _hasReply; }
             set { _hasReply = value; }
+        }
+
+        CharacterEnum SetCharacterBitmap(string name, string direction)
+        {
+            if (name == "Hawke")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJGIRLLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJGIRLRIGHT;
+                }
+                else if(direction == "down")
+                {
+                    return CharacterEnum.PNJGIRL;
+                }
+            }
+
+            return CharacterEnum.MCFACE;
         }
     }
 }

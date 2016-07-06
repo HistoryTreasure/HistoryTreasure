@@ -89,18 +89,6 @@ namespace ITI.HistoryTreasures.Rendering
                                 g.DrawImage(tileBitmap, t.posX, t.posY);
                             }
                         }
-
-                        foreach (PNJ pnj in LevelContext.Pnjs)
-                        {
-                            Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
-                            g.DrawImage(pnjBitmap, pnj.positionX, pnj.positionY);
-                        }
-
-                        foreach (Clue clue in LevelContext.Clues)
-                        {
-                            Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
-                            g.DrawImage(clueBitmap, clue.X, clue.Y);
-                        }
                     }
                 }
             }
@@ -132,6 +120,8 @@ namespace ITI.HistoryTreasures.Rendering
                 InteractionControl.ClueinteractionBox.Text = "";
                 LevelContext = GameContext.Check();
             }
+            
+                
 
             if (LevelContext.CanAnswer() && LevelContext.HasReply == false)
             {
@@ -153,6 +143,20 @@ namespace ITI.HistoryTreasures.Rendering
 
             characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX, MC.positionY);
+
+            foreach (PNJ pnj in LevelContext.Pnjs)
+            {
+                Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
+                e.Graphics.DrawImage(pnjBitmap, pnj.positionX, pnj.positionY);
+            }
+
+            foreach (Clue clue in LevelContext.Clues)
+            {
+                Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
+                e.Graphics.DrawImage(clueBitmap, clue.X, clue.Y);
+            }
+
+            Invalidate();
         }
 
         /// <summary>
