@@ -420,6 +420,86 @@ namespace ITI.HistoryTreasures
                 }
             }
 
+            if (name == "Kiu")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJCREEDLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJCREEDRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJCREED;
+                }
+            }
+
+            if (name == "Kuro")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJUNDERTAKERLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJUNDERTAKERRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJUNDERTAKER;
+                }
+            }
+
+            if (name == "Shiro")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJGUARDLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJGUARDRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJGUARD;
+                }
+            }
+
+            if (name == "Murasaki")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJGIRLLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJGIRLRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJGIRL;
+                }
+            }
+
+            if (name == "Midori")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJGUARDLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJGUARDRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJGUARD;
+                }
+            }
+
             return CharacterEnum.MCFACE;
         }
     }

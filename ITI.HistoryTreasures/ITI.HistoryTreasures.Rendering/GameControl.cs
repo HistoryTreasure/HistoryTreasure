@@ -156,7 +156,7 @@ namespace ITI.HistoryTreasures.Rendering
                 e.Graphics.DrawImage(clueBitmap, clue.X, clue.Y);
             }
 
-            Invalidate();
+            
         }
 
         /// <summary>
