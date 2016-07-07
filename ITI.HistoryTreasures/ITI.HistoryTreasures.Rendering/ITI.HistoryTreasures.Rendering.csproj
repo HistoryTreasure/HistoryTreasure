@@ -207,11 +207,15 @@
     <None Include="Resources\downPnj.png" />
     <None Include="Resources\leftPnj.png" />
     <None Include="Resources\Music\menu.wav" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\menu.wav" />
     <None Include="Resources\T1_1.wav" />
     <None Include="Resources\T1_2.wav" />
     <None Include="Resources\T1_3.wav" />
-    <None Include="Resources\menu.wav" />
-    <None Include="Resources\book.png" />
+    <None Include="Resources\img_X1_Y3.png" />
+    <None Include="Resources\backGuard.png" />
+    <None Include="Resources\backPnj.png" />
+    <None Include="Resources\backUndertaker.png" />
     <None Include="Resources\T2_3.wav" />
     <None Include="Resources\T2_1.wav" />
     <None Include="Resources\T2_2.wav" />

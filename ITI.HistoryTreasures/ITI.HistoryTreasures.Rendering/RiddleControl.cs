@@ -29,6 +29,12 @@ namespace ITI.HistoryTreasures.Rendering
 
         }
 
+        /// <summary>
+        /// Gets or sets the level context.
+        /// </summary>
+        /// <value>
+        /// The level context.
+        /// </value>
         public Level LevelContext
         {
             get { return _lCtx; }

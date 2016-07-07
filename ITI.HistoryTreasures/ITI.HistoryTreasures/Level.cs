@@ -195,6 +195,23 @@ namespace ITI.HistoryTreasures
             {
                 if (MainCharacter.CanInteract(Pnjs[i].HitBox))
                 {
+                    if (Pnjs[i].positionX - MainCharacter.positionX > 0 )
+                    {
+                        Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "left");
+                    }
+                    else if (Pnjs[i].positionY - MainCharacter.positionY > 0)
+                    {
+                        Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "up");
+                    }
+                    else if (Pnjs[i].positionX - MainCharacter.positionX < 0 )
+                    {
+                        Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "right");
+                    }
+                    else if (Pnjs[i].positionY - MainCharacter.positionY < 0)
+                    {
+                        Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "down");
+                    }
+
                     talk = Pnjs[i].Name + (": ") + Pnjs[i].Speech;
                     Pnjs[i].Talk = true;
                     break;
@@ -443,6 +460,131 @@ namespace ITI.HistoryTreasures
         {
             get { return _hasReply; }
             set { _hasReply = value; }
+        }
+
+        CharacterEnum SetCharacterBitmap(string name, string direction)
+        {
+            if (name == "Hawke")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJGIRLLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJGIRLRIGHT;
+                }
+                else if(direction == "down")
+                {
+                    return CharacterEnum.PNJGIRL;
+                }
+                else if(direction == "up")
+                {
+                    return CharacterEnum.PNJGIRLBACK;
+                }
+            }
+
+            if (name == "Kiu")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJCREEDLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJCREEDRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJCREED;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJCREEDBACK;
+                }
+            }
+
+            if (name == "Kuro")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJUNDERTAKERLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJUNDERTAKERRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJUNDERTAKER;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJUNDERTAKERBACK;
+                }
+            }
+
+            if (name == "Shiro")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJGUARDLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJGUARDRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJGUARD;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJGUARDBACK;
+                }
+            }
+
+            if (name == "Murasaki")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJGIRLLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJGIRLRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJGIRL;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJGIRLBACK;
+                }
+            }
+
+            if (name == "Midori")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJGUARDLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJGUARDRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJGUARD;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJGUARDBACK;
+                }
+            }
+
+            return CharacterEnum.MCFACE;
         }
     }
 }
