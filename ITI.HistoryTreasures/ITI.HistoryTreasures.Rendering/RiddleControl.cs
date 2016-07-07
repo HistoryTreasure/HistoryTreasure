@@ -26,8 +26,15 @@ namespace ITI.HistoryTreasures.Rendering
             this._riddle.Size = new Size(590, 61);
             this.Controls.Add(this._riddle);
 
+
         }
 
+        /// <summary>
+        /// Gets or sets the level context.
+        /// </summary>
+        /// <value>
+        /// The level context.
+        /// </value>
         public Level LevelContext
         {
             get { return _lCtx; }
@@ -40,6 +47,8 @@ namespace ITI.HistoryTreasures.Rendering
         private void UpdateFromLevelContext()
         {
             _riddle.Text = LevelContext.Riddle;
+            label2.Text = "Thème " + LevelContext.Theme.Name + ", niveau " + LevelContext.Name;
+
         }
 
         /// <summary>
@@ -51,6 +60,7 @@ namespace ITI.HistoryTreasures.Rendering
             UpdateFromLevelContext();
         }
 
+        
         /// <summary>
         /// button use to validate the answer
         /// </summary>
@@ -75,5 +85,7 @@ namespace ITI.HistoryTreasures.Rendering
                 MessageBox.Show("Mauvaise réponse, réessayer !");
             }
         }
+
+
     }
 }
