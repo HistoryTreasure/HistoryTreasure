@@ -32,9 +32,18 @@ namespace ITI.HistoryTreasures
             _name = name;
             _isFinish = false;
             _levels = new List<Level>();
-            CreateLevel("1_1");
-            CreateLevel("1_2");
-            CreateLevel("1_3");
+            if (name == "1")
+            {
+                CreateLevel("1_1");
+                CreateLevel("1_2");
+                CreateLevel("1_3");
+            }
+            else if (name == "2")
+            {
+                CreateLevel("2_1");
+                CreateLevel("2_2");
+                CreateLevel("2_3");
+            }
         }
 
         /// <summary>
