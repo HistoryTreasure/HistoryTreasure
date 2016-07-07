@@ -35,9 +35,9 @@ namespace ITI.HistoryTreasures.Rendering
         {
             _resourcesManager = new ResourcesManager();
             InitializeComponent();
-            _sound = new Sound();
-            _sound.PlayMusic = true;
-            _sound.Play();
+            PlaySound = new Sound();
+            PlaySound.PlayMusic = true;
+            PlaySound.Play();
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace ITI.HistoryTreasures.Rendering
                     }
 
                     _lCtx = value;
-                    _sound.GetLevel = LevelContext.Name;
+                    PlaySound.GetLevel = LevelContext.Name;
 
                     if (_backGround == null)
                     {
@@ -89,18 +89,6 @@ namespace ITI.HistoryTreasures.Rendering
                                 Debug.Assert(t.posY == i * 32 && t.posX == j * 32);
                                 g.DrawImage(tileBitmap, t.posX, t.posY);
                             }
-                        }
-
-                        foreach (PNJ pnj in LevelContext.Pnjs)
-                        {
-                            Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
-                            g.DrawImage(pnjBitmap, pnj.positionX, pnj.positionY);
-                        }
-
-                        foreach (Clue clue in LevelContext.Clues)
-                        {
-                            Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
-                            g.DrawImage(clueBitmap, clue.X, clue.Y);
                         }
                     }
                 }
@@ -132,7 +120,10 @@ namespace ITI.HistoryTreasures.Rendering
                 InteractionControl.PnJinteractionBox.Text = "";
                 InteractionControl.ClueinteractionBox.Text = "";
                 LevelContext = GameContext.Check();
+                PlaySound.Play();
             }
+
+
 
             if (LevelContext.CanAnswer() && LevelContext.HasReply == false)
             {
@@ -154,6 +145,20 @@ namespace ITI.HistoryTreasures.Rendering
 
             characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX, MC.positionY);
+
+            foreach (PNJ pnj in LevelContext.Pnjs)
+            {
+                Bitmap pnjBitmap = GetResourcesManager.GetCharacterBitmap(pnj);
+                e.Graphics.DrawImage(pnjBitmap, pnj.positionX, pnj.positionY);
+            }
+
+            foreach (Clue clue in LevelContext.Clues)
+            {
+                Bitmap clueBitmap = GetResourcesManager.GetClueBitmap(clue);
+                e.Graphics.DrawImage(clueBitmap, clue.X, clue.Y);
+            }
+
+
         }
 
         /// <summary>
@@ -190,6 +195,7 @@ namespace ITI.HistoryTreasures.Rendering
         public Sound PlaySound
         {
             get { return _sound; }
+            set { _sound = value; }
         }
 
         /// <summary>
@@ -293,6 +299,44 @@ namespace ITI.HistoryTreasures.Rendering
             else if (e.KeyCode == Keys.Escape)
             {
                 rc.Show();
+            }
+            else if (e.KeyCode == Keys.Z && e.KeyCode == Keys.Q)
+            {
+                MC.Movement(KeyEnum.left);
+                MC.Movement(KeyEnum.up);
+
+                MC.CharacterBitmapName = CharacterEnum.MCRIGHTRIGHT;
+                right = true;
+                Invalidate();
+
+            }
+            else if (e.KeyCode == Keys.Z && e.KeyCode == Keys.D)
+            {
+                MC.Movement(KeyEnum.right);
+                MC.Movement(KeyEnum.up);
+
+                MC.CharacterBitmapName = CharacterEnum.MCRIGHTRIGHT;
+                right = true;
+                Invalidate();
+
+            }
+            else if (e.KeyCode == Keys.S && e.KeyCode == Keys.D)
+            {
+                MC.Movement(KeyEnum.right);
+                MC.Movement(KeyEnum.down);
+
+                MC.CharacterBitmapName = CharacterEnum.MCRIGHTRIGHT;
+                right = true;
+                Invalidate();
+            }
+            else if (e.KeyCode == Keys.S && e.KeyCode == Keys.Q)
+            {
+                MC.Movement(KeyEnum.right);
+                MC.Movement(KeyEnum.down);
+
+                MC.CharacterBitmapName = CharacterEnum.MCRIGHTRIGHT;
+                right = true;
+                Invalidate();
             }
         }
 

@@ -18,6 +18,7 @@ namespace ITI.HistoryTreasures
         {
             _themes = new List<Theme>();
             CreateTheme("1");
+            CreateTheme("2");
         }
 
         /// <summary>
@@ -59,7 +60,11 @@ namespace ITI.HistoryTreasures
                     {
                         if (l.IsFinish)
                         {
-                            continue;
+                            l.Theme.FinishTheme();
+                            if (l.Theme.IsFinish)
+                            {
+                                break;
+                            }
                         }
                         else
                         {
