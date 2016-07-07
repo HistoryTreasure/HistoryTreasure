@@ -59,6 +59,10 @@ namespace ITI.HistoryTreasures
             _answers.Add("1_1", "1789");
             _answers.Add("1_2", "louis xvi");
             _answers.Add("1_3", "1799");
+
+            _answers.Add("2_1", "2 septembre 1945");
+            _answers.Add("2_2", "Pearl Harbor");
+            _answers.Add("2_3", "8 mai 1945");
         }
 
         /// <summary>
@@ -191,6 +195,23 @@ namespace ITI.HistoryTreasures
             {
                 if (MainCharacter.CanInteract(Pnjs[i].HitBox))
                 {
+                    if (Pnjs[i].positionX - MainCharacter.positionX > 0 )
+                    {
+                        Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "left");
+                    }
+                    else if (Pnjs[i].positionY - MainCharacter.positionY > 0)
+                    {
+                        Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "up");
+                    }
+                    else if (Pnjs[i].positionX - MainCharacter.positionX < 0 )
+                    {
+                        Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "right");
+                    }
+                    else if (Pnjs[i].positionY - MainCharacter.positionY < 0)
+                    {
+                        Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "down");
+                    }
+
                     talk = Pnjs[i].Name + (": ") + Pnjs[i].Speech;
                     Pnjs[i].Talk = true;
                     break;
@@ -278,6 +299,21 @@ namespace ITI.HistoryTreasures
                 Pnjs.Add(CreatePNJ(Theme.Game, 23*32, 16*32, CharacterEnum.PNJGIRLRIGHT, "Murasaki", "Bonaparte a fait un coup d'état !"));
                 Pnjs.Add(CreatePNJ(Theme.Game, 10*32, 13*32, CharacterEnum.PNJGUARDLEFT, "Midori", "C'est la fin de la monarchie ! Les citoyens vont enfin pouvoir reprendre le pouvoir !"));
             }
+            else if (name == "2_1")
+            {
+                Pnjs.Add(CreatePNJ(Theme.Game, 23 * 32, 16 * 32, CharacterEnum.PNJGIRLLEFT, "Greta", "Cela a commencé en 1939..."));
+                Pnjs.Add(CreatePNJ(Theme.Game, 15 * 32, 11 * 32, CharacterEnum.PNJGUARD, "Hanz", "La victoire des alliés est notre"));
+            }
+            else if (name == "2_2")
+            {
+                Pnjs.Add(CreatePNJ(Theme.Game, 23 * 32, 16 * 32, CharacterEnum.PNJCREED, "Tim", "Les perles..."));
+                Pnjs.Add(CreatePNJ(Theme.Game, 15 * 32, 11 * 32, CharacterEnum.PNJGUARDLEFT, "Gildfoy", "Base aéro navale rasé par les japonais."));
+            }
+            else if (name == "2_3")
+            {
+                Pnjs.Add(CreatePNJ(Theme.Game, 23 * 32, 16 * 32, CharacterEnum.PNJGIRL, "Maria", "En ce mois béni l'Allemagne capitule enfin !"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 15 * 32, 11 * 32, CharacterEnum.PNJCREEDRIGHT, "Adolph", "Ceci marque la fin de la Seconde Guerre Mondiale"));
+            }
             return Pnjs;
         }
 
@@ -310,6 +346,30 @@ namespace ITI.HistoryTreasures
                     "La fin de la révolution marqua le début du consulat."));
                 Clues.Add(CreateClue(_ctx, 11*32, 26*32, ClueEnum.LIVRE, "2",
                     "Au court du siècle suivant, la France vit la naissance de la Première République !"));
+            }
+
+            else if (name == "2_1")
+            {
+                Clues.Add(CreateClue(_ctx, 26 * 32, 2 * 32, ClueEnum.LIVRE, "Allemagne",
+                    "La fin de cette guerre amène la Guerre Froide."));
+                Clues.Add(CreateClue(_ctx, 11 * 32, 26 * 32, ClueEnum.LIVRE, "Russie",
+                    "Cela marque également le début de la décolonisation !"));
+            }
+
+            else if (name == "2_2")
+            {
+                Clues.Add(CreateClue(_ctx, 26 * 32, 2 * 32, ClueEnum.LIVRE, "Allemagne",
+                    "La fin de cette guerre amène la Guerre Froide."));
+                Clues.Add(CreateClue(_ctx, 11 * 32, 26 * 32, ClueEnum.LIVRE, "Russie",
+                    "Cela marque également le début de la décolonisation !"));
+            }
+
+            else if (name == "2_3")
+            {
+                Clues.Add(CreateClue(_ctx, 26 * 32, 2 * 32, ClueEnum.LIVRE, "Allemagne",
+                    "La fin de cette guerre amène la Guerre Froide."));
+                Clues.Add(CreateClue(_ctx, 11 * 32, 26 * 32, ClueEnum.LIVRE, "Russie",
+                    "Cela marque également le début de la décolonisation !"));
             }
 
             return Clues;
@@ -384,6 +444,10 @@ namespace ITI.HistoryTreasures
             _riddles.Add("1_1", "Quelle est la date de la prise de la bastille ?");
             _riddles.Add("1_2", "Quel est le nom du roi qui a été décapité ?");
             _riddles.Add("1_3", "En quelle année a eu lieu le coup d'Etat de Napoléon Bonaparte ?");
+
+            _riddles.Add("2_1", "Quelle est la date de la chute du troisième Reich ?");
+            _riddles.Add("2_2", "Qu'est-ce qui a été attaqué le 7 décembre 1941 ?");
+            _riddles.Add("2_3", "Quelle est la date de la capitulation allemande ?");
         }
 
         /// <summary>
@@ -396,6 +460,131 @@ namespace ITI.HistoryTreasures
         {
             get { return _hasReply; }
             set { _hasReply = value; }
+        }
+
+        CharacterEnum SetCharacterBitmap(string name, string direction)
+        {
+            if (name == "Hawke")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJGIRLLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJGIRLRIGHT;
+                }
+                else if(direction == "down")
+                {
+                    return CharacterEnum.PNJGIRL;
+                }
+                else if(direction == "up")
+                {
+                    return CharacterEnum.PNJGIRLBACK;
+                }
+            }
+
+            if (name == "Kiu")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJCREEDLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJCREEDRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJCREED;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJCREEDBACK;
+                }
+            }
+
+            if (name == "Kuro")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJUNDERTAKERLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJUNDERTAKERRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJUNDERTAKER;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJUNDERTAKERBACK;
+                }
+            }
+
+            if (name == "Shiro")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJGUARDLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJGUARDRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJGUARD;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJGUARDBACK;
+                }
+            }
+
+            if (name == "Murasaki")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJGIRLLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJGIRLRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJGIRL;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJGIRLBACK;
+                }
+            }
+
+            if (name == "Midori")
+            {
+                if (direction == "left")
+                {
+                    return CharacterEnum.PNJGUARDLEFT;
+                }
+                else if (direction == "right")
+                {
+                    return CharacterEnum.PNJGUARDRIGHT;
+                }
+                else if (direction == "down")
+                {
+                    return CharacterEnum.PNJGUARD;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJGUARDBACK;
+                }
+            }
+
+            return CharacterEnum.MCFACE;
         }
     }
 }
