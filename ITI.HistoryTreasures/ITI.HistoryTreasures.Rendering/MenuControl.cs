@@ -120,7 +120,7 @@ namespace ITI.HistoryTreasures.Rendering
             rc.Show();
             Hide();
 
-            MessageBox.Show("Vous reprenez au thème " + LevelContext.Theme.Name + ", niveau " + LevelContext.Name);
+            MessageBox.Show("Vous reprenez au thème " + gc.LevelContext.Theme.Name + ", niveau " + gc.LevelContext.Name);
             gc.PlaySound.Stop();
             gc.PlaySound.Play();
 
