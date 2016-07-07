@@ -18,6 +18,7 @@ namespace ITI.HistoryTreasures.Rendering
         /// </summary>
         public ResourcesManager()
         {
+
             _tileBitmaps = new Dictionary<TileEnum, Bitmap>();
             _tileBitmaps[TileEnum.GRASS] = Properties.Resources.herbe;
             _tileBitmaps[TileEnum.WATER] = Properties.Resources.eau;
@@ -44,15 +45,19 @@ namespace ITI.HistoryTreasures.Rendering
             _characterBitmaps[CharacterEnum.PNJGIRL] = Properties.Resources.downGirl;
             _characterBitmaps[CharacterEnum.PNJGIRLLEFT] = Properties.Resources.leftGirl;
             _characterBitmaps[CharacterEnum.PNJGIRLRIGHT] = Properties.Resources.rightGirl;
+            _characterBitmaps[CharacterEnum.PNJGIRLBACK] = Properties.Resources.backGirl;
             _characterBitmaps[CharacterEnum.PNJCREED] = Properties.Resources.downPnj;
             _characterBitmaps[CharacterEnum.PNJCREEDLEFT] = Properties.Resources.leftPnj;
             _characterBitmaps[CharacterEnum.PNJCREEDRIGHT] = Properties.Resources.rightPnj;
+            _characterBitmaps[CharacterEnum.PNJCREEDBACK] = Properties.Resources.backPnj;
             _characterBitmaps[CharacterEnum.PNJGUARD] = Properties.Resources.downGuard;
             _characterBitmaps[CharacterEnum.PNJGUARDLEFT] = Properties.Resources.leftGuard;
             _characterBitmaps[CharacterEnum.PNJGUARDRIGHT] = Properties.Resources.rightGuard;
+            _characterBitmaps[CharacterEnum.PNJGUARDBACK] = Properties.Resources.backGuard;
             _characterBitmaps[CharacterEnum.PNJUNDERTAKER] = Properties.Resources.downUndertaker;
             _characterBitmaps[CharacterEnum.PNJUNDERTAKERLEFT] = Properties.Resources.leftUndertaker;
             _characterBitmaps[CharacterEnum.PNJUNDERTAKERRIGHT] = Properties.Resources.rightUndertaker;
+            _characterBitmaps[CharacterEnum.PNJUNDERTAKERBACK] = Properties.Resources.backUndertaker;
 
             _clueBitmaps = new Dictionary<ClueEnum, Bitmap>();
             _clueBitmaps[ClueEnum.LIVRE] = Properties.Resources.book;
