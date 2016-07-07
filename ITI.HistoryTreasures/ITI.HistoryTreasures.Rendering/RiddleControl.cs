@@ -41,33 +41,7 @@ namespace ITI.HistoryTreasures.Rendering
         private void UpdateFromLevelContext()
         {
             _riddle.Text = LevelContext.Riddle;
-            if (LevelContext.Name == "1_1")
-            {
-                label2.Text = "Thème I , niveau 1";
-            }
-            else if(LevelContext.Name == "1_2")
-            {
-                label2.Text = "Thème I , niveau 2";
-            }
-            else if(LevelContext.Name == "1_3")
-            {
-                label2.Text = "Thème I , niveau 3";
-            }
-            else if (LevelContext.Name == "2_1")
-            {
-                //MessageBox.Show("Vous avez terminé le Theme I");
-                label2.Text = "Thème II, niveau 1";
-            }
-            else if (LevelContext.Name == "2_2")
-            {
-                label2.Text = "Thème II, niveau 2";
-
-            }
-            else if (LevelContext.Name == "2_3")
-            {
-                label2.Text = "Thème II, niveau 3";
-
-            }
+            label2.Text = "Thème " + LevelContext.Theme.Name + ", niveau " + LevelContext.Name;
 
         }
 
