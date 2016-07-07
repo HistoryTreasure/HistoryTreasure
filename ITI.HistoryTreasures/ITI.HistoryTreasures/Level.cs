@@ -431,6 +431,10 @@ namespace ITI.HistoryTreasures
                 {
                     return CharacterEnum.PNJGIRL;
                 }
+                else if(direction == "up")
+                {
+                    return CharacterEnum.PNJGIRLBACK;
+                }
             }
 
             if (name == "Kiu")
@@ -446,6 +450,10 @@ namespace ITI.HistoryTreasures
                 else if (direction == "down")
                 {
                     return CharacterEnum.PNJCREED;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJCREEDBACK;
                 }
             }
 
@@ -463,6 +471,10 @@ namespace ITI.HistoryTreasures
                 {
                     return CharacterEnum.PNJUNDERTAKER;
                 }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJUNDERTAKERBACK;
+                }
             }
 
             if (name == "Shiro")
@@ -478,6 +490,10 @@ namespace ITI.HistoryTreasures
                 else if (direction == "down")
                 {
                     return CharacterEnum.PNJGUARD;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJGUARDBACK;
                 }
             }
 
@@ -495,6 +511,10 @@ namespace ITI.HistoryTreasures
                 {
                     return CharacterEnum.PNJGIRL;
                 }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJGIRLBACK;
+                }
             }
 
             if (name == "Midori")
@@ -510,6 +530,10 @@ namespace ITI.HistoryTreasures
                 else if (direction == "down")
                 {
                     return CharacterEnum.PNJGUARD;
+                }
+                else if (direction == "up")
+                {
+                    return CharacterEnum.PNJGUARDBACK;
                 }
             }
 

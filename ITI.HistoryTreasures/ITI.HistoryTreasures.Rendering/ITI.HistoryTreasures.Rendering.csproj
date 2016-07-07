@@ -212,6 +212,10 @@
     <None Include="Resources\T1_3.wav" />
     <None Include="Resources\menu.wav" />
     <None Include="Resources\book.png" />
+    <None Include="Resources\img_X1_Y3.png" />
+    <None Include="Resources\backGuard.png" />
+    <None Include="Resources\backPnj.png" />
+    <None Include="Resources\backUndertaker.png" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
