@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +17,7 @@ namespace ITI.HistoryTreasures.Rendering
         Game _g;
         RulesControl rulesControl;
         InteractionsControl iC;
+        Level lCtx;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuControl"/> class.
@@ -73,6 +74,19 @@ namespace ITI.HistoryTreasures.Rendering
             set { iC = value; }
         }
 
+        public Level LevelContext
+        {
+            get
+            {
+                return lCtx;
+            }
+
+            set
+            {
+                lCtx = value;
+            }
+        }
+
         /// <summary>
         /// Handles the Click event of the button2 control.
         /// </summary>
@@ -85,6 +99,8 @@ namespace ITI.HistoryTreasures.Rendering
             iC.Show();
             rc.Show();
             Hide();
+            MessageBox.Show("Bienvenue dans History Treasures, votre partie commence niveau 1 du thème n°1. Pour passer au niveau suivant il vous faut interroger tous les pnj et indices a l'écran puis vous rendre sur la case sombre en bas à droite de l'écran." +
+" Amusez-vous bien.", "Bienvenue");
         }
 
         /// <summary>
@@ -103,8 +119,12 @@ namespace ITI.HistoryTreasures.Rendering
             gc.Show();
             rc.Show();
             Hide();
+
+            MessageBox.Show("Vous reprenez au thème " + LevelContext.Theme.Name + ", niveau " + LevelContext.Name);
             gc.PlaySound.Stop();
             gc.PlaySound.Play();
+
+
         }
 
         private void button4_Click(object sender, EventArgs e) //Button rules
