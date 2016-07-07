@@ -35,9 +35,9 @@ namespace ITI.HistoryTreasures.Rendering
         {
             _resourcesManager = new ResourcesManager();
             InitializeComponent();
-            _sound = new Sound();
-            _sound.PlayMusic = true;
-            _sound.Play();
+            PlaySound = new Sound();
+            PlaySound.PlayMusic = true;
+            PlaySound.Play();
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace ITI.HistoryTreasures.Rendering
                     }
 
                     _lCtx = value;
-                    _sound.GetLevel = LevelContext.Name;
+                    PlaySound.GetLevel = LevelContext.Name;
 
                     if (_backGround == null)
                     {
@@ -119,6 +119,7 @@ namespace ITI.HistoryTreasures.Rendering
                 InteractionControl.PnJinteractionBox.Text = "";
                 InteractionControl.ClueinteractionBox.Text = "";
                 LevelContext = GameContext.Check();
+                PlaySound.Play();
             }
 
 
@@ -193,6 +194,7 @@ namespace ITI.HistoryTreasures.Rendering
         public Sound PlaySound
         {
             get { return _sound; }
+            set { _sound = value; }
         }
 
         /// <summary>
