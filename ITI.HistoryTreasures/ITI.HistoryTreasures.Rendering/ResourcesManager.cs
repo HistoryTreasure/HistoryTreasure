@@ -18,6 +18,7 @@ namespace ITI.HistoryTreasures.Rendering
         /// </summary>
         public ResourcesManager()
         {
+
             _tileBitmaps = new Dictionary<TileEnum, Bitmap>();
             _tileBitmaps[TileEnum.GRASS] = Properties.Resources.herbe;
             _tileBitmaps[TileEnum.WATER] = Properties.Resources.eau;

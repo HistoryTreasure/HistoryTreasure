@@ -153,6 +153,8 @@ namespace ITI.HistoryTreasures.Rendering
 
             characterBitmap = GetResourcesManager.GetCharacterBitmap(MC);
             e.Graphics.DrawImage(characterBitmap, MC.positionX, MC.positionY);
+
+
         }
 
         /// <summary>

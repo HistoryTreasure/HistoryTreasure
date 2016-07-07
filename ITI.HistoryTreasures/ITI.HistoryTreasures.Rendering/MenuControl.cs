@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -85,6 +85,32 @@ namespace ITI.HistoryTreasures.Rendering
             iC.Show();
             rc.Show();
             Hide();
+            // show the level and theme
+            if (gc.LevelContext.Name == "1_1")
+            {
+                MessageBox.Show("Thème I niveau 1");
+            }
+            else if (gc.LevelContext.Name == "1_2")
+            {
+                MessageBox.Show("Thème I niveau 2");
+            }
+            else if (gc.LevelContext.Name == "1_3")
+            {
+                MessageBox.Show("Thème I niveau 3");
+            }
+            else if (gc.LevelContext.Name == "2_1")
+            {
+                //MessageBox.Show("Vous avez terminé le Theme I");
+                MessageBox.Show("Thème II niveau 1");
+            }
+            else if (gc.LevelContext.Name == "2_2")
+            {
+                MessageBox.Show("Thème II niveau 2");
+            }
+            else if (gc.LevelContext.Name == "2_3")
+            {
+                MessageBox.Show("Thème II niveau 3");
+            }
         }
 
         /// <summary>
@@ -103,8 +129,37 @@ namespace ITI.HistoryTreasures.Rendering
             gc.Show();
             rc.Show();
             Hide();
+            // show on what level you are
+
+            if (gc.LevelContext.Name == "1_1")
+            {
+                MessageBox.Show("Thème I niveau 1");
+            }
+            else if (gc.LevelContext.Name == "1_2")
+            {
+                MessageBox.Show("Thème I niveau 2");
+            }
+            else if (gc.LevelContext.Name == "1_3")
+            {
+                MessageBox.Show("Thème I niveau 3");
+            }
+            else if (gc.LevelContext.Name == "2_1")
+            {
+                MessageBox.Show("Vous avez terminé le Theme I");
+                MessageBox.Show("Thème II niveau 1");
+            }
+            else if (gc.LevelContext.Name == "2_3")
+            {
+                MessageBox.Show("Thème II niveau 2");
+            }
+            else if (gc.LevelContext.Name == "2_3")
+            {
+                MessageBox.Show("Thème II niveau 3");
+            }
             gc.PlaySound.Stop();
             gc.PlaySound.Play();
+
+           
         }
 
         private void button4_Click(object sender, EventArgs e) //Button rules
