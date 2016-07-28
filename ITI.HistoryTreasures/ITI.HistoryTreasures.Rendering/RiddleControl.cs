@@ -68,7 +68,7 @@ namespace ITI.HistoryTreasures.Rendering
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == _lCtx.Answer)
+            if (textBox1.Text.ToLower() == _lCtx.Answer)
             {
                 LevelContext.HasReply = true;
                 textBox1.Enabled = false;
