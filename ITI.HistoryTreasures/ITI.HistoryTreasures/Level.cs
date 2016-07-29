@@ -19,7 +19,7 @@ namespace ITI.HistoryTreasures
         readonly Map _mCtx;
         bool _isOpen;
         bool _hasReply = false;
-        
+
         /// <summary>
         /// This constructor create a level.
         /// </summary>
@@ -195,7 +195,7 @@ namespace ITI.HistoryTreasures
             {
                 if (MainCharacter.CanInteract(Pnjs[i].HitBox))
                 {
-                    if (Pnjs[i].positionX - MainCharacter.positionX > 0 )
+                    if (Pnjs[i].positionX - MainCharacter.positionX > 0)
                     {
                         Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "left");
                     }
@@ -203,7 +203,7 @@ namespace ITI.HistoryTreasures
                     {
                         Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "up");
                     }
-                    else if (Pnjs[i].positionX - MainCharacter.positionX < 0 )
+                    else if (Pnjs[i].positionX - MainCharacter.positionX < 0)
                     {
                         Pnjs[i].CharacterBitmapName = SetCharacterBitmap(Pnjs[i].Name, "right");
                     }
@@ -286,18 +286,18 @@ namespace ITI.HistoryTreasures
         {
             if (name == "1_1")
             {
-                Pnjs.Add(CreatePNJ(Theme.Game, 10*32, 8*32, CharacterEnum.PNJGIRL, "Hawke", "Cette année nous prendrons la bastille !"));
-                Pnjs.Add(CreatePNJ(Theme.Game, 15*32, 11*32, CharacterEnum.PNJCREEDRIGHT, "Kiu", "La révolution est en marche"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 10 * 32, 8 * 32, CharacterEnum.PNJGIRL, "Hawke", "Cette année nous prendrons la bastille !"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 15 * 32, 11 * 32, CharacterEnum.PNJCREEDRIGHT, "Kiu", "La révolution est en marche"));
             }
             else if (name == "1_2")
             {
-                Pnjs.Add(CreatePNJ(Theme.Game, 22*32, 13*32, CharacterEnum.PNJUNDERTAKERLEFT, "Kuro", "Le roi est mort !"));
-                Pnjs.Add(CreatePNJ(Theme.Game, 3*32, 21*32, CharacterEnum.PNJGUARD, "Shiro", "Son nombre est 16"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 22 * 32, 13 * 32, CharacterEnum.PNJUNDERTAKERLEFT, "Kuro", "Le roi est mort !"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 3 * 32, 21 * 32, CharacterEnum.PNJGUARD, "Shiro", "Son nombre est 16"));
             }
             else if (name == "1_3")
             {
-                Pnjs.Add(CreatePNJ(Theme.Game, 23*32, 16*32, CharacterEnum.PNJGIRLRIGHT, "Murasaki", "Bonaparte a fait un coup d'état !"));
-                Pnjs.Add(CreatePNJ(Theme.Game, 10*32, 13*32, CharacterEnum.PNJGUARDLEFT, "Midori", "C'est la fin de la monarchie ! Les citoyens vont enfin pouvoir reprendre le pouvoir !"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 23 * 32, 16 * 32, CharacterEnum.PNJGIRLRIGHT, "Murasaki", "Bonaparte a fait un coup d'état !"));
+                Pnjs.Add(CreatePNJ(Theme.Game, 10 * 32, 13 * 32, CharacterEnum.PNJGUARDLEFT, "Midori", "C'est la fin de la monarchie ! Les citoyens vont enfin pouvoir reprendre le pouvoir !"));
             }
             else if (name == "2_1")
             {
@@ -326,25 +326,25 @@ namespace ITI.HistoryTreasures
         {
             if (name == "1_1")
             {
-                Clues.Add(CreateClue(_ctx, 19*32, 5*32, ClueEnum.LIVRE, "Book",
+                Clues.Add(CreateClue(_ctx, 19 * 32, 5 * 32, ClueEnum.LIVRE, "Book",
                     "L'histoire se souviendra de l'an 17... le reste est illisible"));
-                Clues.Add(CreateClue(_ctx, 20*32, 25*32, ClueEnum.LIVRE, "Livre",
+                Clues.Add(CreateClue(_ctx, 20 * 32, 25 * 32, ClueEnum.LIVRE, "Livre",
                     "La bastille fut prise 11 ans avant la fin du siecle"));
             }
 
             else if (name == "1_2")
             {
-                Clues.Add(CreateClue(_ctx, 9*32, 5*32, ClueEnum.LIVRE, "History",
+                Clues.Add(CreateClue(_ctx, 9 * 32, 5 * 32, ClueEnum.LIVRE, "History",
                     "Le roi fut décapité le 21 janviers 1793"));
-                Clues.Add(CreateClue(_ctx, 16*32, 26*32, ClueEnum.LIVRE, "Test",
+                Clues.Add(CreateClue(_ctx, 16 * 32, 26 * 32, ClueEnum.LIVRE, "Test",
                     "Sa mort marqua la fin de la monarchie et le début de la première république."));
             }
 
             else if (name == "1_3")
             {
-                Clues.Add(CreateClue(_ctx, 26*32, 2*32, ClueEnum.LIVRE, "1",
+                Clues.Add(CreateClue(_ctx, 26 * 32, 2 * 32, ClueEnum.LIVRE, "1",
                     "La fin de la révolution marqua le début du consulat."));
-                Clues.Add(CreateClue(_ctx, 11*32, 26*32, ClueEnum.LIVRE, "2",
+                Clues.Add(CreateClue(_ctx, 11 * 32, 26 * 32, ClueEnum.LIVRE, "2",
                     "Au court du siècle suivant, la France vit la naissance de la Première République !"));
             }
 
@@ -464,127 +464,96 @@ namespace ITI.HistoryTreasures
 
         CharacterEnum SetCharacterBitmap(string name, string direction)
         {
-            if (name == "Hawke")
+            switch (name)
             {
-                if (direction == "left")
-                {
-                    return CharacterEnum.PNJGIRLLEFT;
-                }
-                else if (direction == "right")
-                {
-                    return CharacterEnum.PNJGIRLRIGHT;
-                }
-                else if(direction == "down")
-                {
-                    return CharacterEnum.PNJGIRL;
-                }
-                else if(direction == "up")
-                {
-                    return CharacterEnum.PNJGIRLBACK;
-                }
-            }
+                case "Hawke":
+                    switch (direction)
+                    {
+                        case "left":
+                            return CharacterEnum.PNJGIRLLEFT;
+                        case "right":
+                            return CharacterEnum.PNJGIRLRIGHT;
+                        case "down":
+                            return CharacterEnum.PNJGIRL;
+                        case "up":
+                            return CharacterEnum.PNJGIRLBACK;
+                        default:
+                            return CharacterEnum.PNJGIRL;
+                    }
+                case "Kiu":
+                    switch (direction)
+                    {
+                        case "left":
+                            return CharacterEnum.PNJCREEDLEFT;
+                        case "right":
+                            return CharacterEnum.PNJCREEDRIGHT;
+                        case "down":
+                            return CharacterEnum.PNJCREED;
+                        case "up":
+                            return CharacterEnum.PNJCREEDBACK;
+                        default:
+                            return CharacterEnum.PNJCREED;
+                    }
+                case "Kuro":
+                    switch (direction)
+                    {
+                        case "left":
+                            return CharacterEnum.PNJUNDERTAKERLEFT;
+                        case "right":
+                            return CharacterEnum.PNJUNDERTAKERRIGHT;
+                        case "down":
+                            return CharacterEnum.PNJUNDERTAKER;
+                        case "up":
+                            return CharacterEnum.PNJUNDERTAKERBACK;
+                        default:
+                            return CharacterEnum.PNJUNDERTAKER;
+                    }
+                case "Shiro":
+                    switch (direction)
+                    {
+                        case "left":
+                            return CharacterEnum.PNJGUARDLEFT;
+                        case "right":
+                            return CharacterEnum.PNJGUARDRIGHT;
+                        case "down":
+                            return CharacterEnum.PNJGUARD;
+                        case "up":
+                            return CharacterEnum.PNJGUARDBACK;
+                        default:
+                            return CharacterEnum.PNJGUARD;
+                    }
+                case "Murasaki":
+                    switch (direction)
+                    {
+                        case "left":
+                            return CharacterEnum.PNJGIRLLEFT;
+                        case "right":
+                            return CharacterEnum.PNJGIRLRIGHT;
+                        case "down":
+                            return CharacterEnum.PNJGIRL;
+                        case "up":
+                            return CharacterEnum.PNJGIRLBACK;
+                        default:
+                            return CharacterEnum.PNJGIRL;
+                    }
+                case "Midori":
+                    switch (direction)
+                    {
+                        case "left":
+                            return CharacterEnum.PNJGUARDLEFT;
+                        case "right":
+                            return CharacterEnum.PNJGUARDRIGHT;
+                        case "down":
+                            return CharacterEnum.PNJGUARD;
+                        case "up":
+                            return CharacterEnum.PNJGUARDBACK;
+                        default:
+                            return CharacterEnum.PNJGUARD;
+                    }
 
-            if (name == "Kiu")
-            {
-                if (direction == "left")
-                {
-                    return CharacterEnum.PNJCREEDLEFT;
-                }
-                else if (direction == "right")
-                {
-                    return CharacterEnum.PNJCREEDRIGHT;
-                }
-                else if (direction == "down")
-                {
-                    return CharacterEnum.PNJCREED;
-                }
-                else if (direction == "up")
-                {
-                    return CharacterEnum.PNJCREEDBACK;
-                }
+                default:
+                    return CharacterEnum.MCFACE;
             }
-
-            if (name == "Kuro")
-            {
-                if (direction == "left")
-                {
-                    return CharacterEnum.PNJUNDERTAKERLEFT;
-                }
-                else if (direction == "right")
-                {
-                    return CharacterEnum.PNJUNDERTAKERRIGHT;
-                }
-                else if (direction == "down")
-                {
-                    return CharacterEnum.PNJUNDERTAKER;
-                }
-                else if (direction == "up")
-                {
-                    return CharacterEnum.PNJUNDERTAKERBACK;
-                }
-            }
-
-            if (name == "Shiro")
-            {
-                if (direction == "left")
-                {
-                    return CharacterEnum.PNJGUARDLEFT;
-                }
-                else if (direction == "right")
-                {
-                    return CharacterEnum.PNJGUARDRIGHT;
-                }
-                else if (direction == "down")
-                {
-                    return CharacterEnum.PNJGUARD;
-                }
-                else if (direction == "up")
-                {
-                    return CharacterEnum.PNJGUARDBACK;
-                }
-            }
-
-            if (name == "Murasaki")
-            {
-                if (direction == "left")
-                {
-                    return CharacterEnum.PNJGIRLLEFT;
-                }
-                else if (direction == "right")
-                {
-                    return CharacterEnum.PNJGIRLRIGHT;
-                }
-                else if (direction == "down")
-                {
-                    return CharacterEnum.PNJGIRL;
-                }
-                else if (direction == "up")
-                {
-                    return CharacterEnum.PNJGIRLBACK;
-                }
-            }
-
-            if (name == "Midori")
-            {
-                if (direction == "left")
-                {
-                    return CharacterEnum.PNJGUARDLEFT;
-                }
-                else if (direction == "right")
-                {
-                    return CharacterEnum.PNJGUARDRIGHT;
-                }
-                else if (direction == "down")
-                {
-                    return CharacterEnum.PNJGUARD;
-                }
-                else if (direction == "up")
-                {
-                    return CharacterEnum.PNJGUARDBACK;
-                }
-            }
-
-            return CharacterEnum.MCFACE;
         }
     }
 }
