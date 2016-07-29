@@ -284,35 +284,32 @@ namespace ITI.HistoryTreasures
         /// <returns></returns>
         public List<PNJ> AddPnj(string name)
         {
-            if (name == "1_1")
+            switch (name)
             {
-                Pnjs.Add(CreatePNJ(Theme.Game, 10 * 32, 8 * 32, CharacterEnum.PNJGIRL, "Hawke", "Cette année nous prendrons la bastille !"));
-                Pnjs.Add(CreatePNJ(Theme.Game, 15 * 32, 11 * 32, CharacterEnum.PNJCREEDRIGHT, "Kiu", "La révolution est en marche"));
-            }
-            else if (name == "1_2")
-            {
-                Pnjs.Add(CreatePNJ(Theme.Game, 22 * 32, 13 * 32, CharacterEnum.PNJUNDERTAKERLEFT, "Kuro", "Le roi est mort !"));
-                Pnjs.Add(CreatePNJ(Theme.Game, 3 * 32, 21 * 32, CharacterEnum.PNJGUARD, "Shiro", "Son nombre est 16"));
-            }
-            else if (name == "1_3")
-            {
-                Pnjs.Add(CreatePNJ(Theme.Game, 23 * 32, 16 * 32, CharacterEnum.PNJGIRLRIGHT, "Murasaki", "Bonaparte a fait un coup d'état !"));
-                Pnjs.Add(CreatePNJ(Theme.Game, 10 * 32, 13 * 32, CharacterEnum.PNJGUARDLEFT, "Midori", "C'est la fin de la monarchie ! Les citoyens vont enfin pouvoir reprendre le pouvoir !"));
-            }
-            else if (name == "2_1")
-            {
-                Pnjs.Add(CreatePNJ(Theme.Game, 23 * 32, 16 * 32, CharacterEnum.PNJGIRLLEFT, "Greta", "Cela a commencé en 1939..."));
-                Pnjs.Add(CreatePNJ(Theme.Game, 15 * 32, 11 * 32, CharacterEnum.PNJGUARD, "Hanz", "La victoire des alliés est notre"));
-            }
-            else if (name == "2_2")
-            {
-                Pnjs.Add(CreatePNJ(Theme.Game, 23 * 32, 16 * 32, CharacterEnum.PNJCREED, "Tim", "Les perles..."));
-                Pnjs.Add(CreatePNJ(Theme.Game, 15 * 32, 11 * 32, CharacterEnum.PNJGUARDLEFT, "Gildfoy", "Base aéro navale rasé par les japonais."));
-            }
-            else if (name == "2_3")
-            {
-                Pnjs.Add(CreatePNJ(Theme.Game, 23 * 32, 16 * 32, CharacterEnum.PNJGIRL, "Maria", "En ce mois béni l'Allemagne capitule enfin !"));
-                Pnjs.Add(CreatePNJ(Theme.Game, 15 * 32, 11 * 32, CharacterEnum.PNJCREEDRIGHT, "Adolph", "Ceci marque la fin de la Seconde Guerre Mondiale"));
+                case "1_1":
+                    Pnjs.Add(CreatePNJ(Theme.Game, 10 * 32, 8 * 32, CharacterEnum.PNJGIRL, "Hawke", "Cette année nous prendrons la bastille !"));
+                    Pnjs.Add(CreatePNJ(Theme.Game, 15 * 32, 11 * 32, CharacterEnum.PNJCREEDRIGHT, "Kiu", "La révolution est en marche"));
+                    break;
+                case "1_2":
+                    Pnjs.Add(CreatePNJ(Theme.Game, 22 * 32, 13 * 32, CharacterEnum.PNJUNDERTAKERLEFT, "Kuro", "Le roi est mort !"));
+                    Pnjs.Add(CreatePNJ(Theme.Game, 3 * 32, 21 * 32, CharacterEnum.PNJGUARD, "Shiro", "Son nombre est 16"));
+                    break;
+                case "1_3":
+                    Pnjs.Add(CreatePNJ(Theme.Game, 23 * 32, 16 * 32, CharacterEnum.PNJGIRLRIGHT, "Murasaki", "Bonaparte a fait un coup d'état !"));
+                    Pnjs.Add(CreatePNJ(Theme.Game, 10 * 32, 13 * 32, CharacterEnum.PNJGUARDLEFT, "Midori", "C'est la fin de la monarchie ! Les citoyens vont enfin pouvoir reprendre le pouvoir !"));
+                    break;
+                case "2_1":
+                    Pnjs.Add(CreatePNJ(Theme.Game, 23 * 32, 16 * 32, CharacterEnum.PNJGIRLLEFT, "Greta", "Cela a commencé en 1939..."));
+                    Pnjs.Add(CreatePNJ(Theme.Game, 15 * 32, 11 * 32, CharacterEnum.PNJGUARD, "Hanz", "La victoire des alliés est notre"));
+                    break;
+                case "2_2":
+                    Pnjs.Add(CreatePNJ(Theme.Game, 23 * 32, 16 * 32, CharacterEnum.PNJCREED, "Tim", "Les perles..."));
+                    Pnjs.Add(CreatePNJ(Theme.Game, 15 * 32, 11 * 32, CharacterEnum.PNJGUARDLEFT, "Gildfoy", "Base aéro navale rasé par les japonais."));
+                    break;
+                case "2_3":
+                    Pnjs.Add(CreatePNJ(Theme.Game, 23 * 32, 16 * 32, CharacterEnum.PNJGIRL, "Maria", "En ce mois béni l'Allemagne capitule enfin !"));
+                    Pnjs.Add(CreatePNJ(Theme.Game, 15 * 32, 11 * 32, CharacterEnum.PNJCREEDRIGHT, "Adolph", "Ceci marque la fin de la Seconde Guerre Mondiale"));
+                    break;
             }
             return Pnjs;
         }
@@ -324,52 +321,44 @@ namespace ITI.HistoryTreasures
         /// <returns></returns>
         public List<Clue> AddClues(string name)
         {
-            if (name == "1_1")
+            switch (name)
             {
-                Clues.Add(CreateClue(_ctx, 19 * 32, 5 * 32, ClueEnum.LIVRE, "Book",
-                    "L'histoire se souviendra de l'an 17... le reste est illisible"));
-                Clues.Add(CreateClue(_ctx, 20 * 32, 25 * 32, ClueEnum.LIVRE, "Livre",
-                    "La bastille fut prise 11 ans avant la fin du siecle"));
-            }
-
-            else if (name == "1_2")
-            {
-                Clues.Add(CreateClue(_ctx, 9 * 32, 5 * 32, ClueEnum.LIVRE, "History",
+                case "1_1":
+                    Clues.Add(CreateClue(_ctx, 19 * 32, 5 * 32, ClueEnum.LIVRE, "Book",
+                        "L'histoire se souviendra de l'an 17... le reste est illisible"));
+                    Clues.Add(CreateClue(_ctx, 20 * 32, 25 * 32, ClueEnum.LIVRE, "Livre",
+                        "La bastille fut prise 11 ans avant la fin du siecle"));
+                    break;
+                case "1_2":
+                    Clues.Add(CreateClue(_ctx, 9 * 32, 5 * 32, ClueEnum.LIVRE, "History",
                     "Le roi fut décapité le 21 janviers 1793"));
-                Clues.Add(CreateClue(_ctx, 16 * 32, 26 * 32, ClueEnum.LIVRE, "Test",
-                    "Sa mort marqua la fin de la monarchie et le début de la première république."));
-            }
-
-            else if (name == "1_3")
-            {
-                Clues.Add(CreateClue(_ctx, 26 * 32, 2 * 32, ClueEnum.LIVRE, "1",
+                    Clues.Add(CreateClue(_ctx, 16 * 32, 26 * 32, ClueEnum.LIVRE, "Test",
+                        "Sa mort marqua la fin de la monarchie et le début de la première république."));
+                    break;
+                case "1_3":
+                    Clues.Add(CreateClue(_ctx, 26 * 32, 2 * 32, ClueEnum.LIVRE, "1",
                     "La fin de la révolution marqua le début du consulat."));
-                Clues.Add(CreateClue(_ctx, 11 * 32, 26 * 32, ClueEnum.LIVRE, "2",
-                    "Au court du siècle suivant, la France vit la naissance de la Première République !"));
-            }
-
-            else if (name == "2_1")
-            {
-                Clues.Add(CreateClue(_ctx, 26 * 32, 2 * 32, ClueEnum.LIVRE, "Allemagne",
+                    Clues.Add(CreateClue(_ctx, 11 * 32, 26 * 32, ClueEnum.LIVRE, "2",
+                        "Au court du siècle suivant, la France vit la naissance de la Première République !"));
+                    break;
+                case "2_1":
+                    Clues.Add(CreateClue(_ctx, 26 * 32, 2 * 32, ClueEnum.LIVRE, "Allemagne",
                     "La fin de cette guerre amène la Guerre Froide."));
-                Clues.Add(CreateClue(_ctx, 11 * 32, 26 * 32, ClueEnum.LIVRE, "Russie",
-                    "Cela marque également le début de la décolonisation !"));
-            }
-
-            else if (name == "2_2")
-            {
-                Clues.Add(CreateClue(_ctx, 26 * 32, 2 * 32, ClueEnum.LIVRE, "Allemagne",
+                    Clues.Add(CreateClue(_ctx, 11 * 32, 26 * 32, ClueEnum.LIVRE, "Russie",
+                        "Cela marque également le début de la décolonisation !"));
+                    break;
+                case "2_2":
+                    Clues.Add(CreateClue(_ctx, 26 * 32, 2 * 32, ClueEnum.LIVRE, "Allemagne",
                     "La fin de cette guerre amène la Guerre Froide."));
-                Clues.Add(CreateClue(_ctx, 11 * 32, 26 * 32, ClueEnum.LIVRE, "Russie",
-                    "Cela marque également le début de la décolonisation !"));
-            }
-
-            else if (name == "2_3")
-            {
-                Clues.Add(CreateClue(_ctx, 26 * 32, 2 * 32, ClueEnum.LIVRE, "Allemagne",
+                    Clues.Add(CreateClue(_ctx, 11 * 32, 26 * 32, ClueEnum.LIVRE, "Russie",
+                        "Cela marque également le début de la décolonisation !"));
+                    break;
+                case "2_3":
+                    Clues.Add(CreateClue(_ctx, 26 * 32, 2 * 32, ClueEnum.LIVRE, "Allemagne",
                     "La fin de cette guerre amène la Guerre Froide."));
-                Clues.Add(CreateClue(_ctx, 11 * 32, 26 * 32, ClueEnum.LIVRE, "Russie",
-                    "Cela marque également le début de la décolonisation !"));
+                    Clues.Add(CreateClue(_ctx, 11 * 32, 26 * 32, ClueEnum.LIVRE, "Russie",
+                        "Cela marque également le début de la décolonisation !"));
+                    break;
             }
 
             return Clues;
