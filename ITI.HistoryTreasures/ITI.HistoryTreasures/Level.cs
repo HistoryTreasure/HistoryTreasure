@@ -193,6 +193,7 @@ namespace ITI.HistoryTreasures
 
             for (int i = 0; i < Pnjs.Count; i++)
             {
+                // Allow to define the moment when Main Chara meet the PNJ
                 if (MainCharacter.CanInteract(Pnjs[i].HitBox))
                 {
                     if (Pnjs[i].positionX - MainCharacter.positionX > 0 )
@@ -462,6 +463,12 @@ namespace ITI.HistoryTreasures
             set { _hasReply = value; }
         }
 
+        /// <summary>
+        /// Return the name and change the direction of PNJ
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="direction"></param>
+        /// <returns></returns>
         CharacterEnum SetCharacterBitmap(string name, string direction)
         {
             if (name == "Hawke")
